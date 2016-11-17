@@ -1,0 +1,169 @@
+START 1
+O
+0 0 0
+0 0 0
+END
+START 3
+XXX
+XXX
+XXX
+OOO
+OOO
+OOO
+XXX
+XXX
+XXX
+0 0 1
+2 2 1
+END
+START 5
+OOOOO
+OOOOO
+OOOOO
+OOOOO
+OOOOO
+OOOOO
+OOOOO
+OOOOO
+OOOOO
+OOOOO
+XXXXX
+XXXXX
+XXXXX
+XXXXX
+XXXXX
+OOOOO
+OOOOO
+OOOOO
+OOOOO
+OOOOO
+OOOOO
+OOOOO
+OOOOO
+OOOOO
+OOOOO
+0 0 0
+4 4 4
+END
+START 2
+O X
+X O
+O X
+X O
+0 0 0
+1 1 0
+END
+START 2
+O X
+X O
+O O
+O O
+0 0 0
+1 1 0
+END
+START 10
+O O O O O O O O O O
+O O O O O O O O O O 
+O O O O O O O O O O 
+O O O O O O O O O O
+O O O O O O O O O O 
+O O O O O O O O O O
+O O O O O O O O O O 
+O O O O O O O O O O 
+O O O O O O O O O O
+O O O O O O O O O O 
+O O O O O O O O O O
+O O O O O O O O O O 
+O O O O O O O O O O 
+O O O O O O O O O O
+O O O O O O O O O O 
+O O O O O O O O O O
+O O O O O O O O O O 
+O O O O O O O O O O 
+O O O O O O O O O O
+O O O O O O O O O O
+O O O O O O O O O O
+O O O O O O O O O O 
+O O O O O O O O O O 
+O O O O O O O O O O
+O O O O O O O O O O 
+O O O O O O O O O O
+O O O O O O O O O O 
+O O O O O O O O O O 
+O O O O O O O O O O
+O O O O O O O O O O
+O O O O O O O O O O
+O O O O O O O O O O 
+O O O O O O O O O O 
+O O O O O O O O O O
+O O O O O O O O O O 
+O O O O O O O O O O
+O O O O O O O O O O 
+O O O O O O O O O O 
+O O O O O O O O O O
+O O O O O O O O O O
+O O O O O O O O O O
+O O O O O O O O O O 
+O O O O O O O O O O 
+O O O O O O O O O O
+O O O O O O O O O O 
+O O O O O O O O O O
+O O O O O O O O O O 
+O O O O O O O O O O 
+O O O O O O O O O O
+O O O O O O O O O O
+O O O O O O O O O O
+O O O O O O O O O O 
+O O O O O O O O O O 
+O O O O O O O O O O
+O O O O O O O O O O 
+O O O O O O O O O O
+O O O O O O O O O O 
+O O O O O O O O O O 
+O O O O O O O O O O
+O O O O O O O O O O
+O O O O O O O O O O
+O O O O O O O O O O 
+O O O O O O O O O O 
+O O O O O O O O O O
+O O O O O O O O O O 
+O O O O O O O O O O
+O O O O O O O O O O 
+O O O O O O O O O O 
+O O O O O O O O O O
+O O O O O O O O O O
+O O O O O O O O O O
+O O O O O O O O O O 
+O O O O O O O O O O 
+O O O O O O O O O O
+O O O O O O O O O O 
+O O O O O O O O O O
+O O O O O O O O O O 
+O O O O O O O O O O 
+O O O O O O O O O O
+O O O O O O O O O O
+O O O O O O O O O O
+O O O O O O O O O O 
+O O O O O O O O O O 
+O O O O O O O O O O
+O O O O O O O O O O 
+O O O O O O O O O O
+O O O O O O O O O O 
+O O O O O O O O O O 
+O O O O O O O O O O
+O O O O O O O O O O
+O O O O O O O O O O
+O O O O O O O O O O 
+O O O O O O O O O O 
+O O O O O O O O O O
+O O O O O O O O O O 
+O O O O O O O O O O
+O O O O O O O O O O 
+O O O O O O O O O O 
+O O O O O O O O O O
+O O O O O O O O O O
+0 0 0
+9 9 9
+END
+wcc 999
+

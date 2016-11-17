@@ -1,0 +1,123 @@
+/**
+ * 4004
+ */
+
+#include <algorithm>
+#include <cassert>
+#include <cstdio>
+#include <vector>
+
+#include "common.h"
+#include "segtree.h"
+
+using namespace std;
+
+#define N (1<<3)
+
+int n, m, len, a[N+2];
+int d[N+2][2], p[N+2][2];
+
+struct node: public segnode_base {
+	int dst, idx;
+	void init(int distance) {
+		if (b > n+1) {
+			dst = INT_MAX;
+			idx = -1;
+		} else {
+			dst = distance;
+			idx = b;
+		}
+		//printf("init: %2d: dst: %2d, idx: %2d\n", b, dst, idx);
+	}
+
+	void print(int idx) {
+		printf("\t[%2d, %2d]: dst: %5d, idx: %2d\n", b, e, dst, this->idx);
+	}
+};
+
+struct segtree: public segtree_base<node> {
+	segtree(int sz) { init(sz); }
+
+	inline void update(int i) {
+		if (lc(i).dst < rc(i).dst) {
+			seg[i].dst = lc(i).dst;
+			seg[i].idx = lc(i).idx;
+		} else {
+			seg[i].dst = rc(i).dst;
+			seg[i].idx = rc(i).idx;
+		}
+	}
+
+	void build(void) {
+		int i;
+
+		builditv();
+
+		p[0][0] = 0, p[0][1] = 1, p[n+1][0] = n, p[n+1][1] = n+1;
+		forre(i, 1, n) p[i][0] = i-1, p[i][1] = i+1;
+
+		d[0][0] = 0, d[0][1] = a[1], d[n+1][0] = len-a[n], d[n+1][1] = 0;
+		forre(i, 1, n) d[i][0] = a[i]-a[i-1], d[i][1] = a[i+1]-a[i];
+
+		arr[0].dst = INT_MAX, arr[0].idx = 0;
+		forre(i, 1, half) arr[i].init(d[i][0]+d[i][1]);
+		arr[n+1].dst = INT_MAX, arr[n+1].idx = n+1;
+		for (i = lstprt(); valiad(i); --i) update(i);
+	}
+
+	void alter(int i, int dst) {
+		//printf("alter: %2d: %5d ---> %5d\n", i, arr[i].dst, dst);
+		arr[i].dst = dst;
+		for (i = prt(i+half); valiad(i); i = prt(i)) update(i);
+	}
+
+	void remove(int i) {
+		int lp, rp;
+
+		//printf("remove: %2d: %4d\n", i, arr[i].dst);
+
+		lp = p[i][0], rp = p[i][1];
+		p[lp][1] = rp, p[rp][0] = lp;
+		d[lp][1] += d[i][1], d[rp][0] += d[i][0];
+
+		d[i][0] = d[i][1] = 0;
+
+		alter(i, INT_MAX);
+		if (lp != 0) alter(lp, d[lp][0]+d[lp][1]);
+		if (rp != n+1) alter(rp, d[rp][0]+d[rp][1]);
+	}
+};
+
+segtree seg(2*N);
+
+bool read(void) {
+	int i;
+
+	if (scanf("%d%d%d", &len, &n, &m) != 3) return false;
+	a[0] = 0, a[n+1] = len;
+	forre(i, 1, n) scanf("%d", &a[i]);
+	sort(a, a+n+2);
+
+	return true;
+}
+
+void solve(void) {
+	int i, ans;
+
+	seg.build();
+	//seg.print();
+	for (i = n+1; i > m; --i) seg.remove(seg.seg[1].idx);
+
+	ans = 0;
+	forn(i, n+2) ans = max3(ans, d[i][0], d[i][1]);
+
+	printf("%d\n", ans);
+}
+
+int main(void) {
+	freopen("Inputs/4004", "r", stdin);
+
+	while (read()) solve();
+
+	return 0;
+}
