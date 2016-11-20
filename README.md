@@ -8,15 +8,15 @@ are never changed. :)</br>
 Any suggestions or commentary will be appreciated.</br>
 Email: <sy1506420@buaa.edu.cn>
 
-## Codeforces
+## codeforces
 My codeforces rating: <http://codeforces.com/profile/tjytlxwxhyzqfw>.<br/>
 I am green now, but I must be able to get red!
 
-## HDOJ
+## hdoj
 My hdoj rank: <http://acm.hdu.edu.cn/userstatus.php?user=tjytlxwxhyzqfw>.<br/>
 I'm not deliberaty brushing, but I've solved **162** problems indeed :)
 
-## Leetcode
+## leetcode
 
 ## CLOC
 Outputs of command
