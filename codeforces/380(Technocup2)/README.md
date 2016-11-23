@@ -1,6 +1,11 @@
 # Codeforces Round #380
 *(Div. 2, Rated, Based on Technocup 2017 - Elimination Round 2)*
 
+看错了时间,我以为是19:35结束,其实是19:05.
+慢吞吞的调试最后一个题,结果没来得及交,好可惜.
+
+不过也有好处,下次从800多的rank开始,进步的空间更大^_^
+
 ## A
 **字符串查找**
 
