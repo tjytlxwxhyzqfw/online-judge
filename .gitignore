@@ -1,6 +1,6 @@
 *.class
 *.pyc
-*.swap
+*.swp
 Makefile
 a.out
 0000.cpp
