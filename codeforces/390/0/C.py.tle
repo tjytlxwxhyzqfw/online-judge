@@ -1,0 +1,77 @@
+import re
+import sys
+import time
+
+def read(t=None):
+	string = raw_input()
+	return string if t is None else [t(x) for x in string.split()]
+
+def update(cands, idx, nei, n):
+	if nei < 0 or nei >= n:
+		return
+	cands[nei] -= cands[idx]
+	
+def do_solve():
+	nnames = int(read())
+	names = read(str)
+	nchats = int(read())
+
+	#print "names: %s"%names
+
+	recs = []
+	cands = [set(names) for i in range(nchats)]
+	for i in range(nchats):
+		chat = read()
+		name, text = chat.split(":")
+		recs.append([name, text, False])
+		if name != "?":
+			cands[i] = set([name])
+			continue
+		words = re.split(r"[.,!? ]+", text)
+		#print "\t%3d: words: %s"%(i+1, words)
+		cands[i] -= set(words)
+
+	#print "--- recs ---"
+	#print "\n".join([str(x) for x in recs])
+
+	#print "--- cands ---"
+	#print "\n".join([str(x) for x in cands])
+
+	
+	while True:
+		out = True
+		for i in range(nchats):
+			if recs[i][2] or len(cands[i]) != 1:
+				continue
+			update(cands, i, i-1, nchats)
+			update(cands, i, i+1, nchats)
+			recs[i][2] = True
+			out = False
+
+		if out:
+			break
+
+
+	#print "--- cands(new) ---"
+	#print "\n".join([str(x) for x in cands])
+
+	string = ""
+	used = set()
+	for i in range(nchats):
+		cands[i] -= used
+		if len(cands[i]) == 0:
+			print "Impossible"
+			return
+		name = list(cands[i])[0]
+		string += "%s: %s\n"%(name, recs[i][1])
+		used = set([name])
+
+	print string
+
+def solve():
+	t = int(read())
+	for i in range(t):
+		do_solve()
+
+if __name__ == "__main__":
+	solve()
