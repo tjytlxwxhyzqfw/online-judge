@@ -1,0 +1,57 @@
+import re
+import sys
+import time
+
+def read(t=None):
+	string = raw_input()
+	return string if t is None else [t(x) for x in string.split()]
+
+keys = "Blsrabu"
+
+def check(dic):
+	for ch in keys:
+		if dic[ch] < 1:
+			return False
+	if dic["a"] < 2:
+		return False
+	if dic["b"] < 2:
+		return False
+	if dic["u"] < 2:
+		return False
+	return True
+	
+
+def catch(li, start, len_li):
+	dic = dict([(c, 0) for c in keys])
+	#print dic
+
+	i = start
+	while i < len_li:
+		ch = li[i]
+		if ch in keys:
+			dic[ch] += 1
+			if check(dic):
+				return i
+		i += 1
+
+	return len_li
+
+def solve():
+	s = list(read())
+	n = len(s)
+
+	ncatchings = 0
+	start = 0
+	while start < n:
+		#print "start: %d"%start
+		start = catch(s, start, n)
+		if start >= n:
+			break
+		ncatchings += 1
+		start += 1
+
+	print ncatchings
+		
+
+if __name__ == "__main__":
+	solve()
