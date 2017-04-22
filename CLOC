@@ -1,15 +1,18 @@
-Mon Nov 28 17:12:56 CST 2016
+     100 files     200 files     300 files     400 files     500 files     600 files     700 files     800 files     900 files     988 text files.
+classified 976 filesDuplicate file check 976 files (746 known unique)Unique:      100 files                                          Unique:      200 files                                          Unique:      300 files                                          Unique:      400 files                                          Unique:      500 files                                          Unique:      600 files                                          Unique:      700 files                                               963 unique files.                              
+Counting:  100Counting:  200Counting:  300Counting:  400Counting:  500Counting:  600Counting:  700Counting:  800Counting:  900     430 files ignored.
 
-http://cloc.sourceforge.net v 1.64  T=2.74 s (165.2 files/s, 17079.2 lines/s)
--------------------------------------------------------------------------------
-Language                     files          blank        comment           code
--------------------------------------------------------------------------------
-C                              206           3377           2026          24059
-C++                             96           2072            731           7367
-Java                            51            468            376           3455
-Python                          95            497            124           2112
-make                             3             17              0             34
-Bourne Shell                     1              0              0              9
--------------------------------------------------------------------------------
-SUM:                           452           6431           3257          37036
--------------------------------------------------------------------------------
+http://cloc.sourceforge.net v 1.64  T=1.39 s (422.5 files/s, 39921.6 lines/s)
+--------------------------------------------------------------------------------
+Language                      files          blank        comment           code
+--------------------------------------------------------------------------------
+C                               206           3377           2026          24059
+C++                             133           2684            944          10224
+Java                             97            965            518           5842
+Python                          137            848            214           3307
+make                             11            119             24            200
+Bourne Shell                      1              0              0              9
+Bourne Again Shell                1              4              0              8
+--------------------------------------------------------------------------------
+SUM:                            586           7997           3726          43649
+--------------------------------------------------------------------------------
