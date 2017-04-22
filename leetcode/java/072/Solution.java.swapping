@@ -1,0 +1,76 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+import java.util.Scanner;
+
+public class Solution {
+
+	public int minDistance(String s, String t) {
+		if (s == null || s.length() == 0)
+			return (t == null ? 0 : t.length());
+		if (t == null || t.length() == 0)
+			return s.length();
+
+		int m = s.length(), n = t.length();
+		if (m > n) {
+			int ti = m;
+			m = n;
+			n = ti;
+
+			String ts = s;
+			s = t;
+			t = ts;
+		}
+
+		int prov[] = new int[n], need[] = new int[n];
+
+		for (int i = 0; i < m; ++i) {
+			prov[i] = s.charAt(i);
+			need[i] = t.charAt(i);
+			if (prov[i] == need[i])
+				prov[i] = need[i] = -1;
+		}
+
+		for (int i = m; i < n; ++i) {
+			prov[i] = s.charAt(i);
+			need[i] = 0;
+		}
+
+		int nswapings = 0;
+		for (int i = 0; i < n; ++i) {
+			if (prov[i] == -1)
+				continue;
+			for (int j = 0; j < n; ++j) {
+				boolean iprov = (prov[i] == need[j] || need[j] == 0);
+				boolean ineed = (need[i] == prov[j]);
+				if (iprov && ineed) {
+					++nswapings;
+					prov[i] = need[i] = -1;
+					prov[j] = need[j] = -1;
+				}
+			}
+		}
+
+		int nreplacings = 0;
+		for (int i = 0; i < n; ++i) {
+			if (prov[i] != -1) {
+				++nreplacings;
+				prov[i] = need[i] = -1;
+			}
+		}
+
+		int ndeletings = n - m;
+		int total = nswapings + nreplacings + ndeletings;
+
+		return total;
+	}
+
+	public static void main(String args[]) {
+		Scanner scanner = new Scanner(System.in);
+		String s = scanner.next();
+		String t = scanner.next();
+		int total = new Solution().minDistance(s, t);
+		System.out.printf("total: %d\n", total);
+	}
+}

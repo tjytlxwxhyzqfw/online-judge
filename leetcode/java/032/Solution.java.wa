@@ -1,0 +1,48 @@
+import java.util.Scanner;
+import java.util.Stack;
+
+public class Solution {
+
+	public int longestValidParentheses(String s) {
+		int x = leftrght(s);
+		int y = leftrght(new StringBuffer(s).reverse().toString());
+		return Math.min(x, y);
+	}
+
+	private int leftrght(String s) {
+		char left = '(', rght = ')';
+
+		System.out.printf("s: %s\n", s);
+		
+		int maxvalids = 0;
+		int nvalids = 0;
+
+		Stack<Character> stk = new Stack<Character>();
+		for (int i = 0; i < s.length(); ++i) {
+			char c = s.charAt(i);
+
+			if (c == left) {
+				stk.push(c);
+			} else if (c == rght) {
+				if (stk.empty()) {
+					nvalids = 0;
+				} else {
+					stk.pop();
+					nvalids += 2;
+					//System.out.printf("i: %3d, nvalids: %3d\n", i, nvalids);
+					if (nvalids > maxvalids)
+						maxvalids = nvalids;
+				}
+			}
+		}
+
+		return maxvalids;
+	}
+
+	public static void main(String args[]) {
+		Scanner scanner = new Scanner(System.in);
+		String input = scanner.next();
+		int ans = new Solution().longestValidParentheses(input);
+		System.out.printf("--------> %d\n", ans);
+	}
+}

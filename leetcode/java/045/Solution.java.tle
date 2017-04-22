@@ -1,0 +1,60 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+import java.util.Scanner;
+
+// 动态规划
+// i: 从本地最少跳几步能到到终点
+// i转移到状态j: i -> (i+1, i+2, i+a[i])
+// 
+// 根之前的题目一样, 尝试使用1维的数组,
+
+public class Solution {
+
+	private int nums[], dp[];
+	private int nnums;
+
+	public int jump(int[] nums) {
+		this.nums = nums;
+		this.nnums = nums.length;
+		dp = new int[nnums];
+
+		if (nums == null || nums.length == 0)
+			return 0;
+
+		for (int i = nnums-1; i >= 0; --i) {
+			dpFill(i);
+			//dpPrint(i);
+		}
+
+		return dp[0];
+	}
+
+	private void dpFill(int i) {
+		if (i == nnums-1) {
+			dp[i] = 0;
+			return;
+		}
+
+		int njumps_min = Integer.MAX_VALUE;
+		for (int j = 1; j <= nums[i] && (i+j) < nnums; ++j)
+			njumps_min = Math.min(njumps_min, dp[i+j]);
+
+		dp[i] = (njumps_min == Integer.MAX_VALUE ? Integer.MAX_VALUE : njumps_min+1);
+	}
+
+	private void dpPrint(int i) {
+		System.out.printf("%3d: %d\n", i, dp[i]);
+	}
+
+	public static void main(String args[]) {
+		Scanner scanner = new Scanner(System.in);
+		int nnums = scanner.nextInt();
+		int nums[] = new int[nnums];
+		for (int i = 0; i < nnums; ++i)
+			nums[i] = scanner.nextInt();
+		int ans = new Solution().jump(nums);
+		System.out.printf("---> %d\n", ans);
+	}
+}
