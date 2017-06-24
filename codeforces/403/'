@@ -1,0 +1,134 @@
+/**
+ * C
+ */
+
+#include <algorithm>
+#include <cassert>
+#include <cstdio>
+#include <map>
+#include <stack>
+#include <string>
+#include <vector>
+
+#include "common.h"
+
+using namespace std;
+
+#define N 200001
+
+int n;
+vector<vector<int>> tree;
+int colors[N], out[N];
+int color_max;
+
+bool read(void) {
+	int i, left, rght;
+
+	scanf("%d", &n);
+	tree.resize(N);
+	forn(i, n-1) {
+		scanf("%d%d", &left, &rght);
+		--left, --rght;
+		tree[left].push_back(rght);
+		tree[rght].push_back(left);
+	}
+
+	return true;
+}
+
+void dfs(const int cur,  const int color_par, const int color_cur) {
+	int color_chl;
+	int child;
+	int i, nchls;
+
+	printf("dfs: at %3d, color_par: %3d, color_cur: %3d\n", cur, color_par, color_cur);
+
+	colors[cur] = color_cur;
+	nchls = tree[cur].size();
+	color_chl = 0;
+	forn(i, nchls) {
+		child = tree[cur][i];
+		if (colors[child] != -1)
+			continue;
+
+		// color this child
+		while (color_chl == color_par || color_chl == color_cur)
+			++color_chl;
+
+		if (color_chl > color_max)
+			color_max = color_chl;
+
+		dfs(child, color_cur, color_chl);
+	}
+}
+
+inline void fresh(const int color) {
+	if (color > color_max)
+		color_max = color;
+}
+
+int color_nxt(const int bgn, const int color1, const int color2) {
+	int color = bgn;
+	while (color == color1 || color == color2)
+		++color;
+	return color;
+}
+
+void bfs() {
+	stack<int> stk;
+
+
+	stk.push(0);
+	colors[0] = 0;
+	color_par = -1;
+
+	while (!stk.empty()) {
+		cur = stk.top();
+		stk.pop();
+		out[cur] = 1;
+
+		color_cur = colors[cur];
+		fresh(color_cur);
+
+		color_chl = colors_nxt(0, color_cur, color_par);
+
+		nchls = tree[cur].size();
+		forn(i, nchls) {
+			child = tree[cur][i];
+			if (colors[child] != -1)
+				continue;
+
+			// color this child
+			colors[child] = color_chl;
+			fresh(color_chl);
+
+			color_chl = colors_nxt(color_chl, color_cur, color_par);
+
+			if (color_chl > color_max)
+				color_max = color_chl;
+
+	}
+}
+
+void solve(void) {
+	int i;
+
+	forn(i, N) colors[i] = -1;
+	dfs(0, -1, 0);
+
+	printf("%d\n", color_max);
+	forn(i, n) printf("%d ", colors[i]);
+	printf("\n");
+}
+
+int main(void) {
+	#ifdef DEBUG
+	//freopen("Inputs/C", "r", stdin);
+	setbuf(stdout, NULL);
+	#endif
+
+	read();
+	solve();
+
+	return 0;
+}
