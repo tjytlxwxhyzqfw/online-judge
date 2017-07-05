@@ -1,0 +1,75 @@
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * 130 Surrounded Regions
+ *
+ * 错误的想法:
+ * 1. 对每一行, 找到这一行中的第一个x和最后一个x
+ * 2. 对每一列, 找到这一列中的第一个x和最后一个x
+ * 3. 对于任意的board[y][x] == o, (y,x)四周都有x, 那么这个o就被包围了
+ *
+ * 错的!
+ *
+ * XXXX
+ * XOOX
+ * XXOX
+ * XXOO
+ *
+ * 在上图中没有O被包围
+ */
+public class Solution {
+    public void solve(char board[][]) {
+        if (board == null)
+            return;
+
+        int height = board.length;
+        int width = board[0].length;
+
+        int upDownBounders[][] = new int[width][2];
+        int leftRghtBounders[][] = new int[height][2];
+
+        for (int x = 0; x < width; ++x) {
+            int first = height, last = -1;
+            for (int y = 0; y < height; ++y) {
+                if (board[y][x]=='X') {
+                    last = y;
+                    first = (y < first ? y : first);
+                }
+            }
+            upDownBounders[x][0] = first;
+            upDownBounders[x][1] = last;
+        }
+        for (int x = 0; x < width; ++x)
+            System.out.printf("x=%d: [%d, %d]\n", x+1, upDownBounders[x][0], upDownBounders[x][1]);
+
+        for (int y = 0; y < height; ++y) {
+            int first = width, last = -1;
+            for (int x = 0; x < width; ++x) {
+                if (board[y][x] == 'X') {
+                    last = x;
+                    first = (x < first ? x : first);
+                }
+            }
+            leftRghtBounders[y][0] = first;
+            leftRghtBounders[y][1] = last;
+        }
+        for (int y = 0; y < height; ++y)
+            System.out.printf("y=%d: [%d, %d]]\n", y+1, leftRghtBounders[y][0], leftRghtBounders[y][1]);
+
+        for (int y = 0; y < height; ++y) {
+            for (int x = 0; x < width; ++x) {
+                if (board[y][x] == 'O') {
+                    boolean rowwrapped = (leftRghtBounders[y][0] <= x && x <= leftRghtBounders[y][1]);
+                    boolean colwrapped = (upDownBounders[x][0] <= y && y <= upDownBounders[x][1]);
+                    boolean wrapped = (rowwrapped && colwrapped);
+                    if (wrapped)
+                        board[y][x] = 'X';
+                }
+            }
+        }
+
+    }
+    public static void main(String args[]) {
+    }
+}
