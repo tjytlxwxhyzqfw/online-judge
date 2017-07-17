@@ -1,0 +1,52 @@
+/**
+ * 143 Reorder List
+ *
+ * 好像, 除了暴力解, 我也没什么办法
+ * 
+ * 有更好的解法: 先用快慢指针讲链表分成两段, 后半段就地逆织, 然后顺序构造, 只要O(n)
+ */
+
+public class Solution {
+	public void reorderList(ListNode first) {
+		ListNode head = new ListNode(0);
+		head.next = first;
+
+		Integer length = 0;
+		for (ListNode cur=head; cur.next!=null; cur=cur.next)
+			++length;
+		Integer nloops = length/2;
+
+		ListNode current = first;
+		while (--nloops >= 0) {
+			ListNode last = removeLast(head);
+			ListNode neighbor = current.next;
+			current.next = last;
+			last.next = neighbor;
+			current = neighbor;
+		}
+		if (current != null)
+			current.next = null;
+	}
+
+	ListNode removeLast(ListNode head) {
+		if (head.next == null)
+			return null;
+
+		ListNode pre = head;
+		for (; pre.next.next!=null; pre=pre.next);
+		ListNode last = pre.next;
+		pre.next = null;
+		return last;
+	}
+
+	public static void main(String args[]) {
+	}
+}
+
+class ListNode {
+	int val;
+	ListNode next;
+	ListNode (int x) {
+		val = x;
+	}
+}
