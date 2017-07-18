@@ -1,0 +1,95 @@
+/**
+ * 166 - Fraction to Recurring Decimal
+ *
+ * 这个答案失败的很惨,
+ * 因为第一次 while 循环就把整数部分算完了,
+ * 所以你后面处理那么多可能的小数点的情况, 根本就是多余
+ */
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
+
+public class Solution {
+	public String fractionToDecimal(int top, int bottom) {
+		if (top % bottom == 0)
+			return "" + top / bottom;
+
+		StringBuilder solution = new StringBuilder();
+		Map<Integer, Integer> tops = new TreeMap<>();
+
+		int idx = 0;
+		while (true) {
+			if (top == 0)
+				break;
+			if (tops.containsKey(top))
+				break;
+
+			tops.put(top, idx++);
+
+			int q = top / bottom;
+			int r = top % bottom;
+
+			System.out.printf("top: %d, q=%d, r=%d\n", top, q, r);
+
+			solution.append(q);
+
+			// 下一次迭代的时候,
+			// 如果本次迭代商的是0, 那么分子原地乘10
+			// 否则, 分子直接就是 余数*10
+			top = (q == 0 ? top*10 : r*10);
+		}
+
+		// 由于整除的我们已经事先处理了,
+		// 因此, 现在的结果一定是有小数点的
+
+		// 我们找到循环的字符串
+		// 注意, 这个字符串未必是真的循环字符串,
+		// 因为我们的结果未必是个循环小数
+		int begin = tops.get(top);
+		String loop = solution.substring(begin);
+
+		// 我们的答案一定不会比答案的整数部分"短"
+		// 一旦我们的答案比整数部分短, 那就只有一个解释,
+		// 我们还没有计算完整数部分, 就发生了循环,
+		// 此时, 我们只要简单的把循环字符串append 到答案之后就好了
+		int length = (""+top/bottom).length();
+		System.out.printf("length=%d, loop=%s\n", length, loop);
+		while (solution.length() < length)
+			solution.append(loop);
+
+		// 把小数点加到适当的地方
+		solution.insert(length, ".");
+
+		// 如果 top=0, 那么我们此时已经完成了任务,
+		// 可以直接返回结果了
+		if (top == 0)
+			return solution.toString();
+
+		// 此时, top!=0, 发生了循环
+		if (begin >= length) {
+			// 循环发生在小数点之后
+			// 只要简单的加上括号就好了
+			// 注意, 你已经插入了小数点, 
+			// 因此, 插入括号的位置要改变
+			solution.insert(begin+1, "(");
+			solution.append(")");
+		} else {
+			// 循环发生在小数点之前, 
+			// 这个时候, 我们只要简单的把 (loop) append 到后面就好了
+			solution.append("(").append(loop).append(")");
+		}
+
+		return solution.toString();
+	}
+
+	public static void main(String args[]) {
+		int top = 100;
+		int bottom = 3;
+		String ans = new Solution().fractionToDecimal(top, bottom);
+		System.out.printf("ans: %s\n", ans);
+		System.out.printf("number: %f\n", 1.0*top/bottom);
+	}
+}
+
