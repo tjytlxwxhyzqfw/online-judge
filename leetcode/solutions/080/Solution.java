@@ -1,3 +1,9 @@
+/*
+ * 0828: 是不是思路很简单的?
+ * 两个指针i, j, i表示已经放入结果链表中的最后一个元素, j是当前遍历的元素,
+ * 只要a[j]==a[i] && a[j]==a[i-1], 就不放入a[j]
+ * 否则, a[++i]=a[j]
+ */
 public class Solution {
     public int removeDuplicates(int[] nums) {
         if (nums == null || nums.length==0)

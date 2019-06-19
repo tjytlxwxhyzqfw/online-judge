@@ -1,6 +1,8 @@
 /**
  * 144 - Binary Tree Preorder Traversal
  *
+ * 题意: 二叉树先序遍历(非递归)
+ *
  * 用一个栈来代替递归.
  */
 

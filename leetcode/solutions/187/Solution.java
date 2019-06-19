@@ -1,5 +1,13 @@
 /**
  * 187 Repeated DNA Sequences 
+ *
+ * 2017-08-01
+ *
+ * 给定一个DNA字符串{A,T,C,G}*,
+ * 让你找出所有的长度为10的重复的连续子串.
+ *
+ * 简单的每10个连续的字母分割一次单词, 然后统计其出现的次数
+ *
  */
 
 import java.util.ArrayList;

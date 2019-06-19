@@ -1,5 +1,8 @@
 /**
  * 147 - Insertion Sort List 
+ *
+ * 题意: 链表插入排序
+ *
  */
 
 import java.util.ArrayList;

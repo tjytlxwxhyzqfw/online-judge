@@ -1,5 +1,7 @@
 /**
  * 152 - Maximum Product Subarray
+ *
+ * 题意: 最大连续子序列**积**
  * 
  * i号元素开始, 一定使用i号元素, 可以求得从i开始的最大正乘积, 和最小负乘积
  * 如果我们知道了(i+1)号元素的maxpos 和 minneg, 我们就能算出i的 maxpos 和 minneg

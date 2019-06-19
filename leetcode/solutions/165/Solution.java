@@ -1,5 +1,7 @@
 /**
- * 165 Compare Version Numbers 
+ * 165 Compare Version Numbers
+ *
+ * 题意: 比较两个版本号
  *
  * 把版本号的每个字段都解析成整数, 然后从左到右比较.
  * 注意, 应该忽略掉后缀0
