@@ -1,0 +1,156 @@
+二分搜索的临界条件
+
+array:  a
+target: x
+
+1. My Implementation
+=====================
+
+int i=0, j=len(a) - 1
+while i <= j
+	k = (i+j) / 2
+	if a[k] < x: i = k + 1
+	if a[k] > x: j = k - 1
+	if a[k] = x: return k
+
+case 1.1
+---------
+
+i=n j=n
+k=(i+j)/2=n
+if a[k] = x: return k
+if a[k] < x: i=k+1=n+1, j=n
+if a[k] > x: i=n, j=k-1=n-1
+
+on not found: 
+	(1) i=n+1, j=n, k=n
+	(2) i=n, j=n-1, k=n
+
+case 1.2
+---------
+
+i=n, j=n+1
+k=(i+j)/2 = n = i
+if a[k] = x: return k
+if a[k] < x: i=k+1=n+1=j, j=n+1 (to case 1.1)
+if a[k] > x: i=n, j=k-1=n-1
+
+on not found:
+	(1) i=n+2, j=n+1, k=n+1
+	(2) i=n+1, j=n, k=n
+	(3) i=n, j=n-1, k=n
+
+conclusions
+-----------
+
+conditions (!!!important!!!) :
+	(1) init: i=0, j=size-1
+	(2) cond: i <= j
+	(3) update: i=k+1, j=k-1
+
+on not found: 
+	(1) i = j + 1
+	(2) k = i or j
+	(3) a[j] < x < a[i]
+
+2. lower bound
+===============
+
+int i = 0, j = len(a)
+while (i < j)
+	k = i + (j - i) / 2
+	if a[k] < x: i = k + 1
+	if a[k] >= x: j = k
+return i
+
+case 2.1
+--------
+
+i = n, j = n
+return n
+
+case 2.2
+--------
+
+i = n, j = n+1
+k = n+(n+1-n)/2 = n
+if a[k] < x: i = k + 1
+if a[k] >= x: j = k
+
+conclusion
+-----------
+
+when the loop is end, the following conditions is always met:
+	(1) i = j
+	(2) j is len(a) or a[j] >= x
+	(3) i=0 or a[i-1] < xi
+	(4) if i=0 then j can't be len(a), vise versa.
+so we have a[i-1]<x<=a[i]
+
+3. upper bound
+===============
+
+int i = 0, j = len(a)
+while (i < j)
+	k = i + (j-i) / 2
+	if a[k] <= x: i = k + 1
+	if a[k] > x: j = k
+return i
+
+when the loop is end:
+	(1) i = j
+	(2) i=0 or a[i-1] <= x
+	(3) j=len(a) for a[j] > x
+	(4) if i=0 then j can't be len(a), vis versa.
+
+so we have:
+	(1) i = j = len(a) and a[i-1] <= x
+	(2) 0 = i = j and a[j] > x
+	(3) a[i-1] <= x < a[j]
+
+4. my impl again
+=================
+
+when x is not found:
+	(1) i = j + 1
+	(2) i = 0 or a[i-1] < x
+	(3) j = len(a)-1 or a[j+1] > x
+
+so we have:
+	(1) 0 = i = j + 1 and a[j+1] > x      => a[0]>x and return -1
+	(2) i = j + 1 = len(a) and a[i-1] < x => a[l-1]<x and return l
+	(3) a[i - 1] < x and a[j + 1] > x     => a[j]<x<a[j+1] and return j
+
+5. k=(i+j)/2 and k=i+(j-i)/2
+=============================
+
+i=n, j=n+2t
+k1 = (i+j)/2 = n+t
+k2 = i+(j-i)/2 = n+t
+
+i=n, j=n+2t+1
+k1 = (i+j)/2 = n+t
+k2 = i+(j-i)/2 = n+t
+
+conclusion
+----------
+
+k = (i+j)/2 <=> k=i+(j-i)/2
+
+6. consolution
+==============
+
+when loop finished:
+	(1) k in latest loop is i-1 or j+1(upd: j=k-1) or j(upd: j=k).
+	(2) i=j+1(while: i<=j) or i=j(while: i<j)
+	(3) a[k]>x or a[k]>=x or a[k]<x or a[k] <= x
+
+if a has no same items, mine is better becase a[j]<x<a[i] when loop is finished
+if a has same itmes, liu's better becase a[i-1]<x<=a[i]
+in general, liu's impl is better than mine !!!
+
+
+
+
+
+
