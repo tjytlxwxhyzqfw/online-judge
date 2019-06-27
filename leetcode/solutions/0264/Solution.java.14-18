@@ -1,0 +1,38 @@
+/**
+ * 0264: Ugly Number II
+ *
+ * Performance: speed=5.2%, memory=5.5%
+ */
+
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
+import java.util.PriorityQueue;
+import java.util.Set;
+import java.util.HashSet;
+
+public class Solution {
+	public int nthUglyNumber(int n) {
+		long[] dp = new long[n];
+		dp[0] = 1;
+		for (int i = 1; i < n; ++i) {
+			long min = Long.MAX_VALUE;
+			for (int j = i-1; j >= 0; --j) {
+				if (dp[j] * 2 > dp[i-1]) min = Math.min(min, dp[j] * 2);
+				if (dp[j] * 3 > dp[i-1]) min = Math.min(min, dp[j] * 3);
+				if (dp[j] * 5 > dp[i-1]) min = Math.min(min, dp[j] * 5); else break;
+			}
+			dp[i] = min;
+		}
+		return (int)dp[n-1];
+	}
+
+	public static void main(String args[]) {
+		// int y = new Solution().nthUglyNumber(100);
+		// System.out.printf("=====> %d\n", y);
+		int x = new Solution().nthUglyNumber(1690);
+		System.out.printf("=====> %d\n", x);
+	}
+}
+

@@ -1,0 +1,70 @@
+/**
+ * 0983 Minimum Cost For Tickets
+ *
+ * Performance: speed=%, memory=%
+ */
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Solution {
+	public int mincostTickets(int[] days, int[] costs) {
+		int[] mincosts = new int[days.length];
+
+		for (int i = 0; i < mincosts.length; ++i) mincosts[i] = Integer.MAX_VALUE;
+		mincosts[0] = costs[0];
+		for (int i = 0; i < days.length; ++i) {
+			System.out.printf("i=%3d, day=%3d, mincosts=%3d\n", i, days[i], mincosts[i]);
+			for (int j = i+1; j < i+2 && j < days.length; ++j) {
+
+				// buy a 1-day-ticket
+				int c1 = mincosts[i] + costs[0];
+				System.out.printf("\tj=%3d, day=%3d, c1=%d\n", j, days[j], c1);
+
+				// buy a 7-day-ticket
+				int d = -1;
+				for (int k = i; k >= 0; --k) if (days[j]-days[k]<7) d = k;
+				int base = 0;
+				if (d-1>=0) base = mincosts[d-1];
+				int c7 = base + costs[1];
+				System.out.printf("\tj=%3d, day=%3d, c7=%d(from:%3d)\n", j, days[j], c7, d);
+
+				// buy a 30-day-ticket
+				d = -1;
+				for (int k = i; k >= 0; --k) if (days[j]-days[k]<30) d = k;
+				base = 0;
+				if (d-1>=0) base = mincosts[d-1];
+				int c30 = base + costs[2];
+				System.out.printf("\tj=%3d, day=%3d, c30=%d(from:%3d)\n", j, days[j], c30, d);
+
+				if (mincosts[j] > c1) mincosts[j] = c1;
+				if (mincosts[j] > c7) mincosts[j] = c7;  // !!! NOT ELSE IF !!!
+				if (mincosts[j] > c30) mincosts[j] = c30; // !!! NOT ELSE IF !!!
+			}
+		}
+
+		return mincosts[days.length-1];
+	}
+	public static void main(String args[]) {
+		System.out.printf("-------------------\n");
+		new Solution().mincostTickets(
+			new int[]{1, 4, 6, 7, 8, 20},
+			new int[]{2, 7, 15});
+
+		System.out.printf("-------------------\n");
+		new Solution().mincostTickets(
+			new int[]{1, 31},
+			new int[]{2, 7, 15});
+
+		System.out.printf("-------------------\n");
+		new Solution().mincostTickets(
+			new int[]{1, 31},
+			new int[]{2, 1, 1});
+
+		System.out.printf("-------------------\n");
+		new Solution().mincostTickets(
+			new int[]{1,4,6,9,10,11,12,13,14,15,16,17,18,20,21,22,23,27,28},
+			new int[]{3,13,45});
+	}
+}
+

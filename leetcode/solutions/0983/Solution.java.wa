@@ -1,0 +1,60 @@
+/**
+ * 983 Minumum Cost For Tickets
+ *
+ * !!!This Solution Leads To WA!!!: NOT GREEDY
+ *
+ * Performance: speed=%, memory=%
+ */
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Solution {
+	public int mincostTickets(int[] days, int[] costs) {
+		int mincost = 0;
+		int i = 0;
+		while (i < days.length) {
+			int d1 = 0, d7 = 0, d30=0;
+			for (int j = i; j < days.length; ++j) {
+				if ((days[j] - days[i]) < 1) ++d1;
+				if ((days[j] - days[i]) < 7) ++d7;
+				if ((days[j] - days[i]) < 30) ++ d30;
+			}
+
+			int cost = costs[0];
+			double minavg = costs[0];
+			int k = days[i] + 1;  // where next traval starts
+			double d7avg = 1. * costs[1] / d7;
+			if (d7avg < minavg) {minavg=d7avg; k=days[i]+7; cost=costs[1];}
+			double d30avg = 1. * costs[2] / d30;
+			if (d30avg < minavg) {minavg=d30avg; k=days[i]+30; cost=costs[2];}
+			mincost += cost;
+			System.out.printf("i=%3d, day=%3d, ticket=%d, minavg=%.2f, mincost -> %3d\n",
+				i, days[i], k-days[i], minavg, mincost);
+
+			int i1 = i + 1;
+			for (; i1 < days.length; ++i1) if (days[i1] >= k) break;
+			i = i1;
+		}
+		return mincost;
+	}
+	public static void main(String args[]) {
+		new Solution().mincostTickets(
+			new int[]{1, 4, 6, 7, 8, 20},
+			new int[]{2, 7, 15});
+
+		new Solution().mincostTickets(
+			new int[]{1, 31},
+			new int[]{2, 7, 15});
+
+		new Solution().mincostTickets(
+			new int[]{1, 31},
+			new int[]{2, 1, 1});
+
+		System.out.printf("-------------------\n");
+		new Solution().mincostTickets(
+			new int[]{1,4,6,9,10,11,12,13,14,15,16,17,18,20,21,22,23,27,28},
+			new int[]{3,13,45});
+	}
+}
+

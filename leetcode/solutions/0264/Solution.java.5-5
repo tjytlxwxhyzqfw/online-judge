@@ -1,0 +1,77 @@
+/**
+ * 0264: Ugly Number II
+ *
+ * Performance: speed=5.2%, memory=5.5%
+ */
+
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
+import java.util.PriorityQueue;
+import java.util.Set;
+import java.util.HashSet;
+
+public class Solution {
+	public void printNthUglyNumber() {
+		ArrayList<Integer> dp = new ArrayList<>();
+		dp.add(0);
+		dp.add(1);
+		int i = 2, num = 1;
+		while (true) {
+			int x = 0;
+			if (i % 2 == 0 && dp.get(i/2) == 1) x = 1;
+			if (i % 3 == 0 && dp.get(i/3) == 1) x = 1;
+			if (i % 5 == 0 && dp.get(i/5) == 1) x = 1;
+			dp.add(x);
+			if (x == 1) ++num;
+			if (x == 1) System.out.printf("%4d: %4d\n", num, i);
+			if (dp.size() > 1000) break;
+			++i;
+		}
+	}
+
+	public int nthUglyNumber(int n) {
+		
+		PriorityQueue<Integer> heap = new PriorityQueue<Integer>();
+		heap.offer(1);
+
+		Set<Integer> set = new HashSet<>();
+		set.add(1);
+
+		int m = 0;
+		int[] bases = new int[]{2, 3, 5};
+		int last = 0;
+		while (true) {
+			int min = heap.poll();
+			if (++m == n) return min;
+			for (int i = 0; i < bases.length; ++i) {
+				int next = min * bases[i];
+				if (next / bases[i] != min) continue; // !!!IMPORTANT!!!
+				if (!set.contains(next)) {
+					heap.offer(next);
+					set.add(next);
+				}
+			}
+			last = min;
+		}
+	}
+
+	private int lb(int x, int a[], int n) {
+		int i = 0, j = n;
+		while (i < j) {
+			int k = i + (j-i)/2;
+			if (a[k] < x) i = k + 1;
+			else j = k;
+		}
+		return i;
+	}
+
+	public static void main(String args[]) {
+		// int y = new Solution().nthUglyNumber(100);
+		// System.out.printf("=====> %d\n", y);
+		int x = new Solution().nthUglyNumber(1690);
+		System.out.printf("=====> %d\n", x);
+	}
+}
+
