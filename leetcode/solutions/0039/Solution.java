@@ -1,64 +1,70 @@
+/**
+ * 0039: Combination Sum
+ * performance: speed=45%, memory=14%
+ * dp is useless
+ */
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
-// i: [i:], used j dups of a[i], transform to i+1: choose from (i+1)th number, sum is k
-// (i, j, k) -> (i+1, x, k+j*a[i])
-//
-// I dont need numbers, but i need all combinations!!!
-//
-// use dfs(i)
-//
-
 public class Solution {
+	private int[][] dp;
+	private int[] nums;
+	public List<List<Integer>> combinationSum(int[] nums, int target) {
+		int n = nums.length;
+		if (n == 0) return new ArrayList<>();
 
-	public List<List<Integer>> ans = new ArrayList<List<Integer>>();
+		int[][] dp = new int[n][target+1];
 
-	private int candidates[];
-	private int target;
+		for (int j = 1; j <= target; ++j) if (j%nums[0] == 0) dp[0][j] = 1;
 
-	public List<List<Integer>> combinationSum(int[] candidates, int target) {
-		this.candidates = candidates;
-		this.target = target;
+		for (int i = 1; i < n; ++i) {
+			for (int j = 1; j <= target; ++j) {
+				dp[i][j] = (j % nums[i] == 0 ? 1 : 0);
+				for (int k = 0; nums[i]*k < j; ++k) dp[i][j] += dp[i-1][j-nums[i]*k];
+				System.out.printf("i=%2d, v=%2d, j=%2d, dp=%2d\n", i, nums[i], j, dp[i][j]);
+			}
+		}
+		System.out.printf("max: %d\n", dp[n-1][target]);
 
-		if (candidates != null && candidates.length != 0)
-			dfs(0, 0, new ArrayList<Integer>());
-		return ans;
+		this.dp = dp;
+		this.nums = nums;
+	
+
+		return print(n-1, target);
 	}
 
-	private void dfs(int i, int sum, List<Integer> path) {
-		int cursum = sum;
-		List<Integer> curpath = new ArrayList<Integer>(path);
-
-		for (int j = 0;; ++j) {
-			//System.out.printf("%3dx%-3d: cursum: %3d, curpath: %s\n", candidates[i], j, cursum, curpath.toString());
-			if (cursum < target) {
-				if (i < candidates.length-1)
-					dfs(i+1, cursum, curpath);
-			} else if (cursum == target) {
-				ans.add(new ArrayList<Integer>(curpath));
-				break;
-			} else {
-				break;
-			}
-			cursum += candidates[i];
-			curpath.add(candidates[i]);
+	private List<List<Integer>> print(int i, int j) {
+		List<List<Integer>> results = new ArrayList<>();
+		if (j % nums[i] == 0) {
+			List<Integer> ints = new ArrayList<>();
+			addk(ints, nums[i], j / nums[i]);
+			results.add(ints);
 		}
+
+		if (i == 0) return results;
+
+		for (int k = 0; nums[i]*k < j; ++k) {
+			List<List<Integer>> subresults = print(i-1, j-nums[i]*k);
+			for (List<Integer> list : subresults) {
+				if (list.size() != 0) {
+					addk(list, nums[i], k);
+					results.add(list);
+				}
+			}
+		}
+		return results;
+	}
+
+	private void addk(List<Integer> ints, int x, int k) {
+		for (int i = 0; i < k; ++i) ints.add(x);
 	}
 
 	public static void main(String args[]) {
-		Scanner scanner = new Scanner(System.in);
-		int nnums = scanner.nextInt();
-		int target = scanner.nextInt();
-
-		int candidates[] = new int[nnums];
-		for (int i = 0; i < nnums; ++i)
-			candidates[i] = scanner.nextInt();
-
-		List<List<Integer>> ans = new Solution().combinationSum(candidates, target);
-		for (List<Integer> list : ans)
-			System.out.printf("%s\n", list.toString());
+		List<List<Integer>> results = new Solution().combinationSum(new int[]{1, 2, 3, 4, 5}, 4);
+		for (int i = 0; i < results.size(); ++i) System.out.printf("%s\n", results.get(i).toString());
 	}
 }
