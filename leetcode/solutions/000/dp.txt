@@ -1,0 +1,62 @@
+dp
+
+next: 813
+ac: 31
+wa: 6
+lk: 5
+mel: 1
+not even try: 764, 808
+remains: 10
+total: 50
+
+304 (ac) RangeSumQuery2D-Immutable
+309 (ac) BestTimeToBuyAndSellStockWithCooldown
+338 (ac) CountingBits
+343 (ac) IntegerBreak
+351	(lk) AndroidUnlockPatterns
+357	(ac) CountNumbersWithUniqueDigits
+361	(lk) BombEnemy
+368	(ac) LargestDivisibleSubset
+375	(wa) GuessNumberHigherOrLowerII	
+376	(ac) WiggleSubsequence
+377	(ac) CombinationSumIV => order matters, what about order donsn't matter ??? => 039
+413	(ac) ArithmeticSlices
+416	(ac) PartitionEqualSubsetSum
+418	(lk) SentenceScreenFitting
+464	(wa) CanIWin
+467	(ac) UniqueSubstringsInWraparoundString
+474	(ac) OnesAndZeroes
+486	(ac) PredictTheWinner
+494	(ac) Target Sum    
+516	(ac) Longest Palindromic Subsequence 
+523	(mle) ContinuousSubarraySum => i can sovle this problem !
+576	(wa) OutOfBoundaryPaths
+638	(ac) ShoppingOffers => tooooooooo slow !!!!!!
+646	(ac) MaximumLengthOfPairChain
+647	(ac) PalindromicSubstrings
+650	(ac) 2KeysKeyboard ====> todo understand the greedy solution
+651	(lk) 4KeysKeyboard
+673	(ac) NumberOfLongestIncreasingSubsequence
+688	(ac) KnightProbabilityInChessboard
+698	(wa) PartitionToKEqualSumSubsets ======> dfs, 做完动态规划之后再来处理, 读刘汝佳
+712	(ac) MinimumASCIIDeleteSumForTwoStrings
+714	(ac) BestTimeToBuyAndSellStockWithTransactionFee
+718	(ac) MaximumLengthOfRepeatedSubarray =======> continus is differenct from incontinus
+740	(ac) DeleteAndEarn  =====> nums[i]+1 is not used ??????    review 213
+750	(lk) Number Of Corner Rectangles    		64.8%	Medium	
+764	(??) LargestPlusSign
+787	(ac) CheapestFlightsWithinKStops =====> me: dfs+mem, other: bellman-ford, dijkstra(bfs)
+790	(ac) DominoAndTrominoTiling  ======> split by suffix, but the suffix is hard to complete
+801	(wa) Minimum SwapsToMakeSequencesIncreasing   =======> just too hard to me
+808	(??) SoupServings ======> trick 4800 or 5500
+
+813	Largest Sum of Averages    		45.5%	Medium	
+837	New 21 Game    		31.8%	Medium	
+838	Push Dominoes    		44.0%	Medium	
+873	Length of Longest Fibonacci Subsequence    		46.4%	Medium	
+877	Stone Game    		61.5%	Medium	
+898	Bitwise ORs of Subarrays    		34.4%	Medium	
+931	Minimum Falling Path Sum    		59.0%	Medium	
+935	Knight Dialer    		41.1%	Medium	
+967	Numbers With Same Consecutive Differences    		37.1%	Medium	
+978	Longest Turbulent Subarray    		45.6%	Medium
