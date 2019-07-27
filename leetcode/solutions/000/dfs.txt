@@ -1,0 +1,51 @@
+dfs
+
+## overview
+
+- medium: total=30
+- hard: total=?
+
+## history
+
+- 332 (ac) ReconstructItinerary	(32.0% M 19/07/25)
+- 337 (ac) HouseRobberIII (48.4% M 19/07/26) => dissicuss: return 2 values
+- 394 (ac) DecodeString (45.5% M 19/07/26) => disscuss: stack
+- 417 (ac) Pacific Atlantic Water Flow (M 37 87 100 19/07/27)
+- 430 (ac) FlattenAMultilevelDoublyLinkedList (M 43 15 95 19/07/27)	=> todo: try to solve this with a stack
+- 473 (ac) Matchsticks to Square (M 36 55 89 19/07/27) 
+- 491 (ac) IncreasingSubsequences (M 42 9 84 19/07/27) => todo: more efficient way to de-duplicate
+- 513 (ac) FindBottomLeftTreeValue (M 58 70 82 19/07/27)
+- 515 (ac) FindLargestValueInEachTreeRow (M 58 6 92 19/07/27)
+- 529 (ac) Minesweeper (M 53 100 100 19/07/27)
+
+## todo
+
+90:00 breakfast
+11:00 turn on pc and cleaning my room
+12:00 clothes -> washing mathine, put socks into water
+
+
+13:00 maybe take a nap ?
+
+- 542 01 Matrix	36.2%
+- 547 Friend Circles	54.2%
+- 576 Out of Boundary Paths	32.5% (dp?)
+- 638 Shopping Offers	49.2% (dp)
+- 695 Max Area of Island	57.9%
+- 721 Accounts Merge	41.4%
+- 743 Network Delay Time	42.8%
+- 756 Pyramid Transition Matrix	52.2%	Medium	
+- 785 Is Graph Bipartite?	43.8%	Medium	
+- 802 Find Eventual Safe States	44.6%
+- 841 Keys and Rooms	60.7%	Medium	
+- 851 Loud and Rich	48.3%	Medium	
+- 863 All Nodes Distance K in Binary Tree
+- 886 Possible Bipartition	41.0%
+- 934 Shortest Bridge	44.3%	Medium	
+- 947 Most Stones Removed with Same Row or Column	54.5%	Medium	
+- 959 Regions Cut By Slashes	62.6%	
+- 971 Flip Binary Tree To Match Preorder Traversal	43.2%	Medium	
+- 979 Distribute Coins in Binary Tree	67.4%
+- 988 Smallest String Starting From Leaf	45.7%
+
+- 51 bfs problems

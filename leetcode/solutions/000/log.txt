@@ -1,0 +1,7 @@
+log
+
+orders:
+
+- binary search (done)
+- dynamic programing (doing)
+- dfs & backtracking (from next week: 7.22)
