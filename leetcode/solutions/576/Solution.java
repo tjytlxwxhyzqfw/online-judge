@@ -1,49 +1,38 @@
 /**
  * 0576: OutOfBoundaryPaths
  * Performance: speed=%, memory=%
+ * todo: discuss: solve this problem with dp
  */
 
 import java.util.ArrayList;
 import java.util.List;
 
-// dp[i][j][k] = dp[i+1][j][k-1] + dp[i-1][j][k-1] + dp[i][j-1][k-1] + dp[i][j+1][k+1] + n
-// dp[i][y][x]
-// 
-// o o o o
-// o o o o
-// o o o o
-
 public class Solution {
+	private static int[][] ds = new int[][]{{1, 0}, {-1, 0}, {0, 1}, {0, -1}};
 	private static int M = 1000000007;
 
+	private int height, width;
+	private Integer[][][] mem;
+
 	public int findPaths(int height, int width, int n, int by, int bx) {
-		int[][] dp = new int[height][width];
-		int[] up = new int[width], curr = new int[width];
-		int left;
+		this.height = height;
+		this.width = width;
+		mem = new Integer[n+1][height][width];
+		return n >= 1 ? dfs(n, by, bx) : 0;
+	}
 
-		for (int k = 1; k <= n; ++k) {
-			for (int y = 0; y < height; ++y) {
-				left = 0;
-				for (int j = 0; j < width; ++j) curr[j] = dp[y][j];
-				for (int x = 0; x < width; ++x) {
-					int sum = (x-1 < 0 ? 1 : left);
-					// System.out.printf("1: %d\n", sum);
-					sum = (sum + (x+1 >= width ? 1 : dp[y][x+1])) % M;
-					// System.out.printf("2: %d\n", sum);
-					sum = (sum + (y-1 < 0 ? 1 : up[x])) % M;
-					// System.out.printf("3: %d\n", sum);
-					sum = (sum + (y+1 >= height ? 1 : dp[y+1][x])) % M;
-					// System.out.printf("4: %d\n", sum);
-					left = dp[y][x];
-					dp[y][x] = sum;
-
-					System.out.printf("k=%2d, y=%2d, x=%2d, dp=%2d\n", k, y, x, dp[y][x]);
-				}
-				up = curr;
-			}
+	private int dfs(int k, int y, int x) {
+		// verified by caller
+		// 1. (y, x) in boudary
+		// 2. (k >= 1)
+		if (mem[k][y][x] != null) return mem[k][y][x];
+		int n = 0;
+		for (int i = 0; i < 4; ++i) {
+			int p = y + ds[i][0], q = x + ds[i][1];
+			if (p < 0 || p >= height || q < 0 || q >= width) ++n;
+			else if (k > 1) n = (dfs(k-1, p, q) + n) % M;
 		}
-
-		return dp[by][bx];
+		return mem[k][y][x] = n;
 	}
 
 	public static void main(String args[]) {

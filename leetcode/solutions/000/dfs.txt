@@ -17,22 +17,15 @@ dfs
 - 513 (ac) FindBottomLeftTreeValue (M 58 70 82 19/07/27)
 - 515 (ac) FindLargestValueInEachTreeRow (M 58 6 92 19/07/27)
 - 529 (ac) Minesweeper (M 53 100 100 19/07/27)
+- 542 (ac) 01Matrix	(M 36 51 91 19/07/28)
+- 547 (ac) FriendCircles (M 54 100 46 19/07/28) 
+- 576 (ac) OutOfBoundaryPaths (M 32 98 5 19/07/28) => dfs+mem
+- 638 (ac) ShoppingOffers (M 49 5 5 19/07/29) => too slow, why ?
+- 695 (ac) MaxAreaOfIsland	(M 57 52 37 19/07/30)
+- 721 (ac) AccountsMerge (41 16 5 19/07/30)  => disscuss: union find; dfs: suprising idea
 
 ## todo
 
-90:00 breakfast
-11:00 turn on pc and cleaning my room
-12:00 clothes -> washing mathine, put socks into water
-
-
-13:00 maybe take a nap ?
-
-- 542 01 Matrix	36.2%
-- 547 Friend Circles	54.2%
-- 576 Out of Boundary Paths	32.5% (dp?)
-- 638 Shopping Offers	49.2% (dp)
-- 695 Max Area of Island	57.9%
-- 721 Accounts Merge	41.4%
 - 743 Network Delay Time	42.8%
 - 756 Pyramid Transition Matrix	52.2%	Medium	
 - 785 Is Graph Bipartite?	43.8%	Medium	
