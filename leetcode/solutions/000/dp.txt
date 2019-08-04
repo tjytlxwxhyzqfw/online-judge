@@ -10,42 +10,34 @@
 - 309 (ac) BestTimeToBuyAndSellStockWithCooldown
 - 338 (ac) CountingBits
 - 343 (ac) IntegerBreak
-- 351 (locked) AndroidUnlockPatterns
 - 357 (ac) CountNumbersWithUniqueDigits
-- 361 (locked) BombEnemy
 - 368 (ac) LargestDivisibleSubset
-- 375 (wa) GuessNumberHigherOrLowerII	
 - 376 (ac) WiggleSubsequence
 - 377 (ac) CombinationSumIV => order matters, what about order donsn't matter ??? => 039
 - 413 (ac) ArithmeticSlices
 - 416 (ac) PartitionEqualSubsetSum
-- 418 (locked) SentenceScreenFitting
-- 464 (wa) CanIWin
 - 467 (ac) UniqueSubstringsInWraparoundString
 - 474 (ac) OnesAndZeroes
 - 486 (ac) PredictTheWinner
 - 494 (ac) TargetSum    
 - 516 (ac) LongestPalindromicSubsequence 
-- 523 (mle) ContinuousSubarraySum => i can sovle this problem !
-- 576 (wa) OutOfBoundaryPaths
 - 638 (ac) ShoppingOffers => tooooooooo slow !!!!!!
 - 646 (ac) MaximumLengthOfPairChain
 - 647 (ac) PalindromicSubstrings
 - 650 (ac) 2KeysKeyboard ====> todo understand the greedy solution
-- 651 (lk) 4KeysKeyboard
 - 673 (ac) NumberOfLongestIncreasingSubsequence
 - 688 (ac) KnightProbabilityInChessboard
-- 698 (wa) PartitionToKEqualSumSubsets ======> dfs, 做完动态规划之后再来处理, 读刘汝佳
 - 712 (ac) MinimumASCIIDeleteSumForTwoStrings
 - 714 (ac) BestTimeToBuyAndSellStockWithTransactionFee
 - 718 (ac) MaximumLengthOfRepeatedSubarray =======> continus is differenct from incontinus
 - 740 (ac) DeleteAndEarn  =====> nums[i]+1 is not used ??????    review 213
-- 750 (locked) Number Of Corner Rectangles    		64.8%	Medium	
-- 764 (?) LargestPlusSign
 - 787 (ac) CheapestFlightsWithinKStops =====> me: dfs+mem, other: bellman-ford, dijkstra(bfs)
 - 790 (ac) DominoAndTrominoTiling  ======> split by suffix, but the suffix is hard to complete
-- 801 (wa) Minimum SwapsToMakeSequencesIncreasing   =======> just too hard to me
-- 808 (?) SoupServings ======> trick 4800 or 5500
+
+### Week 190715 - 190721
+
+totoal: 6 (+ 2?)
+
 - 813 (ac) LargestSumOfAverages =====> hard to indicate the dp relations, there is some search solutions
 - 837 (?) New21Game
 - 838 (ac) PushDominoes ======> this is a two pointers problem 
@@ -54,10 +46,29 @@
 - 898 (?) BitwiseORsOfSubarrays   ====> i can solve it
 - 931 (ac) MinimumFallingPathSum
 - 935 (ac) KnightDialer
+
+### Week 190722 - 10728
+
+total: 2 (+13 dfs)
+
 - 967 (ac) NumbersWithSameConsecutiveDifferences (37.1%	M 19/07/22)
 - 978 (ac) LongestTurbulentSubarray (45.6% M 19/07/23)
 
+### Week 190729 - 190884
+
+total: (17dfs+) ?
+
+- 375 (ac) GuessNumberHigherOrLowerII (M 38 42 5 19/08/04)
+- 464 (ac) CanIWin (M 27 83 89 19/08/04)
+
 ### todo
+
+- 523 (mle) ContinuousSubarraySum => i can sovle this problem !
+- 576 (wa) OutOfBoundaryPaths => passed in dfs.txt
+- 698 (wa) PartitionToKEqualSumSubsets ======> dfs, 做完动态规划之后再来处理, 读刘汝佳
+- 764 (?) LargestPlusSign
+- 801 (wa) MinimumSwapsToMakeSequencesIncreasing   =======> just too hard to me
+- 808 (?) SoupServings ======> trick 4800 or 5500
 
 - review
 - 51 hard problems

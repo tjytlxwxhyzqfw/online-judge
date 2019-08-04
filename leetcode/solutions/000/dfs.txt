@@ -4,8 +4,13 @@ dfs
 
 - medium: total=30
 - hard: total=?
+- week: 190722-190728 => 
 
 ## history
+
+### Week 190722 - 190728
+
+total: (2dfs +) 13
 
 - 332 (ac) ReconstructItinerary	(32.0% M 19/07/25)
 - 337 (ac) HouseRobberIII (48.4% M 19/07/26) => dissicuss: return 2 values
@@ -20,25 +25,29 @@ dfs
 - 542 (ac) 01Matrix	(M 36 51 91 19/07/28)
 - 547 (ac) FriendCircles (M 54 100 46 19/07/28) 
 - 576 (ac) OutOfBoundaryPaths (M 32 98 5 19/07/28) => dfs+mem
+
+### Week 190729 - 190804
+
+total: 17
+
 - 638 (ac) ShoppingOffers (M 49 5 5 19/07/29) => too slow, why ?
-- 695 (ac) MaxAreaOfIsland	(M 57 52 37 19/07/30)
-- 721 (ac) AccountsMerge (41 16 5 19/07/30)  => disscuss: union find; dfs: suprising idea
+- 695 (ac) MaxAreaOfIsland (M 57 52 37 19/07/30)
+- 721 (ac) AccountsMerge (M 41 16 5 19/07/30)  => disscuss: union find; dfs: suprising idea
+- 743 (ac) NetworkDelayTime	(M 42 98 73 19/07/31) => dijkstra
+- 756 (ac) PyramidTransitionMatrix (M 52 93 96 19/07/31) => backtracking
+- 785 (ac) IsGraphBipartite? (M 43 ? ? 10/08/01) => disscuss: dfs
+- 802 (ac) FindEventualSafeStates (M 44 ? ? 19/08/01) => i don't konw why is it ac for a while.
+- 841 (ac) KeysAndRooms	(M 60 100 97 19/08/02)	
+- 851 (ac) LoudAndRich (M 48 40 30 19/08/03)
+- 863 (ac) All Nodes Distance K in Binary Tree (M 48 100 100 19/08/03) => i think mine is better than all discuss
+- 886 (ac) Possible Bipartition (M 41 58 90 19/08/03) => disscuss: dfs(me) and Union-Find (todo: try)
+- 934 (ac) Shortest Bridge (M 44 69 73 19/08/03) => me: expand one point / discuss: expand the whole island
+- 947 (ac) Most Stones Removed with Same Row or Column	(M 54 56 ? 19/08/03) => union-find
+- 959 (ac) Regions Cut By Slashes (M 62 31 100 19/08/03) => normal solution, try union-find
+- 971 (ac) FlipBinaryTreeToMatchPreorderTraversal (M 43 54 100 19/08/04)
+- 979 (ac) Distribute Coins in Binary Tree (M 67 63 99 19/08/04)
+- 988 (ac) SmallestStringStartingFromLeaf (M 45 61 100 19/08/04)
 
 ## todo
-
-- 743 Network Delay Time	42.8%
-- 756 Pyramid Transition Matrix	52.2%	Medium	
-- 785 Is Graph Bipartite?	43.8%	Medium	
-- 802 Find Eventual Safe States	44.6%
-- 841 Keys and Rooms	60.7%	Medium	
-- 851 Loud and Rich	48.3%	Medium	
-- 863 All Nodes Distance K in Binary Tree
-- 886 Possible Bipartition	41.0%
-- 934 Shortest Bridge	44.3%	Medium	
-- 947 Most Stones Removed with Same Row or Column	54.5%	Medium	
-- 959 Regions Cut By Slashes	62.6%	
-- 971 Flip Binary Tree To Match Preorder Traversal	43.2%	Medium	
-- 979 Distribute Coins in Binary Tree	67.4%
-- 988 Smallest String Starting From Leaf	45.7%
 
 - 51 bfs problems

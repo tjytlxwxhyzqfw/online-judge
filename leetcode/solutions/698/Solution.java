@@ -24,84 +24,42 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Solution {
-	private Boolean[][] dp;
-	private int[] nums;
-	public boolean canPartitionKSubsets_MINE(int[] nums, int k) {
-		int sum = 0;
-		for (int i = 0; i < nums.length; ++i) sum += nums[i];
-		if (sum % k != 0) return false;
-
-		dp = new Boolean[sum/k+1][1<<nums.length];
-		this.nums = nums;
-		int[] state = new int[1];
-		int target = sum / k;
-		while (state[0] != (1<<nums.length)-1) {
-			if (!find(target, state)) return false;
-			System.out.printf("found: state -> %s\n", Integer.toBinaryString(state[0]));
-			for (int i = 0; i < nums.length; ++i) {
-				if (((1<<i)&state[0]) == 0) {
-					state[0] |= (1<<i);
-					target = sum / k - nums[i];
-					System.out.printf("next: i=%d, v=%d, target=%d\n", i, nums[i], target);
-					break;
-				}
-			}
-		}
-		return true;
-	}
-
-	private boolean find(int target, int[] state) {
-		if (target < 0) return false;
-		if (target == 0) return true;
-		if (dp[target][state[0]] != null) return dp[target][state[0]];
-
-		for (int i = 0; i < nums.length; ++i) {
-			if (((1<<i)&state[0]) == 0) {
-				state[0] |= (1<<i);
-				if (find(target-nums[i], state)) return (dp[target][state[0]] = true);
-				state[0] &= (~(1<<i));
-			}
-		}
-		return (dp[target][state[0]] = false);
-	}
-
-	// ----------------------------------------------------------------------------------------- //
+	private int K;
 	public boolean canPartitionKSubsets(int[] nums, int k) {
-		int sum = 0;
-		for(int num:nums)sum += num;
-		if(k <= 0 || sum%k != 0)return false;
-		int[] visited = new int[nums.length];
-			return canPartition(nums, visited, 0, k, 0, 0, sum/k);
-		}
-	
-	public boolean canPartition(int[] nums, int[] visited, int start_index, int k, int cur_sum, int cur_num, int target){
-		System.out.printf("cp: start_index=%d, k=%d, cur_sum=%d, cur_num=%d, target=%d\n",
-			start_index, k, cur_sum, cur_num, target);
-		for (int i = 0; i < visited.length; ++i) System.out.printf("\ti=%d, v=%d, visited=%d\n", i, nums[i], visited[i]);
+		if (k == 1) return true;
 
-		if(k==1) {
-			System.out.printf("=====> return true because = 1\n");
+		int sum = 0; for (int i = 0; i < nums.length; ++i) sum += nums[i];
+		if (sum % k != 0) return false;
+		int[] sums = new int[k-1];
+
+		Arrays.sort(nums);
+		for (int i = 0, j = nums.length-1; i < j; ++i, --j) {
+			int t = nums[i];
+			nums[i] = nums[j];
+			nums[j] = t;
+		}
+
+		K = k;
+		return dfs(0, sums, nums, sum / k);
+	}
+
+	private boolean dfs(int i, int[] sums, int[] nums, int target) {
+		if (i == nums.length) {
+			for (int k = 0; k < K-1; ++k) if (sums[k] != target) return false;
 			return true;
 		}
-
-		if(cur_sum == target && cur_num>0) {
-			System.out.printf("======> recursive\n");
-			return canPartition(nums, visited, 0, k-1, 0, 0, target);
-		}
-		System.out.printf("======> basic\n");
-		for(int i = start_index; i<nums.length; i++){
-			if(visited[i] == 0){
-				visited[i] = 1;
-				if(canPartition(nums, visited, i+1, k, cur_sum + nums[i], cur_num++, target))return true;
-				visited[i] = 0;
+		for (int k = 0; k < K-1; ++k) {
+			if (sums[k] + nums[i] <= target) {
+				sums[k] += nums[i];
+				if (dfs(i+1, sums, nums, target)) return true;
+				sums[k] -= nums[i];
 			}
 		}
-		return false;
+		return dfs(i+1, sums, nums, target);
 	}
-	// ------------------------------------------------------------------------------------------ //
 
 	public static void main(String args[]) {
-		boolean r1 = new Solution().canPartitionKSubsets(new int[]{1, 2, 2, 3, 3, 4, 5}, 4);
+		boolean r1 = new Solution().canPartitionKSubsets(new int[]{1, 1, 1, 1}, 2);
 		System.out.printf("r1=%s\n", r1);
 	}
 }

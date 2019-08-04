@@ -1,0 +1,64 @@
+/**
+ * 988 Smallest String Starting From Leaf
+ * Performance: speed=%, memory=%
+ */
+
+/*
+            z
+           / \
+           b
+          / \
+         a   a
+        /
+       b
+      /
+     a
+
+
+ for at b:
+	left aba
+	rght a
+	i choose a
+	up to a: ababz, abz => wrong answer
+*/
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.Queue;
+
+public class Solution {
+	public String smallestFromLeaf(TreeNode root) {
+		char[] smallest = dfs(root);
+		StringBuilder b = new StringBuilder();
+		for (char c : smallest) b.append((char)(97+c));
+		return b.toString();
+	}
+
+	private char[] dfs(TreeNode root) {
+		if (root == null) return new char[0];	
+
+		char[] left = dfs(root.left), rght = dfs(root.right);
+		char[] left1 = new char[left.length+1], rght1 = new char[rght.length+1];
+		for (int i = 0; i < left.length; ++i) left1[i] = left[i];
+		for (int i = 0; i < rght.length; ++i) rght1[i] = rght[i];
+		left1[left.length] = rght1[rght.length] = (char)root.val;
+
+		if (left.length == 0 && rght.length == 0) return left1;
+		else if (left.length == 0) return rght1;
+		else if (rght.length == 0) return left1;
+		else return smaller(left1, rght1) ? left1 : rght1;
+	}
+
+	private boolean smaller(char[] left, char[] rght) {
+		for (int i = 0; i < left.length && i < rght.length; ++i)
+			if (left[i] != rght[i]) return left[i] < rght[i] ? true : false;
+		return left.length < rght.length ? true : false;
+	}
+
+	public static void main(String args[]) {
+	}
+}
+

@@ -1,0 +1,69 @@
+/**
+ * 851: LoudAndRich
+ * Performance: speed=%, memory=%
+ */
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Arrays;
+import java.util.Queue;
+import java.util.LinkedList;
+import java.util.Map;
+import java.util.HashMap;
+
+public class Solution {
+	public int[] loudAndRich(int[][] richer, int[] quiet) {
+		Map<Integer, List<Integer>> g = new HashMap<Integer, List<Integer>>();
+		int[] ind = new int[quiet.length];
+		for (int i = 0; i < richer.length; ++i) {
+			int poor = richer[i][1], rich = richer[i][0];
+			if (g.get(poor) == null) g.put(poor, new ArrayList<>());
+			g.get(poor).add(rich);
+			++ind[rich];
+		}
+
+		Item[] top = new Item[quiet.length];
+		int topi = 0;
+
+		Queue<Integer> q = new LinkedList<Integer>();
+		for (int i = 0; i < ind.length; ++i) if (ind[i] == 0) { q.offer(i); ind[i] = -1; }
+
+		while (!q.isEmpty()) {
+			int u = q.poll();
+			top[topi++] = new Item(u, -ind[u], quiet[u]);
+			if (g.get(u) == null) continue;
+			for (int v : g.get(u)) if (--ind[v] == 0) { q.offer(v); ind[v] = ind[u]-1; }
+		}
+
+		Arrays.sort(top);
+		int[] answer = new int[top.length];
+		for (int i = 0; i < top.length; ++i) {
+			System.out.printf("idx=%2d, money=%2d, quiet=%2d\n", top[i].i, top[i].m, top[i].q);
+			int a = top[i].i;
+			for (int j = i+1; j < top.length; ++j) if (top[j].q < quiet[a]) a = top[j].i;
+			answer[top[i].i] = a;
+		}
+
+		return answer;
+	}
+
+	public static void main(String args[]) {
+	}
+}
+
+class Item implements Comparable<Item> {
+	int i, m, q;
+
+	Item(int i, int m, int q) {
+		this.i = i;
+		this.m = m;
+		this.q = q;
+	}
+
+	@Override
+	public int compareTo(Item another) {
+		return m == another.m ? another.q - q : m -  another.m;
+	}
+}
+
+
