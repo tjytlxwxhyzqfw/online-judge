@@ -21,6 +21,8 @@
 - 486 (ac) PredictTheWinner
 - 494 (ac) TargetSum    
 - 516 (ac) LongestPalindromicSubsequence 
+- 523 (ac) ContinuousSubarraySum => i can sovle this problem !
+- 576 (wa) OutOfBoundaryPaths => passed in dfs.txt
 - 638 (ac) ShoppingOffers => tooooooooo slow !!!!!!
 - 646 (ac) MaximumLengthOfPairChain
 - 647 (ac) PalindromicSubstrings
@@ -63,8 +65,6 @@ total: (17dfs+) ?
 
 ### todo
 
-- 523 (mle) ContinuousSubarraySum => i can sovle this problem !
-- 576 (wa) OutOfBoundaryPaths => passed in dfs.txt
 - 698 (wa) PartitionToKEqualSumSubsets ======> dfs, 做完动态规划之后再来处理, 读刘汝佳
 - 764 (?) LargestPlusSign
 - 801 (wa) MinimumSwapsToMakeSequencesIncreasing   =======> just too hard to me
