@@ -1,0 +1,57 @@
+/**
+ * 310 Minimum Height Trees
+ * Performance: speed=%, memory=%
+ *
+ * TLE: dfs() from every leaves and compute the max dist from
+ * every inner node to a leaf node then we know that nodes with
+ * min dist are the answer
+ *
+ * Better Idea: bfs() to compute the min dist from every inner node to a 
+ * leaf node, then for some node u, the longest path is 1+max(d[v]) for 
+ * every neighbor node v of u; note that leaf nodes should be consider 
+ * carefully
+ */
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.Queue;
+
+public class Solution {
+	public List<Integer> findMinHeightTrees(int n, int[][] edges) {
+		boolean[] node = new boolean[n];
+		List<List<Integer>> g = new ArrayList<>();
+		for (int i = 0; i < n; ++i) g.add(new ArrayList<>());
+		for (int i = 0; i < n-1; ++i) {
+			int u = edges[i][0], v = edges[i][1];
+			if (g.get(u).size() > 0) node[u] = true;
+			if (g.get(v).size() > 0) node[v] = true;
+			{ g.get(u).add(v); g.get(v).add(u); }
+		}
+
+		int[] d = new int[n];
+		for (int i = 0; i < n; ++i) if (!node[i]) dfs(i, 0, new boolean[n], g, d);
+
+		// debug: print d
+		for (int i = 0; i < n; ++i) System.out.printf("%d, ", d[i]);
+		System.out.println();
+
+		int minH = Integer.MAX_VALUE;
+		for (int i = 0; i < n; ++i) if (d[i] < minH) minH = d[i];
+
+		List<Integer> result = new ArrayList<>();
+		for (int i = 0; i < n; ++i) if (d[i] == minH) result.add(i);
+		return result;
+	}
+
+	void dfs(int i, int c, boolean[] v, List<List<Integer>> g, int[] d) {
+		{ v[i] = true; if (d[i] < c) d[i] = c; }
+		for (Integer j : g.get(i)) if (!v[j]) dfs(j, c+1, v, g, d);
+	}
+
+	public static void main(String args[]) {
+	}
+}
+

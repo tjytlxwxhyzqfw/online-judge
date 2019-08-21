@@ -1,0 +1,39 @@
+median-page-2.txt
+
+215 (ac) Kth Largest Element in an Array 49.1% Medium
+216 (ac) Combination Sum III 52.4% Medium
+220 (ac) Contains Duplicate III 20.0% Medium
+221 (ac) Maximal Square 33.7% Medium	
+223 (ac) Rectangle Area 36% M
+227 (ac) Basic Calculator II    		34.1%	Medium	
+228	(ac) Summary Ranges    		36.5%	Medium	
+229 (ac) Majority Element II 		32.7%	Medium	
+236	(ac) Lowest Common Ancestor of a Binary Tree    		38.7%	Medium	
+238	(ac) Product of Array Except Self    		56.0%	Medium	
+241	(ac) Different Ways to Add Parentheses ( M 50 75 75 19/08/20)
+260	(ac) Single Number III ( M 57 99 100 19/08/12) => x &= -x, ~(x-1) = -x
+274	(ac) H-Index (M 34 100 100 19/08/12) => dis: bucket-sort, me: binary-search
+284	(ac) Peeking Iterator (M 41 14 100 19/08/21)
+289	(ac) Game of Life (M 46 100 100 19/08/12)
+306	(ac) Additive Number (M 28 15 71 19/08/13) => corner cases: fibnacci "000", "011"
+307	(ac) Range Sum Query - Mutable (M 29 79 81 19/08/14)
+310	(ac) Minimum Height Trees (M 30 89 94 19/08/16) => diameter of a tree
+313	(ac) SuperUglyNumber (M 42 39 100 19/08/16) => todo: read discuss for more details
+318	(ac) Maximum Product of Word Lengths ( M 49 62 78 19/08/16)
+319	(ac) Bulb Switcher (M 44 100 33 19/08/16)
+324	Wiggle Sort II  (M 28 100 100 19/08/22) => [2, 2, 2, 3, 3, 1, 1] => median, index mapping
+328	(ac) Odd Even Linked List (M 50 100 100 19/08/17) => dis: while (even!=null&&even.next!=null)
+331	(ac) Verify Preorder Serialization of a Binary Tree (M 39 96 100 19/08/17) => binary tree: y#x##
+334	(ac) Increasing Triplet Subsequence (M 39 100 95 19/08/21) => hard to come up with this idea
+341	(ac) Flatten Nested List Iterator (M 48 69 100 19/08/18)
+347	(ac) Top K Frequent Elements (M 56 78 47 19/08/18)
+355	(ac) Design Twitter (M 27 72 100 19/08/18)
+365	(ac) Water and Jug Problem (M 29 100 11 19/08/18) => math, bezout's identity
+372	(ac) Super Pow (M 35 84 100 19/08/18) => quickpow
+373	(ac) Find K Pairs with Smallest Sums (M 34 99 100 19/08/18)
+
+todo: 
+
+
+
+

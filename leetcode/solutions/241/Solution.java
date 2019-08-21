@@ -1,27 +1,23 @@
 /**
  * 241 Different Ways to Add Parentheses
- * Performance: speed=%, memory=%
+ * Performance: speed=75%, memory=75%
+ *
+ * todo: do not use search() just recurse diffWaysToComput() even without override
  */
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-import java.util.Queue;
-import java.util.Stack;
+import java.util.*;
 
 public class Solution {
-	Stack<Item> stack;
 	public List<Integer> diffWaysToCompute(String input) {
-		List<Item> list = new ArrayList<>();
-		stack = new Stack<>();
+		if (input == null || input.length() == 0) return new ArrayList<>();
 
+		List<Item> list = new ArrayList<>();
 		int n = 0;
 		for (int i = 0; i < input.length(); ++i) {
-			int ch = input.charAt(i);
-			if (ch == '+' || ch == '-' || ch == '*') {
-				{ list.add(new Item(n, 0)); n = 0; }
+			char ch = input.charAt(i);
+			if (ch == '*' || ch == '-' || ch == '+') {
+				list.add(new Item(n, 0));
+				n = 0;
 				list.add(new Item(ch, 1));
 			} else if (Character.isDigit(ch)) {
 				n = n * 10 + ch - 48;
@@ -29,69 +25,41 @@ public class Solution {
 		}
 		list.add(new Item(n, 0));
 
-		Item[] items = new Item[list.size()];
-		for (int i = 0; i < list.size(); ++i) {
-			items[i] = list.get(i);
-			if (items[i].type == 0) System.out.printf("%d\n", items[i].val);
-			else System.out.printf("%c\n", (char)items[i].val);
-		}
+		return search(list, 0, list.size());
+	}
+
+	List<Integer> search(List<Item> list, int begin, int end) {
+		if (begin >= end) return null;
+		if (begin+1 == end) return Arrays.asList(list.get(begin).val);
 
 		List<Integer> result = new ArrayList<>();
-		dfs(new int[items.length], 0, items, new boolean[items.length], 0, 0, result);
-		for (int x : result) System.out.printf("result=%d\n", x);
+		for (int i = begin; i < end; ++i) {
+			if (list.get(i).type == 1) {
+				List<Integer> left = search(list, begin, i);
+				List<Integer> rght = search(list, i+1, end);
+				addToResult(result, left, rght, list.get(i).val);
+			}
+		}
 
-		return null;
+		return result;
 	}
 
-	void dfs(int[] suffix, int n, Item[] items, boolean[] v, int vN, int opN, List<Integer> out) {
-		if (n == items.length) {
-			printSufArr(suffix, items);
-			for (int k = 0; k < suffix.length; ++k) {
-				int i = suffix[k];
-				if (items[i].type == 0) stack.push(items[i]);
-				else {
-					Item rght = stack.pop(), left = stack.pop();
-					switch (items[i].val) {
-						case (int)'+': stack.push(new Item(left.val+rght.val, 0)); break;
-						case (int)'-': stack.push(new Item(left.val-rght.val, 0)); break;
-						case (int)'*': stack.push(new Item(left.val*rght.val, 0)); break;
-					}
+	void addToResult(List<Integer> result, List<Integer> left, List<Integer> rght, int op) {
+		if (left == null || rght == null) return;
+		for (Integer i : left) {
+			for (Integer j : rght) {
+				switch (op) {
+					case (int)'*': result.add(i*j); break;
+					case (int)'+': result.add(i+j); break;
+					case (int)'-': result.add(i-j); break;
 				}
 			}
-			out.add(stack.pop().val);
-			if (!stack.isEmpty()) throw new RuntimeException("invalid input");
-			return;
 		}
-
-		int p = -1;
-		for (int i = 0; i < items.length; ++i) if (items[i].type == 0 && !v[i]) {p = i; break;}
-		if (p != -1) { v[p] = true; suffix[n] = p; dfs(suffix, n+1, items, v, vN+1, opN, out); v[p] = false; }
-
-		if ((vN-opN) < 2) return;
-		p = -1;  // index of first un-visited operator
-		for (int i = 0; i < items.length; ++i) if (items[i].type == 1 && !v[i]) {p = i; break; }
-		if (p != -1) { v[p] = true; suffix[n] = p; dfs(suffix, n+1, items, v, vN, opN+1, out); v[p] = false; }
-	}
-
-	void printItemArr(Item[] items) {
-		for (int i = 0; i < items.length; ++i) {
-			if (items[i].type == 0) System.out.printf("%d ", items[i].val);
-                        else System.out.printf("%c ", (char)items[i].val);
-		}
-		System.out.printf("\n");
-	}
-
-	void printSufArr(int[] suf, Item[] items) {
-		for (int k = 0; k < items.length; ++k) {
-			int i = suf[k];
-			if (items[i].type == 0) System.out.printf("%d ", items[i].val);
-                        else System.out.printf("%c ", (char)items[i].val);
-		}
-		System.out.printf("\n");
 	}
 
 	public static void main(String args[]) {
-		new Solution().diffWaysToCompute("2*3-4*5");
+		List<Integer> ans = new Solution().diffWaysToCompute("1-2+3*4+5-6");
+		System.out.printf("ans: %s\n", ans);
 	}
 }
 
