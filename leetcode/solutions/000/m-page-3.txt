@@ -1,0 +1,89 @@
+m-page-3.txt
+
+### todo: 0-9
+
+380	(ac) Insert Delete GetRandom O(1) (M 43 76 98 19/08/23)
+382	(ac) Linked List Random Node (M 49 13 100 19/08/23)
+384	(ac) Shuffle an Array (M 50 20 61 19/08/23)
+385	(ac) Mini Parser (M 32 63 90 19/08/23)
+386	(ac) Lexicographical Numbers (M 47 70 20 19/08/25) => todo: don't use recursion
+388	(ac) Longest Absolute File Path (M 39 97 100 19/08/25)	=> todo: try the very short solution in dis
+393	(ac) UTF-8 Validation (M 36 34 54 19/08/25)
+396	(ac) Rotate Function (M 35 100 100 19/08/26)
+
+### todo: 10-19
+
+397	(ac) Integer Replacement (M 31 50 10 19/08/26)	
+398	(ac) Random Pick Index (M 50 60 94 19/08/26)
+399	(ac) Evaluate Division (M 48 89 76 19/08/27)
+400	(ac) Nth Digit (M 30 100 10 19/08/27)
+402	(ac,go) Remove K Digits (M 26 ? ? 19/08/??) => case: 1432219->1219, 1234567890->0, todo: stack
+406	(ac,go) Queue Reconstruction by Height (M 60 ? ? 19/08/??) => (h[n], k[n]) (h', k'), (h[n+1], k[n+1])
+419	(ac,go) Battleships in a Board (M 66 ? ? 19/08/??)
+421	(ac,go) Maximum XOR of Two Numbers in an Array (M 51 ? ? 19/08/??) => a^b=c -> a^c=b
+423	(ac,go) Reconstruct Original Digits from English (M 45 ? ? 19/08/??)
+424	(ac,go) Longest Repeating Character Replacement (M 44 ? ? 19/08/??) =? case: (-20, 1, -20) k=5
+	
+### todo: 20-29
+
+427	(ac) Construct Quad Tree (M 58 99 100 19/09/01)
+433	(ac) Minimum Genetic Mutation (M 38 75 100 19/09/01)	
+435	(ac) Non-overlapping Intervals (M 88 62 19/09/01) => todo: re-write without linked list.
+438	(ac) Find All Anagrams in a String (M 38 77 100 19/09/01) => ("abcabc", "abc") -> (0, 1, 2, 3) 
+442	(ac) Find All Duplicates in an Array (M 62 89 88 19/09/01)
+445	(ac) Add Two Numbers II (M 51 99 73 19/09/01) => todo: stack
+449	(ac,go) Serialize and Deserialize BST    		48.3%	Medium	
+450	(ac,go) Delete Node in a BST    		40.5%	Medium	
+451	(ac,go) Sort Characters By Frequency    		57.0%	Medium	
+452	(ac,go) Minimum Number of Arrows to Burst Balloons    		47.1%	Medium	
+
+### todo: 30-39
+
+457	(ac,go) Circular Array Loop 27.9% Medium	
+462	(ac,go) Minimum Moves to Equal Array Elements II 52.7% Medium	
+
+468	(ac) Validate IP Address 21.6% Medium	
+470	(ac) Implement Rand10() Using Rand7() 45.3%	Medium
+477	(ac) Total Hamming Distance    		49.4%	Medium	
+478	(ac) Generate Random Point in a Circle 37.4% Medium => math.sqrt(math.random())
+481	(ac) Magical String  46.5% Medium	
+495	(ac) Teemo Attacking  (M 52 ?? ?? 19/09/12)
+498	(ac) Diagonal Traverse (M 45 35 100 19/09/12)
+
+### todo: 40-49
+
+503	(ac) Next Greater Element II (M 51 81 100 19/09/12)
+508	(ac) Most Frequent Subtree Sum (M 55 85 84 19/09/12)
+518	(ac) Coin Change 2 (M 43 8 9 19/09/12) => todo: read discuss, fuck this problem !
+519	(ac) Random Flip Matrix (M 33 5 66 19/09/12)
+
+522	Longest Uncommon Subsequence II    		33.1%	Medium
+
+524	Longest Word in Dictionary through Deleting    		46.4%	Medium	
+525	Contiguous Array    		43.2%	Medium	
+526	Beautiful Arrangement    		55.3%	Medium	
+535	Encode and Decode TinyURL    		77.4%	Medium	
+537	Complex Number Multiplication    		65.9%	Medium	
+
+### todo: 50-55
+
+539	Minimum Time Difference    		48.7%	Medium	
+540	Single Element in a Sorted Array    		57.4%	Medium	
+553	Optimal Division    		55.7%	Medium	
+554	Brick Wall    		48.1%	Medium	
+556	Next Greater Element III    		30.3%	Medium	
+560	Subarray Sum Equals K    		42.7%	Medium
+
+### todo:
+
+**0-9**
+
+390	Elimination Game 43.6%	Medium (tried 19/08/25)
+395	Longest Substring with At Least K Repeating Characters 39.2%	Medium => niu bi
+456	132 Pattern    		27.5%	Medium	
+
+
+
+
+
+
