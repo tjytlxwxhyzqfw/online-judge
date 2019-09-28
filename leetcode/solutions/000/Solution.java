@@ -1,1 +1,1 @@
-../522/Solution.java
+../553/Solution.java

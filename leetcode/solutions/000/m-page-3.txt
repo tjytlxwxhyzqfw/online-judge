@@ -56,20 +56,19 @@ m-page-3.txt
 508	(ac) Most Frequent Subtree Sum (M 55 85 84 19/09/12)
 518	(ac) Coin Change 2 (M 43 8 9 19/09/12) => todo: read discuss, fuck this problem !
 519	(ac) Random Flip Matrix (M 33 5 66 19/09/12)
-
-522	Longest Uncommon Subsequence II    		33.1%	Medium
-
-524	Longest Word in Dictionary through Deleting    		46.4%	Medium	
-525	Contiguous Array    		43.2%	Medium	
-526	Beautiful Arrangement    		55.3%	Medium	
-535	Encode and Decode TinyURL    		77.4%	Medium	
-537	Complex Number Multiplication    		65.9%	Medium	
+522	(ac) Longest Uncommon Subsequence II 33.1%	Medium
+524	(ac) Longest Word in Dictionary through Deleting (M 46 74 72 19/09/17) 373/191
+525	(ac) Contiguous Array (M 43 89 100 19/09/18) 792/40)
+526	(ac) Beautiful Arrangement (M 55 94 5 19/09/19) 
+535	(ac) Encode and Decode TinyURL (M 77 61 99 19/09/19)
+537	(ac) Complex Number Multiplication (M 65 79 100 19/09/19) => this should be a easy	
 
 ### todo: 50-55
 
-539	Minimum Time Difference    		48.7%	Medium	
-540	Single Element in a Sorted Array    		57.4%	Medium	
-553	Optimal Division    		55.7%	Medium	
+539	(ac) Minimum Time Difference 48.7%	Medium	
+540	(ac) Single Element in a Sorted Array 57.4%	Medium
+553	(ac) Optimal Division 55.7%	Medium	(6 25 19/09/24) 132/996
+
 554	Brick Wall    		48.1%	Medium	
 556	Next Greater Element III    		30.3%	Medium	
 560	Subarray Sum Equals K    		42.7%	Medium
