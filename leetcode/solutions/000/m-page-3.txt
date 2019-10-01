@@ -41,7 +41,6 @@ m-page-3.txt
 
 457	(ac,go) Circular Array Loop 27.9% Medium	
 462	(ac,go) Minimum Moves to Equal Array Elements II 52.7% Medium	
-
 468	(ac) Validate IP Address 21.6% Medium	
 470	(ac) Implement Rand10() Using Rand7() 45.3%	Medium
 477	(ac) Total Hamming Distance    		49.4%	Medium	
@@ -68,18 +67,19 @@ m-page-3.txt
 539	(ac) Minimum Time Difference 48.7%	Medium	
 540	(ac) Single Element in a Sorted Array 57.4%	Medium
 553	(ac) Optimal Division 55.7%	Medium	(6 25 19/09/24) 132/996
-
-554	Brick Wall    		48.1%	Medium	
-556	Next Greater Element III    		30.3%	Medium	
-560	Subarray Sum Equals K    		42.7%	Medium
+554	(ac,golang) Brick Wall 48.1% Medium 100 100 613/31
+556	(ac) Next Greater Element III (30.3% Medium	100 10 410/132) => todo: why memory 10% ????
+560	(ac) Subarray Sum Equals K (42.7% Medium 68 98 2508 70)
 
 ### todo:
 
 **0-9**
 
-390	Elimination Game 43.6%	Medium (tried 19/08/25)
-395	Longest Substring with At Least K Repeating Characters 39.2%	Medium => niu bi
-456	132 Pattern    		27.5%	Medium	
+390	(ac) Elimination Game 43.6%	Medium (tried 19/10/01)
+395	(ac) Longest Substring with At Least K Repeating Characters 39.2% Medium => niu bi, todo again @191001;
+456	(ac) 132 Pattern 27.5% Medium	(191001)
+
+
 
 
 

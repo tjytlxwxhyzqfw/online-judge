@@ -1,0 +1,78 @@
+
+### 191001
+
+(... 5 more)
+
+565	(ac) Array Nesting 53.7% Medium	637/83 64 16 191001 => {a[i], a[a[i]], a[a[a[i]]]}, dont use extra space
+567	(ac) Permutation in String 39.3% Medium	788/42 59 100 191001
+583	(ac) Delete Operation for Two Strings 45.8% Medium 783/21 17 100 191001
+592	(ac) Fraction Addition and Subtraction 47.5% Medium 131/250 191001
+593	(ac) Valid Square 40.9% Medium 151/304 191001
+609	(ac) Find Duplicate File in System 56.6% Medium 279/430 191001 93 93
+
+### 191002
+
+
+611	Valid Triangle Number 46.4% Medium	
+621	Task Scheduler 46.5% Medium	
+622	Design Circular Queue 41.0% Medium	
+623	Add One Row to Tree 47.9% Medium	
+626	Exchange Seats 56.1% Medium	
+636	Exclusive Time of Functions 49.5% Medium	
+640	Solve the Equation 40.9% Medium	
+641	Design Circular Deque 50.0% Medium	
+648	Replace Words 53.3% Medium	
+649	Dota2 Senate 38.1% Medium	
+
+
+### 191003
+
+652	Find Duplicate Subtrees    		47.1%	Medium	
+654	Maximum Binary Tree    		77.1%	Medium	
+655	Print Binary Tree    		52.5%	Medium	
+659	Split Array into Consecutive Subsequences    		41.6%	Medium	
+662	Maximum Width of Binary Tree    		39.5%	Medium	
+667	Beautiful Arrangement II    		52.6%	Medium	
+670	Maximum Swap    		40.8%	Medium	
+672	Bulb Switcher II    		50.3%	Medium	
+676	Implement Magic Dictionary    		52.3%	Medium	
+677	Map Sum Pairs    		52.3%	Medium	
+
+
+### 191004
+
+678	Valid Parenthesis String    		33.3%	Medium	
+684	Redundant Connection    		53.5%	Medium	
+692	Top K Frequent Words    		47.2%	Medium	
+701	Insert into a Binary Search Tree    		77.2%	Medium	
+713	Subarray Product Less Than K    		37.6%	Medium	
+722	Remove Comments    		31.9%	Medium	
+725	Split Linked List in Parts    		49.8%	Medium	
+729 My Calendar I    		48.7%	Medium	
+731	My Calendar II    		46.2%	Medium	
+735	Asteroid Collision    		39.1%	Medium	
+
+
+### 191005
+
+738	Monotone Increasing Digits    		42.6%	Medium	
+739	Daily Temperatures    		60.8%	Medium	
+752	Open the Lock    		47.5%	Medium	
+763	Partition Labels    		72.3%	Medium	
+764 Largest Plus Sign    		44.5%	Medium	
+767	Reorganize String    		44.1%	Medium	
+769	Max Chunks To Make Sorted    		52.7%	Medium	
+775	Global and Local Inversions    		39.9%	Medium	
+777	Swap Adjacent in LR String    		33.9%	Medium	
+779	K-th Symbol in Grammar    		37.6%	Medium	
+
+
+### 191006
+
+781	Rabbits in Forest    		52.5%	Medium	
+789	Escape The Ghosts    		55.9%	Medium	
+791	Custom Sort String    		63.3%	Medium	
+792	Number of Matching Subsequences    		44.9%	Medium	
+794	Valid Tic-Tac-Toe State    		30.9%	Medium	
+
+(... 4 more)
