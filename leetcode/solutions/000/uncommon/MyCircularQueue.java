@@ -1,0 +1,1 @@
+../622/Solution.java
