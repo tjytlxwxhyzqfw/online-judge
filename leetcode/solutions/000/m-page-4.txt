@@ -76,7 +76,7 @@
 792	Number of Matching Subsequences    		44.9%	Medium	
 794	Valid Tic-Tac-Toe State    		30.9%	Medium	
 
-(... 4 more)
+(... 6 more)
 
 ### special
 
