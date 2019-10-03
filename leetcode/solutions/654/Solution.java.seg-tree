@@ -1,0 +1,74 @@
+/**
+ * 654	Maximum Binary Tree 77.1% Medium 1265/168
+ * Performance: speed=%, memory=%
+ */
+
+import java.util.*;
+
+public class Solution {
+	public TreeNode constructMaximumBinaryTree(int[] nums) {
+		if (nums == null || nums.length == 0) return null;
+
+		// SegTree seg = new SegTree(nums);
+		// System.out.println(seg.findMax(1, 0, 8, 3, 6));
+
+		TreeNode root = new TreeNode(0);
+		buildTree(root, 0, nums.length, new SegTree(nums));
+		return root;
+	}
+
+	void buildTree(TreeNode root, int begin, int end, SegTree seg) {
+		int i = seg.findMax(begin, end);
+		root.val = seg.raw[i];
+		if (i > begin) buildTree(root.left = new TreeNode(0), begin, i, seg);
+		if (i+1 < end) buildTree(root.right = new TreeNode(0), i+1, end, seg);
+	}
+
+	public static void main(String args[]) {
+		Solution s = new Solution();
+		s.constructMaximumBinaryTree(new int[]{3, 2, 1, 6, 0, 5});
+                System.out.println("done");
+	}
+}
+
+class SegTree {
+	int n;
+	int[] raw, arr;
+	SegTree(int[] raw) {
+		this.raw = raw;
+
+		{ n = 1; while (n < raw.length) { n <<= 1; } n <<= 1; }
+		arr = new int[n];
+		for (int i = n/2; i < n; ++i) arr[i] = (i-n/2) < raw.length ? i-n/2 : raw.length;
+		for (int i = n/2-1; i > 0; --i) {
+			int left = i<<1;
+			int leftv = arr[left] < raw.length ? raw[arr[left]] : Integer.MIN_VALUE;
+			int rghtv = arr[left+1] < raw.length ? raw[arr[left+1]] : Integer.MIN_VALUE;
+			arr[i] = leftv > rghtv ? arr[left] : arr[left+1];
+		}
+	}
+
+	int findMax(int a, int b) {
+		int idx = findMax(1, 0, n/2, a, b); // fool: findMax(1, 0, n, a, b)
+		System.out.printf("max value on [%2d, %2d] = %3d (idx=%d)\n", a, b, raw[idx], idx);
+		return idx;
+	}
+
+	// position is returned
+	// we keep the rule: x <= a <= b <= y in recusive invoking.
+	int findMax(int r, int x, int y, int a, int b) {
+		// System.out.printf("\t=> findMax(r=%d, x=%d, y=%d, a=%d, b=%d)\n", r, x, y, a, b);
+		if (a == x && y == b) return arr[r];
+		int z = x + (y-x)/2; // index of first element in raw ruled by right child
+
+		if (x <= a && b <= z) return findMax(r*2, x, z, a, b);   // x, a, b, z, y
+		if (z <= a && b <= y) return findMax(r*2+1, z, y, a, b); // x, z, a, b, y
+
+		// x a, z, b, y
+		int leftIdx = findMax(r*2, x, z, a, z);
+		int rghtIdx = findMax(r*2+1, z, y, z, b);
+		int leftVal = leftIdx < raw.length ? raw[leftIdx] : Integer.MIN_VALUE;
+		int rghtVal = rghtIdx < raw.length ? raw[rghtIdx] : Integer.MIN_VALUE;
+		return leftVal > rghtVal ? leftIdx : rghtIdx;
+	}
+}
