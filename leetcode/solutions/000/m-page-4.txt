@@ -34,32 +34,24 @@
 672	(ac) Bulb Switcher II 50.3% Medium 104/749 100 33
 676	(ac) Implement Magic Dictionary 52.3% Medium 411/105 5 5 => most efficient approach is not clear.
 677	(ac) Map Sum Pairs 52.3% Medium 340/64 50 100
+678	(ac) Valid Parenthesis String 33.3% Medium 767/25 45 100
 
-678	Valid Parenthesis String 33.3% Medium
+### 191004 (#=11)
 
-
-
-***todo***:
-
-1. re-write 654 with stack
-
-### 191004 (#=12)
-
-684	Redundant Connection 53.5%	Medium	
-692	Top K Frequent Words 47.2%	Medium	
-701	Insert into a Binary Search Tree    		77.2%	Medium	
-713	Subarray Product Less Than K    		37.6%	Medium	
-722	Remove Comments    		31.9%	Medium	
-725	Split Linked List in Parts    		49.8%	Medium	
-729 My Calendar I    		48.7%	Medium	
-731	My Calendar II    		46.2%	Medium	
-735	Asteroid Collision    		39.1%	Medium	
-738	Monotone Increasing Digits    		42.6%	Medium	
+684 (ac) Redundant Connection 53.5% Medium 817/202 => a union-find problem and i used dfs
+692 (ac) Top K Frequent Words 47.2% Medium 940/92 99 73
+701 (ac) Insert into a Binary Search Tree 77.2% Medium 458/51 => should be a easy problem
+713 (ac) Subarray Product Less Than K 37.6% Medium 773/38 98 100
+722 (ac) Remove Comments 31.9% Medium 192/618 100 100
+725 (ac) Split Linked List in Parts 49.8% Medium 416/85 100 100
+729 (ac) My Calendar I 48.7% Medium 429/29
+735 (ac) Asteroid Collision 39.1% Medium 553/70 29 50
+738 (ac) Monotone Increasing Digits 42.6% Medium 295/47 94 20
+739	(ac) Daily Temperatures 60.8% Medium 1629/47 52 91
 
 ### 191005 (#=12)
 
-739	Daily Temperatures    		60.8%	Medium	
-752	Open the Lock    		47.5%	Medium	
+752	Open the Lock    		47.5%	Medium 483/26
 763	Partition Labels    		72.3%	Medium	
 764 Largest Plus Sign    		44.5%	Medium	
 767	Reorganize String    		44.1%	Medium	
@@ -75,7 +67,9 @@
 
 792	Number of Matching Subsequences    		44.9%	Medium	
 794	Valid Tic-Tac-Toe State    		30.9%	Medium	
-
+todo: 729: understand the floor key solution.
+todo: problem-84 and Monotonous stack which is similiar to 739 
+todo: 731 (hold) at day 1004 My Calendar II 46.2% Medium	
 
 ### 191007
 
