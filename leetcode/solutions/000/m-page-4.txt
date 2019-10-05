@@ -36,7 +36,7 @@
 677	(ac) Map Sum Pairs 52.3% Medium 340/64 50 100
 678	(ac) Valid Parenthesis String 33.3% Medium 767/25 45 100
 
-### 191004 (#=11)
+### 191004 (#=10)
 
 684 (ac) Redundant Connection 53.5% Medium 817/202 => a union-find problem and i used dfs
 692 (ac) Top K Frequent Words 47.2% Medium 940/92 99 73
@@ -49,19 +49,20 @@
 738 (ac) Monotone Increasing Digits 42.6% Medium 295/47 94 20
 739	(ac) Daily Temperatures 60.8% Medium 1629/47 52 91
 
-### 191005 (#=12)
+### 191005 (#=11)
 
-752	Open the Lock    		47.5%	Medium 483/26
-763	Partition Labels    		72.3%	Medium	
-764 Largest Plus Sign    		44.5%	Medium	
-767	Reorganize String    		44.1%	Medium	
-769	Max Chunks To Make Sorted    		52.7%	Medium	
-775	Global and Local Inversions    		39.9%	Medium	
-777	Swap Adjacent in LR String    		33.9%	Medium	
-779	K-th Symbol in Grammar    		37.6%	Medium
-781	Rabbits in Forest    		52.5%	Medium	
-789	Escape The Ghosts    		55.9%	Medium	
-791	Custom Sort String    		63.3%	Medium	
+752 (ac) Open the Lock 47.5% Medium 483/26 51 89 => i spent about 4 hours on this question
+763	(ac) Partition Labels 72.3% Medium 1283/68
+764 (ac) Largest Plus Sign 44.5% Medium 307/69 64 25
+767 (ac) Reorganize String 44.1% Medium 706/36 92 85
+768 (ac, hard) Max Chunks To Make Sorted II 46.8% 293/11 => o(n) < o(nlgn), not happy :(
+769 (ac) Max Chunks To Make Sorted 52.7% Medium 533/89 100 100
+775 (ac) Global and Local Inversions 39.9% Medium 235/126 96 100
+777 (ac) Swap Adjacent in LR String 33.9% Medium 251/232 36 100
+779 (ac) K-th Symbol in Grammar 37.6% Medium 268/92 100 16
+781 (ac) Rabbits in Forest 52.5% Medium 183/234 68 100
+
+791 Custom Sort String 63.3% Medium	470/144
 
 ### 191006
 
@@ -69,7 +70,10 @@
 794	Valid Tic-Tac-Toe State    		30.9%	Medium	
 todo: 729: understand the floor key solution.
 todo: problem-84 and Monotonous stack which is similiar to 739 
-todo: 731 (hold) at day 1004 My Calendar II 46.2% Medium	
+todo: 731 (hold) at day 1004 My Calendar II 46.2% Medium
+todo: 659
+789 (1005, todo) Escape The Ghosts 55.9% Medium	141/279
+
 
 ### 191007
 
