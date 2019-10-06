@@ -1,0 +1,109 @@
+m-page-5
+
+two group per week and you will end this until first week of month 11
+
+you can:
+(1) delay to tonight
+(2) delay to end of this group
+(3) delay to this weekend
+
+### group 1 (#=10)
+
+795	Number of Subarrays with Bounded Maximum    		44.2%	Medium	
+797	All Paths From Source to Target    		71.9%	Medium	
+799	Champagne Tower    		34.5%	Medium	
+801	Minimum Swaps To Make Sequences Increasing    
+807	Max Increase to Keep City Skyline    		82.1%	Medium	
+808	Soup Servings    		38.3%	Medium	
+809	Expressive Words    
+814	Binary Tree Pruning    		72.0%	Medium	
+816	Ambiguous Coordinates    		45.0%	Medium	
+817	Linked List Components    		55.5%	Medium	
+
+### group 2 (#=10)
+
+820	Short Encoding of Words    		48.4%	Medium	
+822	Card Flipping Game    		41.2%	Medium	
+823	Binary Trees With Factors    		33.5%	Medium	
+825	Friends Of Appropriate Ages    		38.7%	Medium	
+826	Most Profit Assigning Work    		36.8%	Medium	
+831	Masking Personal Information    		42.4%	Medium	
+833	Find And Replace in String    		47.8%	Medium	
+835	Image Overlap    		54.2%	Medium	
+837	New 21 Game    
+842	Split Array into Fibonacci Sequence    		35.3%	Medium	
+
+### group 3 (#=10)
+
+845	Longest Mountain in Array    		35.1%	Medium	
+846	Hand of Straights    		50.2%	Medium	
+848	Shifting Letters    
+853	Car Fleet    		41.0%	Medium	
+855	Exam Room    		39.6%	Medium	
+856	Score of Parentheses    		57.7%	Medium	
+858	Mirror Reflection    		52.3%	Medium	
+861	Score After Flipping Matrix    
+865	Smallest Subtree with all the Deepest Nodes    		57.8%	Medium	
+866	Prime Palindrome    		20.5%	Medium	
+
+### group 4 (#=10)
+
+869	Reordered Power of 2    		51.3%	Medium	
+870	Advantage Shuffle    43.4%
+880	Decoded String at Index    		23.6%	Medium	
+881	Boats to Save People    		44.7%	Medium	
+885	Spiral Matrix III    
+889	Construct Binary Tree from Preorder and Postorder Traversal    		61.9%	Medium	
+890	Find and Replace Pattern    		72.0%	Medium	
+894	All Possible Full Binary Trees    		72.0%	Medium	
+898	Bitwise ORs of Subarrays    		35.4%	Medium	
+900	RLE Iterator    		51.5%	Medium	
+
+### group 5 (#=10)
+
+901	Online Stock Span    		51.5%	Medium	
+904	Fruit Into Baskets    		41.8%	Medium	
+907	Sum of Subarray Minimums    		29.3%	Medium
+909	Snakes and Ladders    		35.9%	Medium	
+910	Smallest Range II    
+912	Sort an Array    		62.9%	Medium	
+915	Partition Array into Disjoint Intervals    		44.1%	Medium	
+916	Word Subsets    		45.8%	Medium	
+918	Maximum Sum Circular Subarray    		33.1%	Medium	
+919	Complete Binary Tree Inserter    		55.6%	Medium	
+
+### group 6 (#=10)
+
+921	Minimum Add to Make Parentheses Valid    		70.6%	Medium	
+923	3Sum With Multiplicity    		34.5%	Medium	
+926	Flip String to Monotone Increasing    		50.7%	Medium	
+930	Binary Subarrays With Sum    39.5%
+932	Beautiful Array    
+939	Minimum Area Rectangle    		51.3%	Medium	
+945	Minimum Increment to Make Array Unique    		43.8%	Medium	
+946	Validate Stack Sequences    
+948	Bag of Tokens    		39.6%	Medium	
+950	Reveal Cards In Increasing Order    		72.3%	Medium	
+
+### group 7 (#=10)
+
+951	Flip Equivalent Binary Trees    		65.0%	Medium	
+954	Array of Doubled Pairs    		35.1%	Medium	
+955	Delete Columns to Make Sorted II    		32.3%	Medium	
+957	Prison Cells After N Days    		37.8%	Medium	
+958	Check Completeness of a Binary Tree
+962	Maximum Width Ramp    		42.9%	Medium	
+963	Minimum Area Rectangle II    		46.7%	Medium	
+966	Vowel Spellchecker    
+969	Pancake Sorting    
+973	K Closest Points to Origin    		61.1%	Medium	
+
+### group 8 (#=10)
+
+974	Subarray Sums Divisible by K    
+984	String Without AAA or BBB    		34.7%	Medium	
+986	Interval List Intersections    		64.0%	Medium	
+987	Vertical Order Traversal of a Binary Tree    
+990	Satisfiability of Equality Equations    		41.3%	Medium	
+991	Broken Calculator    		41.4%	Medium	
+998	Maximum Binary Tree II    61.5%
