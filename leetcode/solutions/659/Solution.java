@@ -6,7 +6,37 @@
 import java.util.*;
 
 public class Solution {
-	public boolean isPossible(int[] nums) {
+	// see: https://leetcode.com/problems/split-array-into-consecutive-subsequences/discuss/106495/Java-O(n)-time-and-O(1)-space-solution-greedily-extending-shorter-subsequence
+	public boolean isPossible(int[] a) {
+		int pre = 0, cur, c, p1 = 0, p2 = 0, p3 = 0, c1 = 0, c2 = 0, c3 = 0;
+		int i = 0;
+		while (true) {
+			{ c = 1; cur = a[i]; }
+			while (i+1 < a.length && a[i] == a[i+1]) { ++i; ++c; }
+			// System.out.printf("i=%2d, a[i]=%2d, c=%2d, p1=%d, p2=%d, p3=%d\n", i, a[i], c, p1, p2, p3);
+			if (cur != a[0]) {
+				if (pre+1 != cur) {
+					if ((p1 != 0) || (p2 != 0)) return false;
+					c1 = c;
+					c2 = c3 = 0;
+				} else {
+					if (c < p1 + p2) return false;
+					c2 = p1;
+					c3 = p2 + Math.min(p3, c-p1-p2);
+					c1 = Math.max(c-p1-p2-p3, 0);
+				}
+			} else {
+				c1 = c;
+				c2 = c3 = 0;
+			}
+
+			{ p1 = c1; p2 = c2; p3 = c3; pre = cur; }
+			if (++i == a.length) break;
+		}
+		return p1 == 0 && p2 == 0;
+	}
+
+	public boolean isPossible_raw_WA(int[] nums) {
 		if (nums.length < 3) return false;
 
 		Map<Integer, Integer> cnt = new HashMap<>();
@@ -36,32 +66,37 @@ public class Solution {
 	}
 
 	public boolean isPossible2(int[] nums) {
-    Map<Integer, Integer> freq = new HashMap<>(), appendfreq = new HashMap<>();
-    for (int i : nums) freq.put(i, freq.getOrDefault(i,0) + 1);
-    for (int i : nums) {
-        if (freq.get(i) == 0) continue;
-        else if (appendfreq.getOrDefault(i,0) > 0) {
-            appendfreq.put(i, appendfreq.get(i) - 1);
-            appendfreq.put(i+1, appendfreq.getOrDefault(i+1,0) + 1);
-        }   
-        else if (freq.getOrDefault(i+1,0) > 0 && freq.getOrDefault(i+2,0) > 0) {
-            freq.put(i+1, freq.get(i+1) - 1);
-            freq.put(i+2, freq.get(i+2) - 1);
-            appendfreq.put(i+3, appendfreq.getOrDefault(i+3,0) + 1);
-        }
-        else return false;
-        freq.put(i, freq.get(i) - 1);
-    }
-    return true;
-}
+		Map<Integer, Integer> freq = new HashMap<>(), appendfreq = new HashMap<>();
+		for (int i : nums) freq.put(i, freq.getOrDefault(i,0) + 1);
+		for (int i : nums) {
+			if (freq.get(i) == 0) continue;
+			else if (appendfreq.getOrDefault(i,0) > 0) {
+				appendfreq.put(i, appendfreq.get(i) - 1);
+				appendfreq.put(i+1, appendfreq.getOrDefault(i+1,0) + 1);
+        		} else if (freq.getOrDefault(i+1,0) > 0 && freq.getOrDefault(i+2,0) > 0) {
+				freq.put(i+1, freq.get(i+1) - 1);
+				freq.put(i+2, freq.get(i+2) - 1);
+				appendfreq.put(i+3, appendfreq.getOrDefault(i+3,0) + 1);
+			} else return false;
+        		freq.put(i, freq.get(i) - 1);
+    		}
+		return true;
+	}
 
 	public static void main(String args[]) {
 		Solution s = new Solution();
 
+		assert s.isPossible(new int[]{1, 2, 3, 5, 5}) == false;
+
+		assert s.isPossible(new int[]{1, 2, 3});
+
 		// !!! THIS CASE HACKS MY SOLUTION !!!
 		assert s.isPossible(new int[]{1, 2, 3, 4, 5, 5, 6, 7});
+		assert s.isPossible(new int[]{1, 2, 2, 3, 3, 4});
+		assert s.isPossible(new int[]{1, 2, 2, 3, 3, 4, 5});
+		assert s.isPossible(new int[]{1, 2, 2, 3, 3, 4, 5, 6});
 
-		int[] a = new int[17];
+		int[] a = new int[27];
 		int n = 0;
 		while (true) {
 			s.randArr(a);

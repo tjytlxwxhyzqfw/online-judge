@@ -1,17 +1,32 @@
 /**
  * 789 Escape The Ghosts 55.9% Medium 141/279
- * Performance: speed=%, memory=%
+ * Performance: speed=10%, memory=50%
  */
 
 /*
 attention: sooooo fool of you !
 you run bfs() from target, and if you reach 0,0 first, you win else ghost win
+
+update @ 1005
+still tle, not happy
+actually this problem is very simple and straightforward.
+just cal the distance, dont need bfs() at all
 */
 
 import java.util.*;
 
 public class Solution {
 	public boolean escapeGhosts(int[][] ghosts, int[] target) {
+		int d = Math.abs(target[0]) + Math.abs(target[1]);
+		for (int i = 0; i < ghosts.length; ++i) {
+			int y = ghosts[i][0], x = ghosts[i][1];
+			int d1 = Math.abs(y-target[0]) + Math.abs(x-target[1]);
+			if (d1 <= d) return false;
+		}
+		return true;
+	}
+
+	public boolean escapeGhosts_StillTLE(int[][] ghosts, int[] target) {
 		int[][] drcs = new int[][]{{0, 1}, {0, -1}, {1, 0}, {-1, 0}};
 
                 String t = target[0] + "," + target[1];

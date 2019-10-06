@@ -27,7 +27,7 @@
 
 654	(ac) Maximum Binary Tree 77.1% Medium 1265/168 12 84
 655	(ac) Print Binary Tree 52.5% Medium 9 100
-659	(todo) Split Array into Consecutive Subsequences 41.6% Medium 624/249 => ([1 2 3 4 5 5 6 7])
+659	(ac,todo) Split Array into Consecutive Subsequences 41.6% Medium 624/249 85 66 => ([1 2 3 4 5 5 6 7])
 662	(ac) Maximum Width of Binary Tree 39.5% Medium 757/155 100 83
 667	(ac) Beautiful Arrangement II 52.6% Medium 252/547
 670	(ac) Maximum Swap 40.8% Medium 645/49 35 25
@@ -61,19 +61,21 @@
 777 (ac) Swap Adjacent in LR String 33.9% Medium 251/232 36 100
 779 (ac) K-th Symbol in Grammar 37.6% Medium 268/92 100 16
 781 (ac) Rabbits in Forest 52.5% Medium 183/234 68 100
-
-791 Custom Sort String 63.3% Medium	470/144
+791 (ac) Custom Sort String 63.3% Medium 470/144 60 100
 
 ### 191006
 
-792	Number of Matching Subsequences    		44.9%	Medium	
-794	Valid Tic-Tac-Toe State    		30.9%	Medium	
-todo: 729: understand the floor key solution.
-todo: problem-84 and Monotonous stack which is similiar to 739 
-todo: 731 (hold) at day 1004 My Calendar II 46.2% Medium
-todo: 659
-789 (1005, todo) Escape The Ghosts 55.9% Medium	141/279
+659	(ac) Split Array into Consecutive Subsequences 41.6% Medium 624/249 85 66 => ([1 2 3 4 5 5 6 7]), (done)
+731 (ac) My Calendar II 46.2% Medium 429/66 (done, hold at day 1004) => IMOS(累积和法)
 
+todo:
+
+789 (ac) Escape The Ghosts 55.9% Medium 141/279
+792	(ac) Number of Matching Subsequences 44.9% Medium 562/44 95 100
+794	(ac) Valid Tic-Tac-Toe State 30.9% Medium 126/396 12 100
+
+todo: problem-84 and Monotonous stack which is similiar to 739 (not done yet 1006 15:16)
+todo: 729 => understand the floor key solution. (done)
 
 ### 191007
 
