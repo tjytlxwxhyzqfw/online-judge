@@ -1,0 +1,17 @@
+count of coutinus sub-array.txt
+
+how to count ? 
+
+for (int i = 0; i < a.length; ++i) count(num of sub-arrays ending at i);
+
+conditing 'ending at i' is very important!!!
+
+is there a template ?
+
+yes, see 76
+
+problems using this template ? 
+
+395, 713, 795
+
+problems that can not use this template ?

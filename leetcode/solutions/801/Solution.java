@@ -1,26 +1,64 @@
 /**
  * 801: MinimumSwapsToMakeSequencesIncreasing
- * Performance: speed=%, memory=%
+ * Performance: speed=64%, memory=75%
  */
+
+/*
+50 20 | 30 40
+10 60 | 70 80
+
+50 20 | 70 80
+10 60 | 30 40
+    
+you cannot make the right decision with A[:2] and B[:2],
+because you do not know that which pair should be switched.
+
+BUT !!! you can dp ALL possibilities:
+
+dpF[i] -> i must have been fixxed
+dpS[i] -> i must have been switched
+
+
+if min(a[i], b[i]) > max(a[i-1], b[i-1]) {
+	// you can place a[i], a[i-1], b[i], b[i-1] in any order
+	dpF[i] = min(dpS[i-1], dpF[i-1])
+	dpS[i] = 1 + dF[i]
+} else {
+	if (a[i] > a[i-1] && b[i] > b[i-1]) {
+		// a[i-1] must be followed by a[i] and so as b[i-1]
+		dpF[i] = dpF[i-1];
+		dpS[i] = dpS[i-1] + 1;
+	} else {
+		// a[i-1] must be followed by b[i] and so as b[i-1]
+		dpF[i] = dpS[i-1];
+		dpS[i] = dpF[i-1] + 1;
+	}
+}
+*/
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Solution {
-	public int minSwap(int[] A, int[] B) {
-		int n = A.length;
+	public int minSwap(int[] a, int[] b) {
+		int n = a.length;
 		if (n == 0 || n == 1) return 0;
 
-		int[] dp = new int[n+1];
-		dp[0] = dp[1] = 0;
-		System.out.printf("i=%2d, a=%2d, b=%2d, dp=%d\n", 1, A[0], B[0], dp[1]);
-		for (int i = 2; i <= n; ++i) {
-			dp[i] = dp[i-1];
-			if (A[i-1] <= A[i-2] || B[i-1] <= B[i-2]) dp[i] = dp[i-2] + 1;
-			System.out.printf("i=%2d, a=%2d, b=%2d, dp=%d\n", i, A[i-1], B[i-1], dp[i]);
+		int[] fixed = new int[n], switched = new int[n];
+		{ fixed[0] = 0; switched[0] = 1; }
+		for (int i = 1; i < n; ++i) {
+			if (Math.min(a[i], b[i]) > Math.max(a[i-1], b[i-1])) {
+				fixed[i] = Math.min(fixed[i-1], switched[i-1]);
+				switched[i] = 1 + fixed[i];
+			} else if (a[i] > a[i-1] && b[i] > b[i-1]) {
+				fixed[i] = fixed[i-1];
+				switched[i] = 1 + switched[i-1];
+			} else {
+				fixed[i] = switched[i-1];
+				switched[i] = 1 + fixed[i-1];
+			}
 		}
-
-		return dp[n];
+		return Math.min(fixed[n-1], switched[n-1]);
 	}
 
 	public static void main(String args[]) {
