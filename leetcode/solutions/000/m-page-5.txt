@@ -22,16 +22,16 @@ you can:
 
 ### group 2 (#=10)
 
-820	Short Encoding of Words 48.4% Medium	
-822	Card Flipping Game 41.2% Medium	
-823	Binary Trees With Factors 33.5% Medium	
-825	Friends Of Appropriate Ages 38.7% Medium	
-826	Most Profit Assigning Work 36.8% Medium	
-831	Masking Personal Information 42.4% Medium	
-833	Find And Replace in String 47.8% Medium	
-835	Image Overlap 54.2% Medium	
-837	New 21 Game
-842	Split Array into Fibonacci Sequence 35.3% Medium	
+820	(ac) Short Encoding of Words 48.4% Medium 181/48 92 50
+822	(ac) Card Flipping Game 41.2% Medium 58/378 100 33
+823	(ac) Binary Trees With Factors 33.5% Medium 223/29 55 100
+825	(ac) Friends Of Appropriate Ages 38.7% Medium 216/458
+826	(ac) Most Profit Assigning Work 36.8% Medium 254/46 89 77
+831	(ac) Masking Personal Information 42.4% Medium 54/238 79 100
+833	(ac) Find And Replace in String 47.8% Medium 208/281 70 91
+835	(ac) Image Overlap 54.2% Medium 224/306 72 44
+837	(ac) New 21 Game 32.7% Medium 404/212 9 14
+842	(ac) Split Array into Fibonacci Sequence 35.3% Medium 313/107 9 25
 
 ### group 3 (#=10)
 
