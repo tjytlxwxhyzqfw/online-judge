@@ -35,16 +35,17 @@ you can:
 
 ### group 3 (#=10)
 
-845	Longest Mountain in Array    		35.1%	Medium	
-846	Hand of Straights    		50.2%	Medium	
-848	Shifting Letters    
-853	Car Fleet    		41.0%	Medium	
-855	Exam Room    		39.6%	Medium	
-856	Score of Parentheses    		57.7%	Medium	
-858	Mirror Reflection    		52.3%	Medium	
-861	Score After Flipping Matrix    
-865	Smallest Subtree with all the Deepest Nodes    		57.8%	Medium	
-866	Prime Palindrome    		20.5%	Medium	
+845	Longest Mountain in Array  35.1% Medium	
+846	Hand of Straights 50.2% Medium	
+848	Shifting Letters
+
+853	(pending) Car Fleet 41.0% Medium 312/163
+855	(pending) Exam Room 39.6% Medium 410/180
+856	(pending) Score of Parentheses 57.7% Medium 713/29
+858	(pending) Mirror Reflection 52.3% Medium 148/243
+861	(pending) Score After Flipping Matrix 70.8% => it is very worthy being solved again and again
+865 (pending) Smallest Subtree with all the Deepest Nodes 57.8% Medium 484/145
+866	(pending) Prime Palindrome 20.5% Medium 119/339
 
 ### group 4 (#=10)
 
@@ -70,7 +71,7 @@ you can:
 915	Partition Array into Disjoint Intervals    		44.1%	Medium	
 916	Word Subsets    		45.8%	Medium	
 918	Maximum Sum Circular Subarray    		33.1%	Medium	
-919	Complete Binary Tree Inserter    		55.6%	Medium	
+919	Complete Binary Tree Inserter    		55.6%	Medium
 
 ### group 6 (#=10)
 
