@@ -33,31 +33,37 @@ you can:
 837	(ac) New 21 Game 32.7% Medium 404/212 9 14
 842	(ac) Split Array into Fibonacci Sequence 35.3% Medium 313/107 9 25
 
+------ have done at 2019-10-30 ------
+
 ### group 3 (#=10)
 
-845	Longest Mountain in Array    		35.1%	Medium	
-846	Hand of Straights    		50.2%	Medium	
-848	Shifting Letters    
-853	Car Fleet    		41.0%	Medium	
-855	Exam Room    		39.6%	Medium	
-856	Score of Parentheses    		57.7%	Medium	
-858	Mirror Reflection    		52.3%	Medium	
-861	Score After Flipping Matrix    
-865	Smallest Subtree with all the Deepest Nodes    		57.8%	Medium	
-866	Prime Palindrome    		20.5%	Medium	
+845	(ac) Longest Mountain in Array 35.1% Medium 400/15 38 91 => todo: this is a sub-array + count problem !!!
+846	(ac) Hand of Straights 50.2% Medium 350 52 80 100
+848	(ac) Shifting Letters 42.5% 191/39 43 100
+
+853	Car Fleet 41.0% Medium
+855	Exam Room 39.6% Medium	
+856	Score of Parentheses 57.7% Medium	
+858	Mirror Reflection 52.3% Medium	
+861	Score After Flipping Matrix   
+865	Smallest Subtree with all the Deepest Nodes 57.8% Medium	
+866	Prime Palindrome 20.5% Medium	
 
 ### group 4 (#=10)
 
-869	Reordered Power of 2    		51.3%	Medium	
-870	Advantage Shuffle    43.4%
-880	Decoded String at Index    		23.6%	Medium	
-881	Boats to Save People    		44.7%	Medium	
+869	(ac) Reordered Power of 2 51.3% Medium 157/74 97 25
+870	(ac) Advantage Shuffle 43.4%  62 100
+
+880	Decoded String at Index 23.6% Medium	
+881	Boats to Save People 44.7% Medium	
 885	Spiral Matrix III    
-889	Construct Binary Tree from Preorder and Postorder Traversal    		61.9%	Medium	
-890	Find and Replace Pattern    		72.0%	Medium	
-894	All Possible Full Binary Trees    		72.0%	Medium	
-898	Bitwise ORs of Subarrays    		35.4%	Medium	
-900	RLE Iterator    		51.5%	Medium	
+889	Construct Binary Tree from Preorder and Postorder Traversal 61.9% Medium	
+890	Find and Replace Pattern 72.0% Medium	
+894	All Possible Full Binary Trees 72.0% Medium	
+898	Bitwise ORs of Subarrays 35.4% Medium	
+900	RLE Iterator 51.5% Medium
+
+------ MUST done at 2019-11-03 ------
 
 ### group 5 (#=10)
 
@@ -85,6 +91,8 @@ you can:
 948	Bag of Tokens    		39.6%	Medium	
 950	Reveal Cards In Increasing Order    		72.3%	Medium	
 
+------ MUST done at 2019-11-10 ------
+
 ### group 7 (#=10)
 
 951	Flip Equivalent Binary Trees    		65.0%	Medium	
@@ -107,3 +115,5 @@ you can:
 990	Satisfiability of Equality Equations    		41.3%	Medium	
 991	Broken Calculator    		41.4%	Medium	
 998	Maximum Binary Tree II    61.5%
+
+------ MUST done at 2019-11-17 ------
