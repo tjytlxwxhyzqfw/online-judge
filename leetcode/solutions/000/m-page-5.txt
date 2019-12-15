@@ -9,10 +9,10 @@ you can:
 
 ### group 1 (#=10)
 
-795	(ac) Number of Subarrays with Bounded Maximum 44.2% Medium 391/37 97 100
-797	(ac) All Paths From Source to Target 71.9% Medium 484/41 18/83
-799	(todo) Champagne Tower 34.5% Medium 322/21
-801	(ac) Minimum Swaps To Make Sequences Increasing 35.9% 595/36
+795 (ac) Number of Subarrays with Bounded Maximum 44.2% Medium 391/37 97 100
+797 (ac) All Paths From Source to Target 71.9% Medium 484/41 18/83
+799 (todo) Champagne Tower 34.5% Medium 322/21
+801 (ac) Minimum Swaps To Make Sequences Increasing 35.9% 595/36
 807 (ac) Max Increase to Keep City Skyline 82.1% Medium 627/167
 808 (ac) Soup Servings 38.3% Medium 111/389 6 16
 809 (ac) Expressive Words 45% Medium 134/426 74 100
@@ -22,98 +22,100 @@ you can:
 
 ### group 2 (#=10)
 
-820	(ac) Short Encoding of Words 48.4% Medium 181/48 92 50
-822	(ac) Card Flipping Game 41.2% Medium 58/378 100 33
-823	(ac) Binary Trees With Factors 33.5% Medium 223/29 55 100
-825	(ac) Friends Of Appropriate Ages 38.7% Medium 216/458
-826	(ac) Most Profit Assigning Work 36.8% Medium 254/46 89 77
-831	(ac) Masking Personal Information 42.4% Medium 54/238 79 100
-833	(ac) Find And Replace in String 47.8% Medium 208/281 70 91
-835	(ac) Image Overlap 54.2% Medium 224/306 72 44
-837	(ac) New 21 Game 32.7% Medium 404/212 9 14
-842	(ac) Split Array into Fibonacci Sequence 35.3% Medium 313/107 9 25
+820 (ac) Short Encoding of Words 48.4% Medium 181/48 92 50
+822 (ac) Card Flipping Game 41.2% Medium 58/378 100 33
+823 (ac) Binary Trees With Factors 33.5% Medium 223/29 55 100
+825 (ac) Friends Of Appropriate Ages 38.7% Medium 216/458
+826 (ac) Most Profit Assigning Work 36.8% Medium 254/46 89 77
+831 (ac) Masking Personal Information 42.4% Medium 54/238 79 100
+833 (ac) Find And Replace in String 47.8% Medium 208/281 70 91
+835 (ac) Image Overlap 54.2% Medium 224/306 72 44
+837 (ac) New 21 Game 32.7% Medium 404/212 9 14
+842 (ac) Split Array into Fibonacci Sequence 35.3% Medium 313/107 9 25
 
 ------ have done at 2019-10-30 ------
 
 ### group 3 (#=10)
 
-845	(ac) Longest Mountain in Array 35.1% Medium 400/15 38 91 => todo: this is a sub-array + count problem !!!
-846	(ac) Hand of Straights 50.2% Medium 350 52 80 100
-848	(ac) Shifting Letters 42.5% 191/39 43 100
+845 (ac) Longest Mountain in Array 35.1% Medium 400/15 38 91 => todo: this is a sub-array + count problem !!!
+846 (ac) Hand of Straights 50.2% Medium 350 52 80 100
+848 (ac) Shifting Letters 42.5% 191/39 43 100
 
-853	Car Fleet 41.0% Medium
-855	Exam Room 39.6% Medium	
-856	Score of Parentheses 57.7% Medium	
-858	Mirror Reflection 52.3% Medium	
-861	Score After Flipping Matrix   
-865	Smallest Subtree with all the Deepest Nodes 57.8% Medium	
-866	Prime Palindrome 20.5% Medium	
+853 (ac) Car Fleet 41.0% Medium 312/163 88 40
+855 (ac) Exam Room 39.6% Medium 410/180 30 5
+856 (ac) Score of Parentheses 57.7% Medium 713/29 63 100 => there is a o(1) space solution, understand it
+
+858 (tle) Mirror Reflection 52.3% Medium 148/243
+861 (tle) Score After Flipping Matrix 70.8% => it is very worthy being solved again and again
+
+865 (ac) Smallest Subtree with all the Deepest Nodes 57.8% Medium 484/145 62 100
+866 (ac) Prime Palindrome 20.5% Medium 119/339
 
 ### group 4 (#=10)
 
-869	(ac) Reordered Power of 2 51.3% Medium 157/74 97 25
-870	(ac) Advantage Shuffle 43.4%  62 100
-
-880	Decoded String at Index 23.6% Medium	
-881	Boats to Save People 44.7% Medium	
-885	Spiral Matrix III    
-889	Construct Binary Tree from Preorder and Postorder Traversal 61.9% Medium	
-890	Find and Replace Pattern 72.0% Medium	
-894	All Possible Full Binary Trees 72.0% Medium	
-898	Bitwise ORs of Subarrays 35.4% Medium	
-900	RLE Iterator 51.5% Medium
+869 (ac) Reordered Power of 2 51.3% Medium 157/74 97 25
+870 (ac) Advantage Shuffle 43.4%  62 100
+880 (ac) Decoded String at Index 23.6% Medium 316/65 17 100
+881 (ac) Boats to Save People 44.7% Medium 349/25 81 100
+885 (ac) Spiral Matrix III 66.4% 137 200 12 22
+889 (ac) Construct Binary Tree from Preorder and Postorder Traversal 61.9% Medium 529/35 99 9
+890 (ac) Find and Replace Pattern 72.0% Medium 489/51 100 100
+894 (ac) All Possible Full Binary Trees 72.0% Medium 570/57 9 15
+898 (ac) Bitwise ORs of Subarrays 35.4% Medium 315/64 65 100
+900 (ac) RLE Iterator 51.5% Medium 163/61
 
 ------ MUST done at 2019-11-03 ------
 
 ### group 5 (#=10)
 
-901	Online Stock Span    		51.5%	Medium	
-904	Fruit Into Baskets    		41.8%	Medium	
-907	Sum of Subarray Minimums    		29.3%	Medium
-909	Snakes and Ladders    		35.9%	Medium	
-910	Smallest Range II    
-912	Sort an Array    		62.9%	Medium	
-915	Partition Array into Disjoint Intervals    		44.1%	Medium	
-916	Word Subsets    		45.8%	Medium	
-918	Maximum Sum Circular Subarray    		33.1%	Medium	
-919	Complete Binary Tree Inserter    		55.6%	Medium	
+901 (ac) Online Stock Span 51.5% Medium 304/59 96 10
+904 (ac) Fruit Into Baskets 41.8% Medium 591/915 76 100
+907 (ac) Sum of Subarray Minimums 29.3% Medium 720/54 66 100
+909 (ac) Snakes and Ladders 35.9% Medium 217/564 96 83
+
+910 Smallest Range II 25.3% Medium
+912 Sort an Array 62.9% Medium
+915 Partition Array into Disjoint Intervals 44.1% Medium
+916 Word Subsets 45.8% Medium
+918 Maximum Sum Circular Subarray 33.1% Medium
+919 Complete Binary Tree Inserter 55.6% Medium
 
 ### group 6 (#=10)
 
-921	Minimum Add to Make Parentheses Valid    		70.6%	Medium	
-923	3Sum With Multiplicity    		34.5%	Medium	
-926	Flip String to Monotone Increasing    		50.7%	Medium	
-930	Binary Subarrays With Sum    39.5%
-932	Beautiful Array    
-939	Minimum Area Rectangle    		51.3%	Medium	
-945	Minimum Increment to Make Array Unique    		43.8%	Medium	
-946	Validate Stack Sequences    
-948	Bag of Tokens    		39.6%	Medium	
-950	Reveal Cards In Increasing Order    		72.3%	Medium	
+921 Minimum Add to Make Parentheses Valid      70.6% Medium 
+923 3Sum With Multiplicity      34.5% Medium 
+926 Flip String to Monotone Increasing      50.7% Medium 
+930 Binary Subarrays With Sum    39.5%
+932 Beautiful Array    
+939 Minimum Area Rectangle      51.3% Medium 
+945 Minimum Increment to Make Array Unique      43.8% Medium 
+946 Validate Stack Sequences    
+948 Bag of Tokens      39.6% Medium 
+950 Reveal Cards In Increasing Order      72.3% Medium 
 
 ------ MUST done at 2019-11-10 ------
 
 ### group 7 (#=10)
 
-951	Flip Equivalent Binary Trees    		65.0%	Medium	
-954	Array of Doubled Pairs    		35.1%	Medium	
-955	Delete Columns to Make Sorted II    		32.3%	Medium	
-957	Prison Cells After N Days    		37.8%	Medium	
-958	Check Completeness of a Binary Tree
-962	Maximum Width Ramp    		42.9%	Medium	
-963	Minimum Area Rectangle II    		46.7%	Medium	
-966	Vowel Spellchecker    
-969	Pancake Sorting    
-973	K Closest Points to Origin    		61.1%	Medium	
+951 Flip Equivalent Binary Trees      65.0% Medium 
+954 Array of Doubled Pairs      35.1% Medium 
+955 Delete Columns to Make Sorted II      32.3% Medium 
+957 Prison Cells After N Days      37.8% Medium 
+958 Check Completeness of a Binary Tree
+962 Maximum Width Ramp      42.9% Medium 
+963 Minimum Area Rectangle II      46.7% Medium 
+966 Vowel Spellchecker    
+969 Pancake Sorting    
+973 K Closest Points to Origin      61.1% Medium 
 
 ### group 8 (#=10)
 
-974	Subarray Sums Divisible by K    
-984	String Without AAA or BBB    		34.7%	Medium	
-986	Interval List Intersections    		64.0%	Medium	
-987	Vertical Order Traversal of a Binary Tree    
-990	Satisfiability of Equality Equations    		41.3%	Medium	
-991	Broken Calculator    		41.4%	Medium	
-998	Maximum Binary Tree II    61.5%
+974 Subarray Sums Divisible by K    
+984 String Without AAA or BBB      34.7% Medium 
+986 Interval List Intersections      64.0% Medium 
+987 Vertical Order Traversal of a Binary Tree    
+990 Satisfiability of Equality Equations      41.3% Medium 
+991 Broken Calculator      41.4% Medium 
+998 Maximum Binary Tree II    61.5%
 
 ------ MUST done at 2019-11-17 ------

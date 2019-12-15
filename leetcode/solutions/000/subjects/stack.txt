@@ -1,0 +1,38 @@
+i collected the following problems from 215's solution to problem 901
+
+901 Online Stock Span 51.5% Medium 304/59 96 10
+
+1130. Minimum Cost Tree From Leaf Values
+907. Sum of Subarray Minimums
+901. Online Stock Span
+856. Score of Parentheses
+503. Next Greater Element II
+496. Next Greater Element I
+84. Largest Rectangle in Histogram
+42. Trapping Rain Water
+
+496. Next Greater Element I
+503. Next Greater Element II
+739. Daily Temperatures
+907. Sum of Subarray Minimums
+84. Largest Rectangle in Histogram
+
+i copied this from disscuss of 907
+
+https://leetcode.com/problems/sum-of-subarray-minimums/discuss/178876/stack-solution-with-very-detailed-explanation-step-by-step
+
+What can monotonous decrease stack do?
+
+Some applications of monotone (increase/decrease) stack in leetcode:
+
+Next Greater Element II (a very basic one)
+Largest Rectangle in Histogram(almost the same as this problem)
+Maximal Rectangle(please do this problem after you solve the above one)
+Trapping Rain Water (challenge)
+Remove Duplicate Letters(challenge)
+Remove K Digits
+Create Maximum Number
+132 Pattern(challenge, instead of focusing on the elements in the stack, this problem focuses on the elements poped from the monotone stack)
+sliding window maximum(challenge, monotone queue)
+Max Chunks To Make Sorted II
+Hope this helps.
