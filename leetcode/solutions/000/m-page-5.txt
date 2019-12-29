@@ -40,14 +40,11 @@ you can:
 845 (ac) Longest Mountain in Array 35.1% Medium 400/15 38 91 => todo: this is a sub-array + count problem !!!
 846 (ac) Hand of Straights 50.2% Medium 350 52 80 100
 848 (ac) Shifting Letters 42.5% 191/39 43 100
-
 853 (ac) Car Fleet 41.0% Medium 312/163 88 40
 855 (ac) Exam Room 39.6% Medium 410/180 30 5
 856 (ac) Score of Parentheses 57.7% Medium 713/29 63 100 => there is a o(1) space solution, understand it
-
 858 (tle) Mirror Reflection 52.3% Medium 148/243
 861 (tle) Score After Flipping Matrix 70.8% => it is very worthy being solved again and again
-
 865 (ac) Smallest Subtree with all the Deepest Nodes 57.8% Medium 484/145 62 100
 866 (ac) Prime Palindrome 20.5% Medium 119/339
 
@@ -72,26 +69,26 @@ you can:
 904 (ac) Fruit Into Baskets 41.8% Medium 591/915 76 100
 907 (ac) Sum of Subarray Minimums 29.3% Medium 720/54 66 100
 909 (ac) Snakes and Ladders 35.9% Medium 217/564 96 83
-
-910 Smallest Range II 25.3% Medium
-912 Sort an Array 62.9% Medium
-915 Partition Array into Disjoint Intervals 44.1% Medium
-916 Word Subsets 45.8% Medium
-918 Maximum Sum Circular Subarray 33.1% Medium
-919 Complete Binary Tree Inserter 55.6% Medium
+910 (ac,go) Smallest Range II 25.3% Medium 232/137
+912 (ac,go) Sort an Array 62.9% Medium
+915 (ac,go) Partition Array into Disjoint Intervals 44.1% Medium
+916 (ac,go) Word Subsets 45.8% Medium
+918 (ac,go) Maximum Sum Circular Subarray 33.1% Medium
+919 (ac,go) Complete Binary Tree Inserter 55.6% Medium
 
 ### group 6 (#=10)
 
-921 Minimum Add to Make Parentheses Valid      70.6% Medium 
-923 3Sum With Multiplicity      34.5% Medium 
-926 Flip String to Monotone Increasing      50.7% Medium 
-930 Binary Subarrays With Sum    39.5%
-932 Beautiful Array    
-939 Minimum Area Rectangle      51.3% Medium 
-945 Minimum Increment to Make Array Unique      43.8% Medium 
-946 Validate Stack Sequences    
-948 Bag of Tokens      39.6% Medium 
-950 Reveal Cards In Increasing Order      72.3% Medium 
+921 (ac,go) Minimum Add to Make Parentheses Valid 70.6% Medium 
+923 (ac,go) 3Sum With Multiplicity 34.5% Medium 
+926 (ac,go) Flip String to Monotone Increasing 50.7% Medium 
+930 (ac,go) Binary Subarrays With Sum 39.5%
+932 (ac) Beautiful Array 55.9% 244/351 92 20
+939 (ac) Minimum Area Rectangle 51.3% Medium 432/83 87 60
+945 (ac) Minimum Increment to Make Array Unique 43.8% Medium 259/12 22 100
+946 (ac) Validate Stack Sequences 58.5% Medium 397/12 49 50
+948 (ac) Bag of Tokens 39.6% Medium 127/123
+
+950 Reveal Cards In Increasing Order 72.3% Medium 552/112
 
 ------ MUST done at 2019-11-10 ------
 

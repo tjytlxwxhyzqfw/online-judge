@@ -1,0 +1,24 @@
+some_one_or_two_pass_problems.txt
+
+from disscuss of 845
+https://leetcode.com/problems/longest-mountain-in-array/discuss/135593/C%2B%2BJavaPython-1-pass-and-O(1)-space
+
+Updated list of problems that involved 1 or 2 passes from left to right/right to left:
+
+53 Maximum Subarray
+121 Best Time to Buy and Sell Stock
+152 Maximum Product Subarray
+238 Product of Array Except Self
+739 Daily Temperatures
+769 Max Chunks to Make Sorted
+770 Max Chunks to Make Sorted II
+821 Shortest Distance to a Character
+845 Longest Mountain in Array
+
+I'm wondering can we summarize here about one/two-pass problems?
+821, 845, 769, 768
+
+769 Max Chunks to Make Sorted
+770 Max Chunks to Make Sorted II
+
+Are also one/two pass problems. Anyone know other similar problems?

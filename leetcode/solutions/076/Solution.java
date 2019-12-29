@@ -1,67 +1,54 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
-/*
- * 答案: 尾指针不断后移, 遇到包含t的窗口后, 收缩头指针, 直到头指针不能收缩为止
- *
- * 妙用计数器系列
- */
+// 3229/239 s=70 m=98
 
 public class Solution {
 
 	public String minWindow(String s, String t) {
-		int freq[] = new int[128], prio[] = new int[128];
+		if (s == null || s.length() == 0 || t == null || t.length() == 0) return "";
 
-		Arrays.fill(prio, 0);
-		Arrays.fill(freq, 0);
+		int[] b = new int[128], a = new int[128];
+		for (int i = 0; i < t.length(); ++i) ++b[t.charAt(i)];
 
-		for (int i = 0; i < t.length(); ++i)
-			++prio[t.charAt(i)];
-
-		int total = t.length();
-
-		int bgn = 0, end = 0, minLength = Integer.MAX_VALUE;
-		int fst = 0, sec = 0, ncovered = 0;
-		for (fst = 0; fst < s.length(); ++fst) {
-			char ch = s.charAt(fst);
-			if (prio[ch] == 0)
-				continue;
-			// we encounter a character 'ch' in 't'
-			++freq[ch];
-			//TODO: ATTENTION
-			// if(freq[ch] == prio[ch]
-			if (freq[ch] <= prio[ch])
-				++ncovered;
-			if (ncovered >= total) {
-				for (; sec <= fst; ++sec) {
-					char ch2 = s.charAt(sec);
-					if (prio[ch2] > 0 && freq[ch2]-1 < prio[ch2])
-						break;
-					--freq[ch2];
+		int start = 0, end = Integer.MAX_VALUE;
+		int i = 0, j = -1;
+		while (j+1 < s.length()) {
+			++a[s.charAt(++j)];
+			while (contains(a, b)) {
+				if (j - i < end - start) {
+					start = i;
+					end = j;
 				}
-				if (fst-sec < minLength) {
-					minLength = fst-sec;
-					bgn = sec;
-					end = fst;
-				}
+				--a[s.charAt(i++)];
 			}
+			// [i, j] is not valid
 		}
+		return end == Integer.MAX_VALUE ? "" : s.substring(start, end+1);
+	}
 
-		System.out.printf("bgn: %3d, end: %3d\n", bgn+1, end+1);
-
-		if (minLength == Integer.MAX_VALUE)
-			return "";
-		return s.substring(bgn, end+1);
+	boolean contains(int[] a, int[] b) {
+		for (int i = 0; i < a.length; ++i) {
+			if (a[i] < b[i]) return false;
+		}
+		return true;
 	}
 
 	public static void main(String args[]) {
-		Scanner scanner = new Scanner(System.in);
-		String s = scanner.next();
-		String t = scanner.next();
-		String c = new Solution().minWindow(s, t);
-		System.out.printf("---> %s\n", c);
+		Solution s = new Solution();
+
+		assert s.minWindow("", "").equals("");
+		assert s.minWindow("", "123").equals("");
+		assert s.minWindow("abc", "").equals("");
+
+		assert s.minWindow("xyz", "x").equals("x");
+		assert s.minWindow("xyz", "y").equals("y");
+		assert s.minWindow("xyz", "z").equals("z");
+		assert s.minWindow("xyz", "xz").equals("xyz");
+
+		assert s.minWindow("xyzaaaxzbbb", "xz").equals("xz");
+		assert s.minWindow("ADOBECODEBANC", "ABC").equals("BANC");
+		assert s.minWindow("ADOBECODEBANC", "XYZ").equals("");
+
+		System.out.println("done");
 	}
 }
