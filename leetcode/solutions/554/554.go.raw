@@ -1,0 +1,24 @@
+func leastBricks(wall [][]int) int {
+	counts := map[int]int{}
+	gap := 0
+	for _, layer := range wall {
+		end := 0
+		for i := range layer {
+			end += layer[i]
+			if i != len(layer)-1 {
+				counts[end]++
+				if counts[end] > gap {
+					gap = counts[end]
+				}
+			}
+		}
+	}
+	return len(wall) - gap
+}
+
+func main() {
+	fmt.Println(leastBricks([][]int{})) // 0
+	fmt.Println(leastBricks([][]int{{1}, {1}, {1}, {1}})) // 4
+	fmt.Println(leastBricks([][]int{{1, 2}, {1, 3, 1}, {1, 1}, {1, 3, 7}})) // 0
+	fmt.Println(leastBricks([][]int{{1, 2, 2, 1}, {3, 1, 2}, {1, 3, 2}, {2, 4}, {3, 1, 2}, {1, 3, 1, 1}})) // 2
+}

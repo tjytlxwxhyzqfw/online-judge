@@ -1,12 +1,5 @@
 m-page-5
 
-two group per week and you will end this until first week of month 11
-
-you can:
-(1) delay to tonight
-(2) delay to end of this group
-(3) delay to this weekend
-
 ### group 1 (#=10)
 
 795 (ac) Number of Subarrays with Bounded Maximum 44.2% Medium 391/37 97 100
@@ -87,32 +80,27 @@ you can:
 945 (ac) Minimum Increment to Make Array Unique 43.8% Medium 259/12 22 100
 946 (ac) Validate Stack Sequences 58.5% Medium 397/12 49 50
 948 (ac) Bag of Tokens 39.6% Medium 127/123
-
-950 Reveal Cards In Increasing Order 72.3% Medium 552/112
-
------- MUST done at 2019-11-10 ------
+950 (ac) Reveal Cards In Increasing Order 72.3% Medium 552/112
 
 ### group 7 (#=10)
 
-951 Flip Equivalent Binary Trees      65.0% Medium 
-954 Array of Doubled Pairs      35.1% Medium 
-955 Delete Columns to Make Sorted II      32.3% Medium 
-957 Prison Cells After N Days      37.8% Medium 
-958 Check Completeness of a Binary Tree
-962 Maximum Width Ramp      42.9% Medium 
-963 Minimum Area Rectangle II      46.7% Medium 
-966 Vowel Spellchecker    
-969 Pancake Sorting    
-973 K Closest Points to Origin      61.1% Medium 
+951 (ac,go) Flip Equivalent Binary Trees 65.0% Medium 
+954 (ac,go) Array of Doubled Pairs 35.1% Medium 
+955 (ac,go) Delete Columns to Make Sorted II 32.3% Medium 
+957 (ac) Prison Cells After N Days 37.8% Medium 276/479 99 97
+958 (ac) Check Completeness of a Binary Tree 50.7% Medimu 480/9
+962 (ac) Maximum Width Ramp 42.9% Medium 391/11
+963 (ac) Minimum Area Rectangle II 46.7% Medium 98/155 => todo
+966 (ac,go)Vowel Spellchecker 45.3% Medium 97/198
+969 (ac,go) Pancake Sorting 63.9% Medium
+973 (ac,go) K Closest Points to Origin 61.1% Medium 
 
 ### group 8 (#=10)
 
-974 Subarray Sums Divisible by K    
-984 String Without AAA or BBB      34.7% Medium 
-986 Interval List Intersections      64.0% Medium 
-987 Vertical Order Traversal of a Binary Tree    
-990 Satisfiability of Equality Equations      41.3% Medium 
-991 Broken Calculator      41.4% Medium 
-998 Maximum Binary Tree II    61.5%
-
------- MUST done at 2019-11-17 ------
+974 (ac,go) Subarray Sums Divisible by K    
+984 (ac,go) String Without AAA or BBB 34.7% Medium 
+986 (ac,go) Interval List Intersections 64.0% Medium 
+987 (ac,go) Vertical Order Traversal of a Binary Tree    
+990 (ac,go) Satisfiability of Equality Equations 41.3% Medium 
+991 (ac,go) Broken Calculator 41.4% Medium 
+998 (ac,go) Maximum Binary Tree II 61.5%
