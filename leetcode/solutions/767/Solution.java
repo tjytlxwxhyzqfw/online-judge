@@ -20,6 +20,8 @@ public class Solution {
 				++maxDup;
 			}
 		}
+		// maxDup: how many chars whose cnt == maxCnt
+		// if maxDup > 1, there must be a way to arrange all chars
 		if (maxDup == 1 && (maxCnt-1) > (s.length() - maxCnt)) return "";
 
 		StringBuilder b = new StringBuilder();

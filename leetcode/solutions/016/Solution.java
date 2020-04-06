@@ -11,46 +11,30 @@ public class Solution {
 	private int target;
 
 	public int threeSumClosest(int[] nums, int target) {
-		int i, j, k;
-		int expect, base;
-
-		if (nums.length < 3) throw new RuntimeException();
-
 		Arrays.sort(nums);
-
-		mindelta = Integer.MAX_VALUE;
-		this.target = target;
-		for (i = 0; i < nums.length; ++i) {
-			for (j = i+1; j < nums.length; ++j) {
-				base = nums[i] + nums[j];
-				expect = target - base;
-				k = Arrays.binarySearch(nums, j+1, nums.length, expect);
-				if (k >= 0) return target;
-				k = -1 - k;
-				if (k-1 >= j+1) refresh(base + nums[k-1]);
-				if (k < nums.length) refresh(base + nums[k]); 
+		Integer closet = null;
+		for (int i = 0; i < nums.length-2; ++i) {
+			int j = i+1, k = nums.length-1;
+			while (j < k) {
+				int sum = nums[i] + nums[j] + nums[k];
+				if (sum == target) return sum;
+				if (closet == null || Math.abs(sum-target) < Math.abs(closet-target)) closet = sum;
+				if (sum > target) --k; else ++j;
 			}
 		}
-
-		return best;
-	}
-
-	private void refresh(int value) {
-		int delta;
-
-		delta = Math.abs(value - target);
-		if (delta < mindelta) {
-			mindelta = delta;
-			best = value;
-		}
+		return closet;
 	}
 
 	public static void main(String args[]) {
-		int nums[] = {0, 0, 0};
-		int target = -3, ans;
+		Solution s = new Solution();
 
-		Solution solution = new Solution();
-		ans = solution.threeSumClosest(nums, target);
-		System.out.printf("result: %d\n", ans);
+		assert s.threeSumClosest(new int[]{0, 0, 0}, 0) == 0;
+		assert s.threeSumClosest(new int[]{0, 0, 0}, 1) == 0;
+		assert s.threeSumClosest(new int[]{0, 0, 0}, 1000) == 0;
+		assert s.threeSumClosest(new int[]{1, 2, 3, 4, 5, 6, 7}, 1000) == 18;
+		assert s.threeSumClosest(new int[]{1, 2, 3, 4, 5, 6, 7}, 0) == 6;
+		assert s.threeSumClosest(new int[]{1, 2, 20, 30, 40, 100, 200}, 91) == 90;
+
+		System.out.printf("done\n");
 	}
 }

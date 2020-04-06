@@ -1,4 +1,12 @@
 // 910
+// we sort the original array. then there will be a pivot element in the array:
+// array: min ... x ... pivot ... y ... max, and in the final result we have:
+// 1. [min, pivot] need to add by k
+// 2. (pivot, max] need to add by -k
+// and the max delta must be in one of `ds` (see bellow)
+//
+// above solution is a O(nlgn) solution and find another O(nlgn) solution in disscuss.
+// https://leetcode.com/problems/smallest-range-ii/discuss/173377/C%2B%2BJavaPython-Add-0-or-2-*-K
 func smallestRangeII(a []int, k int) int {
 	sort.Ints(a)
 	min, max := a[0], a[len(a)-1]

@@ -1,0 +1,103 @@
+hard-solved-1.txt
+
+# 15 hard problems
+
+## 1
+
+65  14.7% Hard  596/4165 Valid Number 	
+84  33.3% Hard 2783/  68 Largest Rectangle in Histogram 	
+85  35.8% Hard 2085/  57 Maximal Rectangle 
+87  32.8% Hard  388/ 616 Scramble String 
+97  30.0% Hard 1103/  70 Interleaving String 	
+
+## 2
+
+99  37.2% Hard 1157/  62 Recover Binary Search Tree 	
+115 36.7% Hard  944/  48 Distinct Subsequences 	
+123 35.9% Hard 1613/  63 Best Time to Buy and Sell Stock III 
+124 32.2% Hard 2534/ 205 Binary Tree Maximum Path Sum 	
+126 20.3% Hard 1431/ 220 Word Ladder II	
+
+## 3
+
+128 43.7% Hard 2558/ 147 Longest Consecutive Sequence 
+132 29.1% Hard  835/  28 Palindrome Partitioning II 
+135 30.2% Hard  708/ 142 Candy 	
+140 29.5% Hard 1447/ 319 Word Break II 
+145 52.1% Hard 1334/  69 Binary Tree Postorder Traversal 
+
+# 45 solved problems
+
+## 1
+
+2  (reviewed) 32.7% Medium 6994/1805 Add Two Numbers
+3  (reviewed) 29.5% Medium 7685/ 450 Longest Substring Without Repeating Characters
+4  (pending)  28.3% Hard   5875/ 893 Median of Two Sorted Arrays
+5  (reviewed) 28.7% Medium 5426/ 463 Longest Palindromic Substring -> @0213
+6  (reviewed) 34.6% Medium 1387/4061 ZigZag Conversion -> @0214
+
+## 2
+
+8  (reviewed) 15.0% Medium 1303/7864 String to Integer (atoi) 
+10 (reviewed) 26.1% Hard   3541/ 626 Regular Expression Matching -> @0214
+11 (reviewed) 48.7% Medium 4828/ 515 Container With Most Water -> @0215
+15 (reviewed) 25.6% Medium 5553/ 672 3Sum -> @0215
+16 (reviewed) 45.7% Medium 1629/ 117 3Sum Closest -> @0217
+
+## 3
+
+17 (reviewed) 44.6% Medium 3124/ 363 Letter Combinations of a Phone Number
+18 (reviewed) 32.4% Medium 1510/ 286 4Sum
+19 (reviewed) 34.8% Medium 2608/ 190 Remove Nth Node From End of List
+22 (reviewed) 59.5% Medium 4066/ 228 Generate Parentheses
+23 (reviewed) 38.0% Hard   3722/ 238 Merge k Sorted Lists
+
+## 4
+
+24 (reviewed) 48.1% Medium 1745/ 152 Swap Nodes in Pairs
+25 (reviewed) 39.4% Hard   1689/ 332 Reverse Nodes in k-Group
+29 (reviewed) 16.2% Medium 921 /4485 Divide Two Integers
+
+30 24.7% Hard   728/1119 Substring with Concatenation of All Words
+
+31 31.7% Medium Next Permutation
+
+## 5
+
+32 27.2% Hard   Longest Valid Parentheses
+33 33.6% Medium Search in Rotated Sorted Array
+34 35.0% Medium Find First and Last Position of Element in Sorted Array
+36 46.5% Medium Valid Sudoku
+37 40.6% Hard   Sudoku Solver
+
+## 6
+
+39 53.0% Medium Combination Sum
+40 45.3% Medium Combination Sum II
+41 30.7% Hard   First Missing Positive
+42 46.6% Hard   Trapping Rain Water
+43 32.5% Medium Multiply Strings
+
+## 7
+
+44 24.0% Hard   Wildcard Matching
+45 29.6% Hard   Jump Game II
+46 59.9% Medium Permutations
+47 44.0% Medium Permutations II
+48 53.1% Medium Rotate Image
+
+## 8
+
+49 52.3% Medium Group Anagrams
+50 29.0% Medium Pow(x, n)
+51 43.5% Hard   N-Queens
+52 55.3% Hard   N-Queens II
+54 32.6% Medium Spiral Matrix
+
+## 9
+
+55 33.1% Medium Jump Game
+56 37.8% Medium Merge Intervals
+57 32.5% Hard   Insert Interval
+59 51.0% Medium Spiral Matrix II
+60 35.1% Medium Permutation Sequence
