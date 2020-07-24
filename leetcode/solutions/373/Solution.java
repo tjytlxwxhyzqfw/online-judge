@@ -10,6 +10,14 @@
  * xxxxxx
  */
 
+// review logs
+// -----------
+// Description: 给定两个有序数组left, rght; 求k个对(x in left, y in rght), 并且(x, y)是和最小的那k个.
+// 20200723: 今天的独立想法: 最小的肯定是left[0]+rght[0], 把这个数入堆. 以后, 如果我们从堆中取出了left[i]+rght[j], 
+//   那么把left[i]+rght[j+1]和left[i+1]+rght[j]这两个数入堆. 
+//   而我在Solution中的解法是: 把left x rght的那个二维数组的第一行入堆. 然后每取出一个, 就把取出这个数的下面的那个数入堆.
+//   这个题我之前居然做出来了, 有点怀疑自己. 是不是当时不会, 然后强行看答案, 然后再一次过的啊...
+
 import java.util.*;
 
 public class Solution {

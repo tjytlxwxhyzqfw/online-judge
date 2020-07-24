@@ -4,6 +4,12 @@
  * Performance: speed=64%, memory=98%
  */
 
+// review logs
+// -----------
+// Description: 给定一个不重复数组, 求其最大子集, 满足: 从子集中任取两个数, 小数能整除大数.
+// 20200723: 今天我想到的解法是: 排序, 对于序号i<=n的每个数, 设a[i]是子集中最大的数字时, 集合的大小是b[i]. 对于n+1,
+//   找到第一个能整除a[n+1]的数a[k], 那么b[n+1] = 1 + b[k]. 问题解决.
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;

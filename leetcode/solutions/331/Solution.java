@@ -2,6 +2,12 @@
  * 331 Verify Preorder Serialization of a Binary Tree
  * Performance: speed=96%, memory=50% (search)
  * Performance: speed=96%, memory=100% (stack)
+ *
+ * review logs
+ * -----------
+ * 20202610: 331 (ac,copied) Verify Preorder Serialization of a Binary Tree (M 39 96 100 19/08/17) 
+ * => binary tree: y#x##
+ * 20200610: 可以从后向前处理吗? 从后向前遍历, 这个序列必然以两个井号结尾. 我们就不断的去掉两个井号+一个非井号.
  */
 
 import java.util.ArrayList;
@@ -20,12 +26,16 @@ public class Solution {
 		for (int i = 0; i < preorder.length(); ++i) if (preorder.charAt(i) == ',') ++n; 
 		int p = 0;
 
+		// 20200610
+		// stack中只区分井号和数字, #=true, 数字=false
+		// 只要遇到连续的两个井号, 就弹出栈顶的3个元素然后入栈一个true, 表示这个节点被替换成了井号
+		// 这是可以的, 因为两个井号预示着我们遇到了一个叶子节点 (对吗?)
 		boolean[] stack = new boolean[n];
 		for (int i = 0; i < preorder.length(); ++i) {
 			if (preorder.charAt(i) == '#') {
 				stack[p++] = true;
 				while (p >= 3 && stack[p-1] && stack[p-2] && !stack[p-3]) stack[(p=p-2)-1] = true;
-				++i;
+				++i; // 跳过井号后面的逗号, 这样的话, 以后再遇到逗号, 就是来自数字
 			} else if (preorder.charAt(i) == ',') stack[p++] = false;
 		}
 
@@ -50,6 +60,13 @@ public class Solution {
 		return search(a, 0, n) == n;
 	}
 
+	/* search returns the size of a tree rooted at a[i]
+	 * @param a: the pro-order traversing sequence
+	 * @param i: a index in array `a` 0 <= i < a.length
+	 * @param n: length of a (not necessary)
+	 * @returns: the size of the tree rooted at a[i]
+	 * (date: 20200610)
+	 */
 	int search(boolean[] a, int i, int n) {
 		if (i >= n) return 0;
 		if (a[i]) return 1;

@@ -1,7 +1,12 @@
 /**
  * 365 Water and Jug Problem
- * Performance: speed=%, memory=%
+ * Performance: speed=%, memory=%, ud=303/749
  */
+
+// review logs
+// -----------
+// Description: 给你两个容量为x, y的容器, 能否盛出z升水?
+// 20200723: 这题是有套路的, 等价条件是: gcd(x, y)能够整除z
 
 import java.util.*;
 

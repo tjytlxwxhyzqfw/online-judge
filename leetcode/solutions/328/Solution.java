@@ -13,6 +13,7 @@ import java.util.Queue;
 public class Solution {
 	public ListNode oddEvenList(ListNode head) {
 		if (head == null || head.next == null) return head;
+		// (20200609) H means headr and T for tail
 		ListNode evenH = head.next, oddT = head, evenT = head.next;
 
 		boolean odd = true;

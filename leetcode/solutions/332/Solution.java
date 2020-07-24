@@ -1,6 +1,11 @@
 /**
  * 332: ReconstructItinerary
  * Performance: speed=27%, memory=63%
+ *
+ * review logs
+ * -----------
+ * 20200610: construct a map city -> heap(city) then the problem can be solved with 
+ * a while loop instead of dfs.
  */
 
 import java.util.ArrayList;

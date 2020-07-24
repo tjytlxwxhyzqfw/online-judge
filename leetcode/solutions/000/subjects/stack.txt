@@ -36,3 +36,9 @@ Create Maximum Number
 sliding window maximum(challenge, monotone queue)
 Max Chunks To Make Sorted II
 Hope this helps.
+
+
+经验
+----
+
+1. 20200615: 用一个递增的栈可以一次pass就找到每个元素左边第一个比它小的元素的位置.

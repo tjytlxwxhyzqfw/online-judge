@@ -22,9 +22,12 @@ median-page-2.txt
 318	(ac) Maximum Product of Word Lengths ( M 49 62 78 19/08/16)
 319	(ac) Bulb Switcher (M 44 100 33 19/08/16)
 324	Wiggle Sort II  (M 28 100 100 19/08/22) => [2, 2, 2, 3, 3, 1, 1] => median, index mapping
-328	(ac) Odd Even Linked List (M 50 100 100 19/08/17) => dis: while (even!=null&&even.next!=null)
-331	(ac) Verify Preorder Serialization of a Binary Tree (M 39 96 100 19/08/17) => binary tree: y#x##
-334	(ac) Increasing Triplet Subsequence (M 39 100 95 19/08/21) => hard to come up with this idea
+
+328	(ac) OddEvenLinkedList (M 50 100 100 19/08/17) => dis: while (even!=null&&even.next!=null)
+331	(ac) VerifyPreorderSerializationOfABinaryTree (M 39 96 100 19/08/17) => binary tree: y#x##
+332 (ac) (@dfs.txt)
+334	(ac) IncreasingTripletSubsequence (M 39 100 95 19/08/21) => hard to come up with this idea
+
 341	(ac) Flatten Nested List Iterator (M 48 69 100 19/08/18)
 347	(ac) Top K Frequent Elements (M 56 78 47 19/08/18)
 355	(ac) Design Twitter (M 27 72 100 19/08/18)
