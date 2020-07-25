@@ -3,6 +3,19 @@
  * Performance: speed=100%, memory=91%
  */
 
+// review logs
+// -----------
+// 20200724: i come with a solution that is simillar with LIS:
+//   for i in nums:
+//       if i need a lower
+//           if nums[i] >= nums[i-1] last = nums[i]
+//           else last = nums[i]; need = larger
+//       else i need a larger
+//           if nums[i] >= nums[i-1] last=nums[i]; need = lower
+//           else last = nums[i]
+//
+//   this is supposed to be a wrong answer. (todo: why ?)
+
 import java.util.ArrayList;
 import java.util.List;
 
