@@ -5,6 +5,7 @@
 
 // review logs
 // -----------
+// Description: 给定一个数组, 找出最长的波动子序列. 波动子序列就是大小大小大小的序列, 严格大或小.
 // 20200724: i come with a solution that is simillar with LIS:
 //   for i in nums:
 //       if i need a lower
