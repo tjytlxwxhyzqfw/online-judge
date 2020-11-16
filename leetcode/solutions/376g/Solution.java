@@ -3,6 +3,20 @@
  * Performance: speed=100%, memory=91%
  */
 
+// review logs
+// -----------
+// Description: 给定一个数组, 找出最长的波动子序列. 波动子序列就是大小大小大小的序列, 严格大或小.
+// 20200724: i come with a solution that is simillar with LIS:
+//   for i in nums:
+//       if i need a lower
+//           if nums[i] >= nums[i-1] last = nums[i]
+//           else last = nums[i]; need = larger
+//       else i need a larger
+//           if nums[i] >= nums[i-1] last=nums[i]; need = lower
+//           else last = nums[i]
+//
+//   this is supposed to be a wrong answer. (todo: why ?)
+
 import java.util.ArrayList;
 import java.util.List;
 

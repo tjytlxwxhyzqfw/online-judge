@@ -3,6 +3,12 @@
  * Performance: speed=13%, memory=100%
  */
 
+// review logs
+// -----------
+// Description: there is a stream that you have no idea of it's length.
+//   you are supposed to pick an element from that stream randomly and
+//   the result should be an uniform distribution (均匀分布).
+
 import java.util.*;
 
 public class Solution {
