@@ -1,0 +1,28 @@
+421
+
+How do you even think of getting an O(n) solution for this?
+
+
+I'll try to give roughly my process for solving this problem:
+
+First, since this was a question about XOR, I wanted to look at the binary representations of the example provided. So [3,10,5,25,2,8] became:
+00011
+01010
+00101*
+11001*
+00010
+01000
+
+Since we're XORing and trying to get big numbers, we want as many 1's to the left as possible. Specifically, a 1 in a particular position is more important than anything to the right of that position since the best we can do is 2^b - 1 (when considering index b). For example, looking at the test case, we know 25 is part of the solution because it is the only number that gives us a 1 in the leftmost position. After that, we want a 1 in the second position which is already met for 25. To get a 1 in the third position, our only choice is 5. At this point we can stop because there is only one choice that gives us a 1 in the third most significant bit.
+
+So lets consider what happens if there was another choice, say 6 = 00110.
+
+Following the same process as before, we can see that both 5 and 6 give us a 1 without cancelling out the 1's in the first or second position provided by the 25. However, stepping through the bits of 25, we can see that 6 gives us a 1 in the third and fourth spot whereas the 5 only gives us a 1 in the third position, making 6 a better choice.
+
+This demonstrates the process of finding the "best match" for 25 - the match that yields the greatest XOR. If we can find the best match for every number and take the max of those in O(n), we're done.
+
+In this example, the best match for 25 was the number which had 0's in the places where it had 1's and 1's where it had 0's. And, again, 1's in the leftmost positions impacts the final value more than any other position. In other words, we want to get as close to the binary complement of the number as possible and when we can't get it exact, we want to match the complement in the leftmost bits. That is, in the "prefix" of the binary string.
+
+To find the best match quickly then, we can use a prefix tree (or trie). We build a trie out of all the binary strings in one pass (O(n*lg k) where k is the range of the numbers), making sure to pad 0's up to the longest binary string's length, and then take the complement of each binary string and search for that string in the trie. We match whenever we can, but if there is no matching child at any point during the search, we just advance to the only child that node has instead. Doing this will result in 2 bits cancelling. However, up to that point we had chosen only binary strings which didn't cancel more important bits when possible, so this is the best we can do. Continue this process until reaching a terminal node (all strings are the same length, so this is just when you've finished iterating through the complement) and update the best result found so far with this XOR result if it is greater.
+
+Our overall runtime is O(n lg k + n lg k + n lg k) = O(n lg k) for converting to binary strings, building the trie, and then searching for each string in the trie.

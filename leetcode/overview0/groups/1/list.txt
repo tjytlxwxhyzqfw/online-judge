@@ -1,0 +1,111 @@
+Contents:
+========
+
+  10 27.2%    Hard 5467/832	Regular Expression Matching
+  30 26.0%    Hard 1177/1436	Substring with Concatenation of All Words
+  50 30.8%  Medium 2185/3648	Pow(x, n)
+  70 48.4%    Easy 0/0		Climbing Stairs
+  90 48.3%  Medium 2325/102	Subsets II
+ 130 29.0%  Medium 2565/756	Surrounded Regions
+ 150 37.4%  Medium 1471/515	Evaluate Reverse Polish Notation
+ 210 42.1%  Medium 3425/162	Course Schedule II
+ 230 62.0%  Medium 3598/83	Kth Smallest Element in a BST
+
+ 310 34.4%  Medium Minimum Height Trees
+ 330 34.9%    Hard Patching Array
+ 390 44.8%  Medium Elimination Game
+ 410 45.9%    Hard Split Array Largest Sum
+ 430 56.5%  Medium Flatten a Multilevel Doubly Linked List
+ 450 45.1%  Medium Delete Node in a BST
+ 470 45.9%  Medium Implement Rand10() Using Rand7()
+ 650 49.8%  Medium 2 Keys Keyboard
+ 670 44.8%  Medium Maximum Swap
+
+---
+
+ 790 39.7%  Medium Domino and Tromino Tiling
+ 870 46.5%  Medium Advantage Shuffle
+ 890 74.1%  Medium Find and Replace Pattern
+ 910 31.2%  Medium Smallest Range II
+ 930 44.1%  Medium Binary Subarrays With Sum
+ 950 75.2%  Medium Reveal Cards In Increasing Order
+ 990 46.3%  Medium Satisfiability of Equality Equations
+
+Description:
+===========
+
+  10 27.2%    Hard 5467/832     Regular Expression Matching
+------
+Given an input string (s) and a pattern (p), implement regular expression matching with support for '.' and '*' where: 
+- '.' Matches any single character.
+- '*' Matches zero or more of the preceding element.
+The matching should cover the entire input string (not partial).
+
+Constraints:
+- 0 <= s.length <= 20
+- 0 <= p.length <= 30
+- s contains only lowercase English letters.
+- p contains only lowercase English letters, '.', and '*'.
+- It is guaranteed for each appearance of the character '*', there will be a previous valid character to match.
+
+
+  30 26.0%    Hard 1177/1436    Substring with Concatenation of All Words
+------
+You are given a string s and an array of strings words of the same length.
+Return all starting indices of substring(s) in s that is a concatenation of each word in words exactly once,
+in any order, and without any intervening characters. You can return the answer in any order.
+(example: s = "barfoothefoobarman", words = ["foo","bar"] -> [0, 9])
+
+Constraints:
+- 1 <= s.length <= 104
+- s consists of lower-case English letters.
+- 1 <= words.length <= 5000
+- 1 <= words[i].length <= 30
+- words[i] consists of lower-case English letters.
+
+  50 30.8%  Medium 2185/3648    Pow(x, n)
+------
+Implement pow(x, n), which calculates x raised to the power n (i.e. x^n).
+Constraints: (1) -100.0 < x < 100.0 (2) -2^31 <= n <= 2^31-1 (3) -10^4 <= x^n <= 10^4
+
+  70 48.4%    Easy 0/0          Climbing Stairs
+------
+
+  90 48.3%  Medium 2325/102     Subsets II
+------
+Given an integer array nums that may contain duplicates, return all possible subsets (the power set).
+The solution set must not contain duplicate subsets. Return the solution in any order.
+Constraints: (1) 1 <= nums.length <= 10; (2) -10 <= nums[i] <= 10
+(e.g nums = [1,2,2] Output: [[],[1],[1,2],[1,2,2],[2],[2,2]])
+(实现)
+
+ 130 29.0%  Medium 2565/756     Surrounded Regions
+------
+Given an m x n matrix board containing 'X' and 'O', capture all regions surrounded by 'X'.
+A region is captured by flipping all 'O's into 'X's in that surrounded region.
+(wcc: if o is surrounded by x, then turn o into x, result the result map)
+
+Constraints: 
+(1) m == board.length; (2) n == board[i].length; (3) 1 <= m, n <= 200; (4) board[i][j] is 'X' or 'O'
+
+
+ 150 37.4%  Medium 1471/515     Evaluate Reverse Polish Notation
+------
+(RT)
+
+ 210 42.1%  Medium 3425/162     Course Schedule II
+------
+(TopSort)
+
+ 230 62.0%  Medium 3598/83      Kth Smallest Element in a BST
+------
+Given the root of a binary search tree, and an integer k, return the kth (1-indexed) smallest element in the tree.
+
+Constraints:
+(1) The number of nodes in the tree is n
+(2) 1 <= k <= n <= 10^4
+(3) 0 <= Node.val <= 10^4
+
+Follow up: If the BST is modified often (i.e., we can do insert and delete operations) and you need to find the kth smallest frequently, how would you optimize?
+
+

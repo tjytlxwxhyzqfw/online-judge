@@ -1,0 +1,158 @@
+   5 30.1%  Medium 9063/617 Longest Palindromic Substring
+  25 44.0%    Hard 3078/385 Reverse Nodes in k-Group
+  45 31.2%    Hard 3454/163 Jump Game II
+  85 39.0%    Hard 3667/80 Maximal Rectangle
+ 105 51.0%  Medium 4562/117 Construct Binary Tree from Preorder and Inorder Traversal
+ 145 56.9%  Medium Binary Tree Postorder Traversal
+ 165 30.0%  Medium 747/1647 Compare Version Numbers
+ 365 30.9%  Medium 377/842 Water and Jug Problem
+ 385 34.3%  Medium 274/933 Mini Parser
+ 445 55.9%  Medium 2086/192 Add Two Numbers II
+ 525 43.3%  Medium 2603/134 Contiguous Array (有趣)
+ 565 55.9%  Medium 963/105 Array Nesting
+ 725 52.7%  Medium 861/147 Split Linked List in Parts
+ 785 48.1%  Medium 2104/207 Is Graph Bipartite?
+ 825 43.8%  Medium 363/764 Friends Of Appropriate Ages
+ 845 38.5%  Medium 1080/44 Longest Mountain in Array
+ 865 64.5%  Medium 1212/286 Smallest Subtree with all the Deepest Nodes
+ 885 70.4%  Medium 300/372 Spiral Matrix III
+ 945 46.6%  Medium 586/27 Minimum Increment to Make Array Unique
+
+   5 30.1%  Medium 9063/617 Longest Palindromic Substring
+------
+Given a string s, return the longest palindromic substring in s
+
+  25 44.0%    Hard 3078/385 Reverse Nodes in k-Group
+------
+Given a linked list, reverse the nodes of a linked list k at a time and return its modified list. k is a positive integer and is less than or equal to the length of the linked list. If the number of nodes is not a multiple of k then left-out nodes, in the end, should remain as it is. (example: 1->2->3->4 k=2 => 2->1->4->3)
+
+Follow up: Could you solve the problem in O(1) extra memory space?
+Note: You may not alter the values in the list's nodes, only nodes itself may be changed.
+
+
+  45 31.2%    Hard 3454/163 Jump Game II
+------
+Given an array of non-negative integers nums, you are initially positioned at the first index of the array.Each element in the array represents your maximum jump length at that position.Your goal is to reach the last index in the minimum number of jumps. You can assume that you can always reach the last index.
+
+  85 39.0%    Hard 3667/80 Maximal Rectangle
+------
+Given a rows x cols binary matrix filled with 0's and 1's, find the largest rectangle containing only 1's and return its area.
+
+ 105 51.0%  Medium 4562/117 Construct Binary Tree from Preorder and Inorder Traversal
+------
+Given preorder and inorder traversal of a tree, construct the binary tree.
+Note: You may assume that duplicates do not exist in the tree.
+
+ 145 56.9%  Medium Binary Tree Postorder Traversal
+------
+
+ 165 30.0%  Medium 747/1647 Compare Version Numbers
+------
+Given two version numbers, version1 and version2, compare them.
+Example: 1.01 == 1.001; 1.0 == 1.0.0; 0.1 < 1.1; 1.0.1 > 1; 7.5.2.4 < 7.5.3
+Returns: -1, 1 or 0 
+
+ 365 30.9%  Medium 377/842 Water and Jug Problem
+------
+You are given two jugs with capacities x and y litres. There is an infinite amount of water supply available. You need to determine whether it is possible to measure exactly z litres using these two jugs.
+Operations allowed:
+1) Fill any of the jugs completely with water.
+2) Empty any of the jugs.
+3) Pour water from one jug into another till the other jug is completely full or the first jug itself is empty.
+
+ 385 34.3%  Medium 274/933 Mini Parser
+------
+Given a nested list of integers represented as a string, implement a parser to deserialize it.
+Each element is either an integer, or a list -- whose elements may also be integers or other lists.
+Note: You may assume that the string is well-formed:
+1) String is non-empty.
+2) String does not contain white spaces.
+3) String contains only digits 0-9, [, - ,, ].
+Example: "1", "[123, [456, [789], 987], 654]"
+
+ 445 55.9%  Medium 2086/192 Add Two Numbers II
+------
+You are given two non-empty linked lists representing two non-negative integers.
+The most significant digit comes first and each of their nodes contain a single digit.
+Add the two numbers and return it as a linked list.
+You may assume the two numbers do not contain any leading zero, except the number 0 itself.
+Follow up: What if you cannot modify the input lists? In other words, reversing the lists is not allowed.
+Example: Input: (7 -> 2 -> 4 -> 3) + (5 -> 6 -> 4) Output: 7 -> 8 -> 0 -> 7
+
+ 525 43.3%  Medium 2603/134 Contiguous Array
+------
+Given a ***binary*** array, find the maximum length of a contiguous subarray with equal number of 0 and 1.
+Note: The length of the given binary array will not exceed 50,000.
+
+ 565 55.9%  Medium 963/105 Array Nesting
+------
+A zero-indexed array A of length N contains all integers from 0 to N-1. Find and return the longest length of set S, where S[i] = {A[i], A[A[i]], A[A[A[i]]], ... }.
+
+ 725 52.7%  Medium 861/147 Split Linked List in Parts
+------
+Given a (singly) linked list with head node root, write a function to split the linked list into kconsecutive linked list "parts".
+The length of each part should be as equal as possible: no two parts should have a size differing by more than 1. This may lead to some parts being null.
+The parts should be in order of occurrence in the input list, and parts occurring earlier should always have a size greater than or equal parts occurring later.
+Return a List of ListNode's representing the linked list parts that are formed.
+Examples 1->2->3->4, k = 5 // 5 equal parts [ [1], [2], [3], [4], null ]
+(无聊)
+
+ 785 48.1%  Medium 2104/207 Is Graph Bipartite?
+------
+Given an undirected graph, return true if and only if it is bipartite.
+Recall that a graph is bipartite if we can split its set of nodes into two independent subsets A and B, such that every edge in the graph has one node in A and another node in B.
+Graph: graph=[[1, 2], [0], [0]] => graph[0]=[1,2] means vertix 0 connected with vertix 1 and 2
+
+ 825 43.8%  Medium 363/764 Friends Of Appropriate Ages
+------
+Some people will make friend requests. The list of their ages is given and ages[i] is the age of the ith person. 
+Person A will NOT friend request person B (B != A) if any of the following conditions are true:
+1) age[B] <= 0.5 * age[A] + 7
+2) age[B] > age[A]
+3) age[B] > 100 && age[A] < 100
+Otherwise, A will friend request B.
+Note that if A requests B, B does not necessarily request A.  Also, people will not friend request themselves.
+How many total friend requests are made?
+Notes: (1) 1 <= ages.length <= 20000; (2) 1 <= ages[i] <= 120.
+
+ 845 38.5%  Medium 1080/44 Longest Mountain in Array
+------
+You may recall that an array arr is a mountain array if and only if:
+(1) arr.length >= 3
+(2) There exists some index i (0-indexed) with 0 < i < arr.length - 1 such that:
+  (2.1) arr[0] < arr[1] < ... < arr[i - 1] < arr[i]
+  (2.2) arr[i] > arr[i + 1] > ... > arr[arr.length - 1]
+Given an integer array arr, return the length of the longest subarray, which is a mountain.
+Return 0 if there is no mountain subarray.
+Constraints: (1) 1 <= arr.length <= 10^4; (2) 0 <= arr[i] <= 10^4
+Follow up: (1) Can you solve it using only one pass? (2) Can you solve it in O(1) space?
+
+ 865 64.5%  Medium 1212/286 Smallest Subtree with all the Deepest Nodes
+------
+Given the root of a binary tree, the depth of each node is the shortest distance to the root.
+Return the smallest subtree such that it contains all the deepest nodes in the original tree.
+(note: root of the subtree could be any node in the original tree)
+A node is called the deepest if it has the largest depth possible among any node in the entire tree.
+The subtree of a node is tree consisting of that node, plus the set of all descendants of that node.
+Constraints:
+(1) The number of nodes in the tree will be in the range [1, 500].
+(2) 0 <= Node.val <= 500
+(3) The values of the nodes in the tree are unique.
+
+ 885 70.4%  Medium 300/372 Spiral Matrix III
+------
+On a 2 dimensional grid with R rows and C columns, we start at (r0, c0) facing east.
+Here, the north-west corner of the grid is at the first row and column,
+and the south-east corner of the grid is at the last row and column.
+Now, we walk in a clockwise spiral shape to visit every position in this grid. 
+Whenever we would move outside the boundary of the grid,
+we continue our walk outside the grid (but may return to the grid boundary later.) 
+Eventually, we reach all R * C spaces of the grid.
+Return a list of coordinates representing the positions of the grid in the order they were visited.
+Note: (1) 1 <= R <= 100; (2) 1 <= C <= 100; (3) 0 <= r0 < R; (4) 0 <= c0 < C
+
+ 945 46.6%  Medium 586/27 Minimum Increment to Make Array Unique
+------
+Given an array of integers A, a move consists of choosing any A[i], and incrementing it by 1.
+Return the least number of moves to make every value in A unique.
+Note: (1) 0 <= A.length <= 40000; (2) 0 <= A[i] < 40000

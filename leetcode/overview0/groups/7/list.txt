@@ -1,0 +1,27 @@
+  33 35.5%  Medium Search in Rotated Sorted Array
+  53 47.4%    Easy Maximum Subarray
+  73 44.0%  Medium Set Matrix Zeroes
+  93 37.1%  Medium Restore IP Addresses
+ 113 48.4%  Medium Path Sum II
+ 133 38.2%  Medium Clone Graph
+ 153 45.8%  Medium Find Minimum in Rotated Sorted Array
+ 173 59.4%  Medium Binary Search Tree Iterator
+ 213 37.4%  Medium House Robber II
+ 233 31.6%    Hard Number of Digit One
+ 313 45.8%  Medium Super Ugly Number
+ 373 37.4%  Medium Find K Pairs with Smallest Sums
+ 393 37.9%  Medium UTF-8 Validation
+ 413 58.4%  Medium Arithmetic Slices
+ 433 42.9%  Medium Minimum Genetic Mutation
+ 473 38.1%  Medium Matchsticks to Square
+ 493 26.4%    Hard Reverse Pairs
+ 513 62.2%  Medium Find Bottom Left Tree Value
+ 553 57.3%  Medium Optimal Division
+ 593 43.3%  Medium Valid Square
+ 673 38.3%  Medium Number of Longest Increasing Subsequence
+ 713 40.4%  Medium Subarray Product Less Than K
+ 813 50.8%  Medium Largest Sum of Averages
+ 833 51.2%  Medium Find And Replace in String
+ 853 43.5%  Medium Car Fleet
+ 873 48.0%  Medium Length of Longest Fibonacci Subsequence
+ 973 64.4%  Medium K Closest Points to Origin

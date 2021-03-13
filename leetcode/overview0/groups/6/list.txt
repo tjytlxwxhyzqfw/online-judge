@@ -1,0 +1,24 @@
+   3 31.0%  Medium Longest Substring Without Repeating Characters
+  23 41.8%    Hard Merge k Sorted Lists
+  43 34.6%  Medium Multiply Strings
+  63 35.1%  Medium Unique Paths II
+ 103 49.6%  Medium Binary Tree Zigzag Level Order Traversal
+ 123 39.6%    Hard Best Time to Buy and Sell Stock III
+ 143 40.1%  Medium Reorder List
+ 223 38.1%  Medium Rectangle Area
+ 343 51.0%  Medium Integer Break
+ 363 38.3%    Hard Max Sum of Rectangle No Larger Than K
+ 403 41.0%    Hard Frog Jump
+ 423 47.3%  Medium Reconstruct Original Digits from English
+ 483 36.1%    Hard Smallest Good Base
+ 503 58.0%  Medium Next Greater Element II
+ 523 24.7%  Medium Continuous Subarray Sum
+ 583 49.6%  Medium Delete Operation for Two Strings
+ 623 50.2%  Medium Add One Row to Tree
+ 743 45.2%  Medium Network Delay Time
+ 763 77.8%  Medium Partition Labels
+ 823 36.2%  Medium Binary Trees With Factors
+ 863 57.3%  Medium All Nodes Distance K in Binary Tree
+ 923 36.0%  Medium 3Sum With Multiplicity
+ 963 51.6%  Medium Minimum Area Rectangle II
+ 983 62.6%  Medium Minimum Cost For Tickets

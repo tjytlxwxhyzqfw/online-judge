@@ -1,0 +1,94 @@
+  17 48.4%  Medium Letter Combinations of a Phone Number
+  37 45.7%    Hard Sudoku Solver
+  57 34.7%  Medium Insert Interval
+  77 56.7%  Medium Combinations
+  97 32.3%    Hard Interleaving String
+
+ 117 41.5%  Medium Populating Next Right Pointers in Each Node II
+
+ 137 53.4%  Medium Single Number II
+ 337 51.6%  Medium House Robber III
+ 357 48.7%  Medium Count Numbers with Unique Digits
+ 377 45.8%  Medium Combination Sum IV
+ 397 33.3%  Medium Integer Replacement
+ 417 42.2%  Medium Pacific Atlantic Water Flow
+ 457 29.9%  Medium Circular Array Loop
+ 477 50.6%  Medium Total Hamming Distance
+ 497 39.0%  Medium Random Point in Non-overlapping Rectangles
+ 537 68.2%  Medium Complex Number Multiplication
+ 677 53.8%  Medium Map Sum Pairs
+ 777 35.4%  Medium Swap Adjacent in LR String
+ 797 78.3%  Medium All Paths From Source to Target
+ 817 57.5%  Medium Linked List Components
+ 837 35.3%  Medium New 21 Game
+ 877 66.3%  Medium Stone Game
+ 957 40.2%  Medium Prison Cells After N Days
+
+  17 48.4%  Medium 5218/485 Letter Combinations of a Phone Number
+------
+Given a string containing digits from 2-9 inclusive, return all possible letter combinations that
+the number could represent. Return the answer in any order. A mapping of digit to letters (just
+like on the telephone buttons) is given below. Note that 1 does not map to any letters.
+{""/*0*/, "", "abc"/*2*/, "def", "ghi"/*4*/, "jkl", "mno"/*6*/, "pqrs", "tuv"/*8*/, "wxyz"}
+
+  37 45.7%    Hard 2429/100 Sudoku Solver
+------
+Write a program to solve a Sudoku puzzle by filling the empty cells.
+A sudoku solution must satisfy all of the following rules:
+(1) Each of the digits 1-9 must occur exactly once in each row.
+(2) Each of the digits 1-9 must occur exactly once in each column.
+(3) Each of the digits 1-9 must occur exactly once in each of the 9 3x3 sub-boxes of the grid.
+The '.' character indicates empty cells.
+Constraints: (1) board.length == 9; (2) board[i].length == 9; (3) board[i][j] is a digit or '.';
+(4) It is guaranteed that the input board has only one solution.
+
+  57 34.7%  Medium ???/??? Insert Interval
+------
+Given a set of non-overlapping intervals, insert a new interval into the intervals (merge if
+necessary). You may assume that the intervals were initially sorted according to their start times.
+Constraints:
+(1) 0 <= intervals.length <= 10^4
+(2) intervals[i].length == 2
+(3) 0 <= intervals[i][0] <= intervals[i][1] <= 10^5
+(4) intervals is sorted by intervals[i][0] in ascending order.
+(5) newInterval.length == 2
+(6) 0 <= newInterval[0] <= newInterval[1] <= 10^5
+
+  77 56.7%  Medium 1977/78 Combinations
+------
+Given two integers n and k, return all possible combinations of k numbers out of 1 ... n.
+You may return the answer in any order. (1<=n<=20; 1 <= k <= n)
+
+  97 32.3%    Hard Interleaving String
+------
+Given strings s1, s2, and s3, find whether s3 is formed by an interleaving of s1 and s2.
+An interleaving of two strings s and t is a configuration where they are divided into non-emptysubstrings such that:
+(1) s = s1 + s2 + ... + sn
+(2) t = t1 + t2 + ... + tm
+(3) |n - m| <= 1
+(4) The interleaving is s1 + t1 + s2 + t2 + s3 + t3 + ... or t1 + s1 + t2 + s2 + t3 + s3 + ...
+Note: a + b is the concatenation of strings a and b.
+Constraints:
+(1) 0 <= s1.length, s2.length <= 100
+(2) 0 <= s3.length <= 200
+(3) s1, s2, and s3 consist of lower-case English letters.
+
+ 117 41.5%  Medium 2207/195 Populating Next Right Pointers in Each Node II
+------
+
+ 137 53.4%  Medium Single Number II
+ 337 51.6%  Medium House Robber III
+ 357 48.7%  Medium Count Numbers with Unique Digits
+ 377 45.8%  Medium Combination Sum IV
+ 397 33.3%  Medium Integer Replacement
+ 417 42.2%  Medium Pacific Atlantic Water Flow
+ 457 29.9%  Medium Circular Array Loop
+ 477 50.6%  Medium Total Hamming Distance
+ 497 39.0%  Medium Random Point in Non-overlapping Rectangles
+ 537 68.2%  Medium Complex Number Multiplication
+ 677 53.8%  Medium Map Sum Pairs
+ 777 35.4%  Medium Swap Adjacent in LR String
+ 797 78.3%  Medium All Paths From Source to Target
+ 817 57.5%  Medium Linked List Components
+ 837 35.3%  Medium New 21 Game
+ 877 66.3%  Medium Stone Game

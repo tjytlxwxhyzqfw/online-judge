@@ -1,0 +1,46 @@
+945.txt
+
+有一个并查集的解法, 感觉差不多, 也不用太细化:
+
+集合: x: root=区间起点, size=连续数字的个数
+
+got a new element m
+if start := find(m); start != nil {
+	start = union(start, len(start)+1)
+	total += len(start)+1-m
+}
+left := uf.find(m-1)
+rght := uf.find(m+1)
+if left != nil && rght != nil {
+	left = union(left, rght)
+}
+if left != nil {
+	left = union(left, m)
+}
+if rght != nil {
+	rght = union(m, rght) // m becomes new root
+}
+
+据说并查集都能用DFS代替?
+
+看disscuss:
+
+1. 首先, 上述解法是可行的, 且复杂度较低, 可能是最优解了. 
+2. 但是!!!!!! 有个复杂度稍高但是明显更加简单的解法!!!!!!
+
+排序: 1 1 2 3 5
+然后挨个替换, 
+
+1 1 2 2 3 5
+1 2 2 2 3 5 (1 -> 2)
+1 2 3 2 3 5 (2 -> 3)
+1 2 3 4 3 5 (2 -> 4)
+1 2 3 4 5 5 (3 -> 5)
+1 2 3 4 5 6 (5 -> 6)
+
+害!!!我也太蠢了吧!!
+
+
+
+
+

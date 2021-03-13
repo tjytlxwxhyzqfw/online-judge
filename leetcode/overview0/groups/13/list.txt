@@ -1,0 +1,23 @@
+  16 46.2%  Medium 3Sum Closest
+  36 50.0%  Medium Valid Sudoku
+  56 40.5%  Medium Merge Intervals
+  76 35.6%    Hard Minimum Window Substring
+  96 54.0%  Medium Unique Binary Search Trees
+ 116 48.2%  Medium Populating Next Right Pointers in Each Node
+ 216 59.7%  Medium Combination Sum III
+ 236 47.9%  Medium Lowest Common Ancestor of a Binary Tree
+ 336 34.3%    Hard Palindrome Pairs
+ 376 40.1%  Medium Wiggle Subsequence
+ 396 36.6%  Medium Rotate Function
+ 416 44.7%  Medium Partition Equal Subset Sum
+ 436 48.4%  Medium Find Right Interval
+ 456 30.5%  Medium 132 Pattern
+ 516 54.8%  Medium Longest Palindromic Subsequence
+ 556 33.5%  Medium Next Greater Element III
+ 576 35.7%  Medium Out of Boundary Paths
+ 636 53.7%  Medium Exclusive Time of Functions
+ 676 55.1%  Medium Implement Magic Dictionary
+ 756 55.5%  Medium Pyramid Transition Matrix
+ 816 47.9%  Medium Ambiguous Coordinates
+ 856 62.0%  Medium Score of Parentheses
+ 916 48.1%  Medium Word Subsets

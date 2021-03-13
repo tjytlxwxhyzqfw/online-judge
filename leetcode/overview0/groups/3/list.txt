@@ -1,0 +1,22 @@
+  11 52.0%  Medium Container With Most Water
+  31 33.2%  Medium Next Permutation
+  51 48.8%    Hard N-Queens
+  71 33.5%  Medium Simplify Path
+  91 26.1%  Medium Decode Ways
+ 131 51.0%  Medium Palindrome Partitioning
+ 151 23.2%  Medium Reverse Words in a String
+ 211 39.6%  Medium Design Add and Search Words Data Structure
+ 331 40.8%  Medium Verify Preorder Serialization of a Binary Tree
+ 451 64.0%  Medium Sort Characters By Frequency
+ 491 47.2%  Medium Increasing Subsequences
+ 611 49.0%  Medium Valid Triangle Number
+ 731 50.1%  Medium My Calendar II
+ 791 65.9%  Medium Custom Sort String
+ 831 44.7%  Medium Masking Personal Information
+ 851 52.4%  Medium Loud and Rich
+ 911 51.2%  Medium Online Election
+ 931 63.2%  Medium Minimum Falling Path Sum
+ 951 65.5%  Medium Flip Equivalent Binary Trees
+ 971 46.1%  Medium Flip Binary Tree To Match Preorder Traversal
+ 991 46.3%  Medium Broken Calculator
+1011 59.4%  Medium Capacity To Ship Packages Within D Days

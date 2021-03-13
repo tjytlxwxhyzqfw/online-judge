@@ -1,0 +1,22 @@
+import os
+
+def main():
+	grps = [[] for _ in range(20)]
+	with open('20201231_481_total.txt', 'r') as f:
+		for ln in f:
+			arr = ln.split()
+			pid = int(arr[0])
+			x, y = pid % 10, (pid/10) % 2
+			grp = int(2 * x + y)
+			print('%d (x=%d y=%d) -> %d' % (pid, x, y, grp))
+
+			desc = '%4s %5s %7s %s' % (arr[0], arr[-2], arr[-1], ' '.join(arr[1:-2]))
+			grps[grp].append(desc)
+	for i, grp in enumerate(grps):
+		# s.mkdir(str(i))
+		t = os.path.join(str(i), 'list.txt')
+		with open(t, 'w') as f:
+			f.write('\n'.join(grp))
+
+if __name__ == '__main__':
+	main()

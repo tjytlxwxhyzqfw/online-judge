@@ -1,0 +1,148 @@
+
+目录:
+
+ 1) 雨水问题/水柱问题/柱状图
+ 2) 排列组合&去重
+ 3) 矩阵
+ 4) 区间
+ 5) 中位数
+ 6) DP
+ 7) 树
+ 8) 图
+ 9) JustRememter
+10) 其他
+
+
+1) 雨水问题/水柱问题/柱状图
+===========================
+
+涉及知识点: 单调栈
+  84 36.3%    Hard 5106/104 Largest Rectangle in Histogram => disscuss有时间好好研读一下
+  85 39.0%    Hard 3667/80 Maximal Rectangle
+
+2) 排列组合&去重
+================
+薄弱环节/一见到就头疼妈的, 我之前只能想到的LowB方法: 全集 + Set去重
+
+17 48.4%  Medium 5218/485 Letter Combinations of a Phone Number
+18 4Sum(去重)
+46/47: 排列 -> 方法: 首字母等价划分法 (order matters)
+77 56.7%  Medium 1977/78 Combinations
+90 48.3%  Medium 2325/102     Subsets II -> 方法: 最小值等价划分法 (order doesn't matters)
+
+
+3) 矩阵
+=======
+
+模拟:
+  48 59.1%  Medium 4192/309 Rotate Image
+  54 35.3%  Medium 3348/631 Spiral Matrix
+  885 70.4%  Medium 300/372 Spiral Matrix III
+其他:
+  37 45.7%    Hard 2429/100 Sudoku Solver
+  74 37.2%  Medium 2762/187 Search a 2D Matrix
+
+4) 区间
+=======
+
+57 34.7%  Medium Insert Interval
+
+5) 中位数
+=========
+
+4 - 两个有序数组求其中位数 (有待研究)
+
+6) DP
+==========
+
+经典:
+ (最小路径和问题)
+ 368 38.1%  Medium 1702/86 Largest Divisible Subset
+双字符串:
+  10H 27.2% Hard 5467/832 Regular Expression Matching
+  44H - Wildcard Matching => 逻辑关系比较难以理清楚 (看10H的笔记, 关键看剩下的两个字母)
+  97H 32.3%    Hard Interleaving String
+多状态:
+  188 29.1%    Hard 2185/135 Best Time to Buy and Sell Stock IV
+
+7) 树
+======
+
+各种遍历:
+  94 65.2%  Medium 4137/184 Binary Tree Inorder Traversal
+  105 51.0%  Medium 4562/117 Construct Binary Tree from Preorder and Inorder Traversal
+  144 57.0%  Medium 1989/82 Binary Tree Preorder Traversal
+  145 56.9%  Medium Binary Tree Postorder Traversal
+
+8) 图
+=====
+
+ 210 42.1%  Medium 3425/162     Course Schedule II (拓扑排序)
+
+
+
+9) JustRemember
+================
+
+ 48 59.1%  Medium 4192/309 Rotate Image
+365 30.9%  Medium 377/842 Water and Jug Problem
+
+9) Dictionary
+=============
+
+给一个字符串的集合, 然后搞事情
+
+  30 26.0%    Hard 1177/1436 Substring with Concatenation of All Words
+
+
+10) 其他
+=======
+
+围岛问题
+-------
+
+这类问题通常都很简单, 就一个DFS就搞定了, 不出意外, 应该不用重点关注.
+
+ 130 29.0%  Medium 2565/756     Surrounded Regions
+
+多结果递归
+---------
+
+这类题目主要问题是难以简洁编码. 希望能学习一下其他同学的处理技巧.
+
+98 -> 返回多个结果 ---转化为---> 递归调用时传入参数来避免多结果返回 
+
+桶
+------
+
+164 36.5%    Hard 1045/201 Maximum Gap
+
+特殊数据结构
+----------
+
+385 34.3%  Medium 274/933 Mini Parser => NestedInteger [1, [2, [3, 4], 5], 6, [7]]
+
+计算器
+-----
+
+227 38.2%  Medium 2011/321 Basic Calculator II
+
+数组类
+-----
+
+ 845 38.5%  Medium 1080/44 Longest Mountain in Array (山峰)
+ 945 46.6%  Medium 586/27 Minimum Increment to Make Array Unique 
+
+并查集
+-----
+
+ 945 46.6%  Medium 586/27 Minimum Increment to Make Array Unique
+
+未分类的好题目
+------------
+
+1. 不是模拟题
+2. 套公式: DP, 双指针, BFS/DFS/BackTrack等统统的不是.
+
+128 45.9%    Hard 4550/221 Longest Consecutive Sequence
+525 43.3%  Medium 2603/134 Contiguous Array (有趣)

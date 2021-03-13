@@ -1,0 +1,25 @@
+   1 46.1%    Easy Two Sum
+  21 55.2%    Easy Merge Two Sorted Lists
+  41 33.3%    Hard First Missing Positive
+  61 31.5%  Medium Rotate List
+  81 33.4%  Medium Search in Rotated Sorted Array II
+ 201 39.6%  Medium Bitwise AND of Numbers Range
+ 221 38.5%  Medium Maximal Square
+ 241 56.8%  Medium Different Ways to Add Parentheses
+ 301 44.3%    Hard Remove Invalid Parentheses
+ 321 27.4%    Hard Create Maximum Number
+ 341 54.1%  Medium Flatten Nested List Iterator
+ 381 34.6%    Hard Insert Delete GetRandom O(1) - Duplicates allowed
+ 421 53.8%  Medium Maximum XOR of Two Numbers in an Array
+ 481 47.9%  Medium Magical String
+ 621 51.4%  Medium Task Scheduler
+ 641 54.6%  Medium Design Circular Deque
+ 701 75.8%  Medium Insert into a Binary Search Tree
+ 721 50.9%  Medium Accounts Merge
+ 781 55.3%  Medium Rabbits in Forest
+ 801 39.0%  Medium Minimum Swaps To Make Sequences Increasing
+ 841 65.1%  Medium Keys and Rooms
+ 881 47.5%  Medium Boats to Save People
+ 901 61.1%  Medium Online Stock Span
+ 921 74.6%  Medium Minimum Add to Make Parentheses Valid
+ 981 53.8%  Medium Time Based Key-Value Store

@@ -1,0 +1,29 @@
+  15 27.7%  Medium 3Sum
+  35 42.7%    Easy Search Insert Position
+  55 35.0%  Medium Jump Game
+  75 48.8%  Medium Sort Colors
+  95 41.9%  Medium Unique Binary Search Trees II
+ 115 39.3%    Hard Distinct Subsequences
+ 135 32.6%    Hard Candy
+ 215 57.3%  Medium Kth Largest Element in an Array
+ 275 36.2%  Medium H-Index II
+ 295 46.2%    Hard Find Median from Data Stream
+ 315 42.5%    Hard Count of Smaller Numbers After Self
+ 355 31.0%  Medium Design Twitter
+ 375 41.7%  Medium Guess Number Higher or Lower II
+ 395 43.3%  Medium Longest Substring with At Least K Repeating Characters
+ 435 43.8%  Medium Non-overlapping Intervals
+ 495 56.1%  Medium Teemo Attacking
+ 515 61.9%  Medium Find Largest Value in Each Tree Row
+ 535 80.6%  Medium Encode and Decode TinyURL
+ 655 55.7%  Medium Print Binary Tree
+ 695 64.1%  Medium Max Area of Island
+ 735 43.1%  Medium Asteroid Collision
+ 775 42.4%  Medium Global and Local Inversions
+ 795 47.2%  Medium Number of Subarrays with Bounded Maximum
+ 835 61.9%  Medium Image Overlap
+ 855 43.4%  Medium Exam Room
+ 875 53.3%  Medium Koko Eating Bananas
+ 915 45.9%  Medium Partition Array into Disjoint Intervals
+ 935 46.1%  Medium Knight Dialer
+ 955 33.5%  Medium Delete Columns to Make Sorted II

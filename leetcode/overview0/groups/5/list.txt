@@ -1,0 +1,22 @@
+  32 29.0%    Hard Longest Valid Parentheses
+  52 59.5%    Hard N-Queens II
+  72 46.2%    Hard Edit Distance
+  92 40.1%  Medium Reverse Linked List II
+ 132 30.9%    Hard Palindrome Partitioning II
+ 152 32.5%  Medium Maximum Product Subarray
+ 212 36.3%    Hard Word Search II
+ 312 53.6%    Hard Burst Balloons
+ 332 37.6%  Medium Reconstruct Itinerary
+ 372 36.6%  Medium Super Pow
+ 392 49.4%    Easy Is Subsequence
+ 452 49.7%  Medium Minimum Number of Arrows to Burst Balloons
+ 472 44.9%    Hard Concatenated Words
+ 592 49.9%  Medium Fraction Addition and Subtraction
+ 652 51.8%  Medium Find Duplicate Subtrees
+ 672 51.0%  Medium Bulb Switcher II
+ 692 52.8%  Medium Top K Frequent Words
+ 712 59.2%  Medium Minimum ASCII Delete Sum for Two Strings
+ 752 52.4%  Medium Open the Lock
+ 792 48.0%  Medium Number of Matching Subsequences
+ 912 64.4%  Medium Sort an Array
+ 932 61.1%  Medium Beautiful Array

@@ -1,0 +1,85 @@
+28 problems total
+
+18
+--
+
+2Sum的核心解法:
+
+// (1) 输入数组已经排序 (2) i=0, j=n-1
+while(i < j) { 
+	//find a pair   
+	if(target - nums[i] == nums[j]) {    
+		List<Integer> temp = new ArrayList<>();  
+		temp.add(nums[i]);  
+		temp.add(target-nums[i]); 
+		res.add(temp); 
+		//skip duplication 
+		while(i<j && nums[i]==nums[i+1]) i++; 
+		while(i<j && nums[j-1]==nums[j]) j--; 
+		i++; 
+		j--; 
+		//move left bound   
+	} else if (target - nums[i] > nums[j]) {   
+		i++; //move right bound   
+	} else {   
+		j--;   
+	}  
+} 
+
+有两点注意: 
+(1) 2Sum问题在已经排序的数组上, 有一个真正的O(n)的解法;
+(2) 注意题目中的去重技术
+(3) 图中双指针的应用方式非常有误导性. 它的适用度非常有限, 只能解决2Sum问题.
+    事实上, 这个遍历方式并不能遍历所有的二元组, 而是只能用来寻找2Sum
+    (todo:find) 曾经有个题目, 我用了这种方式, 结果产生了严重的错误
+
+98
+--
+解法1: 递归并返回连个值
+解法2: 中序遍历 => (知识点: BST 等价于 中序遍历结果是一个有序列表)
+
+小技巧: 使用一个栈对树进行中序遍历 (经验来看, 用处有限)
+
+public List<Integer> inorderTraversal(TreeNode root) { List<Integer> list = new ArrayList<>(); if(root == null) return list; Stack<TreeNode> stack = new Stack<>(); while(root != null || !stack.empty()){ while(root != null){ stack.push(root); root = root.left; } root = stack.pop(); list.add(root.val); root = root.right; } return list; }
+
+128
+---
+
+常规的解法很没有意思: 维持一个map, 利用map来记录各个节点间的对应关系
+
+有一个解法, 只用了常数级的额外存储空间: 
+1. 原节点的随机指针指向对应的新建节点;
+2. 新建节点的随机指针指向原节点的随机指针指向的位置;
+3. 第二次遍历时:
+  (1) 原节点的随机指针指向新节点的随机指针指向的位置;
+  (2) 新节点的随机指针指向它指向的节点的随机指针指向的节点;
+
+218
+---
+
+https://briangordon.github.io/2014/08/the-skyline-problem.html
+这个答案里面的解和我自己的想法是一模一样的.
+
+238
+---
+
+result=前缀积
+倒着遍历, result[i] *= 后缀积
+
+318
+---
+
+f(n/2)和f(n-1)这两个思路都行不通 => 提示应该是一个暴力解.
+看数据量 10^3 => 基本可以确定是个O(n^2)的暴力解.
+暴力解就简单了, 核心就是判断两个字符串是否重叠.
+我没想到的方法: 使用bit来进一步加速
+
+338
+---
+
+找规律. c[n] = 1 + c[n-2^k], 2^k <= n
+
+disscuss: f[i] = f[i >> 1] + (i & 1);
+这个理解显然更好. 如果x的最后一位是0的话, 那么f[x] = f[x/2].
+否则, f[x]最后一位是1, 那么f[x] = f[x/2] + 1.
+秒啊!!!

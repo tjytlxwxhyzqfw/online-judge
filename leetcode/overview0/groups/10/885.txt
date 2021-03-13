@@ -1,0 +1,65 @@
+885.txt
+
+让我想起了经典的螺旋型循环:
+
+left, right := c0, c0+1
+top, down := r0, r0+1
+
+for {
+	for i := left; i <= right; i++ { col++ }
+	left--
+
+	for i := top; i <= down; i++ { row++ }
+	top--
+
+	// 以下两个循环注意边界条件
+
+	for i := rght; i >= left; i-- { col-- }
+	right++
+
+	for i := down; i >= top; i-- { row-- }
+	down++
+}
+
+disscuss中还有更多的循环:
+
+这个我比较容易理解:
+(应该是我的那个循环的简化版, 比我的那个要好一些, 因为更加针对这个问题)
+
+public int[][] spiralMatrixIII(int R, int C, int r0, int c0) {
+        int r = r0, c = c0, len = 1;
+        ret = new int[R * C][2];
+        while (idx < (R * C )) {         
+            for (int k = 0; k < len; k++) add(r, c++, R, C);          
+            for (int k = 0; k < len; k++) add(r++, c, R, C);
+            len++;
+            for (int k = 0; k < len; k++) add(r, c--, R, C);
+            for (int k = 0; k < len; k++) add(r--, c, R, C);
+            len++;   
+        }
+        return ret;
+    }
+}
+
+这是最高票:
+这是最针对这个问题的一个答案, 值得研读.
+因为可能我自己的第一个思路也是这样的. 
+但是下面的代码显然是把我的思路用简洁的代码表述了出来.
+
+vector<vector<int>> spiralMatrixIII(int R, int C, int r0, int c0) {
+	vector<vector<int>> dir = {{0, 1}, {1, 0}, {0, -1}, {-1, 0}}; // east, south, west, north
+	vector<vector<int>> res;
+	int len = 0, d = 0; // move <len> steps in the <d> direction 
+	res.push_back({r0, c0}); 
+	while (res.size() < R * C) { 
+		if (d == 0 || d == 2) len++; // when move east or west, the length of path need plus 1 
+		for (int i = 0; i < len; i++) { 
+			r0 += dir[d][0];
+			c0 += dir[d][1];
+			if (r0 >= 0 && r0 < R && c0 >= 0 && c0 < C) // check valid 
+				res.push_back({r0, c0}); 
+		}
+		d = (d + 1) % 4; // turn to next direction 
+	}
+	return res;
+}

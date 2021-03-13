@@ -1,0 +1,24 @@
+   2 34.9%  Medium Add Two Numbers
+  22 64.6%  Medium Generate Parentheses
+  42 50.6%    Hard Trapping Rain Water
+  62 55.5%  Medium Unique Paths
+  82 37.9%  Medium Remove Duplicates from Sorted List II
+ 102 56.0%  Medium Binary Tree Level Order Traversal
+ 142 39.2%  Medium Linked List Cycle II
+ 162 43.7%  Medium Find Peak Element
+ 222 48.6%  Medium Count Complete Tree Nodes
+ 282 36.4%    Hard Expression Add Operators
+ 322 36.8%  Medium Coin Change
+ 382 53.8%  Medium Linked List Random Node
+ 402 28.6%  Medium Remove K Digits
+ 442 68.7%  Medium Find All Duplicates in an Array
+ 462 54.2%  Medium Minimum Moves to Equal Array Elements II
+ 522 34.0%  Medium Longest Uncommon Subsequence II
+ 542 40.5%  Medium 01 Matrix
+ 622 45.0%  Medium Design Circular Queue
+ 662 40.1%  Medium Maximum Width of Binary Tree
+ 722 35.7%  Medium Remove Comments
+ 802 49.6%  Medium Find Eventual Safe States
+ 822 43.4%  Medium Card Flipping Game
+ 842 36.6%  Medium Split Array into Fibonacci Sequence
+ 962 46.1%  Medium Maximum Width Ramp

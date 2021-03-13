@@ -1,0 +1,22 @@
+  20 39.5%    Easy Valid Parentheses
+  40 49.7%  Medium Combination Sum II
+  60 39.1%    Hard Permutation Sequence
+  80 45.7%  Medium Remove Duplicates from Sorted Array II
+ 120 45.3%  Medium Triangle
+ 140 34.1%    Hard Word Break II
+ 200 48.4%  Medium Number of Islands
+ 220 21.3%  Medium Contains Duplicate III
+ 240 43.9%  Medium Search a 2D Matrix II
+ 260 65.2%  Medium Single Number III
+ 300 43.4%  Medium Longest Increasing Subsequence
+ 380 48.5%  Medium Insert Delete GetRandom O(1)
+ 400 32.3%  Medium Nth Digit
+ 440 29.6%    Hard K-th Smallest in Lexicographical Order
+ 480 38.4%    Hard Sliding Window Median
+ 540 57.9%  Medium Single Element in a Sorted Array
+ 560 43.9%  Medium Subarray Sum Equals K
+ 640 42.5%  Medium Solve the Equation
+ 740 49.1%  Medium Delete and Earn
+ 820 51.3%  Medium Short Encoding of Words
+ 880 28.2%  Medium Decoded String at Index
+ 900 55.0%  Medium RLE Iterator

@@ -1,0 +1,22 @@
+  19 35.5%  Medium Remove Nth Node From End of List
+  39 58.5%  Medium Combination Sum
+  59 57.2%  Medium Spiral Matrix II
+  79 36.5%  Medium Word Search
+  99 42.0%    Hard Recover Binary Search Tree
+ 139 41.3%  Medium Word Break
+ 179 30.3%  Medium Largest Number
+ 199 55.6%  Medium Binary Tree Right Side View
+ 239 44.4%    Hard Sliding Window Maximum
+ 279 48.5%  Medium Perfect Squares
+ 319 45.3%  Medium Bulb Switcher
+ 399 53.8%  Medium Evaluate Division
+ 419 70.8%  Medium Battleships in a Board
+ 519 37.6%  Medium Random Flip Matrix
+ 539 52.1%  Medium Minimum Time Difference
+ 659 44.2%  Medium Split Array into Consecutive Subsequences
+ 739 64.3%  Medium Daily Temperatures
+ 779 38.4%  Medium K-th Symbol in Grammar
+ 919 58.5%  Medium Complete Binary Tree Inserter
+ 939 51.8%  Medium Minimum Area Rectangle
+ 959 66.8%  Medium Regions Cut By Slashes
+ 979 69.4%  Medium Distribute Coins in Binary Tree

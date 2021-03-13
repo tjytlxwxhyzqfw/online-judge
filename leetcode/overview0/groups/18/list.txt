@@ -1,0 +1,24 @@
+   9 49.3%    Easy Palindrome Number
+  29 16.6%  Medium Divide Two Integers
+  49 58.6%  Medium Group Anagrams
+  69 34.7%    Easy Sqrt(x)
+  89 49.9%  Medium Gray Code
+ 109 49.6%  Medium Convert Sorted List to Binary Search Tree
+ 129 50.4%  Medium Sum Root to Leaf Numbers
+ 209 39.1%  Medium Minimum Size Subarray Sum
+ 229 38.4%  Medium Majority Element II
+ 289 57.5%  Medium Game of Life
+ 309 48.0%  Medium Best Time to Buy and Sell Stock with Cooldown
+ 329 44.2%    Hard Longest Increasing Path in a Matrix
+ 429 66.2%  Medium N-ary Tree Level Order Traversal
+ 529 60.5%  Medium Minesweeper
+ 609 60.8%  Medium Find Duplicate File in System
+ 649 39.4%  Medium Dota2 Senate
+ 729 53.0%  Medium My Calendar I
+ 769 55.4%  Medium Max Chunks To Make Sorted
+ 789 58.0%  Medium Escape The Ghosts
+ 809 46.6%  Medium Expressive Words
+ 869 54.1%  Medium Reordered Power of 2
+ 889 67.2%  Medium Construct Binary Tree from Preorder and Postorder Traversal
+ 909 39.0%  Medium Snakes and Ladders
+ 969 68.5%  Medium Pancake Sorting

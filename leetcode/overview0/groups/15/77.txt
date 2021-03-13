@@ -1,0 +1,86 @@
+77.txt
+
+disscuss1: backtracking
+-----------------------
+
+好解法, 重点掌握
+
+public static List<List<Integer>> combine(int n, int k) {
+	List<List<Integer>> combs = new ArrayList<List<Integer>>();
+	combine(combs, new ArrayList<Integer>(), 1, n, k);
+	return combs;
+ }
+
+// start: 从哪个开始
+// n: 到哪个结束
+// k: 还需要多少个
+public static void combine(List<List<Integer>> combs, List<Integer> comb, int start, int n, int k) {
+	if(k==0) {
+		combs.add(new ArrayList<Integer>(comb));
+		return;
+	}
+	// for循环优化(disscuss): just a little change it will save a lot of time. i <= end -k + 1, don't use i <=n
+	for(int i=start;i<=n;i++) {
+		comb.add(i);
+		// i+1: 递增加数, 以达到去重的目的
+		combine(combs, comb, i+1, n, k-1);
+		// 这是我想重点学习的: 你看人家是怎么避免了visit数组的使用的
+		comb.remove(comb.size()-1);
+	}
+}
+
+disscuss2: iterative
+--------------------
+
+这个解法有一定的技巧性, 但是想法的确很棒
+从这个解法可以看出两点:
+1. 组合去重问题的最好解法依然还是backtracking
+2. 组合去重问题存在迭代解法, 但是本质还是在模拟backtraing的方法, 并且有一定的技巧性
+
+class Solution { 
+public:
+	vector<vector<int>> combine(int n, int k) { 
+		vector<vector<int>> result;
+		int i = 0; 
+		vector<int> p(k, 0);
+		while (i >= 0) {
+			p[i]++;
+			if (p[i] > n) --i;
+			else if (i == k - 1) result.push_back(p);
+			else {     ++i;     p[i] = p[i - 1];    }
+		}
+		return result;
+	}
+}
+
+Thanks for sharing! This is amazing!! 
+I wrote a Java version with some explanation. 
+Not very fast though. Let me know if you have better implementation. Thanks~
+
+Basic idea: reverse the backtracking process.
+(1) Starting from the right-most position, increase until n,
+(2) then we go back one position, and increase the number in this position until n 
+    while also increase positions on its right. (kinda hard to explain lol)
+
+An example: n = 4, k = 2, we have Integer[] cur = new Integer[2]
+Below is cur's value in every iteration:
+0 0 initialization
+1 0
+1 1 add to res
+1 2 add to res
+1 3 add to res
+1 4 add to res
+1 5 oops, the right-most position > n, go back one position and try 2 for cur[0]
+2 5
+2 2 while cur[0] = 2, we try every possibility for cur[1]
+2 3 add to res
+2 4 add to res
+2 5 oops, the right-most position > n, go back one position and try 3 for cur[0]
+3 5
+3 3
+3 4 add to res
+3 5 oops, the right-most position > n, go back one position
+4 5
+4 4
+4 5 oops, the right-most position > n, go back one position
+5 5 i = -1, out of loop

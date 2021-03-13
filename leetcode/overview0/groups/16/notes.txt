@@ -1,0 +1,6 @@
+21
+
+48: mine (1) move (row, col) to (col, n-row) formula: ori = (ori + 1000) * 10^4 + new;
+    discuss: clockwise-90 = top down + symmetry; anti-clockwise-90 = symmetry + top down
+328: mine (2) dp O(n^2): sort first
+    discuss: same as mine

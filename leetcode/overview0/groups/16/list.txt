@@ -1,0 +1,127 @@
+   8 15.5%  Medium 2085/11270 String to Integer (atoi)
+  28 35.0%    Easy Implement strStr()
+  48 59.1%  Medium Rotate Image
+  68 29.1%    Hard Text Justification
+ 128 45.9%    Hard Longest Consecutive Sequence
+ 148 45.6%  Medium Sort List
+ 188 29.1%    Hard Best Time to Buy and Sell Stock IV
+ 208 51.3%  Medium Implement Trie (Prefix Tree)
+ 228 42.0%    Easy Summary Ranges
+ 328 56.8%  Medium Odd Even Linked List
+ 368 38.1%  Medium Largest Divisible Subset
+ 388 42.4%  Medium Longest Absolute File Path
+~~~
+ 468 24.7%  Medium Validate IP Address
+ 508 58.8%  Medium Most Frequent Subtree Sum
+ 528 44.4%  Medium Random Pick with Weight
+ 648 58.1%  Medium Replace Words
+ 688 49.8%  Medium Knight Probability in Chessboard
+ 768 49.6%    Hard Max Chunks To Make Sorted II
+ 808 40.7%  Medium Soup Servings
+ 848 45.1%  Medium Shifting Letters
+ 948 46.2%  Medium Bag of Tokens
+ 988 46.5%  Medium Smallest String Starting From Leaf
+
+   8 15.5%  Medium 2085/11270 String to Integer (atoi)
+------
+
+  28 35.0%    Easy Implement strStr()
+------
+
+  48 59.1%  Medium 4192/309 Rotate Image
+------
+You are given an n x n 2D matrix representing an image, rotate the image by 90 degrees (clockwise).
+You have to rotate the image in-place, which means you have to modify the input 2D matrix directly.
+DO NOT allocate another 2D matrix and do the rotation.
+Constraints:
+(1) matrix.length == n
+(2) matrix[i].length == n
+(3) 1 <= n <= 20
+(4) -1000 <= matrix[i][j] <= 1000
+
+  68 29.1%    Hard 879/1825 Text Justification
+------
+[粪]
+Given an array of words and a width maxWidth, format the text such that each line has exactly
+maxWidth characters and is fully (left and right) justified. You should pack your words in a greedy
+approach; that is, pack as many words as you can in each line. Pad extra spaces ' ' when necessary
+so that each line has exactly maxWidth characters. Extra spaces between words should be distributed
+as evenly as possible. If the number of spaces on a line do not divide evenly between words, the
+empty slots on the left will be assigned more spaces than the slots on the right. For the last line
+of text, it should be left justified and no extra space is inserted between words.
+Note:
+(1) A word is defined as a character sequence consisting of non-space characters only.
+(2) Each word's length is guaranteed to be greater than 0 and not exceed maxWidth.
+(3) The input array words contains at least one word.
+Constraints:
+(1) 1 <= words.length <= 300
+(2) 1 <= words[i].length <= 20
+(3) words[i] consists of only English letters and symbols.
+(4) 1 <= maxWidth <= 100
+(5) words[i].length <= maxWidth
+
+ 128 45.9%    Hard 4550/221 Longest Consecutive Sequence
+ ------
+ Given an unsorted array of integers nums, return the length of the longest consecutive elements
+ sequence. Constraints: (1) 0 <= nums.length <= 10^4; (2) -10^9 <= nums[i] <= 10^9.
+ Follow up: Could you implement the O(n) solution?
+ Example: [1 -1 2 -1 3] => 3
+
+ 148 45.6%  Medium 3809/163 Sort List
+------
+Given the head of a linked list, return the list after sorting it in ascending order.
+Follow up: Can you sort the linked list in O(n logn) time and O(1) memory (i.e. constant space)?
+
+ 188 29.1%    Hard 2185/135 Best Time to Buy and Sell Stock IV
+------
+You are given an integer array prices where prices[i] is the price of a given stock on the ith day.
+Design an algorithm to find the maximum profit. You may complete at most k transactions.
+Notice that you may not engage in multiple transactions simultaneously (i.e., you must sell the
+stock before you buy again).
+Constraints: (1) 0 <= k <= 100; (2) 0 <= prices.length <= 1000; (3) 0 <= prices[i] <= 1000;
+
+ 208 51.3%  Medium Implement Trie (Prefix Tree)
+ ------
+
+ 228 42.0%    Easy Summary Ranges
+ ------
+
+ 328 56.8%  Medium 2735/330 Odd Even Linked List
+ ------
+ [无聊]
+ Given a singly linked list, group all odd nodes together followed by the even nodes. Please note
+ here we are talking about the node number and not the value in the nodes. You should try to do it
+ in place. The program should run in O(1) space complexity and O(nodes) time complexity.
+
+ 368 38.1%  Medium 1702/86 Largest Divisible Subset
+ ------
+ Given a set of distinct positive integers nums, return the largest subset answer such that every
+ pair (answer[i], answer[j]) of elements in this subset satisfies: answer[i] % answer[j] == 0, or
+ answer[j] % answer[i] == 0. If there are multiple solutions, return any of them.
+ Constraints:
+ (1) 1 <= nums.length <= 1000
+ (2) 1 <= nums[i] <= 2 * 10^9
+ (3) All the integers in nums are unique
+
+ 388 42.4%  Medium 688/1641 Longest Absolute File Path
+ ------
+ If we were to write this representation in code, it will look like this:
+ "dir\n\tsubdir1\n\t\tfile1.ext\n\t\tsubsubdir1\n\tsubdir2\n\t\tsubsubdir2\n\t\t\tfile2.ext".
+ Note that the '\n' and '\t' are the new-line and tab characters. Every file and directory has a
+ unique absolute path in the file system, which is the order of directories that must be opened to
+ reach the file/directory itself, all concatenated by '/'s. Using the above example, the absolute
+ path to file2.ext is "dir/subdir2/subsubdir2/file2.ext".
+ Constraints:
+ (1) 1 <= input.length <= 104
+ (2) input may contain lowercase or uppercase English letters, a new line character '\n', a tab
+     character '\t', a dot '.', a space ' ', and digits.
+
+ 468 24.7%  Medium Validate IP Address
+ 508 58.8%  Medium Most Frequent Subtree Sum
+ 528 44.4%  Medium Random Pick with Weight
+ 648 58.1%  Medium Replace Words
+ 688 49.8%  Medium Knight Probability in Chessboard
+ 768 49.6%    Hard Max Chunks To Make Sorted II
+ 808 40.7%  Medium Soup Servings
+ 848 45.1%  Medium Shifting Letters
+ 948 46.2%  Medium Bag of Tokens

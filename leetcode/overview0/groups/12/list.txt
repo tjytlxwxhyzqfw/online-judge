@@ -1,0 +1,24 @@
+   6 37.5%  Medium ZigZag Conversion
+  26 46.2%    Easy Remove Duplicates from Sorted Array
+  46 65.8%  Medium Permutations
+  66 42.6%    Easy Plus One
+  86 42.8%  Medium Partition List
+ 106 49.0%  Medium Construct Binary Tree from Inorder and Postorder Traversal
+ 126 23.2%    Hard Word Ladder II
+ 166 22.1%  Medium Fraction to Recurring Decimal
+ 306 29.5%  Medium Additive Number
+ 386 53.5%  Medium Lexicographical Numbers
+ 406 68.0%  Medium Queue Reconstruction by Height
+ 446 33.2%    Hard Arithmetic Slices II - Subsequence
+ 466 28.6%    Hard Count The Repetitions
+ 486 48.4%  Medium Predict the Winner
+ 526 59.7%  Medium Beautiful Arrangement
+ 646 52.6%  Medium Maximum Length of Pair Chain
+ 826 38.8%  Medium Most Profit Assigning Work
+ 846 55.1%  Medium Hand of Straights
+ 866 25.1%  Medium Prime Palindrome
+ 886 44.8%  Medium Possible Bipartition
+ 926 52.9%  Medium Flip String to Monotone Increasing
+ 946 63.3%  Medium Validate Stack Sequences
+ 966 47.6%  Medium Vowel Spellchecker
+ 986 68.0%  Medium Interval List Intersections

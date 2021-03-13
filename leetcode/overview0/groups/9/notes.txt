@@ -1,0 +1,31 @@
+25 problems total
+
+54: m行 x n列
+
+解法0(mine):
+struct x     x[0]    x[1]    x[2]     x[3]
+direction = [[0, 1], [1, 0], [0, -1], [-1, 0]]
+    steps = [n,      m-1,    n-1,     m-2]
+            [n-2,    m-3,    n-3,     m-4]
+
+[c, r] = [0, 0]
+for i++ {
+	y = x[i%4]
+	for j := 0; j < y.steps; j++:
+		add matrix[r][c]
+		r, c += y.direction
+	y.steps -= 2
+}
+
+解法1(diss):
+left=0, rght=n-1, top=0, down=m-1
+while (left < rght && top < down) {
+	for col: left -> rght: add matrix[top][col]
+	if ++top > down: break
+	for row: top -> down: add matrix[row][rght]
+	if --rght < left: break
+	for col: rght -> left: add matrix[down][col]
+	if --down < top: break
+	for row: down -> top: add matrix[row][left]
+	if ++left > rght: break
+}

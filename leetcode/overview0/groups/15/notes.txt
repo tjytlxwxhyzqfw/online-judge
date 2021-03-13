@@ -1,0 +1,8 @@
+22 total
+
+17: (1) dfs (mine) (2) iterative (diss which is 4 times faster than dfs)
+37: (1) mine: backtrack = disscuss
+77: mine:
+	(1) dfs好像是最简单的(只生成递增的以避免重复);
+	(2) 不太好的: 从n个生成n+1个 => 12+3 == 13+2 (重复); 按照首字母划分(好实现吗?)
+    disscuss: => 77.txt

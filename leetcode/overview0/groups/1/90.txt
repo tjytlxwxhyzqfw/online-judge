@@ -1,0 +1,96 @@
+Intution:
+--------
+
+1, 2, 2, 3, 3
+
+1 xxxx
+2 xxxx
+3 xxxx
+
+find(i, arr, used) {
+	result = []
+
+	used[i]=true
+	for k=0; i < n; ++k {
+		if used[k] continue
+		subr = find(k, arr, used)
+		result.append([arr[i]] + subr)
+	}
+}
+
+find(i, arr, used): 他能找到所有的以arr[i]开头的幂集, 且不重复
+
+Discuss:
+-------
+
+第一种思路: 迭代的
+
+class Solution {
+public:
+    vector<vector<int> > subsetsWithDup(vector<int> &S) {
+        vector<vector<int> > totalset = {{}};
+        sort(S.begin(),S.end());
+        for(int i=0; i<S.size();){
+            int count = 0; // num of elements are the same
+            while(count + i<S.size() && S[count+i]==S[i])  count++;
+            int previousN = totalset.size();
+            for(int k=0; k<previousN; k++){
+                vector<int> instance = totalset[k];
+                for(int j=0; j<count; j++){
+                    instance.push_back(S[i]);
+                    totalset.push_back(instance);
+                }
+            }
+            i += count;
+        }
+        return totalset;
+        }
+};
+
+作者的思路是这样的:
+
+1, 2, 2, 3, 3, 3
+
+对于1: 要么加入到幂集, 要么不加入
+对于2: 要么不加入到幂集, 要么加入1个, 要么加入2个
+对于3: 要么加0个, 要么1个, 要么2个, ...
+
+totalset是当前为止的不重复幂集
+previousN是它的大小
+假设我们现在遇到了3,
+那么就把totalset中所有的幂集(由{1, 2, 2组成的)都拿出来
+要么不加3, 放回去, 要么加1个3放回去, 要么加2个3放回去, 要么加3个3, 放回去
+
+第二种思路: 递归的
+
+class Solution(object):
+    def subsetsWithDup(self, nums):
+        ret = []
+        self.dfs(sorted(nums), [], ret)
+        return ret
+    
+    def dfs(self, nums, path, ret):
+        ret.append(path)
+        for i in range(len(nums)):
+            if i > 0 and nums[i] == nums[i-1]:
+                continue
+            self.dfs(nums[i+1:], path+[nums[i]], ret)
+
+这让我突然意识到, 我的解法是错的!!!!
+我返回的是: 
+1开头的所有的幂集
+2开头的所有的幂集
+3开头的所有的幂集
+
+对于{1, 2}, 我会返回: {1, 2}和{2, 1}, 这两个是同一个幂集!!!
+
+所以, 对于幂集, 返回的应该是:
+
+最小值是1的所有的幂集
+最小值是2的所有的幂集
+最小值是3的所有的幂集
+...
+
+仔细体会!!! 首字母等价划分啥时候有效? 必须是order maters的时候
+现在是幂集, 顺序不massters了!!!
+

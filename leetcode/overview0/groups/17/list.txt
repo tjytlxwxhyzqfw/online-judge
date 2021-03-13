@@ -1,0 +1,81 @@
+  18 34.5%  Medium 2779/384 4Sum
+------
+Given an array nums of n integers and an integer target, are there elements a, b, c, and d in numssuch that a + b + c + d = target? Find all unique quadruplets in the array which gives the sum of target. (Notice that the solution set must not contain duplicate quadruplets.)
+
+  38 45.7%    Easy Count and Say
+------
+
+  58 33.4%    Easy Length of Last Word
+------
+
+  78 64.2%  Medium 5015/104 Subsets
+------
+Given an integer array nums, return all possible subsets (the power set). The solution set must not contain duplicate subsets. Constraints: (1) 1 <= nums.length <= 10; (2) -10 <= nums[i] <= 10; (3) All the numbers of nums are unique.
+
+  98 28.5%  Medium Validate Binary Search Tree
+------
+Given the root of a binary tree, determine if it is a valid binary search tree (BST).
+
+ 138 39.1%  Medium 4369/780 Copy List with Random Pointer
+------
+A linked list is given such that each node contains an additional random pointer which could point to any node in the list or null. Return a deep copy of the list.
+
+The Linked List is represented in the input/output as a list of n nodes. Each node is represented as a pair of [val, random_index] where: (1) val: an integer representing Node.val;  (2) random_index: the index of the node (range from 0 to n-1) where random pointer points to, or null if it does not point to any node.
+
+(Disscuss: This problem can be solve within a constant extra space)
+
+ 218 35.9%    Hard 2608/149 The Skyline Problem
+------
+A city's skyline is the outer contour of the silhouette formed by all the buildings in that city when viewed from a distance. Given the locations and heights of all the buildings, return the skyline formed by these buildings collectively. The geometric information of each building is given in the array buildings where buildings[i] = [left_i, right_i, height_i]. You may assume all buildings are perfect rectangles grounded on an absolutely flat surface at height 0.
+
+The skyline should be represented as a list of "key points" sorted by their x-coordinate in the form [[x1,y1],[x2,y2],...]. Each key point is the left endpoint of some horizontal segment in the skyline except the last point in the list, which always has a y-coordinate 0 and is used to mark the skyline's termination where the rightmost building ends. Any ground between the leftmost and rightmost buildings should be part of the skyline's contour.
+
+ 238 61.1%  Medium 6386/494 Product of Array Except Self
+------
+Given an array nums of n integers where n > 1,  
+return an array output such that output[i] is equal to the product of all the elements of numsexcept nums[i]. 
+Note: It's guaranteed that the product of the elements of any prefix or suffix of the array (including the whole array) fits in a 32 bit integer
+Constraints: 
+  (1) solve it without division and in O(n); 
+  (2) solve it with constant extra space complexity
+
+ 318 52.0%  Medium 932/79 Maximum Product of Word Lengths
+------
+Given a string array words, find the maximum value of length(word[i]) * length(word[j])
+where the two words do not share common letters. 
+You may assume that each word will contain only lower case letters. If no such two words exist, return 0.
+Constraints:
+(1) 0 <= words.length <= 10^3
+(2) 0 <= words[i].length <= 10^3
+(3) words[i] consists only of lowercase English letters.
+
+ 338 70.1%  Medium 3427/186 Counting Bits
+------
+Given a non negative integer number num. 
+For every numbers i in the range 0 ≤ i ≤ num calculate the number of 1's in their binary representation 
+and return them as an array. Solve this problem within one pass.
+
+ 378 55.7%  Medium Kth Smallest Element in a Sorted Matrix
+------
+Given a n x n matrix where each of the rows and columns are sorted in ascending order, find the kth smallest element in the matrix.
+
+Note that it is the kth smallest element in the sorted order, not the kth distinct element.
+
+ 398 57.4%  Medium Random Pick Index
+ 438 44.5%  Medium Find All Anagrams in a String
+ 458 54.4%    Hard Poor Pigs
+ 478 38.9%  Medium Generate Random Point in a Circle
+ 498 50.0%  Medium Diagonal Traverse
+ 518 51.3%  Medium Coin Change 2
+ 638 52.3%  Medium Shopping Offers
+ 658 41.6%  Medium Find K Closest Elements
+ 678 31.5%  Medium Valid Parenthesis String
+ 698 45.5%  Medium Partition to K Equal Sum Subsets
+ 718 50.0%  Medium Maximum Length of Repeated Subarray
+ 738 45.4%  Medium Monotone Increasing Digits
+ 838 49.5%  Medium Push Dominoes
+ 898 34.0%  Medium Bitwise ORs of Subarrays
+ 918 34.0%  Medium Maximum Sum Circular Subarray
+ 958 52.4%  Medium Check Completeness of a Binary Tree
+ 978 46.6%  Medium Longest Turbulent Subarray
+ 998 63.6%  Medium Maximum Binary Tree II
