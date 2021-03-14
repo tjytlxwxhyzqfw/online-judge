@@ -1,0 +1,19 @@
+Intution:
+--------
+
+深夜了, 题目都没看懂草.
+后来看懂了.
+
+从右往左遍历, 记录到当前为止见过的最大值.
+如果最大值大于当前值, 记录一次替换(最大值<->当前值)
+否则, 更新最大值, 继续往左遍历.
+
+Discuss:
+-------
+
+五花八门.
+
+有用桶的: https://leetcode.com/problems/maximum-swap/discuss/107068/Java-simple-solution-O(n)-time
+有用Next排列的(31): https://leetcode.com/problems/maximum-swap/discuss/107102/Simple-AC-O(n)-java-solution-with-ex
+有跟我一模一样思路的: https://leetcode.com/problems/maximum-swap/discuss/107073/C%2B%2B-one-pass-simple-and-fast-solution%3A-1-3ms-O(n)-time
+还有用DP的: https://leetcode.com/problems/maximum-swap/discuss/107084/C%2B%2B-3ms-O(n)-time-O(n)-space-DP-solution

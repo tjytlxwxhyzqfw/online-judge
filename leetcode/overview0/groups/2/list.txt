@@ -1,25 +1,360 @@
-   1 46.1%    Easy Two Sum
-  21 55.2%    Easy Merge Two Sorted Lists
-  41 33.3%    Hard First Missing Positive
-  61 31.5%  Medium Rotate List
-  81 33.4%  Medium Search in Rotated Sorted Array II
- 201 39.6%  Medium Bitwise AND of Numbers Range
- 221 38.5%  Medium Maximal Square
- 241 56.8%  Medium Different Ways to Add Parentheses
- 301 44.3%    Hard Remove Invalid Parentheses
- 321 27.4%    Hard Create Maximum Number
- 341 54.1%  Medium Flatten Nested List Iterator
- 381 34.6%    Hard Insert Delete GetRandom O(1) - Duplicates allowed
- 421 53.8%  Medium Maximum XOR of Two Numbers in an Array
- 481 47.9%  Medium Magical String
- 621 51.4%  Medium Task Scheduler
- 641 54.6%  Medium Design Circular Deque
- 701 75.8%  Medium Insert into a Binary Search Tree
- 721 50.9%  Medium Accounts Merge
- 781 55.3%  Medium Rabbits in Forest
- 801 39.0%  Medium Minimum Swaps To Make Sequences Increasing
- 841 65.1%  Medium Keys and Rooms
- 881 47.5%  Medium Boats to Save People
- 901 61.1%  Medium Online Stock Span
- 921 74.6%  Medium Minimum Add to Make Parentheses Valid
- 981 53.8%  Medium Time Based Key-Value Store
+Contents:
+========
+
+   1 46.1%    Easy 0/0 Two Sum
+  21 55.2%    Easy 0/0 Merge Two Sorted Lists
+  41 33.3%    Hard 5339/948 First Missing Positive
+  61 31.5%  Medium 2155/1134 Rotate List
+  81 33.4%  Medium 1983/572 Search in Rotated Sorted Array II
+ 201 39.6%  Medium 1314/142 Bitwise AND of Numbers Range
+ 221 38.5%  Medium 4300/105 Maximal Square
+ 241 56.8%  Medium 2098/113 Different Ways to Add Parentheses
+ 301 44.3%    Hard 3212/147 Remove Invalid Parentheses
+ 321 27.4%    Hard 908/296 Create Maximum Number
+ 341 54.1%  Medium 0/0 Flatten Nested List Iterator
+ 381 34.6%    Hard 1079/87 Insert Delete GetRandom O(1) - Duplicates allowed
+ 421 53.8%  Medium 1958/213 Maximum XOR of Two Numbers in an Array
+ 481 47.9%  Medium 127/746 Magical String
+ 621 51.4%  Medium 4491/859 Task Scheduler
+ 641 54.6%  Medium 378/42 Design Circular Deque
+ 701 75.8%  Medium 1454/96 Insert into a Binary Search Tree
+ 721 50.9%  Medium 2213/404 Accounts Merge
+ 781 55.3%  Medium 374/357 Rabbits in Forest
+ 801 39.0%  Medium 1445/105 Minimum Swaps To Make Sequences Increasing
+ 841 65.1%  Medium 1495/107 Keys and Rooms
+ 881 47.5%  Medium 1214/48 Boats to Save People
+ 901 61.1%  Medium 1351/157 Online Stock Span
+ 921 74.6%  Medium 1100/80 Minimum Add to Make Parentheses Valid
+ 981 53.8%  Medium 1117/139 Time Based Key-Value Store
+
+Discuss:
+=======
+
+  1 46.1%    Easy 0/0 Two Sum
+------
+
+  21 55.2%    Easy 0/0 Merge Two Sorted Lists
+------
+
+  41 33.3%    Hard 5339/948 First Missing Positive
+------
+Given an unsorted integer array nums, find the smallest missing positive integer.
+Constraints:
+1) 0 <= nums.length <= 300
+2) -2^31 <= nums[i] <= 2^31 - 1
+Follow up: Could you implement an algorithm that runs in O(n) time and uses constant extra space?
+
+  61 31.5%  Medium 2155/1134 Rotate List
+------
+Given the head of a linked list, rotate the list to the right by k places.
+Constraints:
+1) The number of nodes in the list is in the range [0, 500].
+2) -100 <= Node.val <= 100
+3) 0 <= k <= 2 * 10^9
+
+  81 33.4%  Medium 1983/572 Search in Rotated Sorted Array II
+------
+There is an integer array nums sorted in non-decreasing order (not necessarily with distinct values).
+
+Before being passed to your function, nums is rotated at an unknown pivot index k (0 <= k < nums.length) such that the resulting array is [nums[k], nums[k+1], ..., nums[n-1], nums[0], nums[1], ..., nums[k-1]] (0-indexed). For example, [0,1,2,4,4,4,5,6,6,7] might be rotated at pivot index 5 and become [4,5,6,6,7,0,1,2,4,4].
+
+Given the array nums after the rotation and an integer target, return true if target is in nums, or false if it is not in nums.
+
+12345->45123
+
+Constraints:
+
+1) 1 <= nums.length <= 5000
+2) -104 <= nums[i] <= 104
+3) nums is guaranteed to be rotated at some pivot.
+4) -104 <= target <= 104
+ 
+Follow up: This problem is the same as Search in Rotated Sorted Array, where nums may contain duplicates. Would this affect the runtime complexity? How and why?
+
+
+ 201 39.6%  Medium 1314/142 Bitwise AND of Numbers Range
+------
+Given two integers left and right that represent the range [left, right], return the bitwise AND of all numbers in this range, inclusive.
+
+Constraints: 0 <= left <= right <= 2^31 - 1
+
+ 221 38.5%  Medium 4300/105 Maximal Square
+------
+
+Given an m x n binary matrix filled with 0's and 1's, find the largest square containing only 1's and return its area.
+
+Constraints:
+
+1) m == matrix.length
+2) n == matrix[i].length
+3) 1 <= m, n <= 300
+4) matrix[i][j] is '0' or '1'.
+
+ 241 56.8%  Medium 2098/113 Different Ways to Add Parentheses
+------
+
+Given a string expression of numbers and operators, return all possible results from computing all the different possible ways to group numbers and operators. You may return the answer in any order.
+
+Constraints:
+
+1 <= expression.length <= 20
+expression consists of digits and the operator '+', '-', and '*'.
+
+ 301 44.3%    Hard 3212/147 Remove Invalid Parentheses
+------
+
+Remove the minimum number of invalid parentheses in order to make the input string valid. Return all possible results.
+
+Note: The input string may contain letters other than the parentheses ( and ).
+
+()()) -> ()() (())
+
+ 321 27.4%    Hard 908/296 Create Maximum Number
+------
+
+You are given two integer arrays nums1 and nums2 of lengths m and n respectively. nums1 and nums2 represent the digits of two numbers. You are also given an integer k.
+
+Create the maximum number of length k <= m + n from digits of the two numbers. The relative order of the digits from the same array must be preserved.
+
+Return an array of the k digits representing the answer.
+
+Constraints:
+
+m == nums1.length
+n == nums2.length
+1 <= m, n <= 500
+0 <= nums1[i], nums2[i] <= 9
+1 <= k <= m + n
+ 
+Follow up: Try to optimize your time and space complexity.
+
+ 341 54.1%  Medium 0/0 Flatten Nested List Iterator
+------
+
+ 381 34.6%    Hard 1079/87 Insert Delete GetRandom O(1) - Duplicates allowed
+------
+
+Design a data structure that supports all following operations in average O(1) time.
+
+Note: Duplicate elements are allowed.
+insert(val): Inserts an item val to the collection.
+remove(val): Removes an item val from the collection if present.
+getRandom: Returns a random element from current collection of elements. The probability of each element being returned is linearly related to the number of same value the collection contains.
+
+ 421 53.8%  Medium 1958/213 Maximum XOR of Two Numbers in an Array
+------
+
+Given an integer array nums, return the maximum result of nums[i] XOR nums[j], where 0 ≤ i ≤ j < n.
+
+Follow up: Could you do this in O(n) runtime?
+
+Constraints:
+
+1 <= nums.length <= 2 * 104
+0 <= nums[i] <= 231 - 1
+
+ 481 47.9%  Medium 127/746 Magical String
+------
+A magical string S consists of only '1' and '2' and obeys the following rules:
+
+The string S is magical because concatenating the number of contiguous occurrences of characters '1' and '2' generates the string S itself.
+
+The first few elements of string S is the following: S = "1221121221221121122……"
+
+If we group the consecutive '1's and '2's in S, it will be:
+
+1 22 11 2 1 22 1 22 11 2 11 22 ......
+
+and the occurrences of '1's or '2's in each group are:
+
+1 2 2 1 1 2 1 2 2 1 2 2 ......
+
+You can see that the occurrence sequence above is the S itself.
+
+Given an integer N as input, return the number of '1's in the first N number in the magical string S.
+
+Note: N will not exceed 100,000.
+
+ 621 51.4%  Medium 4491/859 Task Scheduler
+------
+
+Given a characters array tasks, representing the tasks a CPU needs to do, where each letter represents a different task. Tasks could be done in any order. Each task is done in one unit of time. For each unit of time, the CPU could complete either one task or just be idle.
+
+However, there is a non-negative integer n that represents the cooldown period between two same tasks (the same letter in the array), that is that there must be at least n units of time between any two same tasks.
+
+Return the least number of units of times that the CPU will take to finish all the given tasks.
+
+Constraints:
+
+1 <= task.length <= 104
+tasks[i] is upper-case English letter.
+The integer n is in the range [0, 100].
+
+ 641 54.6%  Medium 378/42 Design Circular Deque
+------
+
+Design your implementation of the circular double-ended queue (deque).
+
+Your implementation should support following operations:
+
+MyCircularDeque(k): Constructor, set the size of the deque to be k.
+insertFront(): Adds an item at the front of Deque. Return true if the operation is successful.
+insertLast(): Adds an item at the rear of Deque. Return true if the operation is successful.
+deleteFront(): Deletes an item from the front of Deque. Return true if the operation is successful.
+deleteLast(): Deletes an item from the rear of Deque. Return true if the operation is successful.
+getFront(): Gets the front item from the Deque. If the deque is empty, return -1.
+getRear(): Gets the last item from Deque. If the deque is empty, return -1.
+isEmpty(): Checks whether Deque is empty or not. 
+isFull(): Checks whether Deque is full or not.
+
+Note:
+
+All values will be in the range of [0, 1000].
+The number of operations will be in the range of [1, 1000].
+Please do not use the built-in Deque library.
+
+ 701 75.8%  Medium 1454/96 Insert into a Binary Search Tree
+------
+
+You are given the root node of a binary search tree (BST) and a value to insert into the tree. Return the root node of the BST after the insertion. It is guaranteed that the new value does not exist in the original BST.
+
+Notice that there may exist multiple valid ways for the insertion, as long as the tree remains a BST after insertion. You can return any of them.
+
+Constraints:
+
+The number of nodes in the tree will be in the range [0, 104].
+-108 <= Node.val <= 108
+All the values Node.val are unique.
+-108 <= val <= 108
+It's guaranteed that val does not exist in the original BST.
+
+
+ 721 50.9%  Medium 2213/404 Accounts Merge
+------
+Given a list of accounts where each element accounts[i] is a list of strings, where the first element accounts[i][0] is a name, and the rest of the elements are emails representing emails of the account.
+
+Now, we would like to merge these accounts. Two accounts definitely belong to the same person if there is some common email to both accounts. Note that even if two accounts have the same name, they may belong to different people as people could have the same name. A person can have any number of accounts initially, but all of their accounts definitely have the same name.
+
+After merging the accounts, return the accounts in the following format: the first element of each account is the name, and the rest of the elements are emails in sorted order. The accounts themselves can be returned in any order.
+
+Constraints:
+
+1 <= accounts.length <= 1000
+2 <= accounts[i].length <= 10
+1 <= accounts[i][j] <= 30
+accounts[i][0] consists of English letters.
+accounts[i][j] (for j > 0) is a valid email.
+
+ 781 55.3%  Medium 374/357 Rabbits in Forest
+------
+
+In a forest, each rabbit has some color. Some subset of rabbits (possibly all of them) tell you how many other rabbits have the same color as them. Those answers are placed in an array.
+
+Return the minimum number of rabbits that could be in the forest.
+
+Note:
+
+answers will have length at most 1000.
+Each answers[i] will be an integer in the range [0, 999].
+
+ 801 39.0%  Medium 1445/105 Minimum Swaps To Make Sequences Increasing
+------
+
+We have two integer sequences A and B of the same non-zero length.
+
+We are allowed to swap elements A[i] and B[i].  Note that both elements are in the same index position in their respective sequences.
+
+At the end of some number of swaps, A and B are both strictly increasing.  (A sequence is strictly increasing if and only if A[0] < A[1] < A[2] < ... < A[A.length - 1].)
+
+Given A and B, return the minimum number of swaps to make both sequences strictly increasing.  It is guaranteed that the given input always makes it possible.
+
+Note:
+
+A, B are arrays with the same length, and that length will be in the range [1, 1000].
+A[i], B[i] are integer values in the range [0, 2000].
+
+ 841 65.1%  Medium 1495/107 Keys and Rooms
+------
+
+There are N rooms and you start in room 0.  Each room has a distinct number in 0, 1, 2, ..., N-1, and each room may have some keys to access the next room. 
+
+Formally, each room i has a list of keys rooms[i], and each key rooms[i][j] is an integer in [0, 1, ..., N-1] where N = rooms.length.  A key rooms[i][j] = v opens the room with number v.
+
+Initially, all the rooms start locked (except for room 0). 
+
+You can walk back and forth between rooms freely.
+
+Return true if and only if you can enter every room.
+
+Note:
+
+1 <= rooms.length <= 1000
+0 <= rooms[i].length <= 1000
+The number of keys in all rooms combined is at most 3000.
+
+ 881 47.5%  Medium 1214/48 Boats to Save People
+------
+
+You are given an array people where people[i] is the weight of the ith person, and an infinite number of boats where each boat can carry a maximum weight of limit. Each boat carries at most two people at the same time, provided the sum of the weight of those people is at most limit.
+
+Return the minimum number of boats to carry every given person.
+
+Constraints:
+
+1 <= people.length <= 5 * 104
+1 <= people[i] <= limit <= 3 * 104
+
+ 901 61.1%  Medium 1351/157 Online Stock Span
+------
+
+Write a class StockSpanner which collects daily price quotes for some stock, and returns the span of that stock's price for the current day.
+
+The span of the stock's price today is defined as the maximum number of consecutive days (starting from today and going backwards) for which the price of the stock was less than or equal to today's price.
+
+For example, if the price of a stock over the next 7 days were [100, 80, 60, 70, 60, 75, 85], then the stock spans would be [1, 1, 1, 2, 1, 4, 6].
+
+ Note:
+
+Calls to StockSpanner.next(int price) will have 1 <= price <= 10^5.
+There will be at most 10000 calls to StockSpanner.next per test case.
+There will be at most 150000 calls to StockSpanner.next across all test cases.
+The total time limit for this problem has been reduced by 75% for C++, and 50% for all other languages.
+
+ 921 74.6%  Medium 1100/80 Minimum Add to Make Parentheses Valid
+------
+
+Given a string S of '(' and ')' parentheses, we add the minimum number of parentheses ( '(' or ')', and in any positions ) so that the resulting parentheses string is valid.
+
+Formally, a parentheses string is valid if and only if:
+
+It is the empty string, or
+It can be written as AB (A concatenated with B), where A and B are valid strings, or
+It can be written as (A), where A is a valid string.
+Given a parentheses string, return the minimum number of parentheses we must add to make the resulting string valid.
+
+Note:
+
+S.length <= 1000
+S only consists of '(' and ')' characters.
+
+ 981 53.8%  Medium 1117/139 Time Based Key-Value Store
+------
+
+Create a timebased key-value store class TimeMap, that supports two operations.
+
+1. set(string key, string value, int timestamp)
+
+Stores the key and value, along with the given timestamp.
+2. get(string key, int timestamp)
+
+Returns a value such that set(key, value, timestamp_prev) was called previously, with timestamp_prev <= timestamp.
+If there are multiple such values, it returns the one with the largest timestamp_prev.
+If there are no values, it returns the empty string ("").
+ 
+Note:
+
+All key/value strings are lowercase.
+All key/value strings have length in the range [1, 100]
+The timestamps for all TimeMap.set operations are strictly increasing.
+1 <= timestamp <= 10^7
+TimeMap.set and TimeMap.get functions will be called a total of 120000 times (combined) per test case.

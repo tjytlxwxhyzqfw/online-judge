@@ -10,18 +10,15 @@ Contents:
  150 37.4%  Medium 1471/515	Evaluate Reverse Polish Notation
  210 42.1%  Medium 3425/162	Course Schedule II
  230 62.0%  Medium 3598/83	Kth Smallest Element in a BST
-
- 310 34.4%  Medium Minimum Height Trees
- 330 34.9%    Hard Patching Array
- 390 44.8%  Medium Elimination Game
- 410 45.9%    Hard Split Array Largest Sum
- 430 56.5%  Medium Flatten a Multilevel Doubly Linked List
- 450 45.1%  Medium Delete Node in a BST
- 470 45.9%  Medium Implement Rand10() Using Rand7()
- 650 49.8%  Medium 2 Keys Keyboard
- 670 44.8%  Medium Maximum Swap
-
----
+ 310 34.4%  Medium 2944/130 	Minimum Height Trees
+ 330 34.9%    Hard 604/84	Patching Array
+ 390 44.8%  Medium 542/407	Elimination Game
+ 410 45.9%    Hard 2457/91	Split Array Largest Sum
+ 430 56.5%  Medium 2121/188	Flatten a Multilevel Doubly Linked List
+ 450 45.1%  Medium 2756/107	Delete Node in a BST
+ 470 45.9%  Medium 679/228	Implement Rand10() Using Rand7()
+ 650 49.8%  Medium 1669/119	2 Keys Keyboard
+ 670 44.8%  Medium 1405/88	Maximum Swap
 
  790 39.7%  Medium Domino and Tromino Tiling
  870 46.5%  Medium Advantage Shuffle
@@ -106,6 +103,110 @@ Constraints:
 (2) 1 <= k <= n <= 10^4
 (3) 0 <= Node.val <= 10^4
 
-Follow up: If the BST is modified often (i.e., we can do insert and delete operations) and you need to find the kth smallest frequently, how would you optimize?
+Follow up: If the BST is modified often (i.e., we can do insert and delete operations) 
+and you need to find the kth smallest frequently, how would you optimize?
 
+ 310 34.4%  Medium 2944/130 	Minimum Height Trees
+------
+A tree is an undirected graph in which any two vertices are connected by exactly one path.
+In other words, any connected graph without simple cycles is a tree.
+
+Given a tree of n nodes labelled from 0 to n - 1, and an array of n - 1 edges where edges[i] = [ai, bi]
+indicates that there is an undirected edge between the two nodes ai and bi in the tree,
+you can choose any node of the tree as the root. When you select a node x as the root, the result tree has height h.
+Among all possible rooted trees, those with minimum height (i.e. min(h))  are called minimum height trees (MHTs).
+
+Return a list of all MHTs' root labels. You can return the answer in any order.
+
+The height of a rooted tree is the number of edges on the longest downward path between the root and a leaf.
+
+Constraints:
+(1) 1 <= n <= 2 * 104 (2) edges.length == n - 1 (3) 0 <= ai, bi < n
+(4) ai != bi (5) All the pairs (ai, bi) are distinct.
+(6) The given input is guaranteed to be a tree and there will be no repeated edges.
+
+ 330 34.9%    Hard 604/84	Patching Array
+------
+Given a sorted integer array nums and an integer n, add/patch elements to the array such that any number in the
+range [1, n] inclusive can be formed by the sum of some elements in the array.
+Return the minimum number of patches required.
+
+Constraints:
+(1) 1 <= nums.length <= 1000
+(2) 1 <= nums[i] <= 104
+(3) nums is sorted in ascending order.
+(4) 1 <= n <= 231 - 1
+
+ 390 44.8%  Medium 542/407	Elimination Game
+------
+There is a list of sorted integers from 1 to n.
+Starting from left to right, remove the first number and every other number afterward until you reach the end of the list.
+Repeat the previous step again, but this time from right to left, remove the right most number and every other number from the remaining numbers.
+We keep repeating the steps again, alternating left to right and right to left, until a single number remains.
+Find the last number that remains starting with a list of length n.
+
+ 410 45.9%    Hard 2457/91	Split Array Largest Sum
+------
+Given an array nums which consists of non-negative integers and an integer m,
+you can split the array into m non-empty continuous subarrays.
+Write an algorithm to minimize the largest sum among these m subarrays.
+
+Constraints:
+(1) 1 <= nums.length <= 1000
+(2) 0 <= nums[i] <= 106
+(3) 1 <= m <= min(50, nums.length)
+
+ 430 56.5%  Medium 2121/188	Flatten a Multilevel Doubly Linked List
+------
+You are given a doubly linked list which in addition to the next and previous pointers,
+it could have a child pointer, which may or may not point to a separate doubly linked list.
+These child lists may have one or more children of their own, and so on, 
+to produce a multilevel data structure, as shown in the example below.
+Flatten the list so that all the nodes appear in a single-level, doubly linked list.
+You are given the head of the first level of the list.
+
+Constraints: (1) The number of Nodes will not exceed 1000. (2) 1 <= Node.val <= 10^5
+
+ 450 45.1%  Medium 2756/107	Delete Node in a BST
+------
+Given a root node reference of a BST and a key, delete the node with the given key in the BST.
+Return the root node reference (possibly updated) of the BST.
+Basically, the deletion can be divided into two stages: 
+(1) Search for a node to remove. (2) If the node is found, delete the node.
+Follow up: Can you solve it with time complexity O(height of tree)?
+
+Constraints:
+(1) The number of nodes in the tree is in the range [0, 104].
+(2) -105 <= Node.val <= 105
+(3) Each node has a unique value.
+(4) root is a valid binary search tree.
+(5) -105 <= key <= 105
+
+ 470 45.9%  Medium 679/228	Implement Rand10() Using Rand7()
+------
+(RT)
+
+Follow up:
+(1) What is the expected value for the number of calls to rand7() function?
+(2) Could you minimize the number of calls to rand7()?
+
+Constraints: 1 <= n <= 10^5
+
+ 650 49.8%  Medium 1669/119	2 Keys Keyboard
+------
+Initially on a notepad only one character 'A' is present.
+You can perform two operations on this notepad for each step:
+(1) Copy All: You can copy all the characters present on the notepad (partial copy is not allowed).
+(2) Paste: You can paste the characters which are copied last time.
+Given a number n. You have to get exactly n 'A' on the notepad by performing the minimum number of steps permitted.
+Output the minimum number of steps to get n 'A'.
+
+Note: The n will be in the range [1, 1000].
+
+ 670 44.8%  Medium 1405/88	Maximum Swap
+------
+Given a non-negative integer, you could swap two digits at most once to get the maximum valued number.
+Return the maximum valued number you could get. (e.g 9937 -> 9973)
+
+Note: The given number is in the range [0, 10^8]
 

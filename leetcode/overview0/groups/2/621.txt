@@ -1,0 +1,18 @@
+Intuition:
+=========
+
+我的解法又错了:
+
+Ax3, Bx3, Cx2, n=1
+
+put A: A?A?A
+put B: ABABAB
+put C: ABABABC?C <- 显然不对, 而且我甚至看Discuss之前都没有发现
+
+Discuss:
+=======
+
+把最多的先摆上, 间隔摆哦
+
+把最多的先摆上, 形成一个"frame", 然后再把剩下的, 从多到少, 塞进去
+https://leetcode.com/problems/task-scheduler/discuss/104496/concise-Java-Solution-O(N)-time-O(26)-space

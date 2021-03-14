@@ -1,0 +1,29 @@
+Intuition:
+=========
+
+从第一个数字里面取m个数, 从第二个数组里取n个数
+如果固定m和n是常量, 这个题怎么解?
+
+OK, 从一个数x里面取出m个数, 保持顺序, 并组成最大值.
+怎么解? (*)
+
+3 1 4 1 5 k=4
+
+一个数i, 只要右边有>=m个>=它的数, 那么这个数就毫无作用, 可以删掉.
+反之, 如果没有, 那么这个数必选.
+
+那么基于这个原理, 可以构造一个x^2的解法
+
+那么从x中选m个数, 从y中选n个数, 复杂度就是x^2+y^2
+m和n遍历所有可能性: k(x^2+y^2) = 1000*2.5W*2
+
+OK, 复杂度太高.
+
+Discuss:
+=======
+
+It's probably not the hardest, but quite a 'domain-specific' problem, just like other greedy algorithms.
+I mean, such algorithms can hardly be generalized to other similar problems as DFS, BFS, DP, D&C, etc. The solution is developed based on the particular property of this problem.
+
+上述问题(*)的关键解法是一个单调栈算法.
+这个题怎么说呢? 真的挺有难度的.

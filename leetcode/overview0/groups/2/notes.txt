@@ -1,0 +1,14 @@
+24 problems total
+
+81:
+Intuition: 看第k为为0的数字xxx0yyy在不在区间[left, right]中 => 没思路了, 不想了
+Discuss: 解法很好. 只要left!=right, 那么最后一位必有0, left和right右移, 重复上述步骤
+
+241:
+Intuition: 直接DFS暴力搜索, 我好想记住了, 印象还挺深 => 但是最终生成的表达式怎么求其值?
+Discuss: 按照最后一次计算的地方, 把数组切开两半, 递归求解.
+
+981:
+Intuition: hashmap[key] -> treemap[timestamp] -> value
+Discuss: hashmap[key] -> vector, use binary-search
+
