@@ -1,22 +1,669 @@
-  32 29.0%    Hard Longest Valid Parentheses
-  52 59.5%    Hard N-Queens II
-  72 46.2%    Hard Edit Distance
-  92 40.1%  Medium Reverse Linked List II
- 132 30.9%    Hard Palindrome Partitioning II
- 152 32.5%  Medium Maximum Product Subarray
- 212 36.3%    Hard Word Search II
- 312 53.6%    Hard Burst Balloons
- 332 37.6%  Medium Reconstruct Itinerary
- 372 36.6%  Medium Super Pow
- 392 49.4%    Easy Is Subsequence
- 452 49.7%  Medium Minimum Number of Arrows to Burst Balloons
- 472 44.9%    Hard Concatenated Words
- 592 49.9%  Medium Fraction Addition and Subtraction
- 652 51.8%  Medium Find Duplicate Subtrees
- 672 51.0%  Medium Bulb Switcher II
- 692 52.8%  Medium Top K Frequent Words
- 712 59.2%  Medium Minimum ASCII Delete Sum for Two Strings
- 752 52.4%  Medium Open the Lock
- 792 48.0%  Medium Number of Matching Subsequences
- 912 64.4%  Medium Sort an Array
- 932 61.1%  Medium Beautiful Array
+Contents:
+========
+  32 29.0%    Hard 4579/171 Longest Valid Parentheses
+  52 59.5%    Hard 766/179 N-Queens II
+  72 46.2%    Hard 5314/66 Edit Distance
+  92 40.1%  Medium 3422/177 Reverse Linked List II
+ 132 30.9%    Hard 1722/52 Palindrome Partitioning II
+ 152 32.5%  Medium 6405/210 Maximum Product Subarray
+ 212 36.3%    Hard 3519/142 Word Search II
+ 312 53.6%    Hard 3431/103 Burst Balloons
+ 332 37.6%  Medium 2555/1218 Reconstruct Itinerary
+ 372 36.6%  Medium 293/874 Super Pow
+ 392 49.4%    Easy 2292/229 Is Subsequence
+ 452 49.7%  Medium 1640/60 Minimum Number of Arrows to Burst Balloons
+ 472 44.9%    Hard 1101/145 Concatenated Words
+ 592 49.9%  Medium 223/343 Fraction Addition and Subtraction
+ 652 51.8%  Medium 1846/237 Find Duplicate Subtrees
+ 672 51.0%  Medium 163/943 Bulb Switcher II
+ 692 52.8%  Medium 2809/187 Top K Frequent Words
+ 712 59.2%  Medium 1258/54 Minimum ASCII Delete Sum for Two Strings
+ 752 52.4%  Medium 1481/56 Open the Lock
+ 792 48.0%  Medium 1296/89 Number of Matching Subsequences
+ 912 64.4%  Medium 761/360 Sort an Array
+ 932 61.1%  Medium 456/553 Beautiful Array
+
+ Description:
+ ===========
+
+  32 29.0%    Hard 4579/171 Longest Valid Parentheses
+------
+
+Given a string containing just the characters '(' and ')', find the length of the longest valid (well-formed) parentheses substring.
+
+Example 1:
+Input: s = "(()"
+Output: 2
+Explanation: The longest valid parentheses substring is "()".
+
+Example 2:
+Input: s = ")()())"
+Output: 4
+Explanation: The longest valid parentheses substring is "()()".
+
+Example 3:
+Input: s = ""
+Output: 0
+ 
+
+Constraints:
+
+0 <= s.length <= 3 * 104
+s[i] is '(', or ')'.
+
+Accepted 342,847 Submissions 1,168,189
+
+  52 59.5%    Hard 766/179 N-Queens II
+------
+
+The n-queens puzzle is the problem of placing n queens on an n x n chessboard such that no two queens attack each other.
+
+Given an integer n, return the number of distinct solutions to the n-queens puzzle.
+
+Example 1:
+
+Input: n = 4
+Output: 2
+Explanation: There are two distinct solutions to the 4-queens puzzle as shown.
+Example 2:
+
+Input: n = 1
+Output: 1
+
+Constraints:
+
+1 <= n <= 9
+
+Accepted 156,893 Submissions 260,128
+
+  72 46.2%    Hard 5314/66 Edit Distance
+------
+
+Given two strings word1 and word2, return the minimum number of operations required to convert word1 to word2.
+
+You have the following three operations permitted on a word:
+
+Insert a character
+Delete a character
+Replace a character
+ 
+Example 1:
+
+Input: word1 = "horse", word2 = "ros"
+Output: 3
+Explanation: 
+horse -> rorse (replace 'h' with 'r')
+rorse -> rose (remove 'r')
+rose -> ros (remove 'e')
+Example 2:
+
+Input: word1 = "intention", word2 = "execution"
+Output: 5
+Explanation: 
+intention -> inention (remove 't')
+inention -> enention (replace 'i' with 'e')
+enention -> exention (replace 'n' with 'x')
+exention -> exection (replace 'n' with 'c')
+exection -> execution (insert 'u')
+ 
+Constraints:
+
+0 <= word1.length, word2.length <= 500
+word1 and word2 consist of lowercase English letters.
+
+Accepted 341,542 Submissions 728,218
+
+  92 40.1%  Medium 3422/177 Reverse Linked List II
+------
+
+Given the head of a singly linked list and two integers left and right where left <= right, reverse the nodes of the list from position left to position right, and return the reversed list.
+
+Example 1:
+
+Input: head = [1,2,3,4,5], left = 2, right = 4
+Output: [1,4,3,2,5]
+Example 2:
+
+Input: head = [5], left = 1, right = 1
+Output: [5]
+ 
+Constraints:
+
+The number of nodes in the list is n.
+1 <= n <= 500
+-500 <= Node.val <= 500
+1 <= left <= right <= n
+ 
+Follow up: Could you do it in one pass?
+
+Accepted 335,944 Submissions 825,708
+
+ 132 30.9%    Hard 1721/52 Palindrome Partitioning II
+------
+
+Given a string s, partition s such that every substring of the partition is a palindrome.
+
+Return the minimum cuts needed for a palindrome partitioning of s.
+
+Example 1:
+
+Input: s = "aab"
+Output: 1
+Explanation: The palindrome partitioning ["aa","b"] could be produced using 1 cut.
+Example 2:
+
+Input: s = "a"
+Output: 0
+Example 3:
+
+Input: s = "ab"
+Output: 1
+ 
+Constraints:
+
+1 <= s.length <= 2000
+s consists of lower-case English letters only.
+
+Accepted 151,737 Submissions 484,333
+
+ 152 32.5%  Medium 6405/210 Maximum Product Subarray
+------
+
+Given an integer array nums, find a contiguous non-empty subarray within the array that has the largest product, and return the product.
+
+It is guaranteed that the answer will fit in a 32-bit integer.
+
+A subarray is a contiguous subsequence of the array.
+
+Example 1:
+
+Input: nums = [2,3,-2,4]
+Output: 6
+Explanation: [2,3] has the largest product 6.
+Example 2:
+
+Input: nums = [-2,0,-1]
+Output: 0
+Explanation: The result cannot be 2, because [-2,-1] is not a subarray.
+ 
+Constraints:
+
+1 <= nums.length <= 2 * 104
+-10 <= nums[i] <= 10
+
+Accepted 455,683 Submissions 1,389,028
+
+ 212 36.3%    Hard 3519/142 Word Search II
+------
+
+Given an m x n board of characters and a list of strings words, return all words on the board.
+
+Each word must be constructed from letters of sequentially adjacent cells, where adjacent cells are horizontally or vertically neighboring. The same letter cell may not be used more than once in a word.
+
+Example 1:
+Input: board = [["o","a","a","n"],["e","t","a","e"],["i","h","k","r"],["i","f","l","v"]], words = ["oath","pea","eat","rain"]
+Output: ["eat","oath"]
+
+Example 2:
+Input: board = [["a","b"],["c","d"]], words = ["abcb"]
+Output: []
+ 
+Constraints:
+
+(1) m == board.length
+(2) n == board[i].length
+(3) 1 <= m, n <= 12
+(4) board[i][j] is a lowercase English letter.
+(5) 1 <= words.length <= 3 * 10^4
+(6) 1 <= words[i].length <= 10
+(7) words[i] consists of lowercase English letters.
+(8) All the strings of words are unique.
+
+Accepted 285,377 Submissions 765,772
+
+ 312 53.6%    Hard 3431/103 Burst Balloons
+------
+
+You are given n balloons, indexed from 0 to n - 1. Each balloon is painted with a number on it represented by an array nums. You are asked to burst all the balloons.
+
+If you burst the ith balloon, you will get nums[i - 1] * nums[i] * nums[i + 1] coins. If i - 1 or i + 1 goes out of bounds of the array, then treat it as if there is a balloon with a 1 painted on it.
+
+Return the maximum coins you can collect by bursting the balloons wisely.
+
+Example 1:
+Input: nums = [3,1,5,8]
+Output: 167
+Explanation:
+nums = [3,1,5,8] --> [3,5,8] --> [3,8] --> [8] --> []
+coins =  3*1*5    +   3*5*8   +  1*3*8  + 1*8*1 = 167
+
+Example 2:
+Input: nums = [1,5]
+Output: 10
+
+Constraints:
+
+n == nums.length
+1 <= n <= 500
+0 <= nums[i] <= 100
+
+Accepted 130,598 Submissions 242,693
+
+ 332 37.6%  Medium 2555/1218 Reconstruct Itinerary
+------
+
+You are given a list of airline tickets where tickets[i] = [fromi, toi] represent the departure and the arrival airports of one flight. Reconstruct the itinerary in order and return it.
+
+All of the tickets belong to a man who departs from "JFK", thus, the itinerary must begin with "JFK". If there are multiple valid itineraries, you should return the itinerary that has the smallest lexical order when read as a single string.
+
+For example, the itinerary ["JFK", "LGA"] has a smaller lexical order than ["JFK", "LGB"].
+You may assume all tickets form at least one valid itinerary. You must use all the tickets once and only once.
+
+Example 1:
+
+Input: tickets = [["MUC","LHR"],["JFK","MUC"],["SFO","SJC"],["LHR","SFO"]]
+Output: ["JFK","MUC","LHR","SFO","SJC"]
+Example 2:
+
+Input: tickets = [["JFK","SFO"],["JFK","ATL"],["SFO","ATL"],["ATL","JFK"],["ATL","SFO"]]
+Output: ["JFK","ATL","JFK","SFO","ATL","SFO"]
+Explanation: Another possible reconstruction is ["JFK","SFO","ATL","JFK","ATL","SFO"] but it is larger in lexical order.
+ 
+Constraints:
+
+1 <= tickets.length <= 300
+tickets[i].length == 2
+fromi.length == 3
+toi.length == 3
+fromi and toi consist of uppercase English letters.
+fromi != toi
+
+Accepted 202,166 Submissions 532,537
+
+ 372 36.6%  Medium 293/874 Super Pow
+------
+
+Your task is to calculate a^b mod 1337 where a is a positive integer and b is an extremely large positive integer given in the form of an array.
+
+Example 1:
+Input: a = 2, b = [3]
+Output: 8
+
+Example 2:
+Input: a = 2, b = [1,0]
+Output: 1024
+
+Example 3:
+Input: a = 1, b = [4,3,3,8,5,2]
+Output: 1
+
+Example 4:
+Input: a = 2147483647, b = [2,0,0]
+Output: 1198
+
+Constraints:
+
+1 <= a <= 2^31 - 1
+1 <= b.length <= 2000
+0 <= b[i] <= 9
+b doesn't contain leading zeros.
+
+Accepted 39,683 Submissions 107,998
+
+ 392 49.4%    Easy 2292/229 Is Subsequence
+------
+
+Given two strings s and t, check if s is a subsequence of t.
+
+A subsequence of a string is a new string that is formed from the original string by deleting some (can be none) of the characters without disturbing the relative positions of the remaining characters. (i.e., "ace" is a subsequence of "abcde" while "aec" is not).
+
+Example 1:
+Input: s = "abc", t = "ahbgdc"
+Output: true
+
+Example 2:
+Input: s = "axc", t = "ahbgdc"
+Output: false
+
+Constraints:
+
+0 <= s.length <= 100
+0 <= t.length <= 104
+s and t consist only of lowercase English letters.
+ 
+Follow up: If there are lots of incoming s, say s1, s2, ..., sk where k >= 109, and you want to check one by one to see if t has its subsequence. In this scenario, how would you change your code?
+
+Accepted 280,415 Submissions 566,530
+
+ 452 49.7%  Medium 1640/60 Minimum Number of Arrows to Burst Balloons
+------
+
+452. Minimum Number of Arrows to Burst Balloons
+
+There are some spherical balloons spread in two-dimensional space. For each balloon, provided input is the start and end coordinates of the horizontal diameter. Since it's horizontal, y-coordinates don't matter, and hence the x-coordinates of start and end of the diameter suffice. The start is always smaller than the end.
+
+An arrow can be shot up exactly vertically from different points along the x-axis. A balloon with xstart and xend bursts by an arrow shot at x if xstart ≤ x ≤ xend. There is no limit to the number of arrows that can be shot. An arrow once shot keeps traveling up infinitely.
+
+Given an array points where points[i] = [xstart, xend], return the minimum number of arrows that must be shot to burst all balloons.
+
+Example 1:
+
+Input: points = [[10,16],[2,8],[1,6],[7,12]]
+Output: 2
+Explanation: One way is to shoot one arrow for example at x = 6 (bursting the balloons [2,8] and [1,6]) and another arrow at x = 11 (bursting the other two balloons).
+Example 2:
+
+Input: points = [[1,2],[3,4],[5,6],[7,8]]
+Output: 4
+Example 3:
+
+Input: points = [[1,2],[2,3],[3,4],[4,5]]
+Output: 2
+Example 4:
+
+Input: points = [[1,2]]
+Output: 1
+Example 5:
+
+Input: points = [[2,3],[2,3]]
+Output: 1
+ 
+Constraints:
+
+0 <= points.length <= 104
+points[i].length == 2
+-2^31 <= xstart < xend <= 2^31 - 1
+
+Accepted 108,821 Submissions 218,621
+
+ 472 44.9%    Hard 1101/145 Concatenated Words
+------
+
+Given an array of strings words (without duplicates), return all the concatenated words in the given list of words.
+
+A concatenated word is defined as a string that is comprised entirely of at least two shorter words in the given array.
+
+Example 1:
+
+Input: words = ["cat","cats","catsdogcats","dog","dogcatsdog","hippopotamuses","rat","ratcatdogcat"]
+Output: ["catsdogcats","dogcatsdog","ratcatdogcat"]
+Explanation: "catsdogcats" can be concatenated by "cats", "dog" and "cats"; 
+"dogcatsdog" can be concatenated by "dog", "cats" and "dog"; 
+"ratcatdogcat" can be concatenated by "rat", "cat", "dog" and "cat".
+
+Example 2:
+
+Input: words = ["cat","dog","catdog"]
+Output: ["catdog"]
+
+Constraints:
+
+1 <= words.length <= 10^4
+0 <= words[i].length <= 1000
+words[i] consists of only lowercase English letters.
+0 <= sum(words[i].length) <= 6 * 10^5
+
+Accepted 88,054 Submissions 200,699
+
+ 592 49.9%  Medium 223/343 Fraction Addition and Subtraction
+------
+
+Given a string representing an expression of fraction addition and subtraction, you need to return the calculation result in string format. The final result should be irreducible fraction. If your final result is an integer, say 2, you need to change it to the format of fraction that has denominator 1. So in this case, 2 should be converted to 2/1.
+
+Example 1:
+Input:"-1/2+1/2"
+Output: "0/1"
+
+Example 2:
+Input:"-1/2+1/2+1/3"
+Output: "1/3"
+
+Example 3:
+Input:"1/3-1/2"
+Output: "-1/6"
+
+Example 4:
+Input:"5/3+1/3"
+Output: "2/1"
+
+Note:
+The input string only contains '0' to '9', '/', '+' and '-'. So does the output.
+Each fraction (input and output) has format ±numerator/denominator. If the first input fraction or the output is positive, then '+' will be omitted.
+The input only contains valid irreducible fractions, where the numerator and denominator of each fraction will always be in the range [1,10]. If the denominator is 1, it means this fraction is actually an integer in a fraction format defined above.
+The number of given fractions will be in the range [1,10].
+The numerator and denominator of the final result are guaranteed to be valid and in the range of 32-bit int.
+
+Accepted 21,800 Submissions 43,430
+
+ 652 51.8%  Medium 1846/237 Find Duplicate Subtrees
+------
+
+Given the root of a binary tree, return all duplicate subtrees.
+
+For each kind of duplicate subtrees, you only need to return the root node of any one of them.
+
+Two trees are duplicate if they have the same structure with the same node values.
+
+Example 1:
+Input: root = [1,2,3,4,null,2,4,null,null,4]
+Output: [[2,4],[4]]
+
+Example 2:
+Input: root = [2,1,1]
+Output: [[1]]
+
+Example 3:
+Input: root = [2,2,2,3,null,3,null]
+Output: [[2,3],[3]]
+ 
+Constraints:
+
+The number of the nodes in the tree will be in the range [1, 10^4]
+-200 <= Node.val <= 200
+
+Accepted 86,953 Submissions 165,094
+
+ 672 51.0%  Medium 163/943 Bulb Switcher II
+------
+
+There is a room with n lights which are turned on initially and 4 buttons on the wall. After performing exactly m unknown operations towards buttons, you need to return how many different kinds of status of the n lights could be.
+
+Suppose n lights are labeled as number [1, 2, 3 ..., n], function of these 4 buttons are given below:
+
+Flip all the lights.
+Flip lights with even numbers.
+Flip lights with odd numbers.
+Flip lights with (3k + 1) numbers, k = 0, 1, 2, ...
+
+Example 1:
+
+Input: n = 1, m = 1.
+Output: 2
+Explanation: Status can be: [on], [off]
+ 
+Example 2:
+
+Input: n = 2, m = 1.
+Output: 3
+Explanation: Status can be: [on, off], [off, on], [off, off]
+ 
+Example 3:
+
+Input: n = 3, m = 1.
+Output: 4
+Explanation: Status can be: [off, on, off], [on, off, on], [off, off, off], [off, on, on].
+ 
+Note: n and m both fit in range [0, 1000].
+
+Accepted 14,197 Submissions 27,761
+
+ 692 52.8%  Medium 2809/187 Top K Frequent Words
+------
+
+Given a non-empty list of words, return the k most frequent elements.
+
+Your answer should be sorted by frequency from highest to lowest. If two words have the same frequency, then the word with the lower alphabetical order comes first.
+
+Example 1:
+Input: ["i", "love", "leetcode", "i", "love", "coding"], k = 2
+Output: ["i", "love"]
+Explanation: "i" and "love" are the two most frequent words.
+    Note that "i" comes before "love" due to a lower alphabetical order.
+
+Example 2:
+Input: ["the", "day", "is", "sunny", "the", "the", "the", "sunny", "is", "is"], k = 4
+Output: ["the", "is", "sunny", "day"]
+Explanation: "the", "is", "sunny" and "day" are the four most frequent words,
+    with the number of occurrence being 4, 3, 2 and 1 respectively.
+
+Note:
+You may assume k is always valid, 1 ≤ k ≤ number of unique elements.
+Input words contain only lowercase letters.
+
+Follow up: Try to solve it in O(n log k) time and O(n) extra space.
+
+Accepted 262,431 Submissions 493,675
+
+ 712 59.2%  Medium 1258/54 Minimum ASCII Delete Sum for Two Strings
+------
+
+Given two strings s1, s2, find the lowest ASCII sum of deleted characters to make two strings equal.
+
+Example 1:
+Input: s1 = "sea", s2 = "eat"
+Output: 231
+Explanation: Deleting "s" from "sea" adds the ASCII value of "s" (115) to the sum.
+Deleting "t" from "eat" adds 116 to the sum.
+At the end, both strings are equal, and 115 + 116 = 231 is the minimum sum possible to achieve this.
+
+Example 2:
+Input: s1 = "delete", s2 = "leet"
+Output: 403
+Explanation: Deleting "dee" from "delete" to turn the string into "let",
+adds 100[d]+101[e]+101[e] to the sum.  Deleting "e" from "leet" adds 101[e] to the sum.
+At the end, both strings are equal to "let", and the answer is 100+101+101+101 = 403.
+If instead we turned both strings into "lee" or "eet", we would get answers of 433 or 417, which are higher.
+
+Note:
+
+0 < s1.length, s2.length <= 1000.
+All elements of each string will have an ASCII value in [97, 122].
+
+Accepted 44,373 Submissions 74,579
+
+ 752 52.4%  Medium 1481/56 Open the Lock
+------
+
+You have a lock in front of you with 4 circular wheels. Each wheel has 10 slots: '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'. The wheels can rotate freely and wrap around: for example we can turn '9' to be '0', or '0' to be '9'. Each move consists of turning one wheel one slot.
+
+The lock initially starts at '0000', a string representing the state of the 4 wheels.
+
+You are given a list of deadends dead ends, meaning if the lock displays any of these codes, the wheels of the lock will stop turning and you will be unable to open it.
+
+Given a target representing the value of the wheels that will unlock the lock, return the minimum total number of turns required to open the lock, or -1 if it is impossible.
+
+Example 1:
+
+Input: deadends = ["0201","0101","0102","1212","2002"], target = "0202"
+Output: 6
+Explanation:
+A sequence of valid moves would be "0000" -> "1000" -> "1100" -> "1200" -> "1201" -> "1202" -> "0202".
+Note that a sequence like "0000" -> "0001" -> "0002" -> "0102" -> "0202" would be invalid,
+because the wheels of the lock become stuck after the display becomes the dead end "0102".
+Example 2:
+
+Input: deadends = ["8888"], target = "0009"
+Output: 1
+Explanation:
+We can turn the last wheel in reverse to move from "0000" -> "0009".
+Example 3:
+
+Input: deadends = ["8887","8889","8878","8898","8788","8988","7888","9888"], target = "8888"
+Output: -1
+Explanation:
+We can't reach the target without getting stuck.
+Example 4:
+
+Input: deadends = ["0000"], target = "8888"
+Output: -1
+
+Constraints:
+
+1 <= deadends.length <= 500
+deadends[i].length == 4
+target.length == 4
+target will not be in the list deadends.
+target and deadends[i] consist of digits only.
+
+Accepted 90,417 Submissions 171,041
+
+ 792 48.0%  Medium 1296/89 Number of Matching Subsequences
+------
+
+Given a string s and an array of strings words, return the number of words[i] that is a subsequence of s.
+
+A subsequence of a string is a new string generated from the original string with some characters (can be none) deleted without changing the relative order of the remaining characters.
+
+For example, "ace" is a subsequence of "abcde".
+
+Example 1:
+Input: s = "abcde", words = ["a","bb","acd","ace"]
+Output: 3
+Explanation: There are three strings in words that are a subsequence of s: "a", "acd", "ace".
+
+Example 2:
+Input: s = "dsahjpjauf", words = ["ahjpjau","ja","ahbwzgqnuk","tnmlanowax"]
+Output: 2
+
+Constraints:
+
+1 <= s.length <= 5 * 104
+1 <= words.length <= 5000
+1 <= words[i].length <= 50
+s and words[i] consist of only lowercase English letters.
+
+Accepted 54,984 Submissions 114,075
+
+ 912 64.4%  Medium 761/360 Sort an Array
+------
+
+Given an array of integers nums, sort the array in ascending order.
+
+Example 1:
+
+Input: nums = [5,2,3,1]
+Output: [1,2,3,5]
+Example 2:
+
+Input: nums = [5,1,1,2,0,0]
+Output: [0,0,1,1,2,5]
+ 
+Constraints:
+
+1 <= nums.length <= 50000
+-50000 <= nums[i] <= 50000
+
+Accepted 134,272 Submissions 207,869
+
+ 932 61.1%  Medium 456/553 Beautiful Array
+------
+
+For some fixed N, an array A is beautiful if it is a permutation of the integers 1, 2, ..., N, such that:
+
+For every i < j, there is no k with i < k < j such that A[k] * 2 = A[i] + A[j].
+
+Given N, return any beautiful array A.  (It is guaranteed that one exists.)
+
+Example 1:
+Input: 4
+Output: [2,1,4,3]
+
+Example 2:
+Input: 5
+Output: [3,1,2,5,4]
+ 
+Note:
+
+1 <= N <= 1000
+ 
+Accepted 15,474 Submissions 25,204

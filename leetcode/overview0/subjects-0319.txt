@@ -17,14 +17,9 @@
 
 (1) 题面是矩阵的题目可以单独拿出来, 感觉有点东西的
 
-1) DFS
-
-凡是确定是DFS的, 一定要适当的考虑剪枝策略, 这应该作为一个基本意识保留下来.
-第二个, 要考虑有没有重复元, 有的话提示DP.
+1) 难以理解的DFS题目
 
 301 44.3%    Hard 3212/147 Remove Invalid Parentheses
-473 38.1%  Medium 752/64 Matchsticks to Square
-553 57.3%  Medium 194/1203 Optimal Division (可以练手/有个非常tricky的解法)
 
 1) 位运算
 ========
@@ -65,7 +60,6 @@
 模拟:
   48 59.1%  Medium 4192/309 Rotate Image
   54 35.3%  Medium 3348/631 Spiral Matrix
-  73 44.0%  Medium 3208/360 Set Matrix Zeroes
   885 70.4%  Medium 300/372 Spiral Matrix III
 其他:
   37 45.7%    Hard 2429/100 Sudoku Solver
@@ -94,12 +88,7 @@
 
 1. 考虑d[i]是怎么来的. 这个真的是个DP的非常重要的思路啊.
 把所有来历遍历一遍, 答案就找到了.
-2. 多状态的可能不是这样考虑
-3. DFS出现重复搜索时提示DP
-4. 解出来之后要思考一下, 有时候可以把空间复杂度优化掉
-5. 可能或者肯定有其他的不同思路, 可以再总结, 加油!
-
- 813 50.8%  Medium 1165/54 Largest Sum of Averages (注IPAD-11页; 把我绕晕了)
+2. 可能或者肯定有其他的不同思路, 可以再总结, 加油!
 
 经典:
  (最小路径和问题)
@@ -120,7 +109,6 @@
   123 39.6%    Hard 3341/86 Best Time to Buy and Sell Stock III (高优再做一遍/高优读Discuss)
   152 32.5%  Medium 6405/210 Maximum Product Subarray
   188 29.1%    Hard 2185/135 Best Time to Buy and Sell Stock IV
-  213 37.4%  Medium 2688/63 House Robber II 
   801 39.0%  Medium 1445/105 Minimum Swaps To Make Sequences Increasing (二元决策的最值问题)
   983 62.6%  Medium 2613/48 Minimum Cost For Tickets (不仅是多状态/新未来/重点研究!!!)
 
@@ -132,7 +120,6 @@
 
  222 48.6%  Medium 2767/251 Count Complete Tree Nodes
  450 45.1%  Medium 2756/107 Delete Node in a BST (没你想的那么简单哦)
- 513 62.2%  Medium Find Bottom Left Tree Value
  623 50.2%  Medium 874/160 Add One Row to Tree
  652 51.8%  Medium 1846/237 Find Duplicate Subtrees
  701 75.8%  Medium 1454/96 Insert into a Binary Search Tree (还真有我想的那么简单)
@@ -148,7 +135,6 @@
   105 51.0%  Medium 4562/117 Construct Binary Tree from Preorder and Inorder Traversal
   144 57.0%  Medium 1989/82 Binary Tree Preorder Traversal
   145 56.9%  Medium Binary Tree Postorder Traversal
-  173 59.4%  Medium 3516/313 Binary Search Tree Iterator (中序遍历的迭代器)
   331 40.8%  Medium 918/57 Verify Preorder Serialization of a Binary Tree
   971 46.1%  Medium 337/161 Flip Binary Tree To Match Preorder Traversal
 
@@ -198,11 +184,8 @@
 130 29.0%  Medium 2565/756 Surrounded Regions (矩阵中寻找小岛/矩形/柱状图等)
 164 36.5%    Hard 1045/201 Maximum Gap (桶)
 221 38.5%  Medium 4300/105 Maximal Square
-233 31.6%    Hard 382/725 Number of Digit One (数字十叉树)
-313 45.8%  Medium 820/165 Super Ugly Number (堆)
 321 27.4%    Hard 908/296 Create Maximum Number (高难度单调栈)
 343 51.0%  Medium 1469/254 Integer Break (遍历切分点/DP/数学)
-373 37.4%  Medium 1851/126 Find K Pairs with Smallest Sums (堆)
 382 53.8%  Medium 889/235 Linked List Random Node (随机数/水塘抽样)
 385 34.3%  Medium 274/933 Mini Parser => NestedInteger [1, [2, [3, 4], 5], 6, [7]] (特殊数据结构)
 402 28.6%  Medium 3126/133 Remove K Digits (单调栈:不明显)
@@ -213,11 +196,8 @@
 721 50.9%  Medium 2213/404 Accounts Merge (并查集/DFS)
 781 55.3%  Medium 374/357 Rabbits in Forest (更像是智力题/没有规律/根据题目的特性来做)
 802 49.6%  Medium 1079/209 Find Eventual Safe States (复杂一点的DFS)
-853 43.5%  Medium 636/258 Car Fleet (类似于单调栈;好题)
-873 48.0%  Medium 949/37 Length of Longest Fibonacci Subsequence (两数生成序列: 2个数决定整个序列)
 901 61.1%  Medium 1351/157 Online Stock Span (单调栈变形)
 945 46.6%  Medium 586/27 Minimum Increment to Make Array Unique (并查集)
-973 64.4%  Medium 2822/147 K Closest Points to Origin (经典; 快排)
 991 46.3%  Medium 849/129 Broken Calculator (技巧和推理性很强/反向处理)
 1011 59.4%  Medium 1886/56 Capacity To Ship Packages Within D Days (二分B)
 
@@ -257,7 +237,6 @@ NSum
  227 38.2%  Medium 2011/321 Basic Calculator II (计算器)
  241 56.8%  Medium 2098/113 Different Ways to Add Parentheses (计算器)
  282 36.4%    Hard 1061/268 Expression Add Operators (计算器)
- 553 57.3%  Medium 194/1203 Optimal Division (可以练手/有个非常tricky的解法)
  592 49.9%  Medium 223/343 Fraction Addition and Subtraction
 
 
@@ -268,7 +247,6 @@ NSum
 151 23.2%  Medium 1551/3176 Reverse Words in a String
 223 38.1%  Medium 520/866 Rectangle Area (数学)
 483 36.1%    Hard 187/365 Smallest Good Base (数学)
-593 43.3%  Medium 441/590 Valid Square (数学)
 672 51.0%  Medium 163/943 Bulb Switcher II (数学/纯智力题)
 932 61.1%  Medium 456/553 Beautiful Array (数学)
 963 51.6%  Medium 198/298 Minimum Area Rectangle II (数学)
@@ -285,29 +263,17 @@ NSum
 301 44.3%    Hard 3212/147 Remove Invalid Parentheses (减括号贼难)
 921 74.6%  Medium 1100/80 Minimum Add to Make Parentheses Valid (加括号很简单)
 
-二分
-----
-A: 普通二分
-B: 二分搜索答案空间
-C: 在非排序数组上的查找
-
-33 35.5%  Medium 7190/637 Search in Rotated Sorted Array (二分C)
-81  33.4%  Medium 1983/572 Search in Rotated Sorted Array II (二分C)
-153 45.8%  Medium 3244/294 Find Minimum in Rotated Sorted Array
-162 43.7%  Medium 2634/2573 Find Peak Element (二分C)
-
 数组类
 -----
  
 41  33.3%    Hard 5339/948 First Missing Positive (连续数字, O(n)+O(1))
-330 34.9%    Hard 604/84 Patching Array
-390 44.8%  Medium 542/407 Elimination Game (模拟/找规律)
-493 26.4%    Hard 1292/140 Reverse Pairs (MergeSort)
+81  33.4%  Medium 1983/572 Search in Rotated Sorted Array II (二分C)
+162 43.7%  Medium 2634/2573 Find Peak Element (二分C)
 462 54.2%  Medium 633/53 Minimum Moves to Equal Array Elements II (中位数)
-673 38.3%  Medium 2149/116 Number of Longest Increasing Subsequence (注/经典/LIS)
-713 40.4%  Medium 2208/85 Subarray Product Less Than K (经典/双指针未发现)
 845 38.5%  Medium 1080/44 Longest Mountain in Array (山峰)
 945 46.6%  Medium 586/27 Minimum Increment to Make Array Unique 
+330 34.9%    Hard 604/84 Patching Array
+390 44.8%  Medium 542/407 Elimination Game (模拟/找规律)
 
 模拟题
 ------
@@ -316,8 +282,6 @@ C: 在非排序数组上的查找
  481 47.9%  Medium 127/746 Magical String
  650 49.8%  Medium 1669/119 2 Keys Keyboard
  670 44.8%  Medium 1405/88 Maximum Swap
-833 51.2%  Medium 445/517 Find And Replace in String (有技巧)
-
 
 练手
 ----

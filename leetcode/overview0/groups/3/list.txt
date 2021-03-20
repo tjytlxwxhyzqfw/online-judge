@@ -1,33 +1,34 @@
 Contents:
 ========
-  11 52.0%  Medium Container With Most Water
-  31 33.2%  Medium Next Permutation
-  51 48.8%    Hard N-Queens
-  71 33.5%  Medium Simplify Path
-  91 26.1%  Medium Decode Ways
- 131 51.0%  Medium Palindrome Partitioning
- 151 23.2%  Medium Reverse Words in a String
- 211 39.6%  Medium Design Add and Search Words Data Structure
- 331 40.8%  Medium Verify Preorder Serialization of a Binary Tree
- 451 64.0%  Medium Sort Characters By Frequency
- 491 47.2%  Medium Increasing Subsequences
- 611 49.0%  Medium Valid Triangle Number
- 731 50.1%  Medium My Calendar II
- 791 65.9%  Medium Custom Sort String
- 831 44.7%  Medium Masking Personal Information
- 851 52.4%  Medium Loud and Rich
- 911 51.2%  Medium Online Election
- 931 63.2%  Medium Minimum Falling Path Sum
- 951 65.5%  Medium Flip Equivalent Binary Trees
- 971 46.1%  Medium Flip Binary Tree To Match Preorder Traversal
- 991 46.3%  Medium Broken Calculator
-1011 59.4%  Medium Capacity To Ship Packages Within D Days
+
+  11 52.0%  Medium 8816/681 Container With Most Water
+  31 33.2%  Medium 5114/1757 Next Permutation
+  51 48.8%    Hard 2725/98 N-Queens
+  71 33.5%  Medium 273/87 Simplify Path
+  91 26.1%  Medium 4078/3402 Decode Ways
+ 131 51.0%  Medium 3128/99 Palindrome Partitioning
+ 151 23.2%  Medium 1551/3176 Reverse Words in a String
+ 211 39.6%  Medium 2815/121 Design Add and Search Words Data Structure
+ 331 40.8%  Medium 918/57 Verify Preorder Serialization of a Binary Tree
+ 451 64.0%  Medium 2205/145 Sort Characters By Frequency
+ 491 47.2%  Medium 929/135 Increasing Subsequences
+ 611 49.0%  Medium 1334/103 Valid Triangle Number
+ 731 50.1%  Medium 776/101 My Calendar II
+ 791 65.9%  Medium 980/212 Custom Sort String
+ 831 44.7%  Medium 0/0 Masking Personal Information
+ 851 52.4%  Medium 313/330 Loud and Rich
+ 911 51.2%  Medium 451/372 Online Election
+ 931 63.2%  Medium 1120/82 Minimum Falling Path Sum
+ 951 65.5%  Medium 950/47 Flip Equivalent Binary Trees
+ 971 46.1%  Medium 337/161 Flip Binary Tree To Match Preorder Traversal
+ 991 46.3%  Medium 849/129 Broken Calculator
+1011 59.4%  Medium 1886/56 Capacity To Ship Packages Within D Days
 
 
 Description:
 ===========
 
-  11 52.0%  Medium Container With Most Water
+  11 52.0%  Medium 8815/681 Container With Most Water
 ------
 
 Given n non-negative integers a1, a2, ..., an , where each represents a point at coordinate (i, ai). n vertical lines are drawn such that the two endpoints of the line i is at (i, ai) and (i, 0). Find two lines, which, together with the x-axis forms a container, such that the container contains the most water.
@@ -40,21 +41,9 @@ n == height.length
 2 <= n <= 105
 0 <= height[i] <= 104
 
-8815/681
-
-  31 33.2%  Medium Next Permutation
+  31 33.2%  Medium 5112/1756 Next Permutation
 ------
 
-31. Next Permutation
-Medium
-
-5112
-
-1756
-
-Add to List
-
-Share
 Implement next permutation, which rearranges numbers into the lexicographically next greater permutation of numbers.
 
 If such an arrangement is not possible, it must rearrange it as the lowest possible order (i.e., sorted in ascending order).
@@ -83,29 +72,16 @@ Output: [1]
 1 <= nums.length <= 100
 0 <= nums[i] <= 100
 
-  51 48.8%    Hard N-Queens
+  51 48.8%    Hard 2724/98 N-Queens
  ------
 
- 51. N-Queens
-Hard
-
-2724
-
-98
-
-Add to List
-
-Share
 The n-queens puzzle is the problem of placing n queens on an n x n chessboard such that no two queens attack each other.
 
 Given an integer n, return all distinct solutions to the n-queens puzzle.
 
 Each solution contains a distinct board configuration of the n-queens' placement, where 'Q' and '.' both indicate a queen and an empty space, respectively.
 
- 
-
 Example 1:
-
 
 Input: n = 4
 Output: [[".Q..","...Q","Q...","..Q."],["..Q.","Q...","...Q",".Q.."]]
@@ -114,25 +90,13 @@ Example 2:
 
 Input: n = 1
 Output: [["Q"]]
- 
 
 Constraints:
 
 1 <= n <= 9
 
-  71 33.5%  Medium Simplify Path
+  71 33.5%  Medium 273/86 Simplify Path
  ------
-
- 71. Simplify Path
-Medium
-
-273
-
-86
-
-Add to List
-
-Share
 Given a string path, which is an absolute path (starting with a slash '/') to a file or directory in a Unix-style file system, convert it to the simplified canonical path.
 
 In a Unix-style file system, a period '.' refers to the current directory, a double period '..' refers to the directory up a level, and any multiple consecutive slashes (i.e. '//') are treated as a single slash '/'. For this problem, any other format of periods such as '...' are treated as file/directory names.
@@ -151,19 +115,9 @@ Constraints:
 path consists of English letters, digits, period '.', slash '/' or '_'.
 path is a valid absolute Unix path.
 
-  91 26.1%  Medium Decode Ways
+  91 26.1%  Medium 4076/3402 Decode Ways
  ------
 
- 91. Decode Ways
-Medium
-
-4076
-
-3402
-
-Add to List
-
-Share
 A message containing letters from A-Z can be encoded into numbers using the following mapping:
 
 'A' -> "1"
@@ -179,8 +133,6 @@ Note that the grouping (1 11 06) is invalid because "06" cannot be mapped into '
 Given a string s containing only digits, return the number of ways to decode it.
 
 The answer is guaranteed to fit in a 32-bit integer.
-
- 
 
 Example 1:
 
@@ -205,31 +157,17 @@ Input: s = "06"
 Output: 0
 Explanation: "06" cannot be mapped to "F" because of the leading zero ("6" is different from "06").
  
-
 Constraints:
 
 1 <= s.length <= 100
 s contains only digits and may contain leading zero(s).
 
-
- 131 51.0%  Medium Palindrome Partitioning
+ 131 51.0%  Medium 3127/99 Palindrome Partitioning
 ------
 
-131. Palindrome Partitioning
-Medium
-
-3127
-
-99
-
-Add to List
-
-Share
 Given a string s, partition s such that every substring of the partition is a palindrome. Return all possible palindrome partitioning of s.
 
 A palindrome string is a string that reads the same backward as forward.
-
- 
 
 Example 1:
 
@@ -239,27 +177,15 @@ Example 2:
 
 Input: s = "a"
 Output: [["a"]]
- 
 
 Constraints:
 
 1 <= s.length <= 16
 s contains only lowercase English letters.
 
-
- 151 23.2%  Medium Reverse Words in a String
+ 151 23.2%  Medium 1551/3175 Reverse Words in a String
 ------
 
-151. Reverse Words in a String
-Medium
-
-1551
-
-3175
-
-Add to List
-
-Share
 Given an input string s, reverse the order of the words.
 
 A word is defined as a sequence of non-space characters. The words in s will be separated by at least one space.
@@ -267,8 +193,6 @@ A word is defined as a sequence of non-space characters. The words in s will be 
 Return a string of the words in reverse order concatenated by a single space.
 
 Note that s may contain leading or trailing spaces or multiple spaces between two words. The returned string should only have a single space separating the words. Do not include any extra spaces.
-
- 
 
 Example 1:
 
@@ -293,29 +217,17 @@ Example 5:
 Input: s = "Alice does not even like bob"
 Output: "bob like even not does Alice"
  
-
 Constraints:
 
 1 <= s.length <= 104
 s contains English letters (upper-case and lower-case), digits, and spaces ' '.
 There is at least one word in s.
- 
 
 Follow up: Could you solve it in-place with O(1) extra space?
 
- 211 39.6%  Medium Design Add and Search Words Data Structure
+ 211 39.6%  Medium 2813/121 Design Add and Search Words Data Structure
 ------
 
-211. Design Add and Search Words Data Structure
-Medium
-
-2813
-
-121
-
-Add to List
-
-Share
 Design a data structure that supports adding new words and finding if a string matches any previously added string.
 
 Implement the WordDictionary class:
@@ -324,7 +236,6 @@ WordDictionary() Initializes the object.
 void addWord(word) Adds word to the data structure, it can be matched later.
 bool search(word) Returns true if there is any string in the data structure that matches word or false otherwise. word may contain dots '.' where dots can be matched with any letter.
  
-
 Example:
 
 Input
@@ -343,7 +254,6 @@ wordDictionary.search("bad"); // return True
 wordDictionary.search(".ad"); // return True
 wordDictionary.search("b.."); // return True
  
-
 Constraints:
 
 1 <= word.length <= 500
@@ -351,22 +261,10 @@ word in addWord consists lower-case English letters.
 word in search consist of  '.' or lower-case English letters.
 At most 50000 calls will be made to addWord and search.
 
-
- 331 40.8%  Medium Verify Preorder Serialization of a Binary Tree
+ 331 40.8%  Medium 918/57 Verify Preorder Serialization of a Binary Tree
 ------
 
-331. Verify Preorder Serialization of a Binary Tree
-Medium
-
-918
-
-57
-
-Add to List
-
-Share
 One way to serialize a binary tree is to use preorder traversal. When we encounter a non-null node, we record the node's value. If it is a null node, we record using a sentinel value such as '#'.
-
 
 For example, the above binary tree can be serialized to the string "9,3,4,#,#,1,#,#,2,#,6,#,#", where '#' represents a null node.
 
@@ -377,7 +275,6 @@ It is guaranteed that each comma-separated value in the string must be either an
 You may assume that the input format is always valid.
 
 For example, it could never contain two consecutive commas, such as "1,,3".
- 
 
 Example 1:
 
@@ -391,108 +288,65 @@ Example 3:
 
 Input: preorder = "9,#,#,1"
 Output: false
- 
 
 Constraints:
 
 1 <= preorder.length <= 104
 preoder consist of integers in the range [0, 100] and '#' separated by commas ','.
- 
 
 Follow up: Find an algorithm without reconstructing the tree.
 
- 451 64.0%  Medium Sort Characters By Frequency
+ 451 64.0%  Medium 2203/145 Sort Characters By Frequency
 ------
 
-451. Sort Characters By Frequency
-Medium
-
-2203
-
-145
-
-Add to List
-
-Share
 Given a string, sort it in decreasing order based on the frequency of characters.
 
 Example 1:
 
-Input:
-"tree"
-
-Output:
-"eert"
-
+Input: "tree"
+Output: "eert"
 Explanation:
 'e' appears twice while 'r' and 't' both appear once.
 So 'e' must appear before both 'r' and 't'. Therefore "eetr" is also a valid answer.
 Example 2:
 
-Input:
-"cccaaa"
-
-Output:
-"cccaaa"
-
+Input: "cccaaa"
+Output: "cccaaa"
 Explanation:
 Both 'c' and 'a' appear three times, so "aaaccc" is also a valid answer.
 Note that "cacaca" is incorrect, as the same characters must be together.
 Example 3:
 
-Input:
-"Aabb"
-
-Output:
-"bbAa"
+Input: "Aabb"
+Output: "bbAa"
 
 Explanation:
 "bbaA" is also a valid answer, but "Aabb" is incorrect.
 Note that 'A' and 'a' are treated as two different characters.
 
- 491 47.2%  Medium Increasing Subsequences
+ 491 47.2% 929/135 Medium Increasing Subsequences
 ------
 
-491. Increasing Subsequences
-Medium
-
-929
-
-135
-
-Add to List
-
-Share
-Given an integer array, your task is to find all the different possible increasing subsequences of the given array, and the length of an increasing subsequence should be at least 2.
-
- 
+Given an integer array, your task is to find all the different possible increasing subsequences of the given array, 
+and the length of an increasing subsequence should be at least 2.
 
 Example:
 
 Input: [4, 6, 7, 7]
 Output: [[4, 6], [4, 7], [4, 6, 7], [4, 6, 7, 7], [6, 7], [6, 7, 7], [7,7], [4,7,7]]
  
-
 Constraints:
 
-The length of the given array will not exceed 15.
-The range of integer in the given array is [-100,100].
-The given array may contain duplicates, and two equal integers should also be considered as a special case of increasing sequence.
+1) The length of the given array will not exceed 15.
+2) The range of integer in the given array is [-100,100].
+3) The given array may contain duplicates, and two equal integers should also be considered as a special case of increasing sequence.
 
- 611 49.0%  Medium Valid Triangle Number
+ 611 49.0%  Medium 1334/103 Valid Triangle Number
 ------
 
-611. Valid Triangle Number
-Medium
+Given an array consists of non-negative integers, 
+your task is to count the number of triplets chosen from the array that can make triangles if we take them as side lengths of a triangle.
 
-1334
-
-103
-
-Add to List
-
-Share
-Given an array consists of non-negative integers, your task is to count the number of triplets chosen from the array that can make triangles if we take them as side lengths of a triangle.
 Example 1:
 Input: [2,2,3,4]
 Output: 3
@@ -501,24 +355,14 @@ Valid combinations are:
 2,3,4 (using the first 2)
 2,3,4 (using the second 2)
 2,2,3
+
 Note:
 The length of the given array won't exceed 1000.
 The integers in the given array are in the range of [0, 1000].
 
-
- 731 50.1%  Medium My Calendar II
+ 731 50.1%  Medium 776/101 My Calendar II
 ------
 
-731. My Calendar II
-Medium
-
-776
-
-101
-
-Add to List
-
-Share
 Implement a MyCalendarTwo class to store your events. A new event can be added if adding the event will not cause a triple booking.
 
 Your class will have one method, book(int start, int end). Formally, this represents a booking on the half open interval [start, end), the range of real numbers x such that start <= x < end.
@@ -543,32 +387,15 @@ The fourth event (5, 15) can't be booked, because it would result in a triple bo
 The fifth event (5, 10) can be booked, as it does not use time 10 which is already double booked.
 The sixth event (25, 55) can be booked, as the time in [25, 40) will be double booked with the third event;
 the time [40, 50) will be single booked, and the time [50, 55) will be double booked with the second event.
- 
 
 Note:
 
 The number of calls to MyCalendar.book per test case will be at most 1000.
 In calls to MyCalendar.book(start, end), start and end are integers in the range [0, 10^9].
- 
 
-Accepted
-52,331
-Submissions
-103,188
-
- 791 65.9%  Medium Custom Sort String
+ 791 65.9%  Medium 980/212 Custom Sort String
 ------
 
-791. Custom Sort String
-Medium
-
-980
-
-212
-
-Add to List
-
-Share
 S and T are strings composed of lowercase letters. In S, no letter occurs more than once.
 
 S was sorted in some custom order previously. We want to permute the characters of T so that they match the order that S was sorted. More specifically, if x occurs before y in S, then x should occur before y in the returned string.
@@ -576,118 +403,27 @@ S was sorted in some custom order previously. We want to permute the characters 
 Return any permutation of T (as a string) that satisfies this property.
 
 Example :
-Input: 
-S = "cba"
-T = "abcd"
+Input: S = "cba" T = "abcd"
 Output: "cbad"
 Explanation: 
 "a", "b", "c" appear in S, so the order of "a", "b", "c" should be "c", "b", and "a". 
 Since "d" does not appear in S, it can be at any position in T. "dcba", "cdba", "cbda" are also valid outputs.
  
-
 Note:
 
 S has length at most 26, and no character is repeated in S.
 T has length at most 200.
 S and T consist of lowercase letters only.
-Accepted
-86,083
-Submissions
-130,607
 
- 831 44.7%  Medium Masking Personal Information
+Accepted 86,083 Submissions 130,607
+
+ 831 44.7%  Medium 90/350 Masking Personal Information
+------
+(无聊)
+
+ 851 52.4%  Medium 313/330 Loud and Rich
 ------
 
-831. Masking Personal Information
-Medium
-
-90
-
-350
-
-Add to List
-
-Share
-We are given a personal information string S, which may represent either an email address or a phone number.
-
-We would like to mask this personal information according to the following rules:
-
-
-1. Email address:
-
-We define a name to be a string of length ≥ 2 consisting of only lowercase letters a-z or uppercase letters A-Z.
-
-An email address starts with a name, followed by the symbol '@', followed by a name, followed by the dot '.' and followed by a name. 
-
-All email addresses are guaranteed to be valid and in the format of "name1@name2.name3".
-
-To mask an email, all names must be converted to lowercase and all letters between the first and last letter of the first name must be replaced by 5 asterisks '*'.
-
-
-2. Phone number:
-
-A phone number is a string consisting of only the digits 0-9 or the characters from the set {'+', '-', '(', ')', ' '}. You may assume a phone number contains 10 to 13 digits.
-
-The last 10 digits make up the local number, while the digits before those make up the country code. Note that the country code is optional. We want to expose only the last 4 digits and mask all other digits.
-
-The local number should be formatted and masked as "***-***-1111", where 1 represents the exposed digits.
-
-To mask a phone number with country code like "+111 111 111 1111", we write it in the form "+***-***-***-1111".  The '+' sign and the first '-' sign before the local number should only exist if there is a country code.  For example, a 12 digit phone number mask should start with "+**-".
-
-Note that extraneous characters like "(", ")", " ", as well as extra dashes or plus signs not part of the above formatting scheme should be removed.
-
- 
-
-Return the correct "mask" of the information provided.
-
- 
-
-Example 1:
-
-Input: "LeetCode@LeetCode.com"
-Output: "l*****e@leetcode.com"
-Explanation: All names are converted to lowercase, and the letters between the
-             first and last letter of the first name is replaced by 5 asterisks.
-             Therefore, "leetcode" -> "l*****e".
-Example 2:
-
-Input: "AB@qq.com"
-Output: "a*****b@qq.com"
-Explanation: There must be 5 asterisks between the first and last letter 
-             of the first name "ab". Therefore, "ab" -> "a*****b".
-Example 3:
-
-Input: "1(234)567-890"
-Output: "***-***-7890"
-Explanation: 10 digits in the phone number, which means all digits make up the local number.
-Example 4:
-
-Input: "86-(10)12345678"
-Output: "+**-***-***-5678"
-Explanation: 12 digits, 2 digits for country code and 10 digits for local number. 
-Notes:
-
-S.length <= 40.
-Emails have length at least 8.
-Phone numbers have length at least 10.
-Accepted
-11,926
-Submissions
-26,617
-
- 851 52.4%  Medium Loud and Rich
-------
-
-851. Loud and Rich
-Medium
-
-313
-
-330
-
-Add to List
-
-Share
 In a group of N people (labelled 0, 1, 2, ..., N-1), each person has different amounts of money, and different levels of quietness.
 
 For convenience, we'll call the person with label x, simply "person x".
@@ -697,8 +433,6 @@ We'll say that richer[i] = [x, y] if person x definitely has more money than per
 Also, we'll say quiet[x] = q if person x has quietness q.
 
 Now, return answer, where answer[x] = y if y is the least quiet person (that is, the person y with the smallest value of quiet[y]), among all people who definitely have equal to or more money than person x.
-
- 
 
 Example 1:
 
@@ -716,6 +450,7 @@ Among all people that definitely have equal to or more money than person 7
 is person 7.
 
 The other answers can be filled out with similar reasoning.
+
 Note:
 
 1 <= quiet.length = N <= 500
@@ -725,31 +460,17 @@ Note:
 richer[i][0] != richer[i][1]
 richer[i]'s are all different.
 The observations in richer are all logically consistent.
-Accepted
-14,797
-Submissions
-28,087
 
- 911 51.2%  Medium Online Election
+Accepted 14,797 Submissions 28,087
+
+ 911 51.2%  Medium 451/372 Online Election
 ------
 
-911. Online Election
-Medium
-
-451
-
-372
-
-Add to List
-
-Share
 In an election, the i-th vote was cast for persons[i] at time times[i].
 
 Now, we would like to implement the following query function: TopVotedCandidate.q(int t) will return the number of the person that was leading the election at time t.  
 
 Votes cast at time t will count towards our query.  In the case of a tie, the most recent vote (among tied candidates) wins.
-
- 
 
 Example 1:
 
@@ -760,7 +481,6 @@ At time 3, the votes are [0], and 0 is leading.
 At time 12, the votes are [0,1,1], and 1 is leading.
 At time 25, the votes are [0,1,1,0,0,1], and 1 is leading (as ties go to the most recent vote.)
 This continues for 3 more queries at time 15, 24, and 8.
- 
 
 Note:
 
@@ -769,29 +489,15 @@ Note:
 times is a strictly increasing array with all elements in [0, 10^9].
 TopVotedCandidate.q is called at most 10000 times per test case.
 TopVotedCandidate.q(int t) is always called with t >= times[0].
-Accepted
-29,505
-Submissions
-57,393
 
- 931 63.2%  Medium Minimum Falling Path Sum
+Accepted 29,505 Submissions 57,393
+
+ 931 63.2%  Medium 1120/82 Minimum Falling Path Sum
 ------
 
-931. Minimum Falling Path Sum
-Medium
-
-1120
-
-82
-
-Add to List
-
-Share
 Given an n x n array of integers matrix, return the minimum sum of any falling path through matrix.
 
 A falling path starts at any element in the first row and chooses the element in the next row that is either directly below or diagonally left/right. Specifically, the next element from position (row, col) will be (row + 1, col - 1), (row + 1, col), or (row + 1, col + 1).
-
- 
 
 Example 1:
 
@@ -801,6 +507,7 @@ Explanation: There are two falling paths with a minimum sum underlined below:
 [[2,1,3],      [[2,1,3],
  [6,5,4],       [6,5,4],
  [7,8,9]]       [7,8,9]]
+
 Example 2:
 
 Input: matrix = [[-19,57],[-40,-5]]
@@ -808,43 +515,29 @@ Output: -59
 Explanation: The falling path with a minimum sum is underlined below:
 [[-19,57],
  [-40,-5]]
+
 Example 3:
 
 Input: matrix = [[-48]]
 Output: -48
  
-
 Constraints:
 
 n == matrix.length
 n == matrix[i].length
 1 <= n <= 100
 -100 <= matrix[i][j] <= 100
-Accepted
-68,616
-Submissions
-107,943
 
- 951 65.5%  Medium Flip Equivalent Binary Trees
+Accepted 68,616 Submissions 107,943
+
+ 951 65.5%  Medium 950/47 Flip Equivalent Binary Trees
 ------
 
-951. Flip Equivalent Binary Trees
-Medium
-
-950
-
-47
-
-Add to List
-
-Share
 For a binary tree T, we can define a flip operation as follows: choose any node, and swap the left and right child subtrees.
 
 A binary tree X is flip equivalent to a binary tree Y if and only if we can make X equal to Y after some number of flip operations.
 
 Given the roots of two binary trees root1 and root2, return true if the two trees are flip equivelent or false otherwise.
-
- 
 
 Example 1:
 
@@ -876,32 +569,18 @@ The number of nodes in each tree is in the range [0, 100].
 Each tree will have unique node values in the range [0, 99].
 
 
- 971 46.1%  Medium Flip Binary Tree To Match Preorder Traversal
+ 971 46.1%  Medium 337/161 Flip Binary Tree To Match Preorder Traversal
 ------
 
-971. Flip Binary Tree To Match Preorder Traversal
-Medium
-
-337
-
-161
-
-Add to List
-
-Share
 You are given the root of a binary tree with n nodes, where each node is uniquely assigned a value from 1 to n. You are also given a sequence of n values voyage, which is the desired pre-order traversal of the binary tree.
 
 Any node in the binary tree can be flipped by swapping its left and right subtrees. For example, flipping node 1 will have the following effect:
-
 
 Flip the smallest number of nodes so that the pre-order traversal of the tree matches voyage.
 
 Return a list of the values of all flipped nodes. You may return the answer in any order. If it is impossible to flip the nodes in the tree to make the pre-order traversal match voyage, return the list [-1].
 
- 
-
 Example 1:
-
 
 Input: root = [1,2], voyage = [2,1]
 Output: [-1]
@@ -914,11 +593,9 @@ Output: [1]
 Explanation: Flipping node 1 swaps nodes 2 and 3, so the pre-order traversal matches voyage.
 Example 3:
 
-
 Input: root = [1,2,3], voyage = [1,2,3]
 Output: []
 Explanation: The tree's pre-order traversal already matches voyage, so no nodes need to be flipped.
- 
 
 Constraints:
 
@@ -929,20 +606,9 @@ n == voyage.length
 All the values in the tree are unique.
 All the values in voyage are unique.
 
-
- 991 46.3%  Medium Broken Calculator
+ 991 46.3%  Medium 849/129 Broken Calculator
 ------
 
-991. Broken Calculator
-Medium
-
-849
-
-129
-
-Add to List
-
-Share
 On a broken calculator that has a number showing on its display, we can perform two operations:
 
 Double: Multiply the number on the display by 2, or;
@@ -950,8 +616,6 @@ Decrement: Subtract 1 from the number on the display.
 Initially, the calculator is displaying the number X.
 
 Return the minimum number of operations needed to display the number Y.
-
- 
 
 Example 1:
 
@@ -974,36 +638,21 @@ Input: X = 1024, Y = 1
 Output: 1023
 Explanation: Use decrement operations 1023 times.
  
-
 Note:
 
 1 <= X <= 10^9
 1 <= Y <= 10^9
-Accepted
-41,372
-Submissions
-83,206
 
-1011 59.4%  Medium Capacity To Ship Packages Within D Days
+Accepted 41,372 Submissions 83,206
+
+1011 59.4%  Medium 1886/56 Capacity To Ship Packages Within D Days
 ------
 
-1011. Capacity To Ship Packages Within D Days
-Medium
-
-1886
-
-56
-
-Add to List
-
-Share
 A conveyor belt has packages that must be shipped from one port to another within D days.
 
 The ith package on the conveyor belt has a weight of weights[i]. Each day, we load the ship with packages on the conveyor belt (in the order given by weights). We may not load more weight than the maximum weight capacity of the ship.
 
 Return the least weight capacity of the ship that will result in all the packages on the conveyor belt being shipped within D days.
-
- 
 
 Example 1:
 
@@ -1034,14 +683,11 @@ Explanation:
 2nd day: 2
 3rd day: 3
 4th day: 1, 1
- 
 
 Constraints:
 
 1 <= D <= weights.length <= 5 * 104
 1 <= weights[i] <= 500
-Accepted
-67,687
-Submissions
-113,300
+
+Accepted 67,687 Submissions 113,300
 

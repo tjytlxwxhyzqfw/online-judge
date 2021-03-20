@@ -1,0 +1,196 @@
+notes.txt
+
+32: 好题目
+
+Intuition:
+括号问题, 之前遇到的, 就两类做法. 栈或者DFS搜索.
+这个题目, 还是考虑栈. 第一次遍历, 能把多余的)给删掉.
+逆序, 再遍历一次, 能把多余的(给删掉. 就OK了
+
+Discuss:
+
+有个好办法:
+The workflow of the solution is as below.
+
+Scan the string from beginning to end.
+1. If current character is '(',
+push its index to the stack. 
+2. If current character is ')' and the
+character at the index of the top of stack is '(', we just find a
+matching pair so pop from the stack. Otherwise, we push the index of
+')' to the stack.
+3. After the scan is done, the stack will only
+contain the indices of characters which cannot be matched. Then
+let's use the opposite side - substring between adjacent indices
+should be valid parentheses. (栈中两个连续元素之间的括号是合法括号)
+4. If the stack is empty, the whole input
+string is valid. Otherwise, we can scan the stack to get longest
+valid substring as described in step 3.
+
+还有个DP解:
+https://leetcode.com/problems/longest-valid-parentheses/discuss/14133/My-DP-O(n)-solution-without-using-stack
+本质也跟栈差不多把...
+
+上述两个解法最多最火爆, 但是, 也有人用我的解法的.
+
+https://leetcode.com/problems/longest-valid-parentheses/discuss/14140/Constant-space-O(n)-time-with-forward-and-backward-pass
+
+52:
+Intuition: 
+(1) 新的解可以由已知的解旋转/对称等操作生成吗? 这个问题本身就够难了这个方向上的思路估计无效;
+(2) 那就还是DFS暴力搜索.
+Discuss: 看起来也是这样的.
+
+132:
+Intuition: 
+(1) 回文序列用扩展法/判定法是很好做的; 没有其他更优的处理办法;
+(2) 需要知道任意子串是不是一个回文序列; 可以先求, 也可以后再再去求;
+(3) 动态规划; 考虑d[i]是加了哪个回文子串之后转过来的.
+(4) 基本上能出一个O(n^2)的算法;
+Discuss:
+(1) 差不多是这个思路; 但是人家实现的代码非常简洁;
+(2) 居然排名第一的兄弟没有用那个表, 用的是O(n)的space;
+
+简洁实现:
+ 	for(int i = 0; i < n; i++) {
+        int min = i;
+        for(int j = 0; j <= i; j++) {
+            if(c[j] == c[i] && (j + 1 > i - 1 || pal[j + 1][i - 1])) {
+                pal[j][i] = true;  // [j][i]构成回文
+                min = j == 0 ? 0 : Math.min(min, cut[j - 1] + 1);
+            }
+        }
+        cut[i] = min; // 更新dp[i]
+    }
+ 第一的自己看, 不再贴代码;
+
+ 152:
+ Intuition:
+ pos[i] = a[i]*(pos[i-1] or neg[i-1]) or ...
+ neg[i] = a[i]*(neg[i-1] or pos[i-1]) or ...
+ Discuss:
+ (1) 基本上思路就是这个, 只不过不需要用数组, 因为只用到了右边的第一个元素
+ (2) 还有更骚的看不懂的做法: https://leetcode.com/problems/maximum-product-subarray/discuss/183483/JavaC%2B%2BPython-it-can-be-more-simple
+
+212:
+Intuition: DFS同时搜索矩阵和Trie
+Discuss: same, 但是在细节上有非常多的优化
+
+312:
+Intuition: 按照最后一个元素切分
+Discuss: more than that: 切分后引起递归 -> 有重复元 -> DP
+dp[i][j] -> burst [i, j]时能获得的最大收益
+先算长度为1的;
+假设长度为j-i的已经知道了
+dp[i][j] = dp[i][k] + left*k*rght + dp[k+1][j]
+自然的递归例程, 复杂度O(n^2)
+
+332:
+Intuition: map[start]->heap
+Discuss: same
+
+372:
+Intuition: quick pow
+Discuss: 快速幂也能做; 用数论知识也能做;
+
+452:
+Intuition:
+1) 第一个气球一定要戳破
+2) 如果小气球被大气球包围, 删掉大气球, 结果不变
+3) 第一个气球比别人长出来的那一块没用;
+Discuss: 思路差不多; 每怎么细看;
+
+472:
+Intuition: x, xx, xx, xx, xxx, xxx, xxx
+这像个套娃的问题. 先按照长度排序, 
+然后对于每个单词, 从右向左遍历它的所有前缀, 
+每当发现一个前缀, 就判断: 前缀是结合词 && 后缀出现在列表中
+复杂度分析: 所有单词组成Trie, 复杂度O(W*N), 基本上也就是这个复杂度了.
+HashSet<String, Boolean>
+Discuss: 
+我解错了. 前缀上找到一个匹配之后, 这个词的后缀可能是个3词结合体.
+这时候, 你是找不到这个3词结合体的. 除非再去树上搜索, 也就是变成一个DFS.
+
+标准解法还是DP:
+public class Solution { 
+	public static List<String> findAllConcatenatedWordsInADict(String[] words) { 
+		List<String> result = new ArrayList<>(); 
+		Set<String> preWords = new HashSet<>();
+		Arrays.sort(words, new Comparator<String>() { public int compare (String s1, String s2) { return s1.length() - s2.length(); } });
+		for (int i = 0; i < words.length; i++) { 
+			if (canForm(words[i], preWords)) { result.add(words[i]); } 
+			preWords.add(words[i]);
+		}
+		return result;
+	}
+	private static boolean canForm(String word, Set<String> dict) { 
+		if (dict.isEmpty()) return false; 
+		boolean[] dp = new boolean[word.length() + 1];
+		dp[0] = true;
+		for (int i = 1; i <= word.length(); i++) {
+			for (int j = 0; j < i; j++) {
+				if (!dp[j]) continue;
+				if (dict.contains(word.substring(j, i))) {
+					dp[i] = true;
+					break;
+				}
+			}
+		}
+		return dp[word.length()];
+	}
+}
+
+592:
+Intuition: 栈+通分解, 可能需要求一个最大公约数;
+Discuss: 思路是一样的, 但是其实用不到栈;
+
+652:
+Intuition: 前序+中序遍历每个节点, 形成一个key, 放入到Map<>中, 就行了
+Discuss: 基本上跟我的想法一样, 但是只需要后序遍历(为啥???), 而且, 还有用ID代替遍历序列进行优化的方法.
+
+后续遍历的原因: 只要把空节点也放到遍历序列中去, 那么是不是后续遍历就能唯一确定一棵树了?
+
+692:
+Intuition: 先统计数量, 维护一个大小为k的堆, 然后给出答案?
+Discuss: 一样的思路
+
+752:
+Intuition: BFS
+Discuss: Same
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

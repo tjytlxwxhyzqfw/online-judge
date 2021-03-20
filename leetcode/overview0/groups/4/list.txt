@@ -1,24 +1,892 @@
-   2 34.9%  Medium Add Two Numbers
-  22 64.6%  Medium Generate Parentheses
-  42 50.6%    Hard Trapping Rain Water
-  62 55.5%  Medium Unique Paths
-  82 37.9%  Medium Remove Duplicates from Sorted List II
- 102 56.0%  Medium Binary Tree Level Order Traversal
- 142 39.2%  Medium Linked List Cycle II
- 162 43.7%  Medium Find Peak Element
- 222 48.6%  Medium Count Complete Tree Nodes
- 282 36.4%    Hard Expression Add Operators
- 322 36.8%  Medium Coin Change
- 382 53.8%  Medium Linked List Random Node
- 402 28.6%  Medium Remove K Digits
- 442 68.7%  Medium Find All Duplicates in an Array
- 462 54.2%  Medium Minimum Moves to Equal Array Elements II
- 522 34.0%  Medium Longest Uncommon Subsequence II
- 542 40.5%  Medium 01 Matrix
- 622 45.0%  Medium Design Circular Queue
- 662 40.1%  Medium Maximum Width of Binary Tree
- 722 35.7%  Medium Remove Comments
- 802 49.6%  Medium Find Eventual Safe States
- 822 43.4%  Medium Card Flipping Game
+Contents:
+========
+   2 34.9%  Medium 11108/2659 Add Two Numbers
+  22 64.6%  Medium 7335/316 Generate Parentheses
+  42 50.6%    Hard 10350/155 Trapping Rain Water
+  62 55.5%  Medium 4720/240 Unique Paths
+  82 37.9%  Medium 2740/122 Remove Duplicates from Sorted List II
+ 102 56.0%  Medium 4363/103 Binary Tree Level Order Traversal
+ 142 39.2%  Medium 3890/291 Linked List Cycle II
+ 162 43.7%  Medium 2634/2573 Find Peak Element
+ 222 48.6%  Medium 2767/251 Count Complete Tree Nodes
+ 282 36.4%    Hard 1061/268 Expression Add Operators
+ 322 36.8%  Medium 6414/189 Coin Change
+ 382 53.8%  Medium 889/235 Linked List Random Node
+ 402 28.6%  Medium 3126/133 Remove K Digits
+ 442 68.7%  Medium 3374/178 Find All Duplicates in an Array
+ 462 54.2%  Medium 633/53 Minimum Moves to Equal Array Elements II
+ 522 34.0%  Medium 213/648 Longest Uncommon Subsequence II
+ 542 40.5%  Medium 2165/124 01 Matrix
+ 622 45.0%  Medium 839/118 Design Circular Queue
+ 662 40.1%  Medium 2096/376 Maximum Width of Binary Tree
+ 722 35.7%  Medium 0/0 Remove Comments
+ 802 49.6%  Medium 1079/209 Find Eventual Safe States
+ 822 43.4%  Medium 85/514 Card Flipping Game
+~~~~~~~
  842 36.6%  Medium Split Array into Fibonacci Sequence
  962 46.1%  Medium Maximum Width Ramp
+
+ Description:
+ ===========
+
+  2 34.9%  Medium Add Two Numbers
+------
+You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order, and each of their nodes contains a single digit. Add the two numbers and return the sum as a linked list.
+
+You may assume the two numbers do not contain any leading zero, except the number 0 itself.
+
+ 
+
+Example 1:
+
+
+Input: l1 = [2,4,3], l2 = [5,6,4]
+Output: [7,0,8]
+Explanation: 342 + 465 = 807.
+Example 2:
+
+Input: l1 = [0], l2 = [0]
+Output: [0]
+Example 3:
+
+Input: l1 = [9,9,9,9,9,9,9], l2 = [9,9,9,9]
+Output: [8,9,9,9,0,0,0,1]
+ 
+
+Constraints:
+
+The number of nodes in each linked list is in the range [1, 100].
+0 <= Node.val <= 9
+It is guaranteed that the list represents a number that does not have leading zeros.
+
+
+  22 64.6%  Medium Generate Parentheses
+------
+
+22. Generate Parentheses
+Medium
+
+7332
+
+315
+
+Add to List
+
+Share
+Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses.
+
+ 
+
+Example 1:
+
+Input: n = 3
+Output: ["((()))","(()())","(())()","()(())","()()()"]
+Example 2:
+
+Input: n = 1
+Output: ["()"]
+ 
+
+Constraints:
+
+1 <= n <= 8
+Accepted
+701,455
+Submissions
+1,071,221
+
+  42 50.6%    Hard Trapping Rain Water
+------
+
+42. Trapping Rain Water
+Hard
+
+10340
+
+155
+
+Add to List
+
+Share
+Given n non-negative integers representing an elevation map where the width of each bar is 1, compute how much water it can trap after raining.
+
+ 
+
+Example 1:
+
+
+Input: height = [0,1,0,2,1,0,1,3,2,1,2,1]
+Output: 6
+Explanation: The above elevation map (black section) is represented by array [0,1,0,2,1,0,1,3,2,1,2,1]. In this case, 6 units of rain water (blue section) are being trapped.
+Example 2:
+
+Input: height = [4,2,0,3,2,5]
+Output: 9
+ 
+
+Constraints:
+
+n == height.length
+0 <= n <= 3 * 104
+0 <= height[i] <= 105
+Accepted
+696,503
+Submissions
+1,356,229
+
+  62 55.5%  Medium Unique Paths
+------
+
+62. Unique Paths
+Medium
+
+4718
+
+240
+
+Add to List
+
+Share
+A robot is located at the top-left corner of a m x n grid (marked 'Start' in the diagram below).
+
+The robot can only move either down or right at any point in time. The robot is trying to reach the bottom-right corner of the grid (marked 'Finish' in the diagram below).
+
+How many possible unique paths are there?
+
+ 
+
+Example 1:
+
+
+Input: m = 3, n = 7
+Output: 28
+Example 2:
+
+Input: m = 3, n = 2
+Output: 3
+Explanation:
+From the top-left corner, there are a total of 3 ways to reach the bottom-right corner:
+1. Right -> Down -> Down
+2. Down -> Down -> Right
+3. Down -> Right -> Down
+Example 3:
+
+Input: m = 7, n = 3
+Output: 28
+Example 4:
+
+Input: m = 3, n = 3
+Output: 6
+ 
+
+Constraints:
+
+1 <= m, n <= 100
+It's guaranteed that the answer will be less than or equal to 2 * 109.
+Accepted
+610,076
+Submissions
+1,086,743
+
+  82 37.9%  Medium Remove Duplicates from Sorted List II
+------
+
+82. Remove Duplicates from Sorted List II
+Medium
+
+2739
+
+122
+
+Add to List
+
+Share
+Given the head of a sorted linked list, delete all nodes that have duplicate numbers, leaving only distinct numbers from the original list. Return the linked list sorted as well.
+
+ 
+
+Example 1:
+
+
+Input: head = [1,2,3,3,4,4,5]
+Output: [1,2,5]
+Example 2:
+
+
+Input: head = [1,1,1,2,3]
+Output: [2,3]
+ 
+
+Constraints:
+
+The number of nodes in the list is in the range [0, 300].
+-100 <= Node.val <= 100
+The list is guaranteed to be sorted in ascending order.
+Accepted
+319,466
+Submissions
+811,909
+
+ 102 56.0%  Medium Binary Tree Level Order Traversal
+ ------
+ 102. Binary Tree Level Order Traversal
+Medium
+
+4362
+
+103
+
+Add to List
+
+Share
+Given the root of a binary tree, return the level order traversal of its nodes' values. (i.e., from left to right, level by level).
+
+ 
+
+Example 1:
+
+
+Input: root = [3,9,20,null,null,15,7]
+Output: [[3],[9,20],[15,7]]
+Example 2:
+
+Input: root = [1]
+Output: [[1]]
+Example 3:
+
+Input: root = []
+Output: []
+ 
+
+Constraints:
+
+The number of nodes in the tree is in the range [0, 2000].
+-1000 <= Node.val <= 1000
+Accepted
+792,749
+Submissions
+1,396,536
+
+ 142 39.2%  Medium Linked List Cycle II
+------
+
+142. Linked List Cycle II
+Medium
+
+3889
+
+291
+
+Add to List
+
+Share
+Given a linked list, return the node where the cycle begins. If there is no cycle, return null.
+
+There is a cycle in a linked list if there is some node in the list that can be reached again by continuously following the next pointer. Internally, pos is used to denote the index of the node that tail's next pointer is connected to. Note that pos is not passed as a parameter.
+
+Notice that you should not modify the linked list.
+
+ 
+
+Example 1:
+
+
+Input: head = [3,2,0,-4], pos = 1
+Output: tail connects to node index 1
+Explanation: There is a cycle in the linked list, where tail connects to the second node.
+Example 2:
+
+
+Input: head = [1,2], pos = 0
+Output: tail connects to node index 0
+Explanation: There is a cycle in the linked list, where tail connects to the first node.
+Example 3:
+
+
+Input: head = [1], pos = -1
+Output: no cycle
+Explanation: There is no cycle in the linked list.
+ 
+
+Constraints:
+
+The number of the nodes in the list is in the range [0, 104].
+-105 <= Node.val <= 105
+pos is -1 or a valid index in the linked-list.
+ 
+
+Follow up: Can you solve it using O(1) (i.e. constant) memory?
+
+Accepted
+427,644
+Submissions
+1,074,232
+
+ 162 43.7%  Medium Find Peak Element
+------
+
+162. Find Peak Element
+Medium
+
+2633
+
+2571
+
+Add to List
+
+Share
+A peak element is an element that is strictly greater than its neighbors.
+
+Given an integer array nums, find a peak element, and return its index. If the array contains multiple peaks, return the index to any of the peaks.
+
+You may imagine that nums[-1] = nums[n] = -∞.
+
+ 
+
+Example 1:
+
+Input: nums = [1,2,3,1]
+Output: 2
+Explanation: 3 is a peak element and your function should return the index number 2.
+Example 2:
+
+Input: nums = [1,2,1,3,5,6,4]
+Output: 5
+Explanation: Your function can return either index number 1 where the peak element is 2, or index number 5 where the peak element is 6.
+ 
+
+Constraints:
+
+1 <= nums.length <= 1000
+-231 <= nums[i] <= 231 - 1
+nums[i] != nums[i + 1] for all valid i.
+ 
+
+Follow up: Could you implement a solution with logarithmic complexity?
+Accepted
+467,692
+Submissions
+1,062,532
+
+ 222 48.6%  Medium 2767/251 Count Complete Tree Nodes
+------
+
+Given the root of a complete binary tree, return the number of the nodes in the tree.
+
+According to Wikipedia, every level, except possibly the last, is completely filled in a complete binary tree, and all nodes in the last level are as far left as possible. It can have between 1 and 2h nodes inclusive at the last level h.
+
+Example 1:
+
+Input: root = [1,2,3,4,5,6]
+Output: 6
+Example 2:
+
+Input: root = []
+Output: 0
+Example 3:
+
+Input: root = [1]
+Output: 1
+
+Constraints:
+
+The number of nodes in the tree is in the range [0, 5 * 104].
+0 <= Node.val <= 5 * 104
+The tree is guaranteed to be complete.
+ 
+
+Follow up: Traversing the tree to count the number of nodes in the tree is an easy solution but with O(n) complexity. Could you find a faster algorithm?
+
+Accepted 284,297 Submissions 574,996
+
+ 282 36.4%    Hard 1601/268 Expression Add Operators
+------
+
+Given a string num that contains only digits and an integer target, return all possibilities to add the binary operators '+', '-', or '*' between the digits of num so that the resultant expression evaluates to the target value.
+
+Example 1:
+
+Input: num = "123", target = 6
+Output: ["1*2*3","1+2+3"]
+Example 2:
+
+Input: num = "232", target = 8
+Output: ["2*3+2","2+3*2"]
+Example 3:
+
+Input: num = "105", target = 5
+Output: ["1*0+5","10-5"]
+Example 4:
+
+Input: num = "00", target = 0
+Output: ["0*0","0+0","0-0"]
+Example 5:
+
+Input: num = "3456237490", target = 9191
+Output: []
+
+Constraints:
+
+1 <= num.length <= 10
+num consists of only digits.
+-231 <= target <= 231 - 1
+
+Accepted 127,347 Submissions 345,865
+
+ 322 36.8%  Medium 6414/189 Coin Change
+------
+
+You are given coins of different denominations and a total amount of money amount. Write a function to compute the fewest number of coins that you need to make up that amount. If that amount of money cannot be made up by any combination of the coins, return -1.
+
+You may assume that you have an infinite number of each kind of coin.
+
+Example 1:
+
+Input: coins = [1,2,5], amount = 11
+Output: 3
+Explanation: 11 = 5 + 5 + 1
+
+Example 2:
+
+Input: coins = [2], amount = 3
+Output: -1
+
+Example 3:
+
+Input: coins = [1], amount = 0
+Output: 0
+
+Example 4:
+
+Input: coins = [1], amount = 1
+Output: 1
+
+Example 5:
+
+Input: coins = [1], amount = 2
+Output: 2
+
+Constraints:
+
+1 <= coins.length <= 12
+1 <= coins[i] <= 231 - 1
+0 <= amount <= 104
+
+Accepted 602,398 Submissions 1,602,974
+
+ 382 53.8%  Medium 889/235 Linked List Random Node
+------
+
+Given a singly linked list, return a random node's value from the linked list. Each node must have the same probability of being chosen.
+
+Example 1:
+
+Input
+["Solution", "getRandom", "getRandom", "getRandom", "getRandom", "getRandom"]
+[[[1, 2, 3]], [], [], [], [], []]
+Output
+[null, 1, 3, 2, 2, 3]
+
+Explanation
+Solution solution = new Solution([1, 2, 3]);
+solution.getRandom(); // return 1
+solution.getRandom(); // return 3
+solution.getRandom(); // return 2
+solution.getRandom(); // return 2
+solution.getRandom(); // return 3
+// getRandom() should return either 1, 2, or 3 randomly. Each element should have equal probability of returning.
+ 
+
+Constraints:
+
+The number of nodes in the linked list will be in the range [1, 104]
+-104 <= Node.val <= 104
+At most 104 calls will be made to getRandom.
+
+Follow up:
+
+What if the linked list is extremely large and its length is unknown to you?
+Could you solve this efficiently without using extra space?
+
+Accepted 103,342 Submissions 190,728
+
+ 402 28.6%  Medium 3126/133 Remove K Digits
+------
+
+Given a non-negative integer num represented as a string, remove k digits from the number so that the new number is the smallest possible.
+
+Note:
+The length of num is less than 10002 and will be ≥ k.
+The given num does not contain any leading zero.
+
+Example 1:
+
+Input: num = "1432219", k = 3
+Output: "1219"
+Explanation: Remove the three digits 4, 3, and 2 to form the new number 1219 which is the smallest.
+Example 2:
+
+Input: num = "10200", k = 1
+Output: "200"
+Explanation: Remove the leading 1 and the number is 200. Note that the output must not contain leading zeroes.
+Example 3:
+
+Input: num = "10", k = 2
+Output: "0"
+Explanation: Remove all the digits from the number and it is left with nothing which is 0.
+
+Accepted 174,030 Submissions 606,845
+
+ 442 68.7%  Medium 3374/178 Find All Duplicates in an Array
+------
+
+Given an array of integers, 1 ≤ a[i] ≤ n (n = size of array), some elements appear twice and others appear once.
+
+Find all the elements that appear twice in this array.
+
+Could you do it without extra space and in O(n) runtime?
+
+Example:
+Input: [4,3,2,7,8,2,3,1]
+Output: [2,3]
+
+Accepted 260,684 Submissions 377,877
+
+ 462 54.2%  Medium 633/53 Minimum Moves to Equal Array Elements II
+------
+
+Given a non-empty integer array, find the minimum number of moves required to make all array elements equal, where a move is incrementing a selected element by 1 or decrementing a selected element by 1.
+
+You may assume the array's length is at most 10,000.
+
+Example:
+Input: [1,2,3]
+Output: 2
+Explanation:
+Only two moves are needed (remember each move increments or decrements one element):
+[1,2,3]  =>  [2,2,3]  =>  [2,2,2]
+
+Accepted 51,539 Submissions 94,753
+
+ 522 34.0%  Medium 213/648 Longest Uncommon Subsequence II
+------
+
+Given a list of strings, you need to find the longest uncommon subsequence among them. The longest uncommon subsequence is defined as the longest subsequence of one of these strings and this subsequence should not be any subsequence of the other strings.
+
+A subsequence is a sequence that can be derived from one sequence by deleting some characters without changing the order of the remaining elements. Trivially, any string is a subsequence of itself and an empty string is a subsequence of any string.
+
+The input will be a list of strings, and the output needs to be the length of the longest uncommon subsequence. If the longest uncommon subsequence doesn't exist, return -1.
+
+Example 1:
+Input: "aba", "cdc", "eae"
+Output: 3
+Note:
+
+All the given strings' lengths will not exceed 10.
+The length of the given list will be in the range of [2, 50].
+
+Accepted 24,295 Submissions 70,998
+
+ 542 40.5%  Medium 2165/124 01 Matrix
+------
+
+Given a matrix consists of 0 and 1, find the distance of the nearest 0 for each cell.
+
+The distance between two adjacent cells is 1.
+
+Example 1:
+
+Input:
+[[0,0,0],
+ [0,1,0],
+ [0,0,0]]
+
+Output:
+[[0,0,0],
+ [0,1,0],
+ [0,0,0]]
+Example 2:
+
+Input:
+[[0,0,0],
+ [0,1,0],
+ [1,1,1]]
+
+Output:
+[[0,0,0],
+ [0,1,0],
+ [1,2,1]]
+ 
+
+Note:
+
+The number of elements of the given matrix will not exceed 10,000.
+There are at least one 0 in the given matrix.
+The cells are adjacent in only four directions: up, down, left and right.
+
+Accepted 118,253 Submissions 288,497
+
+ 622 45.0%  Medium 839/118 Design Circular Queue
+------
+
+Design your implementation of the circular queue. The circular queue is a linear data structure in which the operations are performed based on FIFO (First In First Out) principle and the last position is connected back to the first position to make a circle. It is also called "Ring Buffer".
+
+One of the benefits of the circular queue is that we can make use of the spaces in front of the queue. In a normal queue, once the queue becomes full, we cannot insert the next element even if there is a space in front of the queue. But using the circular queue, we can use the space to store new values.
+
+Implementation the MyCircularQueue class:
+
+MyCircularQueue(k) Initializes the object with the size of the queue to be k.
+int Front() Gets the front item from the queue. If the queue is empty, return -1.
+int Rear() Gets the last item from the queue. If the queue is empty, return -1.
+boolean enQueue(int value) Inserts an element into the circular queue. Return true if the operation is successful.
+boolean deQueue() Deletes an element from the circular queue. Return true if the operation is successful.
+boolean isEmpty() Checks whether the circular queue is empty or not.
+boolean isFull() Checks whether the circular queue is full or not.
+ 
+
+Example 1:
+
+Input
+["MyCircularQueue", "enQueue", "enQueue", "enQueue", "enQueue", "Rear", "isFull", "deQueue", "enQueue", "Rear"]
+[[3], [1], [2], [3], [4], [], [], [], [4], []]
+Output
+[null, true, true, true, false, 3, true, true, true, 4]
+
+Explanation
+MyCircularQueue myCircularQueue = new MyCircularQueue(3);
+myCircularQueue.enQueue(1); // return True
+myCircularQueue.enQueue(2); // return True
+myCircularQueue.enQueue(3); // return True
+myCircularQueue.enQueue(4); // return False
+myCircularQueue.Rear();     // return 3
+myCircularQueue.isFull();   // return True
+myCircularQueue.deQueue();  // return True
+myCircularQueue.enQueue(4); // return True
+myCircularQueue.Rear();     // return 4
+ 
+Constraints:
+
+1 <= k <= 1000
+0 <= value <= 1000
+At most 3000 calls will be made to enQueue, deQueue, Front, Rear, isEmpty, and isFull.
+ 
+Follow up: Could you solve the problem without using the built-in queue? 
+
+Accepted 95,181 Submissions 207,474
+
+ 662 40.1%  Medium 2096/376 Maximum Width of Binary Tree
+------
+
+Given a binary tree, write a function to get the maximum width of the given tree. The maximum width of a tree is the maximum width among all levels.
+
+The width of one level is defined as the length between the end-nodes (the leftmost and right most non-null nodes in the level, where the null nodes between the end-nodes are also counted into the length calculation.
+
+It is guaranteed that the answer will in the range of 32-bit signed integer.
+
+Example 1:
+
+Input: 
+
+           1
+         /   \
+        3     2
+       / \     \  
+      5   3     9 
+
+Output: 4
+Explanation: The maximum width existing in the third level with the length 4 (5,3,null,9).
+Example 2:
+
+Input: 
+
+          1
+         /  
+        3    
+       / \       
+      5   3     
+
+Output: 2
+Explanation: The maximum width existing in the third level with the length 2 (5,3).
+Example 3:
+
+Input: 
+
+          1
+         / \
+        3   2 
+       /        
+      5      
+
+Output: 2
+Explanation: The maximum width existing in the second level with the length 2 (3,2).
+Example 4:
+
+Input: 
+
+          1
+         / \
+        3   2
+       /     \  
+      5       9 
+     /         \
+    6           7
+Output: 8
+Explanation:The maximum width existing in the fourth level with the length 8 (6,null,null,null,null,null,null,7).
+ 
+
+Constraints:
+
+The given binary tree will have between 1 and 3000 nodes.
+
+ 722 35.7%  Medium 447/1158 Remove Comments
+------
+
+Given a C++ program, remove comments from it. The program source is an array where source[i] is the i-th line of the source code. This represents the result of splitting the original source code string by the newline character \n.
+
+(long story omitted ...)
+
+Note:
+
+The length of source is in the range [1, 100].
+The length of source[i] is in the range [0, 80].
+Every open block comment is eventually closed.
+There are no single-quote, double-quote, or control characters in the source code.
+
+Accepted 40,909 Submissions 112,852
+
+ 802 49.6%  Medium 1079/209 Find Eventual Safe States
+------
+
+We start at some node in a directed graph, and every turn, we walk along a directed edge of the graph. If we reach a terminal node (that is, it has no outgoing directed edges), we stop.
+
+We define a starting node to be safe if we must eventually walk to a terminal node. More specifically, there is a natural number k, so that we must have stopped at a terminal node in less than k steps for any choice of where to walk.
+
+Return an array containing all the safe nodes of the graph. The answer should be sorted in ascending order.
+
+The directed graph has n nodes with labels from 0 to n - 1, where n is the length of graph. The graph is given in the following form: graph[i] is a list of labels j such that (i, j) is a directed edge of the graph, going from node i to node j.
+
+(好好读题)
+
+Example 1:
+
+Illustration of graph
+Input: graph = [[1,2],[2,3],[5],[0],[5],[],[]]
+Output: [2,4,5,6]
+Explanation: The given graph is shown above.
+Example 2:
+
+Input: graph = [[1,2,3,4],[1,2],[3,4],[0,4],[]]
+Output: [4]
+ 
+
+Constraints:
+
+n == graph.length
+1 <= n <= 104
+0 <= graph[i].legnth <= n
+graph[i] is sorted in a strictly increasing order.
+The graph may contain self-loops.
+The number of edges in the graph will be in the range [1, 4 * 104].
+
+Accepted 49,950 Submissions 100,141
+
+ 822 43.4%  Medium 85/514 Card Flipping Game
+------
+
+On a table are N cards, with a positive integer printed on the front and back of each card (possibly different).
+
+We flip any number of cards, and after we choose one card. 
+
+If the number X on the back of the chosen card is not on the front of any card, then this number X is good.
+
+What is the smallest number that is good?  If no number is good, output 0.
+
+Here, fronts[i] and backs[i] represent the number on the front and back of card i. 
+
+A flip swaps the front and back numbers, so the value on the front is now on the back and vice versa.
+
+Example:
+
+Input: fronts = [1,2,4,4,7], backs = [1,3,4,1,3]
+Output: 2
+Explanation: If we flip the second card, the fronts are [1,3,4,4,7] and the backs are [1,2,4,1,3].
+We choose the second card, which has number 2 on the back, and it isn't on the front of any card, so 2 is good.
+
+Note:
+
+1 <= fronts.length == backs.length <= 1000.
+1 <= fronts[i] <= 2000.
+1 <= backs[i] <= 2000.
+
+Accepted 10,561 Submissions 24,171
+
+ 842 36.6%  Medium 604/199 Split Array into Fibonacci Sequence
+------
+
+Given a string S of digits, such as S = "123456579", we can split it into a Fibonacci-like sequence [123, 456, 579].
+
+Formally, a Fibonacci-like sequence is a list F of non-negative integers such that:
+
+0 <= F[i] <= 2^31 - 1, (that is, each integer fits a 32-bit signed integer type);
+F.length >= 3;
+and F[i] + F[i+1] = F[i+2] for all 0 <= i < F.length - 2.
+Also, note that when splitting the string into pieces, each piece must not have extra leading zeroes, except if the piece is the number 0 itself.
+
+Return any Fibonacci-like sequence split from S, or return [] if it cannot be done.
+
+Example 1:
+
+Input: "123456579"
+Output: [123,456,579]
+Example 2:
+
+Input: "11235813"
+Output: [1,1,2,3,5,8,13]
+Example 3:
+
+Input: "112358130"
+Output: []
+Explanation: The task is impossible.
+Example 4:
+
+Input: "0123"
+Output: []
+Explanation: Leading zeroes are not allowed, so "01", "2", "3" is not valid.
+Example 5:
+
+Input: "1101111"
+Output: [110, 1, 111]
+Explanation: The output [11, 0, 11, 11] would also be accepted.
+Note:
+
+1 <= S.length <= 200
+S contains only digits.
+
+Accepted 24,637 Submissions 66,659
+
+ 962 46.1%  Medium 737/20 Maximum Width Ramp
+------
+
+Given an array A of integers, a ramp is a tuple (i, j) for which i < j and A[i] <= A[j].  The width of such a ramp is j - i.
+
+Find the maximum width of a ramp in A.  If one doesn't exist, return 0.
+
+Example 1:
+
+Input: [6,0,8,2,1,5]
+Output: 4
+Explanation: 
+The maximum width ramp is achieved at (i, j) = (1, 5): A[1] = 0 and A[5] = 5.
+Example 2:
+
+Input: [9,8,1,0,1,9,4,0,4,1]
+Output: 7
+Explanation: 
+The maximum width ramp is achieved at (i, j) = (2, 9): A[2] = 1 and A[9] = 1.
+
+Note:
+
+2 <= A.length <= 50000
+0 <= A[i] <= 50000
+ 
+Accepted 24,482 Submissions 52,537

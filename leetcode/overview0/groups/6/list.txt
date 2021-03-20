@@ -1,24 +1,476 @@
-   3 31.0%  Medium Longest Substring Without Repeating Characters
-  23 41.8%    Hard Merge k Sorted Lists
-  43 34.6%  Medium Multiply Strings
-  63 35.1%  Medium Unique Paths II
- 103 49.6%  Medium Binary Tree Zigzag Level Order Traversal
- 123 39.6%    Hard Best Time to Buy and Sell Stock III
- 143 40.1%  Medium Reorder List
- 223 38.1%  Medium Rectangle Area
- 343 51.0%  Medium Integer Break
- 363 38.3%    Hard Max Sum of Rectangle No Larger Than K
- 403 41.0%    Hard Frog Jump
- 423 47.3%  Medium Reconstruct Original Digits from English
- 483 36.1%    Hard Smallest Good Base
- 503 58.0%  Medium Next Greater Element II
- 523 24.7%  Medium Continuous Subarray Sum
- 583 49.6%  Medium Delete Operation for Two Strings
- 623 50.2%  Medium Add One Row to Tree
- 743 45.2%  Medium Network Delay Time
- 763 77.8%  Medium Partition Labels
- 823 36.2%  Medium Binary Trees With Factors
- 863 57.3%  Medium All Nodes Distance K in Binary Tree
- 923 36.0%  Medium 3Sum With Multiplicity
- 963 51.6%  Medium Minimum Area Rectangle II
- 983 62.6%  Medium Minimum Cost For Tickets
+ Contents:
+ ========
+
+   3 31.0%  Medium 13499/698 Longest Substring Without Repeating Characters
+  23 41.8%    Hard 6753/349 Merge k Sorted Lists
+  43 34.6%  Medium 2335/966 Multiply Strings
+  63 35.1%  Medium 2546/289 Unique Paths II
+ 103 49.6%  Medium 3210/125 Binary Tree Zigzag Level Order Traversal
+ 123 39.6%    Hard 3341/86 Best Time to Buy and Sell Stock III (高优再做一遍/高优读Discuss)
+ 143 40.1%  Medium 2952/144 Reorder List
+ 223 38.1%  Medium 520/866 Rectangle Area
+ 343 51.0%  Medium 1469/254 Integer Break
+ 363 38.3%    Hard 1071/80 Max Sum of Rectangle No Larger Than K (高优好好看: 85/560/862TODO)
+ 403 41.0%    Hard 1462/130 Frog Jump
+ 423 47.3%  Medium 201/659 Reconstruct Original Digits from English
+ 483 36.1%    Hard 187/365 Smallest Good Base
+ 503 58.0%  Medium 2274/89 Next Greater Element II (42/84/496/503/856/901/907/1130)
+ 523 24.7%  Medium 1873/2612 Continuous Subarray Sum
+ 583 49.6%  Medium 1425/34 Delete Operation for Two Strings
+ 623 50.2%  Medium 874/160 Add One Row to Tree
+ 743 45.2%  Medium 2412/244 Network Delay Time
+ 763 77.8%  Medium 4285/181 Partition Labels
+ 823 36.2%  Medium 666/84 Binary Trees With Factors
+ 863 57.3%  Medium 3311/68 All Nodes Distance K in Binary Tree
+ 923 36.0%  Medium 459/93 3Sum With Multiplicity
+ 963 51.6%  Medium 198/298 Minimum Area Rectangle II
+ 983 62.6%  Medium 2613/48 Minimum Cost For Tickets
+
+ Description:
+ ===========
+
+ (<=223的先忽略...)
+
+ 343 51.0%  Medium 1469/254 Integer Break
+------
+
+Given an integer n, break it into the sum of k positive integers, where k >= 2, and maximize the product of those integers.
+
+Return the maximum product you can get.
+
+Example 1:
+
+Input: n = 2
+Output: 1
+Explanation: 2 = 1 + 1, 1 × 1 = 1.
+Example 2:
+
+Input: n = 10
+Output: 36
+Explanation: 10 = 3 + 3 + 4, 3 × 3 × 4 = 36.
+ 
+
+Constraints:
+
+2 <= n <= 58
+
+Accepted 126,315 Submissions 246,399
+
+ 363 38.3%    Hard 1071/80 Max Sum of Rectangle No Larger Than K
+------
+
+Given a non-empty 2D matrix matrix and an integer k, find the max sum of a rectangle in the matrix such that its sum is no larger than k.
+
+Example:
+
+Input: matrix = [[1,0,1],[0,-2,3]], k = 2
+Output: 2 
+Explanation: Because the sum of rectangle [[0, 1], [-2, 3]] is 2,
+             and 2 is the max number no larger than k (k = 2).
+Note:
+
+The rectangle inside the matrix must have an area > 0.
+What if the number of rows is much larger than the number of columns?
+
+Accepted 53,103 Submissions 138,143
+
+ 403 41.0%    Hard 1462/130 Frog Jump
+------
+
+A frog is crossing a river. The river is divided into some number of units, and at each unit, there may or may not exist a stone. The frog can jump on a stone, but it must not jump into the water.
+
+Given a list of stones' positions (in units) in sorted ascending order, determine if the frog can cross the river by landing on the last stone. Initially, the frog is on the first stone and assumes the first jump must be 1 unit.
+
+If the frog's last jump was k units, its next jump must be either k - 1, k, or k + 1 units. The frog can only jump in the forward direction.
+
+Example 1:
+
+Input: stones = [0,1,3,5,6,8,12,17]
+Output: true
+Explanation: The frog can jump to the last stone by jumping 1 unit to the 2nd stone, then 2 units to the 3rd stone, then 2 units to the 4th stone, then 3 units to the 6th stone, 4 units to the 7th stone, and 5 units to the 8th stone.
+Example 2:
+
+Input: stones = [0,1,2,3,4,8,9,11]
+Output: false
+Explanation: There is no way to jump to the last stone as the gap between the 5th and 6th stone is too large.
+ 
+
+Constraints:
+
+2 <= stones.length <= 2000
+0 <= stones[i] <= 231 - 1
+stones[0] == 0
+
+Accepted 116,377 Submissions 280,021
+
+ 423 47.3%  Medium 201/659 Reconstruct Original Digits from English
+------
+
+Given a non-empty string containing an out-of-order English representation of digits 0-9, output the digits in ascending order.
+
+Note:
+Input contains only lowercase English letters.
+Input is guaranteed to be valid and can be transformed to its original digits. That means invalid inputs such as "abc" or "zerone" are not permitted.
+Input length is less than 50,000.
+Example 1:
+Input: "owoztneoer"
+
+Output: "012"
+Example 2:
+Input: "fviefuro"
+
+Output: "45"
+
+Accepted 26,700 Submissions 56,168
+
+ 483 36.1%    Hard 187/365 Smallest Good Base
+------
+
+For an integer n, we call k>=2 a good base of n, if all digits of n base k are 1.
+
+Now given a string representing n, you should return the smallest good base of n in string format.
+
+Example 1:
+
+Input: "13"
+Output: "3"
+Explanation: 13 base 3 is 111.
+
+Example 2:
+
+Input: "4681"
+Output: "8"
+Explanation: 4681 base 8 is 11111.
+
+Example 3:
+
+Input: "1000000000000000000"
+Output: "999999999999999999"
+Explanation: 1000000000000000000 base 999999999999999999 is 11.
+ 
+Note:
+
+The range of n is [3, 10^18].
+The string representing n is always valid and will not have leading zeros.
+
+Accepted 14,156 Submissions 39,032
+
+ 503 58.0%  Medium 2274/89 Next Greater Element II
+------
+
+Given a circular array (the next element of the last element is the first element of the array), print the Next Greater Number for every element. The Next Greater Number of a number x is the first greater number to its traversing-order next in the array, which means you could search circularly to find its next greater number. If it doesn't exist, output -1 for this number.
+
+Example 1:
+Input: [1,2,1]
+Output: [2,-1,2]
+Explanation: The first 1's next greater number is 2; 
+The number 2 can't find next greater number; 
+The second 1's next greater number needs to search circularly, which is also 2.
+Note: The length of given array won't exceed 10000.
+
+Accepted 129,503 Submissions 221,127
+
+ 523 24.7%  Medium 1873/2612 Continuous Subarray Sum
+------
+
+Given a list of non-negative numbers and a target integer k, write a function to check if the array has a continuous subarray of size at least 2 that sums up to a multiple of k, that is, sums up to n*k where n is also an integer.
+
+Example 1:
+
+Input: [23, 2, 4, 6, 7],  k=6
+Output: True
+Explanation: Because [2, 4] is a continuous subarray of size 2 and sums up to 6.
+Example 2:
+
+Input: [23, 2, 6, 4, 7],  k=6
+Output: True
+Explanation: Because [23, 2, 6, 4, 7] is an continuous subarray of size 5 and sums up to 42.
+
+Constraints:
+
+The length of the array won't exceed 10,000.
+You may assume the sum of all the numbers is in the range of a signed 32-bit integer.
+
+Accepted 180,098 Submissions 728,552
+
+ 583 49.6%  Medium 1425/34 Delete Operation for Two Strings
+------
+
+Given two strings word1 and word2, return the minimum number of steps required to make word1 and word2 the same.
+
+In one step, you can delete exactly one character in either string.
+
+Example 1:
+
+Input: word1 = "sea", word2 = "eat"
+Output: 2
+Explanation: You need one step to make "sea" to "ea" and another step to make "eat" to "ea".
+Example 2:
+
+Input: word1 = "leetcode", word2 = "etco"
+Output: 4
+
+Constraints:
+
+1 <= word1.length, word2.length <= 500
+word1 and word2 consist of only lowercase English letters.
+
+Accepted 62,008 Submissions 123,581
+
+ 623 50.2%  Medium 874/160 Add One Row to Tree
+------
+
+Given the root of a binary tree and two integers val and depth, add a row of nodes with value val at the given depth depth.
+
+Note that the root node is at depth 1.
+
+The adding rule is:
+
+Given the integer depth, for each not null tree node cur at the depth depth - 1, create two tree nodes with value val as cur's left subtree root and right subtree root.
+cur's original left subtree should be the left subtree of the new left subtree root.
+cur's original right subtree should be the right subtree of the new right subtree root.
+If depth == 1 that means there is no depth depth - 1 at all, then create a tree node with value val as the new root of the whole original tree, and the original tree is the new root's left subtree.
+ 
+Example 1:
+Input: root = [4,2,6,3,1,5], val = 1, depth = 2
+Output: [4,1,1,2,null,null,6,3,1,5]
+
+Example 2:
+Input: root = [4,2,null,3,1], val = 1, depth = 3
+Output: [4,2,null,1,1,3,null,null,1]
+
+Constraints:
+
+The number of nodes in the tree is in the range [1, 104].
+The depth of the tree is in the range [1, 104].
+-100 <= Node.val <= 100
+-105 <= val <= 105
+1 <= depth <= the depth of tree + 1
+
+Accepted 67,510 Submissions 127,220
+
+ 743 45.2%  Medium 2412/244 Network Delay Time
+------
+
+You are given a network of n nodes, labeled from 1 to n. You are also given times, a list of travel times as directed edges times[i] = (ui, vi, wi), where ui is the source node, vi is the target node, and wi is the time it takes for a signal to travel from source to target.
+
+We will send a signal from a given node k. Return the time it takes for all the n nodes to receive the signal. If it is impossible for all the n nodes to receive the signal, return -1.
+
+Example 1:
+Input: times = [[2,1,1],[2,3,1],[3,4,1]], n = 4, k = 2
+Output: 2
+
+Example 2:
+Input: times = [[1,2,1]], n = 2, k = 1
+Output: 1
+
+Example 3:
+Input: times = [[1,2,1]], n = 2, k = 2
+Output: -1
+
+Constraints:
+
+1 <= k <= n <= 100
+1 <= times.length <= 6000
+times[i].length == 3
+1 <= ui, vi <= n
+ui != vi
+0 <= wi <= 100
+All the pairs (ui, vi) are unique. (i.e., no multiple edges.)
+
+Accepted 139,581 Submissions 306,093
+
+ 763 77.8%  Medium 4285/181 Partition Labels
+------
+
+A string S of lowercase English letters is given. We want to partition this string into as many parts as possible so that each letter appears in at most one part, and return a list of integers representing the size of these parts.
+
+Example 1:
+
+Input: S = "ababcbacadefegdehijhklij"
+Output: [9,7,8]
+Explanation:
+The partition is "ababcbaca", "defegde", "hijhklij".
+This is a partition so that each letter appears in at most one part.
+A partition like "ababcbacadefegde", "hijhklij" is incorrect, because it splits S into less parts.
+ 
+Note:
+
+S will have length in range [1, 500].
+S will consist of lowercase English letters ('a' to 'z') only.
+ 
+Accepted 242,454 Submissions 310,506
+
+ 823 36.2%  Medium 666/84 Binary Trees With Factors
+------
+
+Given an array of unique integers, arr, where each integer arr[i] is strictly greater than 1.
+
+We make a binary tree using these integers, and each number may be used for any number of times. Each non-leaf node's value should be equal to the product of the values of its children.
+
+Return the number of binary trees we can make. The answer may be too large so return the answer modulo 10^9 + 7.
+
+Example 1:
+
+Input: arr = [2,4]
+Output: 3
+Explanation: We can make these trees: [2], [4], [4, 2, 2]
+Example 2:
+
+Input: arr = [2,4,5,10]
+Output: 7
+Explanation: We can make these trees: [2], [4], [5], [10], [4, 2, 2], [10, 2, 5], [10, 5, 2].
+
+Constraints:
+
+1 <= arr.length <= 1000
+2 <= arr[i] <= 109
+
+Accepted 31,235 Submissions 71,310
+
+ 863 57.3%  Medium 3311/68 All Nodes Distance K in Binary Tree
+------
+
+We are given a binary tree (with root node root), a target node, and an integer value K.
+
+Return a list of the values of all nodes that have a distance K from the target node.  The answer can be returned in any order.
+
+Example 1:
+
+Input: root = [3,5,1,6,2,0,8,null,null,7,4], target = 5, K = 2
+
+Output: [7,4,1]
+
+Explanation: 
+The nodes that are a distance 2 from the target node (with value 5)
+have values 7, 4, and 1.
+
+Note that the inputs "root" and "target" are actually TreeNodes.
+The descriptions of the inputs above are just serializations of these objects.
+ 
+Note:
+
+The given tree is non-empty.
+Each node in the tree has unique values 0 <= node.val <= 500.
+The target node is a node in the tree.
+0 <= K <= 1000.
+
+Accepted 124,562 Submissions 214,658
+
+ 923 36.0%  Medium 459/93 3Sum With Multiplicity
+------
+
+Given an integer array arr, and an integer target, return the number of tuples i, j, k such that i < j < k and arr[i] + arr[j] + arr[k] == target.
+
+As the answer can be very large, return it modulo 109 + 7.
+
+Example 1:
+
+Input: arr = [1,1,2,2,3,3,4,4,5,5], target = 8
+Output: 20
+Explanation: 
+Enumerating by the values (arr[i], arr[j], arr[k]):
+(1, 2, 5) occurs 8 times;
+(1, 3, 4) occurs 8 times;
+(2, 2, 4) occurs 2 times;
+(2, 3, 3) occurs 2 times.
+Example 2:
+
+Input: arr = [1,1,2,2,2,2], target = 5
+Output: 12
+Explanation: 
+arr[i] = 1, arr[j] = arr[k] = 2 occurs 12 times:
+We choose one 1 from [1,1] in 2 ways,
+and two 2s from [2,2,2,2] in 6 ways.
+ 
+
+Constraints:
+
+3 <= arr.length <= 3000
+0 <= arr[i] <= 100
+0 <= target <= 300
+
+Accepted 22,960 Submissions 63,241
+
+ 963 51.6%  Medium 198/298 Minimum Area Rectangle II
+------
+
+Given a set of points in the xy-plane, determine the minimum area of any rectangle formed from these points, with sides not necessarily parallel to the x and y axes.
+
+If there isn't any rectangle, return 0.
+
+Example 1:
+Input: [[1,2],[2,1],[1,0],[0,1]]
+Output: 2.00000
+Explanation: The minimum area rectangle occurs at [1,2],[2,1],[1,0],[0,1], with an area of 2.
+
+Example 2:
+Input: [[0,1],[2,1],[1,1],[1,0],[2,0]]
+Output: 1.00000
+Explanation: The minimum area rectangle occurs at [1,0],[1,1],[2,1],[2,0], with an area of 1.
+
+Example 3:
+Input: [[0,3],[1,2],[3,1],[1,3],[2,1]]
+Output: 0
+Explanation: There is no possible rectangle to form from these points.
+
+Example 4:
+Input: [[3,1],[1,1],[0,1],[2,1],[3,3],[3,2],[0,2],[2,3]]
+Output: 2.00000
+Explanation: The minimum area rectangle occurs at [2,1],[2,3],[3,3],[3,1], with an area of 2.
+ 
+Note:
+
+1 <= points.length <= 50
+0 <= points[i][0] <= 40000
+0 <= points[i][1] <= 40000
+All points are distinct.
+Answers within 10^-5 of the actual value will be accepted as correct.
+
+Accepted 15,552 Submissions 29,885
+
+ 983 62.6%  Medium 2613/48 Minimum Cost For Tickets
+------
+
+In a country popular for train travel, you have planned some train travelling one year in advance.  The days of the year that you will travel is given as an array days.  Each day is an integer from 1 to 365.
+
+Train tickets are sold in 3 different ways:
+
+a 1-day pass is sold for costs[0] dollars;
+a 7-day pass is sold for costs[1] dollars;
+a 30-day pass is sold for costs[2] dollars.
+The passes allow that many days of consecutive travel.  For example, if we get a 7-day pass on day 2, then we can travel for 7 days: day 2, 3, 4, 5, 6, 7, and 8.
+
+Return the minimum number of dollars you need to travel every day in the given list of days.
+
+Example 1:
+
+Input: days = [1,4,6,7,8,20], costs = [2,7,15]
+Output: 11
+Explanation: 
+For example, here is one way to buy passes that lets you travel your travel plan:
+On day 1, you bought a 1-day pass for costs[0] = $2, which covered day 1.
+On day 3, you bought a 7-day pass for costs[1] = $7, which covered days 3, 4, ..., 9.
+On day 20, you bought a 1-day pass for costs[0] = $2, which covered day 20.
+In total you spent $11 and covered all the days of your travel.
+Example 2:
+
+Input: days = [1,2,3,4,5,6,7,8,9,10,30,31], costs = [2,7,15]
+Output: 17
+Explanation: 
+For example, here is one way to buy passes that lets you travel your travel plan:
+On day 1, you bought a 30-day pass for costs[2] = $15 which covered days 1, 2, ..., 30.
+On day 31, you bought a 1-day pass for costs[0] = $2 which covered day 31.
+In total you spent $17 and covered all the days of your travel.
+ 
+Note:
+
+1 <= days.length <= 365
+1 <= days[i] <= 365
+days is in strictly increasing order.
+costs.length == 3
+1 <= costs[i] <= 1000
+
+Accepted 93,931 Submissions 149,659
+
+

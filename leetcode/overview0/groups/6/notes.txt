@@ -1,0 +1,276 @@
+notes.txt
+
+3:
+I: 双指针, 有移动, 碰到重复的, 左之指针挨个右移直到消掉为止
+D: 双指针, 技巧更好, 碰到重复的, 直接跳到重复元第一次被发现的位置+1. (HashMap保存下标而非count)
+
+23:
+I: heap
+D: heap可以. 也可以两两合并?
+
+43:
+I: 模拟乘法, Nx单个数字, 再相加, O(MN)
+D: 两个单数字直接相乘的时候, 它们落在第几位是可以直接算出来的
+
+63:
+I: DFS暴力搜索, 没办法, 要统计不同路径的个数只能搜
+D: 沙雕了, 这不就是DP吗? 我为啥会想到DFS啊......
+   再强调一下,  DFS的时候, 先考虑有没有重复元!!!
+
+103:
+I: BFS
+D: BFS/DFS也能解, 条条大路通罗马
+
+123:
+I:
+
+s[i] = (b[i-1] + a[i], s[i-1])
+b[i] = (s[i-1] - a[i], b[i-1])
+
+s[k][i] = b[k][i-1] + a[i]
+b[k][i] = s[k-1][i-1] - a[i]
+
+差不多是这样的, 这个题很值得再做一遍.
+Discuss中也有不同的解法, 可以高优读.
+
+143:
+I: 用双倍速的指针快速找到后一半, 然后后一半压栈, 然后前一半隔一个插一个
+D: 我的方法要消耗空间的. 可以就地做, 直接把后一半倒序.
+
+223:
+I: 没啥立即的思路
+D: 看了答案之后发现, 虽然我给这题点了一个踩, 但是这个题目本身是真的还不错.
+   判断重合有一个很棒的办法: 左边界=两个左边界中靠右的那个. 上边界=两个上边界中靠下的那个. 以此类推...
+
+343:
+I:
+
+用递归的方式遍历切割点:
+
+f(n) {
+	result = n;
+	for i := 1; i <= n/2; i++ {
+		left = max(i)
+		rght = max(n-i)
+		result = max(left*rght, result)
+	}
+	return result;
+}
+
+肯定是有重复的, 所以想到了dp:
+
+dp[i] = max{ dp[j]*dp[i-j] for j = [1, i/2] }
+
+D: 有人用我的方法. 也有人用纯数学方法: break n into 2 or 3 ...
+
+
+363:
+I: 
+(1) 遍历所有的连续列的组合, 然后求这些连续列组合的和
+(2) 问题退化为: 求一个一维数组中的连续子序列, 其和为不大于K的最大值
+(3) 一维数组转前缀和数组. 求以第j个元素结尾的序列时, 将前j-1个元素放到树上
+(4) 从树上去寻找"恰当的"元素. (这个好像没有现成的API啊...)
+
+D:
+ 提示: BinarySearch -> 上述第3和第4步改成搜索答案空间?
+ 	假设result = (1+k)/2 -> 检查: 以i为结尾的区间: 前面的区间值建立HashSet. 可以快速判断.
+ 	貌似是可行的啊. (这个未必/一定要仔细check)
+
+这是java的解, 用了我的第一个思路:
+
+ first consider the situation matrix is 1D we can save every sum of 0~i(0<=i<len) and binary search previous sum to find possible result for every index, time complexity is O(NlogN). so in 2D matrix, we can sum up all values from row i to row j and create a 1D array to use 1D array solution. If col number is less than row number, we can sum up all values from col i to col j then use 1D array solution.
+
+ public int maxSumSubmatrix(int[][] matrix, int target) {
+    int row = matrix.length;
+    if(row==0)return 0;
+    int col = matrix[0].length;
+    int m = Math.min(row,col);
+    int n = Math.max(row,col);
+    //indicating sum up in every row or every column
+    boolean colIsBig = col>row;
+    int res = Integer.MIN_VALUE;
+    for(int i = 0;i<m;i++){
+        int[] array = new int[n];
+        // sum from row j to row i
+        for(int j = i;j>=0;j--){
+            int val = 0;
+            TreeSet<Integer> set = new TreeSet<Integer>();
+            set.add(0);
+            //traverse every column/row and sum up
+            for(int k = 0;k<n;k++){
+                array[k]=array[k]+(colIsBig?matrix[j][k]:matrix[k][j]);
+                val = val + array[k];
+                //use  TreeMap to binary search previous sum to get possible result 
+                Integer subres = set.ceiling(val-target);
+                if(null!=subres){
+                    res=Math.max(res,val-subres);
+                }
+                set.add(val);
+            }
+        }
+    }
+    return res;
+}
+
+这是c++的思路, 与java的类似, 也是使用了现成的函数做的.
+它的重点在于: set<int>.lower_bound()这个函数;
+
+			// Find the max subarray no more than K 
+            set<int> accuSet;
+            accuSet.insert(0);
+            int curSum = 0, curMax = INT_MIN;
+            for (int sum : sums) {
+                curSum += sum;
+                set<int>::iterator it = accuSet.lower_bound(curSum - k);
+                if (it != accuSet.end()) curMax = std::max(curMax, curSum - *it);
+                accuSet.insert(curSum);
+            }
+            res = std::max(res, curMax);
+
+403:
+
+17: 
+I: (错误的!!!)
+dp[i] = dp[j] iff (i-j-1)(i-j)(i-j+1)三个位置之一有stone 且 dp[某stone]
+
+dp[0] = dp[1] = true;
+for i := 2; i < len(a); i++ {
+	for j := 0; j < i; j++ {
+		d = a[i] - a[j]
+		if idx, ok := stoneIndex[a[j]-d]; ok && dp[idx] {
+			dp[i] = true;
+		}
+		// d-1, d+1 ...
+	}
+}
+
+正向的BFS会导致爆炸多的可能性; 但是倒着就不一样了, 情况变得很简单;
+再一次说明了, 可逆过程尝试倒序考虑问题.
+
+D:
+
+有三个优秀的解法:
+
+方法一:
+
+1. 记下到达每个点时, 这个点上有多少个"来源";
+2. 然后对于每个来源, 看看它能到达多少个"去处", 同时更新这些去处的"来源"
+3. 双循环迭代可解
+
+方法二: DP (基于石头的值<=1100, 但是现在石头的值已经改成2^31了, 所以这个解法不可行了)
+
+// Recurrence relation:
+for any j < i,
+dist = stones[i] - stones[j];
+if dp[j][dist]:
+    dp[i][dist - 1] = ture
+    dp[i][dist] = ture
+    dp[i][dist + 1] = ture
+Code
+
+方法三: DFS
+
+也需要一些技巧
+
+483:
+I: 没思路
+D: 
+(1) 数学证明: 如要搜索n^(1/m)
+(2) 魔数62: ... (有点难先不看了)
+
+503: 
+I: 单调栈/入栈两遍
+D: Same
+
+523:
+I: 倍数 -> 取模
+D: Same, 可能表述上或者实现上要更简单一些.
+
+763:
+I: 某字母的第一次出现和最后一次出现必然在同一个分区中; => 每个字母都划分了一个区间;
+D: Same; 但是要比我的更加精简. 这也难怪, 毕竟人家是写完了代码之后又回头来总结的. 而我甚至没有写代码;
+
+823:
+I: 动态规划: 排序, 然后dp[i] = sum(dp[x]*dp[y]*2 for all x y that x*y=i), dp[i]表示以i为根的数量
+D: 一样的
+
+863:
+I: DFS+BFS解法: DFS寻找当前(根)节点距离target的距离. 对于找到的那个儿子, 不管了; 对于没找到的那个儿子, BFS求所有距离为X的节点. 
+	递归此过程;
+D: 我的解法也行; 但是也有其他的解法(用两次DFS)
+
+923:
+I: DP, 考虑target是+多少过来的. 预处理: 排序去重统计count
+D: 我的Intuition肯定错了, 没有考虑'3'这个关键条件. 而是考虑的是任意个数字的和.
+注意数据量; 值很小; 可以用值来当索引的.
+
+963:
+I: 从数学上, 我能找到一个暴力解. (遍历所有两点组合, 在垂直方向上找到第三个点, 然后算出第四个点)
+D: 果然是一连串的几何分析
+
+983:
+
+I: dp经典思路: 考虑第i天是怎么被traval到的.
+
+这天可能没花钱
+dp[free][i] = min{
+	dp[week][x] for a[i]-a[x] <= 6
+	dp[month][x] for a[i]-a[x] <= 29
+}
+
+这天可能买了张日票
+dp[day][i] = price[day] + min{
+	dp[free][i-1]
+	dp[day][i-1]
+	dp[week][i-1]
+	dp[month][i-1]
+}
+
+这天可能买了张周票
+dp[week][i] = price[week] + min{
+}
+
+这天可能买了张月票
+dp[month][i] = price[week] + min{
+}
+
+也就是说, 我可以提供一个O(n)的解法.
+
+D: 也是一个O(N)的解法. 但是比我的理解更加深刻一些. 更简洁.
+这种DP就是我下个阶段的目标了!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

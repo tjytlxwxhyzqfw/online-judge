@@ -1,1 +1,238 @@
 21
+
+11: 
+--
+Intuition: 以每个柱子为最矮的柱子去遍历. 单调栈/遍历3次, reverse一次.
+Discuss: 有个很重要的点: 从最左和最右开始(它们只能往里面移动), 
+如果不把矮的那个替换掉, 高的那个, 无论怎么往里移动,
+这个容器的体积都是只会缩小, 不会增大. 这可以很轻易的就构造一个O(N)的解法.
+(https://leetcode.com/problems/container-with-most-water/discuss/6099/Yet-another-way-to-see-what-happens-in-the-O(n)-algorithm)
+
+51:
+--
+Intuition: DFS暴力搜索是肯定的.
+(1) 每放一个, 就遍历棋盘, 把所有行/列/斜的格子都占上.
+(2) 优化: 每放一个[col, row], 就设置cols[col], rows[row]和delta[col-row]
+    注意delta数组表斜率
+Discuss: 基本上跟我是一样的. (https://leetcode.com/problems/n-queens/discuss/19808/Accepted-4ms-c%2B%2B-solution-use-backtracking-and-bitmask-easy-understand.)
+
+91:
+--
+Intuition: 最右边的元素有两种解码方法, 要么自己, 要么跟前一个结合, 所以自然就想到DP啊: dp[i] = dp[i-1](条件) + dp[i-2](条件)
+Discuss: 跟我一样
+
+131:
+---
+Intuition: 回文->扩展法. 生成一个表s[i][j]=bool,表回文. 然后, DFS暴力搜索.
+Discuss: 也可以直接用回文的判断方法, 现场临时判断来避免两阶段处理.
+
+151:
+---
+Intuition: (1) 分割+栈; (2) FollowUP优化: 逆序整个字符串, 在逐个逆序每个单词
+
+211:
+---
+Intuition: Trie+DFS 复杂度貌似有点高, 不如直接存数组然后挨个匹配
+Discuss: 我算错了, Trie+DFS复杂度其实并不高, 直接存数组然后挨个匹配复杂度才高
+
+331:
+---
+Intuition: 看到##, 勾起了自己的回忆, 想到了X##这个模式
+Discuss: 出入度的方法: 太多疑问了, 我不太能理解这个解法.
+
+451:
+---
+Discuss: 是我想少了, 没想到频次也可以桶排序这一层.
+
+491:
+Intuition: DFS, 跟之前的很多去重类的非常类似?
+
+dfs(i) {
+	for (j = i+1; j < n; ++j) {
+		if j > i+1 && a[j] == a[j-1] {
+			continue
+		}
+		if a[j] < a[i] {
+			continue
+		}
+		dfs(j)
+	}
+}
+
+Discuss: 这样做是有问题的. 还是可能会导致重复 [1, 4, 5, 4, 5]
+因为数据是没有事先排好序的, 所以不能用共a[j]==a[j-1]来去重, 
+但是首字母等价划分的思路是没有错的.
+
+611:
+---
+
+Intuition: [a+b, a-b] => 显然不对, 会有重复
+
+按照三角形的两个最短边: min, mid, [mid, min+mid)
+
+O(N^2)Log(N)
+
+sort(a)
+for (i = 0; i < len(a); ++i) {
+	for (j = i+1; j < len(a); ++j) {
+		lower_bound(a[j+1:], mid)
+		upper_bound(a[j+1:], min+mid-1)
+	}
+}
+
+这个也是去重, 但是呢, 是index去重, 而不是val去重
+这个情况下, 其实也是最小值等价划分法.
+
+Discuss: O(N^2)的解法: 双指针
+
+(以下解法我自己想的)
+
+for (i = 0; i < len(a); ++i) {
+	front=i+2;
+	for (behind=i+1; behind<len(a); ++behind) {
+		if front < behind {
+			front = behind+1
+		}
+		for (a[i]+a[behind] > a[front]) {
+			++front
+		}
+		count += front-behind-1
+	}
+}
+
+discuss中还有另外的解法.
+有时间的话, 先看我的这个对不对, 再看discuss中的解法.
+731:
+---
+
+Intuition:
+
+[10, 20] [10, 40] [5, 15]
+
+线段树? 不行
+切开? 分治? DP? 不行
+
+区间问题, 其实, 大部分解法都是一样的
+一定要把所有区间排在一起, 标记好start还是end, 就贼容易处理
+
+nstart = 0
+for (i = 0; i < a; ++i) {
+	nstart += a[i].nstart - a[i].nend
+	if nstart >= 3 {
+		return false
+	}
+}
+
+突然发现啊, 这类问题和括号问题不是一样的吗? 
+本质不都是栈吗?
+
+Discuss:
+
+有个思路跟我的是一样的. 只不过, 需要用个TreeMap来实现a[i].nstart和a[i].nend的计数
+
+791:
+---
+
+Intuition: BucketSort
+Discuss: Same
+
+851:
+---
+
+Intuition:
+
+(1) BFS可以遍历出所有的比X有钱的人
+(2) 遍历过程中找最吵闹的那个就行了啊
+
+Discuss:
+
+需要加缓存?
+要的, 因为不是求一个用户啊, 是求很多个用户, 肯定要加的.
+
+911:
+---
+
+Intuition:
+1. 每个时间点谁是票王我是知道的: Heap
+2. 查询的时候, 用binary-search找到那个时间点, 然后直接读出来就行了啊
+
+Discuss: 傻掉了, 用什么heap啊, 直接遍历一边就知道每个时间点的票王了啊!
+
+931:
+---
+
+Intuition: BFS并更新到达每个点时的最小值, 然后就解出来了啊!
+Discuss: DP, 考虑每个下层点是从哪个上层点来的就行; 但是我觉得BFS也行啊! 可能我还是不太习惯DP思维
+
+951:
+---
+
+Intuition: 就递归的解啊; 能用出入度如解码?(不能) 能用什么先序遍历和后续遍历去解吗? (好像也不对)
+Discuss: 树上元素是unique的, 所以说, 还可以用BFS去解的啊 (可能稍微麻烦点, 但是不用递归)
+
+971:
+---
+
+Intuition: 树上元素是unique的啊, 就递归的解就行了
+Discuss:  基本也是递归解, 首页没看到什么BFS
+
+991:
+---
+
+Intuition: BFS, 当x大于y的时候, 就可以不走了, 相当于适当剪枝
+Discuss: 有一个非常不好理解并且需要证明的解法.
+
+考虑把Y变成X. 
+如果Y比X小, 直接+1加上去
+如果Y比X大, 
+	如果Y是奇数: Y只能+1
+	如果Y是偶数: Y=Y/2 或者 Y=(Y+2)/2=Y/2+1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

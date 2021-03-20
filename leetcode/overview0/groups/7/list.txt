@@ -1,27 +1,1093 @@
-  33 35.5%  Medium Search in Rotated Sorted Array
+Contents:
+========
+
+  33 35.5%  Medium 7190/637 Search in Rotated Sorted Array
+  53 47.4%    Easy 0/0 Maximum Subarray
+  73 44.0%  Medium 3208/360 Set Matrix Zeroes
+  93 37.1%  Medium 1687/556 Restore IP Addresses
+ 113 48.4%  Medium 2604/85 Path Sum II
+ 133 38.2%  Medium 2830/1652 Clone Graph
+ 153 45.8%  Medium 3244/294 Find Minimum in Rotated Sorted Array
+ 173 59.4%  Medium 3516/313 Binary Search Tree Iterator
+ 213 37.4%  Medium 2688/63 House Robber II 
+ 233 31.6%    Hard 382/725 Number of Digit One
+ 313 45.8%  Medium 820/165 Super Ugly Number
+ 373 37.4%  Medium 1851/126 Find K Pairs with Smallest Sums
+ 393 37.9%  Medium 0/0 UTF-8 Validation
+ 413 58.4%  Medium 1690/204 Arithmetic Slices
+ 433 42.9%  Medium 528/72 Minimum Genetic Mutation
+ 473 38.1%  Medium 752/64 Matchsticks to Square
+ 493 26.4%    Hard 1292/140 Reverse Pairs
+ 513 62.2%  Medium 1278/170 Find Bottom Left Tree Value
+ 553 57.3%  Medium 194/1203 Optimal Division
+ 593 43.3%  Medium 441/590 Valid Square
+ 673 38.3%  Medium 2149/116 Number of Longest Increasing Subsequence (注)
+ 713 40.4%  Medium 2208/85 Subarray Product Less Than K
+ 813 50.8%  Medium 1165/54 Largest Sum of Averages (注IPAD-11页)
+ 833 51.2%  Medium 445/517 Find And Replace in String
+ 853 43.5%  Medium 636/258 Car Fleet
+ 873 48.0%  Medium 949/37 Length of Longest Fibonacci Subsequence
+ 973 64.4%  Medium 2822/147 K Closest Points to Origin
+
+Description:
+===========
+
+  33 35.5%  Medium 7190/637 Search in Rotated Sorted Array
+ ------
+
+There is an integer array nums sorted in ascending order (with distinct values).
+
+Prior to being passed to your function, nums is rotated at an unknown pivot index k (0 <= k < nums.length) such that the resulting array is [nums[k], nums[k+1], ..., nums[n-1], nums[0], nums[1], ..., nums[k-1]] (0-indexed). For example, [0,1,2,4,5,6,7] might be rotated at pivot index 3 and become [4,5,6,7,0,1,2].
+
+Given the array nums after the rotation and an integer target, return the index of target if it is in nums, or -1 if it is not in nums.
+
+Example 1:
+
+Input: nums = [4,5,6,7,0,1,2], target = 0
+Output: 4
+Example 2:
+
+Input: nums = [4,5,6,7,0,1,2], target = 3
+Output: -1
+Example 3:
+
+Input: nums = [1], target = 0
+Output: -1
+ 
+Constraints:
+
+1 <= nums.length <= 5000
+-10^4 <= nums[i] <= 10^4
+All values of nums are unique.
+nums is guaranteed to be rotated at some pivot.
+-104 <= target <= 104
+
+Follow up: Can you achieve this in O(log n) time complexity?
+
+Accepted 943,927 Submissions 2,623,085
+
   53 47.4%    Easy Maximum Subarray
-  73 44.0%  Medium Set Matrix Zeroes
-  93 37.1%  Medium Restore IP Addresses
- 113 48.4%  Medium Path Sum II
- 133 38.2%  Medium Clone Graph
- 153 45.8%  Medium Find Minimum in Rotated Sorted Array
- 173 59.4%  Medium Binary Search Tree Iterator
- 213 37.4%  Medium House Robber II
- 233 31.6%    Hard Number of Digit One
+------
+
+  73 44.0%  Medium 3208/360 Set Matrix Zeroes
+------
+
+Given an m x n matrix. If an element is 0, set its entire row and column to 0. Do it in-place.
+
+Follow up:
+
+A straight forward solution using O(mn) space is probably a bad idea.
+A simple improvement uses O(m + n) space, but still not the best solution.
+Could you devise a constant space solution?
+
+Example 1:
+
+Input: matrix = [[1,1,1],[1,0,1],[1,1,1]]
+Output: [[1,0,1],[0,0,0],[1,0,1]]
+Example 2:
+
+Input: matrix = [[0,1,2,0],[3,4,5,2],[1,3,1,5]]
+Output: [[0,0,0,0],[0,4,5,0],[0,3,1,0]]
+ 
+Constraints:
+
+m == matrix.length
+n == matrix[0].length
+1 <= m, n <= 200
+-2^31 <= matrix[i][j] <= 2^31 - 
+
+Accepted 407,414 Submissions 916,897
+
+  93 37.1%  Medium 1687/556 Restore IP Addresses
+------
+
+Given a string s containing only digits, return all possible valid IP addresses that can be obtained from s. You can return them in any order.
+
+A valid IP address consists of exactly four integers, each integer is between 0 and 255, separated by single dots and cannot have leading zeros. For example, "0.1.2.201" and "192.168.1.1" are valid IP addresses and "0.011.255.245", "192.168.1.312" and "192.168@1.1" are invalid IP addresses. 
+
+Example 1:
+
+Input: s = "25525511135"
+Output: ["255.255.11.135","255.255.111.35"]
+Example 2:
+
+Input: s = "0000"
+Output: ["0.0.0.0"]
+Example 3:
+
+Input: s = "1111"
+Output: ["1.1.1.1"]
+Example 4:
+
+Input: s = "010010"
+Output: ["0.10.0.10","0.100.1.0"]
+Example 5:
+
+Input: s = "101023"
+Output: ["1.0.10.23","1.0.102.3","10.1.0.23","10.10.2.3","101.0.2.3"]
+ 
+Constraints:
+
+0 <= s.length <= 3000
+s consists of digits only.
+
+Accepted 228,770 Submissions 606,626
+
+ 113 48.4%  Medium 2604/85 Path Sum II
+------
+
+Given the root of a binary tree and an integer targetSum, return all root-to-leaf paths where each path's sum equals targetSum.
+
+A leaf is a node with no children.
+
+Example 1:
+
+Input: root = [5,4,8,11,null,13,4,7,2,null,null,5,1], targetSum = 22
+Output: [[5,4,11,2],[5,8,4,5]]
+Example 2:
+
+Input: root = [1,2,3], targetSum = 5
+Output: []
+Example 3:
+
+Input: root = [1,2], targetSum = 0
+Output: []
+ 
+Constraints:
+
+The number of nodes in the tree is in the range [0, 5000].
+-1000 <= Node.val <= 1000
+-1000 <= targetSum <= 1000
+
+Accepted 400,643 Submissions 812,750
+
+ 133 38.2%  Medium 2830/1652 Clone Graph
+------
+
+Given a reference of a node in a connected undirected graph.
+
+Return a deep copy (clone) of the graph.
+
+Each node in the graph contains a val (int) and a list (List[Node]) of its neighbors.
+
+class Node {
+    public int val;
+    public List<Node> neighbors;
+}
+ 
+
+Test case format:
+
+For simplicity sake, each node's value is the same as the node's index (1-indexed). For example, the first node with val = 1, the second node with val = 2, and so on. The graph is represented in the test case using an adjacency list.
+
+Adjacency list is a collection of unordered lists used to represent a finite graph. Each list describes the set of neighbors of a node in the graph.
+
+The given node will always be the first node with val = 1. You must return the copy of the given node as a reference to the cloned graph.
+
+Example 1:
+
+Input: adjList = [[2,4],[1,3],[2,4],[1,3]]
+Output: [[2,4],[1,3],[2,4],[1,3]]
+Explanation: There are 4 nodes in the graph.
+1st node (val = 1)'s neighbors are 2nd node (val = 2) and 4th node (val = 4).
+2nd node (val = 2)'s neighbors are 1st node (val = 1) and 3rd node (val = 3).
+3rd node (val = 3)'s neighbors are 2nd node (val = 2) and 4th node (val = 4).
+4th node (val = 4)'s neighbors are 1st node (val = 1) and 3rd node (val = 3).
+Example 2:
+
+
+Input: adjList = [[]]
+Output: [[]]
+Explanation: Note that the input contains one empty list. The graph consists of only one node with val = 1 and it does not have any neighbors.
+Example 3:
+
+Input: adjList = []
+Output: []
+Explanation: This an empty graph, it does not have any nodes.
+Example 4:
+
+
+Input: adjList = [[2],[1]]
+Output: [[2],[1]]
+ 
+
+Constraints:
+
+1 <= Node.val <= 100
+Node.val is unique for each node.
+Number of Nodes will not exceed 100.
+There is no repeated edges and no self-loops in the graph.
+The Graph is connected and all nodes can be visited starting from the given node.
+
+Accepted 449,157 Submissions 1,137,061
+
+ 153 45.8%  Medium 3244/294 Find Minimum in Rotated Sorted Array
+------
+
+Suppose an array of length n sorted in ascending order is rotated between 1 and n times. For example, the array nums = [0,1,2,4,5,6,7] might become:
+
+[4,5,6,7,0,1,2] if it was rotated 4 times.
+[0,1,2,4,5,6,7] if it was rotated 7 times.
+Notice that rotating an array [a[0], a[1], a[2], ..., a[n-1]] 1 time results in the array [a[n-1], a[0], a[1], a[2], ..., a[n-2]].
+
+Given the sorted rotated array nums of unique elements, return the minimum element of this array.
+
+Example 1:
+
+Input: nums = [3,4,5,1,2]
+Output: 1
+Explanation: The original array was [1,2,3,4,5] rotated 3 times.
+Example 2:
+
+Input: nums = [4,5,6,7,0,1,2]
+Output: 0
+Explanation: The original array was [0,1,2,4,5,6,7] and it was rotated 4 times.
+Example 3:
+
+Input: nums = [11,13,15,17]
+Output: 11
+Explanation: The original array was [11,13,15,17] and it was rotated 4 times. 
+
+Constraints:
+
+n == nums.length
+1 <= n <= 5000
+-5000 <= nums[i] <= 5000
+All the integers of nums are unique.
+nums is sorted and rotated between 1 and n times.
+
+Accepted 566,871 Submissions 1,225,681
+
+ 173 59.4%  Medium 3516/313 Binary Search Tree Iterator
+------
+
+Implement the BSTIterator class that represents an iterator over the in-order traversal of a binary search tree (BST):
+
+BSTIterator(TreeNode root) Initializes an object of the BSTIterator class. The root of the BST is given as part of the constructor. The pointer should be initialized to a non-existent number smaller than any element in the BST.
+boolean hasNext() Returns true if there exists a number in the traversal to the right of the pointer, otherwise returns false.
+int next() Moves the pointer to the right, then returns the number at the pointer.
+Notice that by initializing the pointer to a non-existent smallest number, the first call to next() will return the smallest element in the BST.
+
+You may assume that next() calls will always be valid. That is, there will be at least a next number in the in-order traversal when next() is called.
+
+Example 1:
+
+Input
+["BSTIterator", "next", "next", "hasNext", "next", "hasNext", "next", "hasNext", "next", "hasNext"]
+[[[7, 3, 15, null, null, 9, 20]], [], [], [], [], [], [], [], [], []]
+Output
+[null, 3, 7, true, 9, true, 15, true, 20, false]
+
+Explanation
+BSTIterator bSTIterator = new BSTIterator([7, 3, 15, null, null, 9, 20]);
+bSTIterator.next();    // return 3
+bSTIterator.next();    // return 7
+bSTIterator.hasNext(); // return True
+bSTIterator.next();    // return 9
+bSTIterator.hasNext(); // return True
+bSTIterator.next();    // return 15
+bSTIterator.hasNext(); // return True
+bSTIterator.next();    // return 20
+bSTIterator.hasNext(); // return False
+ 
+Constraints:
+
+The number of nodes in the tree is in the range [1, 105].
+0 <= Node.val <= 106
+At most 105 calls will be made to hasNext, and next.
+ 
+Follow up:
+
+Could you implement next() and hasNext() to run in average O(1) time and use O(h) memory, where h is the height of the tree?
+
+Accepted 393,739 Submissions 652,296
+
+
+ 213 37.4%  Medium 2688/63 House Robber II 
+------
+
+You are a professional robber planning to rob houses along a street. Each house has a certain amount of money stashed. All houses at this place are arranged in a circle. That means the first house is the neighbor of the last one. Meanwhile, adjacent houses have a security system connected, and it will automatically contact the police if two adjacent houses were broken into on the same night.
+
+Given an integer array nums representing the amount of money of each house, return the maximum amount of money you can rob tonight without alerting the police.
+
+Example 1:
+
+Input: nums = [2,3,2]
+Output: 3
+Explanation: You cannot rob house 1 (money = 2) and then rob house 3 (money = 2), because they are adjacent houses.
+Example 2:
+
+Input: nums = [1,2,3,1]
+Output: 4
+Explanation: Rob house 1 (money = 1) and then rob house 3 (money = 3).
+Total amount you can rob = 1 + 3 = 4.
+Example 3:
+
+Input: nums = [0]
+Output: 0
+ 
+Constraints:
+
+1 <= nums.length <= 100
+0 <= nums[i] <= 1000
+
+Accepted 233,256 Submissions 620,428
+
+ 233 31.6%    Hard 382/725 Number of Digit One (讨论没看)
+------
+
+Given an integer n, count the total number of digit 1 appearing in all non-negative integers less than or equal to n.
+
+Example 1:
+
+Input: n = 13
+Output: 6
+Example 2:
+
+Input: n = 0
+Output: 0
+ 
+Constraints:
+
+0 <= n <= 2 * 10^9
+
+Accepted 52,534 Submissions 165,154
+
  313 45.8%  Medium Super Ugly Number
+------
+313. Super Ugly Number
+Medium
+
+820
+
+165
+
+Given an integer n and an array of integers primes, return the nth super ugly number.
+
+Super ugly number is a positive number whose all prime factors are in the array primes.
+
+The nth super ugly number is guaranteed to fit in a 32-bit signed integer.
+
+ 
+
+Example 1:
+
+Input: n = 12, primes = [2,7,13,19]
+Output: 32
+Explanation: [1,2,4,7,8,13,14,16,19,26,28,32] is the sequence of the first 12 super ugly numbers given primes == [2,7,13,19].
+Example 2:
+
+Input: n = 1, primes = [2,3,5]
+Output: 1
+Explanation: 1 is a super ugly number for any given primes.
+ 
+
+Constraints:
+
+1 <= n <= 106
+1 <= primes.length <= 100
+2 <= primes[i] <= 1000
+primes[i] is guaranteed to be a prime number.
+All the values of primes are unique and sorted in ascending order.
+Accepted
+85,968
+Submissions
+185,883
+
  373 37.4%  Medium Find K Pairs with Smallest Sums
+------
+
+373. Find K Pairs with Smallest Sums
+Medium
+
+1849
+
+126
+
+Add to List
+
+Share
+You are given two integer arrays nums1 and nums2 sorted in ascending order and an integer k.
+
+Define a pair (u,v) which consists of one element from the first array and one element from the second array.
+
+Find the k pairs (u1,v1),(u2,v2) ...(uk,vk) with the smallest sums.
+
+Example 1:
+
+Input: nums1 = [1,7,11], nums2 = [2,4,6], k = 3
+Output: [[1,2],[1,4],[1,6]] 
+Explanation: The first 3 pairs are returned from the sequence: 
+             [1,2],[1,4],[1,6],[7,2],[7,4],[11,2],[7,6],[11,4],[11,6]
+Example 2:
+
+Input: nums1 = [1,1,2], nums2 = [1,2,3], k = 2
+Output: [1,1],[1,1]
+Explanation: The first 2 pairs are returned from the sequence: 
+             [1,1],[1,1],[1,2],[2,1],[1,2],[2,2],[1,3],[1,3],[2,3]
+Example 3:
+
+Input: nums1 = [1,2], nums2 = [3], k = 3
+Output: [1,3],[2,3]
+Explanation: All possible pairs are returned from the sequence: [1,3],[2,3]
+Accepted
+123,484
+Submissions
+326,623
+
  393 37.9%  Medium UTF-8 Validation
+------
+
+393. UTF-8 Validation
+Medium
+
+283
+
+1228
+
+Add to List
+
+Share
+A character in UTF8 can be from 1 to 4 bytes long, subjected to the following rules:
+
+For 1-byte character, the first bit is a 0, followed by its unicode code.
+For n-bytes character, the first n-bits are all one's, the n+1 bit is 0, followed by n-1 bytes with most significant 2 bits being 10.
+This is how the UTF-8 encoding would work:
+
+   Char. number range  |        UTF-8 octet sequence
+      (hexadecimal)    |              (binary)
+   --------------------+---------------------------------------------
+   0000 0000-0000 007F | 0xxxxxxx
+   0000 0080-0000 07FF | 110xxxxx 10xxxxxx
+   0000 0800-0000 FFFF | 1110xxxx 10xxxxxx 10xxxxxx
+   0001 0000-0010 FFFF | 11110xxx 10xxxxxx 10xxxxxx 10xxxxxx
+Given an array of integers representing the data, return whether it is a valid utf-8 encoding.
+
+Note:
+The input is an array of integers. Only the least significant 8 bits of each integer is used to store the data. This means each integer represents only 1 byte of data.
+
+Example 1:
+
+data = [197, 130, 1], which represents the octet sequence: 11000101 10000010 00000001.
+
+Return true.
+It is a valid utf-8 encoding for a 2-bytes character followed by a 1-byte character.
+Example 2:
+
+data = [235, 140, 4], which represented the octet sequence: 11101011 10001100 00000100.
+
+Return false.
+The first 3 bits are all one's and the 4th bit is 0 means it is a 3-bytes character.
+The next byte is a continuation byte which starts with 10 and that's correct.
+But the second continuation byte does not start with 10, so it is invalid.
+Accepted
+56,447
+Submissions
+148,244
+
  413 58.4%  Medium Arithmetic Slices
+------
+
+413. Arithmetic Slices
+Medium
+
+1690
+
+204
+
+Add to List
+
+Share
+An integer array is called arithmetic if it consists of at least three elements and if the difference between any two consecutive elements is the same.
+
+For example, [1,3,5,7,9], [7,7,7,7], and [3,-1,-5,-9] are arithmetic sequences.
+Given an integer array nums, return the number of arithmetic subarrays of nums.
+
+A subarray is a contiguous subsequence of the array.
+
+ 
+
+Example 1:
+
+Input: nums = [1,2,3,4]
+Output: 3
+Explanation: We have 3 arithmetic slices in nums: [1, 2, 3], [2, 3, 4] and [1,2,3,4] itself.
+Example 2:
+
+Input: nums = [1]
+Output: 0
+ 
+
+Constraints:
+
+1 <= nums.length <= 5000
+-1000 <= nums[i] <= 1000
+Accepted
+128,040
+Submissions
+213,587
+
  433 42.9%  Medium Minimum Genetic Mutation
+------
+
+433. Minimum Genetic Mutation
+Medium
+
+528
+
+72
+
+Add to List
+
+Share
+A gene string can be represented by an 8-character long string, with choices from "A", "C", "G", "T".
+
+Suppose we need to investigate about a mutation (mutation from "start" to "end"), where ONE mutation is defined as ONE single character changed in the gene string.
+
+For example, "AACCGGTT" -> "AACCGGTA" is 1 mutation.
+
+Also, there is a given gene "bank", which records all the valid gene mutations. A gene must be in the bank to make it a valid gene string.
+
+Now, given 3 things - start, end, bank, your task is to determine what is the minimum number of mutations needed to mutate from "start" to "end". If there is no such a mutation, return -1.
+
+Note:
+
+Starting point is assumed to be valid, so it might not be included in the bank.
+If multiple mutations are needed, all mutations during in the sequence must be valid.
+You may assume start and end string is not the same.
+ 
+
+Example 1:
+
+start: "AACCGGTT"
+end:   "AACCGGTA"
+bank: ["AACCGGTA"]
+
+return: 1
+ 
+
+Example 2:
+
+start: "AACCGGTT"
+end:   "AAACGGTA"
+bank: ["AACCGGTA", "AACCGCTA", "AAACGGTA"]
+
+return: 2
+ 
+
+Example 3:
+
+start: "AAAAACCC"
+end:   "AACCCCCC"
+bank: ["AAAACCCC", "AAACCCCC", "AACCCCCC"]
+
+return: 3
+ 
+
+Accepted
+37,971
+Submissions
+87,489
+
  473 38.1%  Medium Matchsticks to Square
+------
+
+473. Matchsticks to Square
+Medium
+
+751
+
+64
+
+Add to List
+
+Share
+Remember the story of Little Match Girl? By now, you know exactly what matchsticks the little match girl has, please find out a way you can make one square by using up all those matchsticks. You should not break any stick, but you can link them up, and each matchstick must be used exactly one time.
+
+Your input will be several matchsticks the girl has, represented with their stick length. Your output will either be true or false, to represent whether you could make one square using all the matchsticks the little match girl has.
+
+Example 1:
+Input: [1,1,2,2,2]
+Output: true
+
+Explanation: You can form a square with length 2, one side of the square came two sticks with length 1.
+Example 2:
+Input: [3,3,3,3,4]
+Output: false
+
+Explanation: You cannot find a way to form a square with all the matchsticks.
+Note:
+The length sum of the given matchsticks is in the range of 0 to 10^9.
+The length of the given matchstick array will not exceed 15.
+Accepted
+42,969
+Submissions
+112,356
+
  493 26.4%    Hard Reverse Pairs
- 513 62.2%  Medium Find Bottom Left Tree Value
+------
+
+493. Reverse Pairs
+Hard
+
+1290
+
+140
+
+Add to List
+
+Share
+Given an array nums, we call (i, j) an important reverse pair if i < j and nums[i] > 2*nums[j].
+
+You need to return the number of important reverse pairs in the given array.
+
+Example1:
+
+Input: [1,3,2,3,1]
+Output: 2
+Example2:
+
+Input: [2,4,3,5,1]
+Output: 3
+Note:
+The length of the given array will not exceed 50,000.
+All the numbers in the input array are in the range of 32-bit integer.
+Accepted
+51,984
+Submissions
+192,628
+
+ 513 62.2%  Medium Find Bottom Left Tree Value (回到目录)
+------
+
+513. Find Bottom Left Tree Value
+Medium
+
+1276
+
+170
+
+Add to List
+
+Share
+Given the root of a binary tree, return the leftmost value in the last row of the tree.
+
+ 
+
+Example 1:
+
+
+Input: root = [2,1,3]
+Output: 1
+Example 2:
+
+
+Input: root = [1,2,3,4,null,5,6,null,null,7]
+Output: 7
+ 
+
+Constraints:
+
+The number of nodes in the tree is in the range [1, 104].
+-231 <= Node.val <= 231 - 1
+Accepted
+126,321
+Submissions
+201,453
+
  553 57.3%  Medium Optimal Division
+------
+
+553. Optimal Division
+Medium
+
+193
+
+1203
+
+Add to List
+
+Share
+Given a list of positive integers, the adjacent integers will perform the float division. For example, [2,3,4] -> 2 / 3 / 4.
+
+However, you can add any number of parenthesis at any position to change the priority of operations. You should find out how to add parenthesis to get the maximum result, and return the corresponding expression in string format. Your expression should NOT contain redundant parenthesis.
+
+Example:
+Input: [1000,100,10,2]
+Output: "1000/(100/10/2)"
+Explanation:
+1000/(100/10/2) = 1000/((100/10)/2) = 200
+However, the bold parenthesis in "1000/((100/10)/2)" are redundant, 
+since they don't influence the operation priority. So you should return "1000/(100/10/2)". 
+
+Other cases:
+1000/(100/10)/2 = 50
+1000/(100/(10/2)) = 50
+1000/100/10/2 = 0.5
+1000/100/(10/2) = 2
+Note:
+
+The length of the input array is [1, 10].
+Elements in the given array will be in range [2, 1000].
+There is only one optimal division for each test case.
+Accepted
+27,375
+Submissions
+47,620
+
  593 43.3%  Medium Valid Square
+------
+
+593. Valid Square
+Medium
+
+441
+
+590
+
+Add to List
+
+Share
+Given the coordinates of four points in 2D space p1, p2, p3 and p4, return true if the four points construct a square.
+
+The coordinate of a point pi is represented as [xi, yi]. The input is not given in any order.
+
+A valid square has four equal sides with positive length and four equal angles (90-degree angles).
+
+ 
+
+Example 1:
+
+Input: p1 = [0,0], p2 = [1,1], p3 = [1,0], p4 = [0,1]
+Output: true
+Example 2:
+
+Input: p1 = [0,0], p2 = [1,1], p3 = [1,0], p4 = [0,12]
+Output: false
+Example 3:
+
+Input: p1 = [1,0], p2 = [-1,0], p3 = [0,1], p4 = [0,-1]
+Output: true
+ 
+
+Constraints:
+
+p1.length == p2.length == p3.length == p4.length == 2
+-104 <= xi, yi <= 104
+Accepted
+58,697
+Submissions
+135,597
+
  673 38.3%  Medium Number of Longest Increasing Subsequence
+------
+
+673. Number of Longest Increasing Subsequence
+Medium
+
+2144
+
+116
+
+Add to List
+
+Share
+Given an integer array nums, return the number of longest increasing subsequences.
+
+Notice that the sequence has to be strictly increasing.
+
+ 
+
+Example 1:
+
+Input: nums = [1,3,5,4,7]
+Output: 2
+Explanation: The two longest increasing subsequences are [1, 3, 4, 7] and [1, 3, 5, 7].
+Example 2:
+
+Input: nums = [2,2,2,2,2]
+Output: 5
+Explanation: The length of longest continuous increasing subsequence is 1, and there are 5 subsequences' length is 1, so output 5.
+
+ 
+
+Constraints:
+
+1 <= nums.length <= 2000
+-106 <= nums[i] <= 106
+Accepted
+75,924
+Submissions
+196,883
+
  713 40.4%  Medium Subarray Product Less Than K
+------
+
+713. Subarray Product Less Than K
+Medium
+
+2206
+
+85
+
+Add to List
+
+Share
+Your are given an array of positive integers nums.
+
+Count and print the number of (contiguous) subarrays where the product of all the elements in the subarray is less than k.
+
+Example 1:
+Input: nums = [10, 5, 2, 6], k = 100
+Output: 8
+Explanation: The 8 subarrays that have product less than 100 are: [10], [5], [2], [6], [10, 5], [5, 2], [2, 6], [5, 2, 6].
+Note that [10, 5, 2] is not included as the product of 100 is not strictly less than k.
+Note:
+
+0 < nums.length <= 50000.
+0 < nums[i] < 1000.
+0 <= k < 10^6.
+Accepted
+98,489
+Submissions
+243,099
+
  813 50.8%  Medium Largest Sum of Averages
+------
+
+813. Largest Sum of Averages
+Medium
+
+1165
+
+54
+
+Add to List
+
+Share
+We partition a row of numbers A into at most K adjacent (non-empty) groups, then our score is the sum of the average of each group. What is the largest score we can achieve?
+
+Note that our partition must use every number in A, and that scores are not necessarily integers.
+
+Example:
+Input: 
+A = [9,1,2,3,9]
+K = 3
+Output: 20
+Explanation: 
+The best choice is to partition A into [9], [1, 2, 3], [9]. The answer is 9 + (1 + 2 + 3) / 3 + 9 = 20.
+We could have also partitioned A into [9, 1], [2], [3, 9], for example.
+That partition would lead to a score of 5 + 2 + 6 = 13, which is worse.
+ 
+
+Note:
+
+1 <= A.length <= 100.
+1 <= A[i] <= 10000.
+1 <= K <= A.length.
+Answers within 10^-6 of the correct answer will be accepted as correct.
+Accepted
+30,626
+Submissions
+59,872
+
  833 51.2%  Medium Find And Replace in String
+------
+
+833. Find And Replace in String
+Medium
+
+445
+
+517
+
+Add to List
+
+Share
+To some string S, we will perform some replacement operations that replace groups of letters with new ones (not necessarily the same size).
+
+Each replacement operation has 3 parameters: a starting index i, a source word x and a target word y.  The rule is that if x starts at position i in the original string S, then we will replace that occurrence of x with y.  If not, we do nothing.
+
+For example, if we have S = "abcd" and we have some replacement operation i = 2, x = "cd", y = "ffff", then because "cd" starts at position 2 in the original string S, we will replace it with "ffff".
+
+Using another example on S = "abcd", if we have both the replacement operation i = 0, x = "ab", y = "eee", as well as another replacement operation i = 2, x = "ec", y = "ffff", this second operation does nothing because in the original string S[2] = 'c', which doesn't match x[0] = 'e'.
+
+All these operations occur simultaneously.  It's guaranteed that there won't be any overlap in replacement: for example, S = "abc", indexes = [0, 1], sources = ["ab","bc"] is not a valid test case.
+
+ 
+
+Example 1:
+
+Input: S = "abcd", indexes = [0, 2], sources = ["a", "cd"], targets = ["eee", "ffff"]
+Output: "eeebffff"
+Explanation:
+"a" starts at index 0 in S, so it's replaced by "eee".
+"cd" starts at index 2 in S, so it's replaced by "ffff".
+Example 2:
+
+Input: S = "abcd", indexes = [0, 2], sources = ["ab","ec"], targets = ["eee","ffff"]
+Output: "eeecd"
+Explanation:
+"ab" starts at index 0 in S, so it's replaced by "eee".
+"ec" doesn't starts at index 2 in the original S, so we do nothing.
+ 
+
+Constraints:
+
+0 <= S.length <= 1000
+S consists of only lowercase English letters.
+0 <= indexes.length <= 100
+0 <= indexes[i] < S.length
+sources.length == indexes.length
+targets.length == indexes.length
+1 <= sources[i].length, targets[i].length <= 50
+sources[i] and targets[i] consist of only lowercase English letters.
+Accepted
+58,410
+Submissions
+113,456
+
+
  853 43.5%  Medium Car Fleet
+------
+
+853. Car Fleet
+Medium
+
+635
+
+258
+
+Add to List
+
+Share
+N cars are going to the same destination along a one lane road.  The destination is target miles away.
+
+Each car i has a constant speed speed[i] (in miles per hour), and initial position position[i] miles towards the target along the road.
+
+A car can never pass another car ahead of it, but it can catch up to it, and drive bumper to bumper at the same speed.
+
+The distance between these two cars is ignored - they are assumed to have the same position.
+
+A car fleet is some non-empty set of cars driving at the same position and same speed.  Note that a single car is also a car fleet.
+
+If a car catches up to a car fleet right at the destination point, it will still be considered as one car fleet.
+
+
+How many car fleets will arrive at the destination?
+
+ 
+
+Example 1:
+
+Input: target = 12, position = [10,8,0,5,3], speed = [2,4,1,1,3]
+Output: 3
+Explanation:
+The cars starting at 10 and 8 become a fleet, meeting each other at 12.
+The car starting at 0 doesn't catch up to any other car, so it is a fleet by itself.
+The cars starting at 5 and 3 become a fleet, meeting each other at 6.
+Note that no other cars meet these fleets before the destination, so the answer is 3.
+
+Note:
+
+0 <= N <= 10 ^ 4
+0 < target <= 10 ^ 6
+0 < speed[i] <= 10 ^ 6
+0 <= position[i] < target
+All initial positions are different.
+Accepted
+36,306
+Submissions
+82,289
+
  873 48.0%  Medium Length of Longest Fibonacci Subsequence
+------
+
+873. Length of Longest Fibonacci Subsequence
+Medium
+
+949
+
+37
+
+Add to List
+
+Share
+A sequence X1, X2, ..., Xn is Fibonacci-like if:
+
+n >= 3
+Xi + Xi+1 = Xi+2 for all i + 2 <= n
+Given a strictly increasing array arr of positive integers forming a sequence, return the length of the longest Fibonacci-like subsequence of arr. If one does not exist, return 0.
+
+A subsequence is derived from another sequence arr by deleting any number of elements (including none) from arr, without changing the order of the remaining elements. For example, [3, 5, 8] is a subsequence of [3, 4, 5, 6, 7, 8].
+
+ 
+
+Example 1:
+
+Input: arr = [1,2,3,4,5,6,7,8]
+Output: 5
+Explanation: The longest subsequence that is fibonacci-like: [1,2,3,5,8].
+Example 2:
+
+Input: arr = [1,3,7,11,12,14,18]
+Output: 3
+Explanation: The longest subsequence that is fibonacci-like: [1,11,12], [3,11,14] or [7,11,18].
+ 
+
+Constraints:
+
+3 <= arr.length <= 1000
+1 <= arr[i] < arr[i + 1] <= 109
+Accepted
+37,108
+Submissions
+76,968
+
+
  973 64.4%  Medium K Closest Points to Origin
+------
+
+973. K Closest Points to Origin
+Medium
+
+2820
+
+146
+
+Add to List
+
+Share
+Given an array of points where points[i] = [xi, yi] represents a point on the X-Y plane and an integer k, return the k closest points to the origin (0, 0).
+
+The distance between two points on the X-Y plane is the Euclidean distance (i.e, √(x1 - x2)2 + (y1 - y2)2).
+
+You may return the answer in any order. The answer is guaranteed to be unique (except for the order that it is in).
+
+ 
+
+Example 1:
+
+
+Input: points = [[1,3],[-2,2]], k = 1
+Output: [[-2,2]]
+Explanation:
+The distance between (1, 3) and the origin is sqrt(10).
+The distance between (-2, 2) and the origin is sqrt(8).
+Since sqrt(8) < sqrt(10), (-2, 2) is closer to the origin.
+We only want the closest k = 1 points from the origin, so the answer is just [[-2,2]].
+Example 2:
+
+Input: points = [[3,3],[5,-1],[-2,4]], k = 2
+Output: [[3,3],[-2,4]]
+Explanation: The answer [[-2,4],[3,3]] would also be accepted.
+ 
+
+Constraints:
+
+1 <= k <= points.length <= 104
+-104 < xi, yi < 104
+Accepted
+434,526
+Submissions
+673,060
