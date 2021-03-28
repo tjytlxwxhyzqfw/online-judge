@@ -1,0 +1,618 @@
+   6 37.5%  Medium 2235/5619 ZigZag Conversion
+   (可以跟sprial matrix放在一起, 思路差不多的)
+
+  26 46.2%    Easy Remove Duplicates from Sorted Array
+
+  46 65.8%  Medium 5646/129 Permutations
+ (DFS的去重问题, 有人出模板了: https://leetcode.com/problems/permutations/discuss/18239/A-general-approach-to-backtracking-questions-in-Java-(Subsets-Permutations-Combination-Sum-Palindrome-Partioning)
+
+  66 42.6%    Easy Plus One
+
+  86 42.8%  Medium Partition List
+ (无聊)
+
+ 106 49.0%  Medium 2517/49 Construct Binary Tree from Inorder and Postorder Traversal
+
+ 126 23.2%    Hard 2351/283 Word Ladder II
+ (=433, 752, 单433只求最小值, 这个要求所有的最短路径)
+ (解法: 正常来说BFS求最短路+建图, DFS查找路径; 有个更好的解法: 用BFS存储数组, 这样来记录路径)
+
+ 166 22.1%  Medium 1093/2213 Fraction to Recurring Decimal
+ I: 看商和余数, 余数重复出现的时候, 就出现了循环
+ (答案和我的一样, 但是人家的循环写的真是非常紧凑了, 可以学: https://leetcode.com/problems/fraction-to-recurring-decimal/discuss/51106/My-clean-Java-solution)
+
+ 306 29.5%  Medium 506/501 Additive Number
+------
+
+Additive number is a string whose digits can form additive sequence.
+
+A valid additive sequence should contain at least three numbers. Except for the first two numbers, each subsequent number in the sequence must be the sum of the preceding two.
+
+Given a string containing only digits '0'-'9', write a function to determine if it's an additive number.
+
+Note: Numbers in the additive sequence cannot have leading zeros, so sequence 1, 2, 03 or 1, 02, 3 is invalid.
+
+Example 1:
+
+Input: "112358"
+Output: true
+Explanation: The digits can form an additive sequence: 1, 1, 2, 3, 5, 8. 
+             1 + 1 = 2, 1 + 2 = 3, 2 + 3 = 5, 3 + 5 = 8
+Example 2:
+
+Input: "199100199"
+Output: true
+Explanation: The additive sequence is: 1, 99, 100, 199. 
+             1 + 99 = 100, 99 + 100 = 199
+ 
+
+Constraints:
+
+num consists only of digits '0'-'9'.
+1 <= num.length <= 35
+Follow up:
+How would you handle overflow for very large input integers?
+
+Accepted 58,511 Submissions 196,956
+
+D=I: 遍历所有前两个数的组合然后生成整个序列; 可能需要借用大数函数(Java BigInteger);
+
+ 386 53.5%  Medium 719/91 Lexicographical Numbers
+------
+
+Given an integer n, return 1 - n in lexicographical order.
+
+For example, given 13, return: [1,10,11,12,13,2,3,4,5,6,7,8,9].
+
+Please optimize your algorithm to use less time and space. The input size may be as large as 5,000,000.
+
+Accepted 63,759 Submissions 117,265
+
+I: 十叉树的遍历, 不需要记忆化; 如果需要记忆化的话, 就会变得很难 (233)
+D: The idea is pretty simple. If we look at the order we can find out we just keep adding digit from 0 to 9 to every digit and make it a tree. Then we visit every node in pre-order.
+
+ 406 68.0%  Medium 3938/441 Queue Reconstruction by Height
+------
+
+You are given an array of people, people, which are the attributes of some people in a queue (not necessarily in order). Each people[i] = [hi, ki] represents the ith person of height hi with exactly ki other people in front who have a height greater than or equal to hi.
+
+Reconstruct and return the queue that is represented by the input array people. The returned queue should be formatted as an array queue, where queue[j] = [hj, kj] is the attributes of the jth person in the queue (queue[0] is the person at the front of the queue).
+
+Example 1:
+
+Input: people = [[7,0],[4,4],[7,1],[5,0],[6,1],[5,2]]
+Output: [[5,0],[7,0],[5,2],[6,1],[4,4],[7,1]]
+Explanation:
+Person 0 has height 5 with no other people taller or the same height in front.
+Person 1 has height 7 with no other people taller or the same height in front.
+Person 2 has height 5 with two persons taller or the same height in front, which is person 0 and 1.
+Person 3 has height 6 with one person taller or the same height in front, which is person 1.
+Person 4 has height 4 with four people taller or the same height in front, which are people 0, 1, 2, and 3.
+Person 5 has height 7 with one person taller or the same height in front, which is person 1.
+Hence [[5,0],[7,0],[5,2],[6,1],[4,4],[7,1]] is the reconstructed queue.
+Example 2:
+
+Input: people = [[6,0],[5,0],[4,0],[3,2],[2,2],[1,4]]
+Output: [[4,0],[5,0],[2,2],[3,2],[1,4],[6,0]]
+
+Constraints:
+
+1 <= people.length <= 2000
+0 <= hi <= 106
+0 <= ki < people.length
+It is guaranteed that the queue can be reconstructed.
+
+Accepted 191,305 Submissions 279,248
+
+I: 
+尝试O(N) => (身高降序, 前面人数升序) => 先从最高的开始放 => 新来的需要插入到队列中间 => 复杂度不太好;
+尝试O(N) => (前面人数升序, 身高升序) => 也不对
+尝试O(N^2) => 只能用O(n^2)的解法吗? 先放k=0的, 按照身高升序放.
+每放置一个0的, 就调整其他元素的k, 然后继续放0的.
+维护一个优先队列(PriorityQueue<Node> heap = new PriorityQueue<>())
+class Node{@Override public int compareTo(Node that) {return this.val - that.val}}
+
+D: 答案多是我的第一个解法: 插入排序, O(n^2)
+
+ 446 33.2%    Hard 676/64 Arithmetic Slices II - Subsequence
+------
+
+A sequence of numbers is called arithmetic if it consists of at least three elements and if the difference between any two consecutive elements is the same.
+
+For example, these are arithmetic sequences:
+
+1, 3, 5, 7, 9
+7, 7, 7, 7
+3, -1, -5, -9
+The following sequence is not arithmetic.
+
+1, 1, 2, 5, 7
+ 
+A zero-indexed array A consisting of N numbers is given. A subsequence slice of that array is any sequence of integers (P0, P1, ..., Pk) such that 0 ≤ P0 < P1 < ... < Pk < N.
+
+A subsequence slice (P0, P1, ..., Pk) of array A is called arithmetic if the sequence A[P0], A[P1], ..., A[Pk-1], A[Pk] is arithmetic. In particular, this means that k ≥ 2.
+
+The function should return the number of arithmetic subsequence slices in the array A.
+
+The input contains N integers. Every integer is in the range of -2^31 and 2^31-1 and 0 ≤ N ≤ 1000. 
+The output is guaranteed to be less than 2^31-1.
+ 
+Example:
+
+Input: [2, 4, 6, 8, 10]
+
+Output: 7
+
+Explanation:
+All arithmetic subsequence slices are:
+[2,4,6]
+[4,6,8]
+[6,8,10]
+[2,4,6,8]
+[4,6,8,10]
+[2,4,6,8,10]
+[2,6,10]
+
+Accepted 24,748 Submissions 73,824
+
+I: dp[i][j] = dp[j][x1] + dp[j][x2] + dp[j][x3] ...
+   我只能想到一个O(N^3)的解法吗???
+D: 果然有O(n^2)的解法; 唉; 动态规划啊...
+
+int numberOfArithmeticSlices(int[] A) { 
+	int res = 0;
+	Map<Integer, Integer>[] map = new Map[A.length];
+	for (int i = 0; i < A.length; i++) {
+		map[i] = new HashMap<>(i);
+		for (int j = 0; j < i; j++) {
+			long diff = (long)A[i] - A[j];
+			// 如果溢出了, 那么必然不可能组成等差序列
+			if (diff <= Integer.MIN_VALUE || diff > Integer.MAX_VALUE) continue; 
+			int d = (int)diff;
+			int c1 = map[i].getOrDefault(d, 0);
+			int c2 = map[j].getOrDefault(d, 0); 
+			res += c2; // 注意map存的是长度>=2的等差序列的个数, 所以直接+c2就是安全的
+			map[i].put(d, c1 + c2 + 1); // map的意思是: >=两个元素的等差序列的个数, 所以要+1 (i和j组成的那个)
+		}
+	}
+	return res;
+}
+
+这种DP是啥子哦, 我咋第一次见.
+
+ 466 28.6%    Hard 217/196 Count The Repetitions
+------
+
+Define S = [s,n] as the string S which consists of n connected strings s. For example, ["abc", 3] ="abcabcabc".
+
+On the other hand, we define that string s1 can be obtained from string s2 if we can remove some characters from s2 such that it becomes s1. For example, “abc” can be obtained from “abdbec” based on our definition, but it can not be obtained from “acbbe”.
+
+You are given two non-empty strings s1 and s2 (each at most 100 characters long) and two integers 0 ≤ n1 ≤ 10^6 and 1 ≤ n2 ≤ 10^6. Now consider the strings S1 and S2, where S1=[s1,n1] and S2=[s2,n2]. Find the maximum integer M such that [S2,M] can be obtained from S1.
+
+Example:
+
+Input:
+s1="acb", n1=4
+s2="ab", n2=2
+
+Return:
+2
+
+Accepted 12,168 Submissions 42,495
+
+I: while (???) {
+	ch = s2.next()
+	if s1.nextIndexOf(ch) <= s1.currentIndex() {
+		break
+	}
+}
+
+循环结束之后, 我们知道, n个s1生成元恰好可以组成m个s2生成元;
+所以通过一个数学计算就能算出来整体的东西.
+关键有两点:
+(1) 如何高效的实现上面的那个类;
+(2) 万一永远都生成不了咋办? 上面的循环终止条件
+
+D: 答案应该也是类似的, 先不看了
+
+ 486 48.4%  Medium 1847/105 Predict the Winner
+------
+
+Given an array of scores that are non-negative integers. Player 1 picks one of the numbers from either end of the array followed by the player 2 and then player 1 and so on. Each time a player picks a number, that number will not be available for the next player. This continues until all the scores have been chosen. The player with the maximum score wins.
+
+Given an array of scores, predict whether player 1 is the winner. You can assume each player plays to maximize his score.
+
+Example 1:
+
+Input: [1, 5, 2]
+Output: False
+Explanation: Initially, player 1 can choose between 1 and 2. 
+If he chooses 2 (or 1), then player 2 can choose from 1 (or 2) and 5. If player 2 chooses 5, then player 1 will be left with 1 (or 2). 
+So, final score of player 1 is 1 + 2 = 3, and player 2 is 5. 
+Hence, player 1 will never be the winner and you need to return False.
+ 
+
+Example 2:
+
+Input: [1, 5, 233, 7]
+Output: True
+Explanation: Player 1 first chooses 1. Then player 2 have to choose between 5 and 7. No matter which number player 2 choose, player 1 can choose 233.
+Finally, player 1 has more score (234) than player 2 (12), so you need to return True representing player1 can win.
+ 
+
+Constraints:
+
+1 <= length of the array <= 20.
+Any scores in the given array are non-negative integers and will not exceed 10,000,000.
+If the scores of both players are equal, then player 1 is still the winner.
+
+Accepted 84,410 Submissions 172,477
+Seen this question in a real interview before?
+
+I: DFS, +剪枝策略: (1) 总是先选大数; (2) 超过一半就停;
+D: 可以用动态规划来做, bitmap来记录状态, 记得不? (494题)
+
+ 526 59.7%  Medium 1188/209 Beautiful Arrangement
+------
+
+Suppose you have n integers labeled 1 through n. A permutation of those n integers perm (1-indexed) is considered a beautiful arrangement if for every i (1 <= i <= n), either of the following is true:
+
+perm[i] is divisible by i.
+i is divisible by perm[i].
+Given an integer n, return the number of the beautiful arrangements that you can construct.
+
+Example 1:
+
+Input: n = 2
+Output: 2
+Explanation: 
+The first beautiful arrangement is [1,2]:
+    - perm[1] = 1 is divisible by i = 1
+    - perm[2] = 2 is divisible by i = 2
+The second beautiful arrangement is [2,1]:
+    - perm[1] = 2 is divisible by i = 1
+    - i = 2 is divisible by perm[2] = 1
+Example 2:
+
+Input: n = 1
+Output: 1
+
+Constraints:
+
+1 <= n <= 15
+
+Accepted 87,731 Submissions 141,591
+
+I: dp + bitmap数组
+D: 差不多的思路吧. 
+
+ 646 52.6%  Medium 1289/87 Maximum Length of Pair Chain
+------
+
+You are given n pairs of numbers. In every pair, the first number is always smaller than the second number.
+
+Now, we define a pair (c, d) can follow another pair (a, b) if and only if b < c. Chain of pairs can be formed in this fashion.
+
+Given a set of pairs, find the length longest chain which can be formed. You needn't use up all the given pairs. You can select pairs in any order.
+
+Example 1:
+Input: [[1,2], [2,3], [3,4]]
+Output: 2
+Explanation: The longest chain is [1,2] -> [3,4]
+Note:
+The number of given pairs will be in the range [1, 1000].
+
+Accepted 73,477 Submissions 138,570
+
+I: LIS好像派不上用场, 我只能想到一个O(N^2)的DP解;
+D: DP也是个解; 贪心也行: 交叉的区间中, 我总是优先选择尾巴比较短的那个;
+   区间这类题目里啊, 大量的贪心算法
+
+ 826 38.8%  Medium 488/77 Most Profit Assigning Work
+------
+
+We have jobs: difficulty[i] is the difficulty of the ith job, and profit[i] is the profit of the ith job. 
+
+Now we have some workers. worker[i] is the ability of the ith worker, which means that this worker can only complete a job with difficulty at most worker[i]. 
+
+Every worker can be assigned at most one job, but one job can be completed multiple times.
+
+For example, if 3 people attempt the same job that pays $1, then the total profit will be $3.  If a worker cannot complete any job, his profit is $0.
+
+What is the most profit we can make?
+
+Example 1:
+
+Input: difficulty = [2,4,6,8,10], profit = [10,20,30,40,50], worker = [4,5,6,7]
+Output: 100 
+Explanation: Workers are assigned jobs of difficulty [4,4,6,6] and they get profit of [20,20,30,30] seperately.
+Notes:
+
+1 <= difficulty.length = profit.length <= 10000
+1 <= worker.length <= 10000
+difficulty[i], profit[i], worker[i]  are in range [1, 10^5]
+
+Accepted 25,253 Submissions 64,369
+
+I:  (1) 工作按照收益从大到小排序; 工人的难度也排序;
+	(2) 从钱最多的那个开会派活; lower_bound()找到位置k, 然后[k:]全都去干这个活
+	(3) 第二有钱的活重复上述动作, 不过工人的搜索范围缩减为[0, k)
+D: 我的上述方法复杂度可以进一步降低: 用双指针;
+	(1) i指向钱最多的工作
+	(2) j从能力最高的工人开始, 左移(能力下降的方向), 移不动为止
+	(3) i指向钱第二多的工作, 重复
+
+ 846 55.1%  Medium 931/96 Hand of Straights
+------
+
+Alice has a hand of cards, given as an array of integers.
+
+Now she wants to rearrange the cards into groups so that each group is size W, and consists of W consecutive cards.
+
+Return true if and only if she can.
+
+Note: This question is the same as 1296: https://leetcode.com/problems/divide-array-in-sets-of-k-consecutive-numbers/
+
+Example 1:
+
+Input: hand = [1,2,3,6,2,3,4,7,8], W = 3
+Output: true
+Explanation: Alice's hand can be rearranged as [1,2,3],[2,3,4],[6,7,8]
+Example 2:
+
+Input: hand = [1,2,3,4,5], W = 4
+Output: false
+Explanation: Alice's hand can't be rearranged into groups of 4.
+
+Constraints:
+
+1 <= hand.length <= 10000
+0 <= hand[i] <= 10^9
+1 <= W <= hand.length
+
+Accepted 67,500 Submissions 121,673
+
+I: 加一类: 连续自然数, 处理方法可能会类似的.
+
+	用hashSet计数配合heap来处理问题, NLogN
+	while (heap.size() > 0) {
+		while (count[heap.top()] == 0) heap.pop()
+		head = heap.pop()
+		hash[head+1] -= count[head]
+		hash[head+2] -= count[head]
+		if hash[head+1] < 0 || hash[head+2] < 0 {
+			return false
+		}
+	}
+D: 差不多是一样的思路. 注意不一定是3, 连续自然数可能是个变量
+
+
+ 866 25.1%  Medium 235/616 Prime Palindrome
+------
+
+Find the smallest prime palindrome greater than or equal to N.
+
+Recall that a number is prime if it's only divisors are 1 and itself, and it is greater than 1. 
+
+For example, 2,3,5,7,11 and 13 are primes.
+
+Recall that a number is a palindrome if it reads the same from left to right as it does from right to left. 
+
+For example, 12321 is a palindrome.
+
+Example 1:
+
+Input: 6
+Output: 7
+Example 2:
+
+Input: 8
+Output: 11
+Example 3:
+
+Input: 13
+Output: 101
+ 
+Note:
+
+1 <= N <= 10^8
+The answer is guaranteed to exist and be less than 2 * 10^8.
+
+Accepted 21,164 Submissions 84,560
+
+I: 线性遍历搜索
+D: 有很多数学或者剪枝的策略在里面.
+
+ 886 44.8%  Medium 1345/37 Possible Bipartition
+------
+
+Given a set of N people (numbered 1, 2, ..., N), we would like to split everyone into two groups of any size.
+
+Each person may dislike some other people, and they should not go into the same group. 
+
+Formally, if dislikes[i] = [a, b], it means it is not allowed to put the people numbered a and b into the same group.
+
+Return true if and only if it is possible to split everyone into two groups in this way.
+
+Example 1:
+
+Input: N = 4, dislikes = [[1,2],[1,3],[2,4]]
+Output: true
+Explanation: group1 [1,4], group2 [2,3]
+Example 2:
+
+Input: N = 3, dislikes = [[1,2],[1,3],[2,3]]
+Output: false
+Example 3:
+
+Input: N = 5, dislikes = [[1,2],[2,3],[3,4],[4,5],[1,5]]
+Output: false
+ 
+Constraints:
+
+1 <= N <= 2000
+0 <= dislikes.length <= 10000
+dislikes[i].length == 2
+1 <= dislikes[i][j] <= N
+dislikes[i][0] < dislikes[i][1]
+There does not exist i != j for which dislikes[i] == dislikes[j].
+
+Accepted 72,658 Submissions 160,630
+
+I: BFS一次应该就解出来了
+D: BFS也行, DFS也行, 都行, 都行
+
+ 926 52.9%  Medium 759/25 Flip String to Monotone Increasing
+------
+
+A string of '0's and '1's is monotone increasing if it consists of some number of '0's (possibly 0), followed by some number of '1's (also possibly 0.)
+
+We are given a string S of '0's and '1's, and we may flip any '0' to a '1' or a '1' to a '0'.
+
+Return the minimum number of flips to make S monotone increasing.
+
+Example 1:
+
+Input: "00110"
+Output: 1
+Explanation: We flip the last digit to get 00111.
+Example 2:
+
+Input: "010110"
+Output: 2
+Explanation: We flip to get 011111, or alternatively 000111.
+Example 3:
+
+Input: "00011000"
+Output: 2
+Explanation: We flip to get 00000000.
+
+Note:
+
+1 <= S.length <= 20000
+S only consists of '0' and '1' characters.
+
+Accepted 26,633 Submissions 49,891
+
+I: 前缀和数组统计1的个数: O(n) + O(n) space
+D: 可以用 O(1) space
+
+ 946 63.3%  Medium 1623/34 Validate Stack Sequences
+------
+
+Given two sequences pushed and popped with distinct values, return true if and only if this could have been the result of a sequence of push and pop operations on an initially empty stack.
+
+Example 1:
+
+Input: pushed = [1,2,3,4,5], popped = [4,5,3,2,1]
+Output: true
+Explanation: We might do the following sequence:
+push(1), push(2), push(3), push(4), pop() -> 4,
+push(5), pop() -> 5, pop() -> 3, pop() -> 2, pop() -> 1
+Example 2:
+
+Input: pushed = [1,2,3,4,5], popped = [4,3,5,1,2]
+Output: false
+Explanation: 1 cannot be popped before 2.
+
+Constraints:
+
+0 <= pushed.length == popped.length <= 1000
+0 <= pushed[i], popped[i] < 1000
+pushed is a permutation of popped.
+pushed and popped have distinct values.
+
+Accepted 99,299 Submissions 154,113
+
+I: 用一个栈可以很轻松的模拟这个过程
+D: 就模拟, 我估计也差不多
+
+ 966 47.6%  Medium 194/355 Vowel Spellchecker
+------
+
+Given a wordlist, we want to implement a spellchecker that converts a query word into a correct word.
+
+For a given query word, the spell checker handles two categories of spelling mistakes:
+
+Capitalization: If the query matches a word in the wordlist (case-insensitive), then the query word is returned with the same case as the case in the wordlist.
+Example: wordlist = ["yellow"], query = "YellOw": correct = "yellow"
+Example: wordlist = ["Yellow"], query = "yellow": correct = "Yellow"
+Example: wordlist = ["yellow"], query = "yellow": correct = "yellow"
+Vowel Errors: If after replacing the vowels ('a', 'e', 'i', 'o', 'u') of the query word with any vowel individually, it matches a word in the wordlist (case-insensitive), then the query word is returned with the same case as the match in the wordlist.
+Example: wordlist = ["YellOw"], query = "yollow": correct = "YellOw"
+Example: wordlist = ["YellOw"], query = "yeellow": correct = "" (no match)
+Example: wordlist = ["YellOw"], query = "yllw": correct = "" (no match)
+In addition, the spell checker operates under the following precedence rules:
+
+When the query exactly matches a word in the wordlist (case-sensitive), you should return the same word back.
+When the query matches a word up to capitlization, you should return the first such match in the wordlist.
+When the query matches a word up to vowel errors, you should return the first such match in the wordlist.
+If the query has no matches in the wordlist, you should return the empty string.
+Given some queries, return a list of words answer, where answer[i] is the correct word for query = queries[i].
+
+Example 1:
+
+Input: wordlist = ["KiTe","kite","hare","Hare"], queries = ["kite","Kite","KiTe","Hare","HARE","Hear","hear","keti","keet","keto"]
+Output: ["kite","KiTe","KiTe","Hare","hare","","","KiTe","","KiTe"]
+ 
+Note:
+
+1 <= wordlist.length <= 5000
+1 <= queries.length <= 5000
+1 <= wordlist[i].length <= 7
+1 <= queries[i].length <= 7
+All strings in wordlist and queries consist only of english letters.
+
+Accepted 15,145 Submissions 31,594
+
+I: 有点挺无聊的, 不太想看了, 太长了
+
+ 986 68.0%  Medium 2114/59 Interval List Intersections
+------
+
+You are given two lists of closed intervals, firstList and secondList, where firstList[i] = [starti, endi] and secondList[j] = [startj, endj]. Each list of intervals is pairwise disjoint and in sorted order.
+
+Return the intersection of these two interval lists.
+
+A closed interval [a, b] (with a < b) denotes the set of real numbers x with a <= x <= b.
+
+The intersection of two closed intervals is a set of real numbers that are either empty or represented as a closed interval. For example, the intersection of [1, 3] and [2, 4] is [2, 3].
+
+Example 1:
+
+Input: firstList = [[0,2],[5,10],[13,23],[24,25]], secondList = [[1,5],[8,12],[15,24],[25,26]]
+Output: [[1,2],[5,5],[8,10],[15,23],[24,24],[25,25]]
+Example 2:
+
+Input: firstList = [[1,3],[5,9]], secondList = []
+Output: []
+Example 3:
+
+Input: firstList = [], secondList = [[4,8],[10,12]]
+Output: []
+Example 4:
+
+Input: firstList = [[1,7]], secondList = [[3,10]]
+Output: [[3,7]]
+ 
+Constraints:
+
+0 <= firstList.length, secondList.length <= 1000
+firstList.length + secondList.length >= 1
+0 <= starti < endi <= 109
+endi < starti+1
+0 <= startj < endj <= 109
+endj < startj+1
+
+Accepted 172,173 Submissions 251,668
+
+I: 又是区间问题, 贪心, 总是去删除那个尾巴短的就行
+D: 一样的
+
+for(int i=0, j=0; i<A.size() && j<B.size();){
+	int start = max(A[i][0], B[j][0]);
+	int end = min(A[i][1], B[j][1]);
+	if(start<=end) result.push_back(vector<int>{start, end});
+	if(A[i][1]<B[j][1]) ++i; else ++j;
+}
+

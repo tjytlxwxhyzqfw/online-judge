@@ -8,6 +8,27 @@
 ------
 Given a collection of numbers, nums, that might contain duplicates, return all possible unique permutations in any order. (example: [1, 1, 2] -> 112, 121, 211)
 
+I: DFS去重技术: 
+
+dfs(i, a, v) {
+	v[i] = true
+	for idx, val in a {
+		if v[idx] {
+			continue
+		}
+		if idx > 0 && a[idx]==a[idx-1] {
+			continue
+		}
+		dfs(idx, a, v)
+	}
+}
+
+DFS去重技术真的要做一个专题拿出来
+
+D: 上面的解法不对, 给你[1, 1, 2], 你永远无法生成(1, 1, 2)这个排列
+
+这个真的很不好用DFS来解啊我去!!!
+
   67 46.5%    Easy Add Binary
 ------
 

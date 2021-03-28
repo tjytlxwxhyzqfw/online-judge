@@ -1,4 +1,4 @@
-   4 30.6%    Hard 8949/1375 Median of Two Sorted Arrays
+   4 30.6%    Hard 8949/1375 Median of Two Sorted Arrays (注: IPAD12)
 ------
 Given two sorted arrays nums1 and nums2 of size m and n respectively, return the median of the two sorted arrays.
 Follow up: The overall run time complexity should be O(log (m+n))
@@ -25,9 +25,7 @@ Note: You can only move either down or right at any point in time.
 
   84 36.3%    Hard 5106/104 Largest Rectangle in Histogram
 ------
-Given n non-negative integers representing the histogram's bar height where the width of each bar is 1,
-find the area of largest rectangle in the histogram.
-(研读)
+Given n non-negative integers representing the histogram's bar height where the width of each bar is 1, find the area of largest rectangle in the histogram.
 
  124 35.2%    Hard 4972/367 Binary Tree Maximum Path Sum
 ------
@@ -59,15 +57,321 @@ Constraints:
 2) s consists of digits, '+', '-', '(', ')', and ' '.
 3) s represents a valid expression.
 
- 264 42.7%  Medium Ugly Number II
+ 264 42.7%  Medium 2494/155 Ugly Number II (注)
+ ------
+
+Given an integer n, return the nth ugly number.
+
+Ugly number is a positive number whose prime factors only include 2, 3, and/or 5.
+
+Example 1:
+
+Input: n = 10
+Output: 12
+Explanation: [1, 2, 3, 4, 5, 6, 8, 9, 10, 12] is the sequence of the first 10 ugly numbers.
+Example 2:
+
+Input: n = 1
+Output: 1
+Explanation: 1 is typically treated as an ugly number.
+ 
+Constraints:
+
+1 <= n <= 1690
+
  284 47.3%  Medium Peeking Iterator
+------
+
  304 40.1%  Medium Range Sum Query 2D - Immutable
- 324 30.5%  Medium Wiggle Sort II
- 384 53.7%  Medium Shuffle an Array
+------
+
+ 324 30.5%  Medium 1332/653 Wiggle Sort II (注)
+------
+
+Given an integer array nums, reorder it such that nums[0] < nums[1] > nums[2] < nums[3]....
+
+You may assume the input array always has a valid answer.
+
+ 
+
+Example 1:
+
+Input: nums = [1,5,1,1,6,4]
+Output: [1,6,1,5,1,4]
+Explanation: [1,4,1,5,1,6] is also accepted.
+Example 2:
+
+Input: nums = [1,3,2,2,3,1]
+Output: [2,3,1,3,1,2]
+ 
+
+Constraints:
+
+1 <= nums.length <= 5 * 104
+0 <= nums[i] <= 5000
+It is guaranteed that there will be an answer for the given input nums.
+ 
+
+Follow Up: Can you do it in O(n) time and/or in-place with O(1) extra space?
+
+ 384 53.7%  Medium 103/132 Shuffle an Array
+------
+(RT)
+
  424 47.9%  Medium Longest Repeating Character Replacement
- 464 29.5%  Medium Can I Win
+------
+Given a string s that consists of only uppercase English letters, you can perform at most k operations on that string.
+
+In one operation, you can choose any character of the string and change it to any other uppercase English character.
+
+Find the length of the longest sub-string containing all repeating letters you can get after performing the above operations.
+
+Note:
+Both the string's length and k will not exceed 104.
+
+Example 1:
+
+Input:
+s = "ABAB", k = 2
+
+Output:
+4
+
+Explanation:
+Replace the two 'A's with two 'B's or vice versa.
+ 
+
+Example 2:
+
+Input:
+s = "AABABBA", k = 1
+
+Output:
+4
+
+Explanation:
+Replace the one 'A' in the middle with 'B' and form "AABBBBA".
+The substring "BBBB" has the longest repeating letters, which is 4.
+
+ 464 29.5%  Medium 1265/202 Can I Win
+ ------
+
+ In the "100 game" two players take turns adding, to a running total, any integer from 1 to 10. The player who first causes the running total to reach or exceed 100 wins.
+
+What if we change the game so that players cannot re-use integers?
+
+For example, two players might take turns drawing from a common pool of numbers from 1 to 15 without replacement until they reach a total >= 100.
+
+Given two integers maxChoosableInteger and desiredTotal, return true if the first player to move can force a win, otherwise return false. Assume both players play optimally.
+
+ 
+
+Example 1:
+
+Input: maxChoosableInteger = 10, desiredTotal = 11
+Output: false
+Explanation:
+No matter which integer the first player choose, the first player will lose.
+The first player can choose an integer from 1 up to 10.
+If the first player choose 1, the second player can only choose integers from 2 up to 10.
+The second player will win by choosing 10 and get a total = 11, which is >= desiredTotal.
+Same with other integers chosen by the first player, the second player will always win.
+Example 2:
+
+Input: maxChoosableInteger = 10, desiredTotal = 0
+Output: true
+Example 3:
+
+Input: maxChoosableInteger = 10, desiredTotal = 1
+Output: true
+ 
+
+Constraints:
+
+1 <= maxChoosableInteger <= 20
+0 <= desiredTotal <= 300
+
  524 48.8%  Medium Longest Word in Dictionary through Deleting
- 684 58.6%  Medium Redundant Connection
- 764 46.2%  Medium Largest Plus Sign
- 904 42.8%  Medium Fruit Into Baskets
+------
+Given a string s and a string array dictionary, return the longest string in the dictionary that can be formed by deleting some of the given string characters. If there is more than one possible result, return the longest word with the smallest lexicographical order. If there is no possible result, return the empty string.
+
+Example 1:
+
+Input: s = "abpcplea", dictionary = ["ale","apple","monkey","plea"]
+Output: "apple"
+Example 2:
+
+Input: s = "abpcplea", dictionary = ["a","b","c"]
+Output: "a"
+ 
+Constraints:
+
+1 <= s.length <= 1000
+1 <= dictionary.length <= 1000
+1 <= dictionary[i].length <= 1000
+s and dictionary[i] consist of lowercase English letters.
+
+ 684 58.6%  Medium 1956/242 Redundant Connection
+------
+In this problem, a tree is an undirected graph that is connected and has no cycles.
+
+The given input is a graph that started as a tree with N nodes (with distinct values 1, 2, ..., N), with one additional edge added. The added edge has two different vertices chosen from 1 to N, and was not an edge that already existed.
+
+The resulting graph is given as a 2D-array of edges. Each element of edges is a pair [u, v] with u < v, that represents an undirected edge connecting nodes u and v.
+
+Return an edge that can be removed so that the resulting graph is a tree of N nodes. If there are multiple answers, return the answer that occurs last in the given 2D-array. The answer edge [u, v] should be in the same format, with u < v.
+
+Example 1:
+Input: [[1,2], [1,3], [2,3]]
+Output: [2,3]
+Explanation: The given undirected graph will be like this:
+  1
+ / \
+2 - 3
+Example 2:
+Input: [[1,2], [2,3], [3,4], [1,4], [1,5]]
+Output: [1,4]
+Explanation: The given undirected graph will be like this:
+5 - 1 - 2
+    |   |
+    4 - 3
+Note:
+The size of the input 2D-array will be between 3 and 1000.
+Every integer represented in the 2D-array will be between 1 and N, where N is the size of the input array.
+
+Update (2017-09-26):
+We have overhauled the problem description + test cases and specified clearly the graph is an undirected graph. For the directed graph follow up please see Redundant Connection II). We apologize for any inconvenience caused.
+
+Accepted
+123,519
+Submissions
+209,182
+
+ 764 46.2%  Medium 562/117 Largest Plus Sign
+------
+
+In a 2D grid from (0, 0) to (N-1, N-1), every cell contains a 1, except those cells in the given list mines which are 0. What is the largest axis-aligned plus sign of 1s contained in the grid? Return the order of the plus sign. If there is none, return 0.
+
+An "axis-aligned plus sign of 1s of order k" has some center grid[x][y] = 1 along with 4 arms of length k-1 going up, down, left, and right, and made of 1s. This is demonstrated in the diagrams below. Note that there could be 0s or 1s beyond the arms of the plus sign, only the relevant area of the plus sign is checked for 1s.
+
+Examples of Axis-Aligned Plus Signs of Order k:
+
+Order 1:
+000
+010
+000
+
+Order 2:
+00000
+00100
+01110
+00100
+00000
+
+Order 3:
+0000000
+0001000
+0001000
+0111110
+0001000
+0001000
+0000000
+Example 1:
+
+Input: N = 5, mines = [[4, 2]]
+Output: 2
+Explanation:
+11111
+11111
+11111
+11111
+11011
+In the above grid, the largest plus sign can only be order 2.  One of them is marked in bold.
+Example 2:
+
+Input: N = 2, mines = []
+Output: 1
+Explanation:
+There is no plus sign of order 2, but there is of order 1.
+Example 3:
+
+Input: N = 1, mines = [[0, 0]]
+Output: 0
+Explanation:
+There is no plus sign, so return 0.
+Note:
+
+N will be an integer in the range [1, 500].
+mines will have length at most 5000.
+mines[i] will be length 2 and consist of integers in the range [0, N-1].
+(Additionally, programs submitted in C, C++, or C# will be judged with a slightly smaller time limit.)
+
+ 904 42.8%  Medium 1138/1641 Fruit Into Baskets
+------
+In a row of trees, the i-th tree produces fruit with type tree[i].
+
+You start at any tree of your choice, then repeatedly perform the following steps:
+
+Add one piece of fruit from this tree to your baskets.  If you cannot, stop.
+Move to the next tree to the right of the current tree.  If there is no tree to the right, stop.
+Note that you do not have any choice after the initial choice of starting tree: you must perform step 1, then step 2, then back to step 1, then step 2, and so on until you stop.
+
+You have two baskets, and each basket can carry any quantity of fruit, but you want each basket to only carry one type of fruit each.
+
+What is the total amount of fruit you can collect with this procedure?
+
+Example 1:
+
+Input: [1,2,1]
+Output: 3
+Explanation: We can collect [1,2,1].
+Example 2:
+
+Input: [0,1,2,2]
+Output: 3
+Explanation: We can collect [1,2,2].
+If we started at the first tree, we would only collect [0, 1].
+Example 3:
+
+Input: [1,2,3,2,2]
+Output: 4
+Explanation: We can collect [2,3,2,2].
+If we started at the first tree, we would only collect [1, 2].
+Example 4:
+
+Input: [3,3,3,1,2,1,1,2,3,3,4]
+Output: 5
+Explanation: We can collect [1,2,1,1,2].
+If we started at the first tree or the eighth tree, we would only collect 4 fruits.
+ 
+Note:
+
+1 <= tree.length <= 40000
+0 <= tree[i] < tree.length
+
  984 38.4%  Medium String Without AAA or BBB
+------
+
+Given two integers a and b, return any string s such that:
+
+s has length a + b and contains exactly a 'a' letters, and exactly b 'b' letters,
+The substring 'aaa' does not occur in s, and
+The substring 'bbb' does not occur in s.
+ 
+
+Example 1:
+
+Input: a = 1, b = 2
+Output: "abb"
+Explanation: "abb", "bab" and "bba" are all correct answers.
+Example 2:
+
+Input: a = 4, b = 1
+Output: "aabaa"
+ 
+
+Constraints:
+
+0 <= a, b <= 100
+It is guaranteed such an s exists for the given a and b.
+

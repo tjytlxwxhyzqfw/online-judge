@@ -1,0 +1,238 @@
+   7 25.8%    Easy Reverse Integer
+------
+
+  27 48.9%    Easy Remove Element
+------
+
+  47 48.8%  Medium 2616/73 Permutations II
+------
+Given a collection of numbers, nums, that might contain duplicates, return all possible unique permutations in any order. (example: [1, 1, 2] -> 112, 121, 211)
+
+I: DFS去重技术: 
+
+dfs(i, a, v) {
+	v[i] = true
+	for idx, val in a {
+		if v[idx] {
+			continue
+		}
+		if idx > 0 && a[idx]==a[idx-1] {
+			continue
+		}
+		dfs(idx, a, v)
+	}
+}
+
+DFS去重技术真的要做一个专题拿出来
+
+D: 上面的解法不对, 给你[1, 1, 2], 你永远无法生成(1, 1, 2)这个排列
+
+重要: dfs去重的核心算法: (排序后) if (i > 0 && a[i] == a[i-1] && !used[i-1]) continue;
+	上面的代码保证对于相同的元素, 它们在结果序列中一定是按照下标递增的顺序出现的, 故不可能出现重复.
+
+  67 46.5%    Easy Add Binary
+------
+
+  87 34.4%    Hard 694/768 Scramble String
+------
+We can scramble a string s to get a string t using the following algorithm:
+(1) If the length of the string is 1, stop.
+(2) If the length of the string is > 1, do the following: 
+(2.1) Split the string into two non-empty substrings at a random index, i.e., if the string is s, divide it to x and y where s = x + y.
+(2.2) Randomly decide to swap the two substrings or to keep them in the same order. i.e., after this step, s may become s = x + y or s = y + x.
+Apply step 1 recursively on each of the two substrings x and y.
+Given two strings s1 and s2 of the same length, return true if s2 is a scrambled string of s1, otherwise, return false.
+Constraints: (1) s1.length == s2.length (2) 1 <= s1.length <= 30 (3) s1 and s2 consist of lower-case English letters.
+
+ 127 31.0%    Hard 4251/1368 Word Ladder
+------
+Given two words beginWord and endWord, and a dictionary wordList, 
+return the length of the shortest transformation sequence from beginWordto endWord, such that:
+(1) Only one letter can be changed at a time.
+(2) Each transformed word must exist in the word list.
+Return 0 if there is no such transformation sequence.
+
+ 147 44.0%  Medium 917/659 Insertion Sort List
+------
+Sort a linked list using insertion sort.
+
+ 187 41.1%  Medium 1065/325 Repeated DNA Sequences
+------
+All DNA is composed of a series of nucleotides abbreviated as 'A', 'C', 'G', and 'T', for example: "ACGAATTCCG".
+When studying DNA, it is sometimes useful to identify repeated sequences within the DNA.
+Write a function to find all the 10-letter-long sequences (substrings) that occur more than once in a DNA molecule.
+
+ 207 44.1%  Medium 4993/201 Course Schedule
+------
+There are a total of numCourses courses you have to take, labeled from 0 to numCourses-1.
+Some courses may have prerequisites, for example to take course 0 you have to first take course 1, which is expressed as a pair: [0,1]
+Given the total number of courses and a list of prerequisite pairs, is it possible for you to finish all courses?
+
+(210: 要求输出一个顺序; 207: 仅输出布尔值)
+
+ 227 38.2%  Medium 2011/321 Basic Calculator II
+------
+Given a string s which represents an expression, evaluate this expression and return its value. 
+The integer division should truncate toward zero.
+Constraints:
+(1) 1 <= s.length <= 3 * 10^5
+(2) s consists of integers and operators ('+', '-', '*', '/') separated by some number of spaces.
+(3) s represents a valid expression.
+(4) All the integers in the expression are non-negative integers in the range [0, 2^31 - 1].
+(5) The answer is guaranteed to fit in a 32-bit integer.
+
+ 287 56.9%  Medium 6605/716 Find the Duplicate Number
+------
+Given an array of integers nums containing n + 1 integers where each integer is in the range [1, n] inclusive.
+There is only one repeated number in nums, return this repeated number.
+
+ 307 36.3%  Medium Range Sum Query - Mutable
+------
+I: 单点更新线段树? 
+D: 是的
+
+ 327 35.8%    Hard 1004/119 Count of Range Sum
+------
+I: (1) 用MergeSort的方式, Merge的过程非常复杂;
+   (2) 还可以选用树上的特殊接口来实现, 统计以x为结尾的数量, x左边的前缀和构成一棵树;
+D: 确实用的MergeSort的方式. 
+
+这个Merge过程要和2Sum的过程联合起来分析.
+2Sum是求和, 单数组, 首尾两个指针相向移动;
+这个是求差, 双数组, 两个指针同向移动;
+这类问题的一般性分析方法是, 固定一个指针, 看看另一个指针移到什么地方合适.
+这应该就是我之前要找的那个: 双指针求差有坑.
+
+ 347 62.1%  Medium Top K Frequent Elements
+------
+I: (1) HashMap+PriorityQueue; (2) HashMap count + QuickSort()
+D: 有用priorityQueue的, 也有用quicksort的, 但是第一的答案是: bucket sort
+很有意思, 我接触过不少跟Frequence有关的问题了, 这类问题总是能冷不丁的用上bucketSort
+因为既然统计的是频次, 那么bucketSort真的是天然合适.
+
+ 407 43.7%    Hard 1758/37 Trapping Rain Water II
+------
+I: (1) 把所有的边界加入到heap中, 并着色;
+	(2) 取出最矮的那个边界, 看它周围的4个: 着色的忽略; 更矮的累加水量; 更高的入堆;
+D: 一样的
+
+
+ 427 62.3%  Medium 312/476 Construct Quad Tree
+------
+ I: 递归就做了, 很简单
+ D: 第一的答案跟我想的一样
+
+ 467 36.0%  Medium 768/99 Unique Substrings in Wraparound String
+------
+I: 很好做, 统计止于每个ch的连续substr的个数就行了. O(n)
+D: 哦不对, 它要求不重复, 所以还得去重 => 尾字母等价划分法; 
+
+ 547 59.9%  Medium 2859/176 Number of Provinces
+------
+I: DFS搜索单联通域
+D: 是的
+
+ 567 44.5%  Medium 2282/78 Permutation in String
+------
+I: 双指针计数
+D: Same
+
+ 647 61.6%  Medium 3831/134 Palindromic Substrings
+------
+I: 有很多种方法, 扩展法, DP都可以
+D: 第一就是扩展法
+
+复习+强调: 回文没有很好地方式, 就是扩展法+判定法.
+另外, 记住那道题: 回文(非连续)子串 (516)
+
+
+ 667 54.9%  Medium 390/689 Beautiful Arrangement II
+------
+I: 肯定有某种顺序把他们排起来, 但是不太想认真思考, 真的有意思嘛?
+   => 反正分治不行, DP不行, 堆排列不行, 单调栈? 不行
+D: 有个题目的放置顺序跟这个差不多.....
+   中位数的题目来着..... (324 wiggle sort, 还有一个链表的题目也跟这个差不多...)
+
+ 767 49.8%  Medium 2685/126 Reorganize String
+------
+I: (0) 有个字母出现x次, 如果 x - (n-x) >= 2 ====> 2x-n >= 2 ====> 那就不行
+   (1) 把所有字母按照频数排序; 比如abcd
+   (2) 然后: abcdabcdabc(d被消耗完了)ab(c被消耗完了)a(b被消耗完了)
+D: 奇偶分家; 还有堆的解法(没看懂)
+好多奇偶分家的放置策略了啊, 324, 667都是这么放置的
+
+ 787 39.5%  Medium 2867/94 Cheapest Flights Within K Stops
+------
+I:
+	dp[i][j] = min {
+		dp[x][j-1] for every x that x->i
+	}
+	复杂度大概是: n*k*(e/n) = k*|E|: k和边数的乘积
+D:
+	这里有个BellmanFord算法, 真的好简单啊我去!!! (虽然也没看懂)
+
+	class Solution { 
+		public: 
+		//bellman ford. 
+		//just run it k+1 iterations. 
+		int findCheapestPrice(int n, vector<vector<int>>& a, int src, int sink, int k) { 
+			vector<int> c(n, 1e8); 
+			c[src] = 0; 
+			for(int z=0; z<=k; z++){ 
+				vector<int> C(c); 
+				for(auto e: a) C[e[1]] = min(C[e[1]], c[e[0]] + e[2]); 
+				c = C;
+			}
+			return c[sink] == 1e8 ? -1 : c[sink];
+		}
+	};
+	突然想到, 向我I中的dp, 如果用j来当for循环的主力的话, 不断的更新dp[i], 貌似就是一个bellmanford算法了.
+	对吧???
+
+	这个题目里后面有一篇初学者教程, 从BFS讲到Dijkstra再到BellmanFord等.
+
+ 807 84.2%  Medium 1101/328 Max Increase to Keep City Skyline
+------
+I: a[row][col] = min(skrow[row], skcol[col])
+D: Same
+
+ 907 33.3%  Medium 1855/119 Sum of Subarray Minimums
+------
+I:
+(1) 统计以i为结尾的子序列的和
+(2) j是i的左边第一个比i大的元素 (单调栈)
+(3) sum[i] = sum[j] + (i-j)*i
+D: 估计是一样的, 不用看太多;
+
+ 947 55.3%  Medium 1372/455 Most Stones Removed with Same Row or Column
+------
+I:
+(1) 用图的眼光去看待这个问题; 每个连通域上的元素一定可以删到只剩最后一个
+(2) 所以剩余的个数=单连通域的数目
+
+怎么写算法呢?
+
+dfs(stone) {
+	for s1 in row[stone.row].stones {
+		if !visited[s1] dfs(s1)
+	}
+	for s1 in col[stone.col].stones {
+		if !visite[s1] dfs(s1)
+	}
+}
+
+dfs就行了, 不用建图了
+
+D: 一样的: Count the number of island
+
+
+ 967 44.3%  Medium 620/120 Numbers With Same Consecutive Differences
+------
+
+I: 我这一个DFS很容易就搜出来了
+D: 是的
+
+ 987 37.4%  Medium 1369/2353 Vertical Order Traversal of a Binary Tree
+------
+I: 我想用递归
+D: 主流答案貌似没有用递归的?

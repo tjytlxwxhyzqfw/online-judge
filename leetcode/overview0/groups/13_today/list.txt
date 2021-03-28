@@ -1,0 +1,745 @@
+  16 46.2%  Medium 3010/167 3Sum Closest
+ I: 用2Sum求3Sum的原理可以在一个图上表示出
+    然后呢? 如果是求最接近的值, 还能用2Sum吗?
+    我觉得能! 为啥? 
+    假设a[behind]+a[front]太大了,
+    这时候, behind能右移吗? 不能, 右移只会更大, 所以必须左移.
+    反之同理, 所以说, 两个指针移动的方向必然是一样的.
+    (还是要找到那个题!!!!!!, 两个指针移动不能解决问题的那个题)
+  D: 一样的: Similar to 3 Sum problem, use 3 pointers to point current element, next element and the last element. If the sum is less than target, it means we have to add a larger element so next element move to the next. If the sum is greater, it means we have to add a smaller element so last element move to the second last element. Keep doing this until the end. Each time compare the difference between sum and target, if it is less than minimum difference so far, then replace result with it, otherwise keep iterating.
+
+  36 50.0%  Medium 2423/544 Valid Sudoku
+  I: 我觉得直接验证就行吧, 不用看答案了
+
+  56 40.5%  Medium Merge Intervals
+  I: 又是区间; 排序之后OnePass就解了;
+  D: 跟我的方法一样的 (注意下面这几行代码, 学一下java语法)
+  Arrays.sort(intervals, (i1, i2) -> Integer.compare(i1[0], i2[0]));
+  List<int[]> result = new ArrayList<>();
+  return result.toArray(new int[result.size()][]);
+
+  76 35.6%    Hard 6245/422 Minimum Window Substring
+ I: 双指针啊
+ D: 一样的思路把; 这里还有个模板: https://leetcode.com/problems/minimum-window-substring/discuss/26808/Here-is-a-10-line-template-that-can-solve-most-'substring'-problems
+
+  96 54.0%  Medium 4433/162 Unique Binary Search Trees
+ (894类似)
+ I=D
+
+ 116 48.2%  Medium 3187/163 Populating Next Right Pointers in Each Node
+ I: (考虑不用额外空间但是可以递归的解法)
+    对于root:
+    	(1) 用dfs把左树连起来; 再用dfs把右子树连起来;
+    	(2) 开一个for循环: 沿着左树右边界和右树左边界下降, 把边界连起来
+ D: 人家有更牛的方法, 可以不用递归的呀: 利用上一层的next指针, 把下一层连起来, 然后下降到下一层;
+
+ public void connect(TreeLinkNode root) {
+        TreeLinkNode level_start=root;
+        while(level_start!=null){
+            TreeLinkNode cur=level_start;
+            while(cur!=null){
+                if(cur.left!=null) cur.left.next=cur.right;
+                if(cur.right!=null && cur.next!=null) cur.right.next=cur.next.left;
+                
+                cur=cur.next;
+            }
+            level_start=level_start.left;
+        }
+    }
+
+ 这个方法甚至是不是可以连接那种不是完美的二叉树啊!!!
+
+ (对比题目: 102, 993E)
+
+ 216 59.7%  Medium 1707/64 Combination Sum III
+------
+
+Find all valid combinations of k numbers that sum up to n such that the following conditions are true:
+
+Only numbers 1 through 9 are used.
+Each number is used at most once.
+Return a list of all possible valid combinations. The list must not contain the same combination twice, and the combinations may be returned in any order.
+
+Example 1:
+
+Input: k = 3, n = 7
+Output: [[1,2,4]]
+Explanation:
+1 + 2 + 4 = 7
+There are no other valid combinations.
+Example 2:
+
+Input: k = 3, n = 9
+Output: [[1,2,6],[1,3,5],[2,3,4]]
+Explanation:
+1 + 2 + 6 = 9
+1 + 3 + 5 = 9
+2 + 3 + 4 = 9
+There are no other valid combinations.
+Example 3:
+
+Input: k = 4, n = 1
+Output: []
+Explanation: There are no valid combinations. [1,2,1] is not valid because 1 is used twice.
+Example 4:
+
+Input: k = 3, n = 2
+Output: []
+Explanation: There are no valid combinations.
+Example 5:
+
+Input: k = 9, n = 45
+Output: [[1,2,3,4,5,6,7,8,9]]
+Explanation:
+1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 = 45
+​​​​​​​There are no other valid combinations.
+ 
+
+Constraints:
+
+2 <= k <= 9
+1 <= n <= 60
+
+Accepted 221,026 Submissions 365,475
+
+I: DFS/DP都可以的吧, 不难的吧
+D: 哦对, DP不好解, 因为DP不好统计路径
+
+ 236 47.9%  Medium 5371/201 Lowest Common Ancestor of a Binary Tree
+------
+
+Given a binary tree, find the lowest common ancestor (LCA) of two given nodes in the tree.
+
+According to the definition of LCA on Wikipedia: “The lowest common ancestor is defined between two nodes p and q as the lowest node in T that has both p and q as descendants (where we allow a node to be a descendant of itself).”
+
+Example 1:
+
+Input: root = [3,5,1,6,2,0,8,null,null,7,4], p = 5, q = 1
+Output: 3
+Explanation: The LCA of nodes 5 and 1 is 3.
+Example 2:
+
+Input: root = [3,5,1,6,2,0,8,null,null,7,4], p = 5, q = 4
+Output: 5
+Explanation: The LCA of nodes 5 and 4 is 5, since a node can be a descendant of itself according to the LCA definition.
+Example 3:
+
+Input: root = [1,2], p = 1, q = 2
+Output: 1
+ 
+Constraints:
+
+(1) The number of nodes in the tree is in the range [2, 10^5].
+(2) -10^9 <= Node.val <= 10^9
+(3) All Node.val are unique.
+(4) p != q
+(5) p and q will exist in the tree.
+
+Accepted 618,740 Submissions 1,260,852
+
+I: 用递归很简单, 能用迭代解吗? 不太好想
+D: 递归解还是主流; 迭代解的思路: 找到两条通往p, q的路径, 然后比较这两个路径的最后一个公共节点;
+
+ 336 34.3%    Hard 1725/168 Palindrome Pairs
+------
+
+Given a list of unique words, return all the pairs of the distinct indices (i, j) in the given list, so that the concatenation of the two words words[i] + words[j] is a palindrome.
+
+Example 1:
+
+Input: words = ["abcd","dcba","lls","s","sssll"]
+Output: [[0,1],[1,0],[3,2],[2,4]]
+Explanation: The palindromes are ["dcbaabcd","abcddcba","slls","llssssll"]
+Example 2:
+
+Input: words = ["bat","tab","cat"]
+Output: [[0,1],[1,0]]
+Explanation: The palindromes are ["battab","tabbat"]
+Example 3:
+
+Input: words = ["a",""]
+Output: [[0,1],[1,0]]
+ 
+
+Constraints:
+
+1 <= words.length <= 5000
+0 <= words[i].length <= 300
+words[i] consists of lower-case English letters.
+
+Accepted 113,546 Submissions 326,800
+
+I: (1) 求每一个字母的回文前缀; 所有的字母加入到后缀树;
+   (2) 每个字母都在后缀树上查找一次, 行就行呗. 
+   (3) 复杂度: N*W^2 => 还是挺大的
+D: 可能还有其他的解法, 更直观一些, 但是也就是这个复杂度了, 不会再变了.
+
+ 376 40.1%  Medium 1665/78 Wiggle Subsequence
+------
+
+Given an integer array nums, return the length of the longest wiggle sequence.
+
+A wiggle sequence is a sequence where the differences between successive numbers strictly alternate between positive and negative. The first difference (if one exists) may be either positive or negative. A sequence with fewer than two elements is trivially a wiggle sequence.
+
+For example, [1, 7, 4, 9, 2, 5] is a wiggle sequence because the differences (6, -3, 5, -7, 3) are alternately positive and negative.
+In contrast, [1, 4, 7, 2, 5] and [1, 7, 4, 5, 5] are not wiggle sequences, the first because its first two differences are positive and the second because its last difference is zero.
+A subsequence is obtained by deleting some elements (eventually, also zero) from the original sequence, leaving the remaining elements in their original order.
+
+Example 1:
+
+Input: nums = [1,7,4,9,2,5]
+Output: 6
+Explanation: The entire sequence is a wiggle sequence.
+Example 2:
+
+Input: nums = [1,17,5,10,13,15,10,5,16,8]
+Output: 7
+Explanation: There are several subsequences that achieve this length. One is [1,17,10,13,10,16,8].
+Example 3:
+
+Input: nums = [1,2,3,4,5,6,7,8,9]
+Output: 2
+ 
+Constraints:
+
+1 <= nums.length <= 1000
+0 <= nums[i] <= 1000
+ 
+Follow up: Could you solve this in O(n) time?
+
+Accepted 100,990 Submissions 239,488
+
+I: dp[i][down] = dp[nearestBiggerThan[i]][up]
+   dp[i][up] = dp[nearestSmallerThan[i]][down]
+   所以我用一次遍历求出nearest{Bigger,Smaller}Than[]这两个数组
+   然后用上述公式就求出来了啊 (好好想一想, 貌似也没哈毛病, 空间优化不太好做)
+D: 是有一个更好的解法的. 这个解法的空间复杂度可以优化到O(1), 是的, 就是i其实只依赖于i-1
+   也算是一个不错的意识吧, 多练练
+
+ 396 36.6%  Medium 495/159 Rotate Function
+------
+
+Given an array of integers A and let n to be its length.
+
+Assume Bk to be an array obtained by rotating the array A k positions clock-wise, we define a "rotation function" F on A as follow:
+
+F(k) = 0 * Bk[0] + 1 * Bk[1] + ... + (n-1) * Bk[n-1].
+
+Calculate the maximum value of F(0), F(1), ..., F(n-1).
+
+Note:
+n is guaranteed to be less than 10^5.
+
+Example:
+
+A = [4, 3, 2, 6]
+
+F(0) = (0 * 4) + (1 * 3) + (2 * 2) + (3 * 6) = 0 + 3 + 4 + 18 = 25
+F(1) = (0 * 6) + (1 * 4) + (2 * 3) + (3 * 2) = 0 + 4 + 6 + 6 = 16
+F(2) = (0 * 2) + (1 * 6) + (2 * 4) + (3 * 3) = 0 + 6 + 8 + 9 = 23
+F(3) = (0 * 3) + (1 * 2) + (2 * 6) + (3 * 4) = 0 + 2 + 12 + 12 = 26
+
+So the maximum value of F(0), F(1), F(2), F(3) is F(3) = 26.
+
+Accepted 49,200 Submissions 134,298
+
+I: 寻找F(i+1)和F(i)之间的关系
+D: 估计也一样, 先不看了
+
+ 416 44.7%  Medium 4128/90 Partition Equal Subset Sum
+------
+
+Given a non-empty array nums containing only positive integers, find if the array can be partitioned into two subsets such that the sum of elements in both subsets is equal.
+
+Example 1:
+
+Input: nums = [1,5,11,5]
+Output: true
+Explanation: The array can be partitioned as [1, 5, 5] and [11].
+Example 2:
+
+Input: nums = [1,2,3,5]
+Output: false
+Explanation: The array cannot be partitioned into equal sum subsets.
+ 
+
+Constraints:
+
+1 <= nums.length <= 200
+1 <= nums[i] <= 100
+
+Accepted 268,810 Submissions 598,471
+
+I: dp[i][j] = or {
+	dp[i-1][j]
+	dp[i-1][j-a[i]]
+} => 可解: n*sum
+D: 一样的思路, 而且指出, 这是个0/1knapsack的经典DP
+
+ 436 48.4%  Medium 694/191 Find Right Interval
+------
+
+You are given an array of intervals, where intervals[i] = [starti, endi] and each starti is unique.
+
+The right interval for an interval i is an interval j such that startj >= endi and startj is minimized.
+
+Return an array of right interval indices for each interval i. If no right interval exists for interval i, then put -1 at index i.
+
+Example 1:
+Input: intervals = [[1,2]]
+Output: [-1]
+Explanation: There is only one interval in the collection, so it outputs -1.
+
+Example 2:
+Input: intervals = [[3,4],[2,3],[1,2]]
+Output: [-1,0,1]
+Explanation: There is no right interval for [3,4].
+The right interval for [2,3] is [3,4] since start0 = 3 is the smallest start that is >= end1 = 3.
+The right interval for [1,2] is [2,3] since start1 = 2 is the smallest start that is >= end2 = 2.
+
+Example 3:
+Input: intervals = [[1,4],[2,3],[3,4]]
+Output: [-1,2,-1]
+Explanation: There is no right interval for [1,4] and [3,4].
+The right interval for [2,3] is [3,4] since start2 = 3 is the smallest start that is >= end1 = 3.
+
+Constraints:
+
+1 <= intervals.length <= 2 * 104
+intervals[i].length == 2
+-106 <= starti <= endi <= 106
+The start point of each interval is unique.
+
+Accepted 62,343 Submissions 128,439
+
+I: (1) 所有区间按照end排序;
+	(2) 所有区间按照start构建最小堆;
+	(3) for end in ends[] {
+			for !heap.empty() && heap.top().start < end {
+				heap.pop()
+			}
+			if heap.empty() {
+				break
+			}
+			result[end.index] = heap.top().index
+		}
+		result[index of rest ends] = -1
+
+D: 主流解法用binarySearch的居多(确实更简单), 但是我这个应该也是可以的
+
+ 456 30.5%  Medium 2191/139 132 Pattern
+------
+
+Given an array of n integers nums, a 132 pattern is a subsequence of three integers nums[i], nums[j] and nums[k] such that i < j < k and nums[i] < nums[k] < nums[j].
+
+Return true if there is a 132 pattern in nums, otherwise, return false.
+
+Follow up: The O(n^2) is trivial, could you come up with the O(n logn) or the O(n) solution?
+
+Example 1:
+
+Input: nums = [1,2,3,4]
+Output: false
+Explanation: There is no 132 pattern in the sequence.
+Example 2:
+
+Input: nums = [3,1,4,2]
+Output: true
+Explanation: There is a 132 pattern in the sequence: [1, 4, 2].
+Example 3:
+
+Input: nums = [-1,3,2,0]
+Output: true
+Explanation: There are three 132 patterns in the sequence: [-1, 3, 2], [-1, 3, 0] and [-1, 2, 0].
+ 
+Constraints:
+
+n == nums.length
+1 <= n <= 104
+-10^9 <= nums[i] <= 10^9
+
+Accepted 85,186 Submissions 277,884
+
+I: 唉, 好几次了, 怎么都记不住解法. => 有时间再重点看下吧
+D: TODO: 总得记住一个解法把?!
+
+ 516 54.8%  Medium 2936/214 Longest Palindromic Subsequence
+------
+
+Given a string s, find the longest palindromic subsequence's length in s.
+
+A subsequence is a sequence that can be derived from another sequence by deleting some or no elements without changing the order of the remaining elements.
+
+Example 1:
+
+Input: s = "bbbab"
+Output: 4
+Explanation: One possible longest palindromic subsequence is "bbbb".
+Example 2:
+
+Input: s = "cbbd"
+Output: 2
+Explanation: One possible longest palindromic subsequence is "bb".
+
+Constraints:
+
+1 <= s.length <= 1000
+s consists only of lowercase English letters.
+
+Accepted 161,309 Submissions 289,915
+
+I: (1) 寻找s和s的逆序的LCS, 然后遍历dp[i][j]这个数组, 找到i+j满足条件的那个?
+   (2) 没想出来
+D: 首先我的解法是可行的, 但不是主流解法.
+主流解法是: dp[i][j]表示[i:j] 上的最大回文子序列, dp[i][j] = dp[i+1][j-1]+2 if a[i]==a[j]
+else dp[i][j] = max(dp[i+1][j], dp[i][j-1])
+
+ 556 33.5%  Medium 1124/260 Next Greater Element III
+------
+
+Given a positive integer n, find the smallest integer which has exactly the same digits existing in the integer n and is greater in value than n. If no such positive integer exists, return -1.
+
+Note that the returned integer should fit in 32-bit integer, if there is a valid answer but it does not fit in 32-bit integer, return -1.
+
+Example 1:
+
+Input: n = 12
+Output: 21
+Example 2:
+
+Input: n = 21
+Output: -1
+
+Constraints:
+
+1 <= n <= 231 - 1
+
+Accepted 66,051 Submissions 197,231
+
+- 3273
+- 3372
+
+I: 从右往左遍历, 找到第一个下降的元素, 然后再遍历到右边, 找到最后一个比这个元素大的元素, 交换位置
+D: 上面的步骤只能从: 3273 -> 3372, 还需要最后一步才能变回那个较小的数字: 3327: 那就是从交换的位置
+的数字开始, 逆序. 递减变递增.
+
+ 576 35.7%  Medium 735/148 Out of Boundary Paths
+------
+
+There is an m by n grid with a ball. Given the start coordinate (i,j) of the ball, you can move the ball to adjacent cell or cross the grid boundary in four directions (up, down, left, right). However, you can at most move N times. Find out the number of paths to move the ball out of grid boundary. The answer may be very large, return it after mod 10^9 + 7.
+
+Example 1:
+Input: m = 2, n = 2, N = 2, i = 0, j = 0
+Output: 6
+Explanation:
+
+Example 2:
+Input: m = 1, n = 3, N = 3, i = 0, j = 1
+Output: 12
+Explanation:
+
+Note:
+
+Once you move the ball out of boundary, you cannot move it back.
+The length and height of the grid is in range [1,50].
+N is in range [0,50].
+
+Accepted 35,446 Submissions 98,311
+
+I: dp[i][j][k] = sum(dp[x][y][k-1])
+   然后再把边界绕一圈加起来? dp[i][j][k], 已经走了k步, 到达(i, j)的方法是dp[i][j][k]
+D: 注意只要走出去就行, 所以, 只要到达了边界, 就可以统计出去的次数了, 不必非要让k=n-1
+
+ 636 53.7%  Medium 1004/1763 Exclusive Time of Functions
+------
+
+On a single-threaded CPU, we execute a program containing n functions. Each function has a unique ID between 0 and n-1.
+
+Function calls are stored in a call stack: when a function call starts, its ID is pushed onto the stack, and when a function call ends, its ID is popped off the stack. The function whose ID is at the top of the stack is the current function being executed. Each time a function starts or ends, we write a log with the ID, whether it started or ended, and the timestamp.
+
+You are given a list logs, where logs[i] represents the ith log message formatted as a string "{function_id}:{"start" | "end"}:{timestamp}". For example, "0:start:3" means a function call with function ID 0 started at the beginning of timestamp 3, and "1:end:2" means a function call with function ID 1 ended at the end of timestamp 2. Note that a function can be called multiple times, possibly recursively.
+
+A function's exclusive time is the sum of execution times for all function calls in the program. For example, if a function is called twice, one call executing for 2 time units and another call executing for 1 time unit, the exclusive time is 2 + 1 = 3.
+
+Return the exclusive time of each function in an array, where the value at the ith index represents the exclusive time for the function with ID i.
+
+ 
+
+Example 1:
+
+Input: n = 2, logs = ["0:start:0","1:start:2","1:end:5","0:end:6"]
+Output: [3,4]
+Explanation:
+Function 0 starts at the beginning of time 0, then it executes 2 for units of time and reaches the end of time 1.
+Function 1 starts at the beginning of time 2, executes for 4 units of time, and ends at the end of time 5.
+Function 0 resumes execution at the beginning of time 6 and executes for 1 unit of time.
+So function 0 spends 2 + 1 = 3 units of total time executing, and function 1 spends 4 units of total time executing.
+Example 2:
+
+Input: n = 1, logs = ["0:start:0","0:start:2","0:end:5","0:start:6","0:end:6","0:end:7"]
+Output: [8]
+Explanation:
+Function 0 starts at the beginning of time 0, executes for 2 units of time, and recursively calls itself.
+Function 0 (recursive call) starts at the beginning of time 2 and executes for 4 units of time.
+Function 0 (initial call) resumes execution then immediately calls itself again.
+Function 0 (2nd recursive call) starts at the beginning of time 6 and executes for 1 unit of time.
+Function 0 (initial call) resumes execution at the beginning of time 7 and executes for 1 unit of time.
+So function 0 spends 2 + 4 + 1 + 1 = 8 units of total time executing.
+Example 3:
+
+Input: n = 2, logs = ["0:start:0","0:start:2","0:end:5","1:start:6","1:end:6","0:end:7"]
+Output: [7,1]
+Explanation:
+Function 0 starts at the beginning of time 0, executes for 2 units of time, and recursively calls itself.
+Function 0 (recursive call) starts at the beginning of time 2 and executes for 4 units of time.
+Function 0 (initial call) resumes execution then immediately calls function 1.
+Function 1 starts at the beginning of time 6, executes 1 units of time, and ends at the end of time 6.
+Function 0 resumes execution at the beginning of time 6 and executes for 2 units of time.
+So function 0 spends 2 + 4 + 1 = 7 units of total time executing, and function 1 spends 1 unit of total time executing.
+Example 4:
+
+Input: n = 2, logs = ["0:start:0","0:start:2","0:end:5","1:start:7","1:end:7","0:end:8"]
+Output: [8,1]
+Example 5:
+
+Input: n = 1, logs = ["0:start:0","0:end:0"]
+Output: [1]
+ 
+
+Constraints:
+
+1 <= n <= 100
+1 <= logs.length <= 500
+0 <= function_id < n
+0 <= timestamp <= 109
+No two start events will happen at the same timestamp.
+No two end events will happen at the same timestamp.
+Each function has an "end" log for each "start" log.
+
+Accepted 104,227 Submissions 190,294
+
+I: 用一个栈就能模拟这个过程了把? 好像也不难啊?
+D: 看上去是这样的.
+
+ 676 55.1%  Medium 713/157 Implement Magic Dictionary
+------
+
+Design a data structure that is initialized with a list of different words. Provided a string, you should determine if you can change exactly one character in this string to match any word in the data structure.
+
+Implement the MagicDictionary class:
+
+MagicDictionary() Initializes the object.
+void buildDict(String[] dictionary) Sets the data structure with an array of distinct strings dictionary.
+bool search(String searchWord) Returns true if you can change exactly one character in searchWord to match any string in the data structure, otherwise returns false.
+ 
+
+Example 1:
+
+Input
+["MagicDictionary", "buildDict", "search", "search", "search", "search"]
+[[], [["hello", "leetcode"]], ["hello"], ["hhllo"], ["hell"], ["leetcoded"]]
+Output
+[null, null, false, true, false, false]
+
+Explanation
+MagicDictionary magicDictionary = new MagicDictionary();
+magicDictionary.buildDict(["hello", "leetcode"]);
+magicDictionary.search("hello"); // return False
+magicDictionary.search("hhllo"); // We can change the second 'h' to 'e' to match "hello" so we return True
+magicDictionary.search("hell"); // return False
+magicDictionary.search("leetcoded"); // return False
+ 
+
+Constraints:
+
+1 <= dictionary.length <= 100
+1 <= dictionary[i].length <= 100
+dictionary[i] consists of only lower-case English letters.
+All the strings in dictionary are distinct.
+1 <= searchWord.length <= 100
+searchWord consists of only lower-case English letters.
+buildDict will be called only once before search.
+At most 100 calls will be made to search.
+
+Accepted 48,572 Submissions 87,802
+
+I: 建立一棵字典树, 然后每个字母找26X次?
+D: 有很多看上去更巧妙一点的算法; 没有明显的主流算法; 我这个解法也就普普通通把
+
+ 756 55.5%  Medium 357/372 Pyramid Transition Matrix
+------
+
+We are stacking blocks to form a pyramid. Each block has a color which is a one-letter string.
+
+We are allowed to place any color block C on top of two adjacent blocks of colors A and B, if and only if ABC is an allowed triple.
+
+We start with a bottom row of bottom, represented as a single string. We also start with a list of allowed triples allowed. Each allowed triple is represented as a string of length 3.
+
+Return true if we can build the pyramid all the way to the top, otherwise false.
+
+ 
+
+Example 1:
+
+Input: bottom = "BCD", allowed = ["BCG","CDE","GEA","FFF"]
+Output: true
+Explanation:
+We can stack the pyramid like this:
+    A
+   / \
+  G   E
+ / \ / \
+B   C   D
+
+We are allowed to place G on top of B and C because BCG is an allowed triple.  Similarly, we can place E on top of C and D, then A on top of G and E.
+Example 2:
+
+Input: bottom = "AABA", allowed = ["AAA","AAB","ABA","ABB","BAC"]
+Output: false
+Explanation:
+We cannot stack the pyramid to the top.
+Note that there could be allowed triples (A, B, C) and (A, B, D) with C != D.
+ 
+
+Constraints:
+
+2 <= bottom.length <= 8
+0 <= allowed.length <= 200
+allowed[i].length == 3
+The letters in all input strings are from the set {'A', 'B', 'C', 'D', 'E', 'F', 'G'}.
+
+Accepted 23,581 Submissions 42,373
+
+I: 我只能用DFS去暴力搜索啊....貌似也可以用动态规划: 层数*层数*转的种类*|allowed| = 8*8*7*200: 够了
+D: 这道题超出出题者的意料之外了; 正解就只有DFS, DP是错的. 见IPAD13
+
+ 816 47.9%  Medium 133/246 Ambiguous Coordinates
+------
+
+We had some 2-dimensional coordinates, like "(1, 3)" or "(2, 0.5)".  Then, we removed all commas, decimal points, and spaces, and ended up with the string S.  Return a list of strings representing all possibilities for what our original coordinates could have been.
+
+Our original representation never had extraneous zeroes, so we never started with numbers like "00", "0.0", "0.00", "1.0", "001", "00.01", or any other number that can be represented with less digits.  Also, a decimal point within a number never occurs without at least one digit occuring before it, so we never started with numbers like ".1".
+
+The final answer list can be returned in any order.  Also note that all coordinates in the final answer have exactly one space between them (occurring after the comma.)
+
+Example 1:
+Input: "(123)"
+Output: ["(1, 23)", "(12, 3)", "(1.2, 3)", "(1, 2.3)"]
+Example 2:
+Input: "(00011)"
+Output:  ["(0.001, 1)", "(0, 0.011)"]
+Explanation: 
+0.0, 00, 0001 or 00.01 are not allowed.
+Example 3:
+Input: "(0123)"
+Output: ["(0, 123)", "(0, 12.3)", "(0, 1.23)", "(0.1, 23)", "(0.1, 2.3)", "(0.12, 3)"]
+Example 4:
+Input: "(100)"
+Output: [(10, 0)]
+Explanation: 
+1.0 is not allowed.
+ 
+
+Note:
+
+4 <= S.length <= 12.
+S[0] = "(", S[S.length - 1] = ")", and the other elements in S are digits.
+ 
+
+Accepted 11,208 Submissions 23,306
+
+I: 我只要知道第一个数字怎么拆出来, 这个问题就已经解决了
+D: 我可能读错了题, 它只能被分开成为两个数字. 
+
+ 856 62.0%  Medium 2044/67 Score of Parentheses
+------
+
+Given a balanced parentheses string S, compute the score of the string based on the following rule:
+
+() has score 1
+AB has score A + B, where A and B are balanced parentheses strings.
+(A) has score 2 * A, where A is a balanced parentheses string.
+ 
+
+Example 1:
+
+Input: "()"
+Output: 1
+Example 2:
+
+Input: "(())"
+Output: 2
+Example 3:
+
+Input: "()()"
+Output: 2
+Example 4:
+
+Input: "(()(()))"
+Output: 6
+ 
+
+Note:
+
+S is a balanced parentheses string, containing only ( and ).
+2 <= S.length <= 50
+
+Accepted 71,697 Submissions 110,557
+
+I: 用一个栈就能解决问题:
+遇到左括号: 压栈
+遇到右括号: 从栈中弹出:
+  弹出是个( -> 1入栈
+  弹出是个数字, *2, 继续弹出, 还是数字的话, *2, 累加, 继续弹出, 直到弹出(, 为止, 把和压栈
+D: 我的这个解法还是主流; 但是有O(1)的解法.....醉了, 这都行
+
+ 916 48.1%  Medium 501/89 Word Subsets
+
+----
+
+We are given two arrays A and B of words.  Each word is a string of lowercase letters.
+
+Now, say that word b is a subset of word a if every letter in b occurs in a, including multiplicity.  For example, "wrr" is a subset of "warrior", but is not a subset of "world".
+
+Now say a word a from A is universal if for every b in B, b is a subset of a. 
+
+Return a list of all universal words in A.  You can return the words in any order.
+
+ 
+
+Example 1:
+
+Input: A = ["amazon","apple","facebook","google","leetcode"], B = ["e","o"]
+Output: ["facebook","google","leetcode"]
+Example 2:
+
+Input: A = ["amazon","apple","facebook","google","leetcode"], B = ["l","e"]
+Output: ["apple","google","leetcode"]
+Example 3:
+
+Input: A = ["amazon","apple","facebook","google","leetcode"], B = ["e","oo"]
+Output: ["facebook","google"]
+Example 4:
+
+Input: A = ["amazon","apple","facebook","google","leetcode"], B = ["lo","eo"]
+Output: ["google","leetcode"]
+Example 5:
+
+Input: A = ["amazon","apple","facebook","google","leetcode"], B = ["ec","oc","ceo"]
+Output: ["facebook","leetcode"]
+ 
+
+Note:
+
+1 <= A.length, B.length <= 10000
+1 <= A[i].length, B[i].length <= 10
+A[i] and B[i] consist only of lowercase letters.
+All words in A[i] are unique: there isn't i != j with A[i] == A[j].
+Accepted
+26,134
+Submissions
+54,314
+
+I: B中的单词遍历一遍, 找到每个字母的计数, 比如a, #a=B中含a最多的那个单词的a的个数
+   然后再遍历一遍A, 找出这样的单词就行了
+D: 一样的

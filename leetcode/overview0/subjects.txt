@@ -22,9 +22,13 @@
 凡是确定是DFS的, 一定要适当的考虑剪枝策略, 这应该作为一个基本意识保留下来.
 第二个, 要考虑有没有重复元, 有的话提示DP.
 
+
 301 44.3%    Hard 3212/147 Remove Invalid Parentheses
+464 29.5%  Medium 1265/202 Can I Win (类博弈)
 473 38.1%  Medium 752/64 Matchsticks to Square
 553 57.3%  Medium 194/1203 Optimal Division (可以练手/有个非常tricky的解法)
+684 58.6%  Medium 1956/242 Redundant Connection (DFS的解法没看懂; UnionFind解法更好一些)
+721 50.9%  Medium 2213/404 Accounts Merge (并查集/DFS)
 
 1) 位运算
 ========
@@ -42,7 +46,7 @@
 涉及知识点: 单调栈
   11 52.0%  	Medium 8816/681 Container With Most Water (可以不用单调栈)
   42 50.6%    Hard 10350/155 Trapping Rain Water
-  84 36.3%    Hard 5106/104 Largest Rectangle in Histogram => disscuss有时间好好研读一下
+  84 36.3%    Hard 5106/104 Largest Rectangle in Histogram (就是两个单调栈)
   85 39.0%    Hard 3667/80 Maximal Rectangle
 
 2) 排列组合&去重
@@ -50,14 +54,17 @@
 薄弱环节/一见到就头疼妈的, 我之前只能想到的LowB方法: 全集 + Set去重
 
 17 48.4%  Medium 5218/485 Letter Combinations of a Phone Number
-18 4Sum(去重)
+15. 3Sum
+18  4Sum(去重)
 31 33.2%  Medium 5114/1757 Next Permutation
 46/47: 排列 -> 方法: 首字母等价划分法 (order matters)
 77 56.7%  Medium 1977/78 Combinations
 90 48.3%  Medium 2325/102     Subsets II -> 方法: 最小值等价划分法 (order doesn't matters)
 301 44.3%    Hard 3212/147 Remove Invalid Parentheses
+454 54.5%  Medium 1833/84 4Sum II (注)
 491 47.2%  Medium 929/135  Increasing Subsequences (首字母等价划分)
 611 49.0%  Medium 1334/103 Valid Triangle Number
+894 76.8%  Medium 1323/109 All Possible Full Binary Trees
 
 3) 矩阵
 =======
@@ -99,28 +106,47 @@
 4. 解出来之后要思考一下, 有时候可以把空间复杂度优化掉
 5. 可能或者肯定有其他的不同思路, 可以再总结, 加油!
 
+https://leetcode.com/problems/target-sum/discuss/455024/DP-IS-EASY!-5-Steps-to-Think-Through-DP-Questions.
+
+上面这篇文章对DP有不错的总结.
+其中, 对DP有以下几个分类, 建议全都看一下:
+- 0/1 Knapsack
+- Unbounded Knapsack
+- Shortest Path (eg: Unique Paths I/II)
+- Fibonacci Sequence (eg: House Thief, Jump Game)
+- Longest Common Substring/Subsequeunce
+(但是他好像遗漏了多状态DP这类题目)
+
+ 174 33.0%    Hard 2225/47 Dungeon Game (像是DFS)
  813 50.8%  Medium 1165/54 Largest Sum of Averages (注IPAD-11页; 把我绕晕了)
 
 经典:
- (最小路径和问题)
   63 35.1%  Medium 2546/289 Unique Paths II
+  64 55.7%  Medium 4119/78 Minimum Path Sum
  312 53.6%    Hard 3431/103 Burst Balloons (切分作为切入点)
  322 36.8%  Medium 6414/189 Coin Change (神奇的找硬币问题/我总是比别人的复杂度更高/理解了!!!)
  368 38.1%  Medium 1702/86 Largest Divisible Subset
+ 474 43.4%  Medium 1420/263 Ones and Zeroes (经典:knapsack; 又一个我的思路和别人不一样的!!!研读!!!)
+ 494 45.9%  Medium 3838/158 Target Sum (经典: knapsack; DFS而来)
+
 
 双字符串(编辑距离):
   10H 27.2% Hard 5467/832 Regular Expression Matching
-  44H - Wildcard Matching => 逻辑关系比较难以理清楚 (看10H的笔记, 关键看剩下的两个字母)
+  44 25.2%    Hard 2627/126 Wildcard Matching 逻辑关系比较难以理清楚 (看10H的笔记, 关键看剩下的两个字母)
   72 46.2%    Hard 5314/66 Edit Distance (太经典了哥)
   97H 32.3%    Hard Interleaving String
   583 49.6%  Medium 1425/34 Delete Operation for Two Strings
   712 59.2%  Medium 1258/54 Minimum ASCII Delete Sum for Two Strings
 
 多状态:
+  股票问题是一大类多状态DP, 也是我的这类DP的启蒙问题;
+  这里有一篇关于股票问题的总结文: https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/discuss/108870/Most-consistent-ways-of-dealing-with-the-series-of-stock-problems
+
   123 39.6%    Hard 3341/86 Best Time to Buy and Sell Stock III (高优再做一遍/高优读Discuss)
   152 32.5%  Medium 6405/210 Maximum Product Subarray
   188 29.1%    Hard 2185/135 Best Time to Buy and Sell Stock IV
   213 37.4%  Medium 2688/63 House Robber II 
+  714 55.7%  Medium Best Time to Buy and Sell Stock with Transaction Fee
   801 39.0%  Medium 1445/105 Minimum Swaps To Make Sequences Increasing (二元决策的最值问题)
   983 62.6%  Medium 2613/48 Minimum Cost For Tickets (不仅是多状态/新未来/重点研究!!!)
 
@@ -129,26 +155,32 @@
 
 * 递归永远都是个好的切入点
 * 把树遍历后序列化, 处理这个序列化之后的字符串, 也是个不错的切入点
+* 栈几乎总是可以代替递归, 并且有时会带来有更低的复杂度
 
+
+ 124 35.2%    Hard 4972/367 Binary Tree Maximum Path Sum
  222 48.6%  Medium 2767/251 Count Complete Tree Nodes
  450 45.1%  Medium 2756/107 Delete Node in a BST (没你想的那么简单哦)
  513 62.2%  Medium Find Bottom Left Tree Value
  623 50.2%  Medium 874/160 Add One Row to Tree
  652 51.8%  Medium 1846/237 Find Duplicate Subtrees
+ 654 80.8%  Medium 2390/268 Maximum Binary Tree (栈/单调栈)
  701 75.8%  Medium 1454/96 Insert into a Binary Search Tree (还真有我想的那么简单)
+ 814 73.0%  Medium 1372/52 Binary Tree Pruning
  823 36.2%  Medium 666/84 Binary Trees With Factors
  863 57.3%  Medium 3311/68 All Nodes Distance K in Binary Tree
+ 894 76.8%  Medium 1323/109 All Possible Full Binary Trees
  951 65.5%  Medium 950/47 Flip Equivalent Binary Trees
 
 
 各种遍历:
-  94  65.2%  Medium 4137/184 Binary Tree Inorder Traversal
+  94  65.2%  Medium 4137/184 Binary Tree Inorder Traversal (迭代中序遍历)
   102 56.0%  Medium 4363/103 Binary Tree Level Order Traversal (DFS解你知道)
   103 49.6%  Medium 3210/125 Binary Tree Zigzag Level Order Traversal
   105 51.0%  Medium 4562/117 Construct Binary Tree from Preorder and Inorder Traversal
-  144 57.0%  Medium 1989/82 Binary Tree Preorder Traversal
+  144 57.0%  Medium 1989/82 Binary Tree Preorder Traversal (迭代先序遍历)
   145 56.9%  Medium Binary Tree Postorder Traversal
-  173 59.4%  Medium 3516/313 Binary Search Tree Iterator (中序遍历的迭代器)
+  173 59.4%  Medium 3516/313 Binary Search Tree Iterator (迭代中序遍历)
   331 40.8%  Medium 918/57 Verify Preorder Serialization of a Binary Tree
   971 46.1%  Medium 337/161 Flip Binary Tree To Match Preorder Traversal
 
@@ -166,8 +198,10 @@
 
  48 59.1%  Medium 4192/309 Rotate Image
 142 39.2%  Medium 3890/291 Linked List Cycle II
-365 30.9%  Medium 377/842 Water and Jug Problem
+365 30.9%  Medium 377/842 Water and Jug Problem (裴蜀定理; 没懂)
 372 36.6%  Medium 293/874 Super Pow
+384 53.7%  Medium 103/132 Shuffle an Array (Knuth洗牌算法)
+
 
 9) Dictionary
 =============
@@ -185,6 +219,7 @@
   392 49.4%    Easy 2292/229 Is Subsequence (母串索引+二分)
   472 44.9%    Hard 1101/145 Concatenated Words
   522 34.0%  Medium 213/648 Longest Uncommon Subsequence II (非公共子串)
+  524 48.8%  Medium Longest Word in Dictionary through Deleting
   792 48.0%  Medium 1296/89 Number of Matching Subsequences (母串索引+二分)
 
 10) 其他
@@ -195,12 +230,14 @@
 43 34.6%  Medium 2335/966 Multiply Strings
 51 48.8%    Hard 2725/98 N-Queens (矩阵45度和135度线上的元素有什么性质?/52也是提供这个价值)
 98 -> 返回多个结果 ---转化为---> 递归调用时传入参数来避免多结果返回 
-130 29.0%  Medium 2565/756 Surrounded Regions (矩阵中寻找小岛/矩形/柱状图等)
-164 36.5%    Hard 1045/201 Maximum Gap (桶)
+130 29.0%  Medium 2565/756 Surrounded Regions (像素矩阵/围岛/矩形/柱状图等)
+164 36.5%    Hard 1045/201 Maximum Gap (桶;注)
 221 38.5%  Medium 4300/105 Maximal Square
 233 31.6%    Hard 382/725 Number of Digit One (数字十叉树)
-313 45.8%  Medium 820/165 Super Ugly Number (堆)
+264 42.7%  Medium Ugly Number II (注; 质因子)
+313 45.8%  Medium 820/165 Super Ugly Number (质因子; 注:IPAD)
 321 27.4%    Hard 908/296 Create Maximum Number (高难度单调栈)
+324 30.5%  Medium 1332/653 Wiggle Sort II (注; O(n)+O(1); 中位数)
 343 51.0%  Medium 1469/254 Integer Break (遍历切分点/DP/数学)
 373 37.4%  Medium 1851/126 Find K Pairs with Smallest Sums (堆)
 382 53.8%  Medium 889/235 Linked List Random Node (随机数/水塘抽样)
@@ -210,14 +247,17 @@
 470 45.9%  Medium 679/228 Implement Rand10() Using Rand7() (随机数)
 503 58.0%  Medium 2274/89 Next Greater Element II (单调栈: 42/84/496/503/856/901/907/1130)
 542 40.5%  Medium 2165/124 01 Matrix (01矩阵)
-721 50.9%  Medium 2213/404 Accounts Merge (并查集/DFS)
+654 80.8%  Medium 2390/268 Maximum Binary Tree (栈/单调栈)
+764 46.2%  Medium 562/117 Largest Plus Sign
 781 55.3%  Medium 374/357 Rabbits in Forest (更像是智力题/没有规律/根据题目的特性来做)
 802 49.6%  Medium 1079/209 Find Eventual Safe States (复杂一点的DFS)
 853 43.5%  Medium 636/258 Car Fleet (类似于单调栈;好题)
 873 48.0%  Medium 949/37 Length of Longest Fibonacci Subsequence (两数生成序列: 2个数决定整个序列)
 901 61.1%  Medium 1351/157 Online Stock Span (单调栈变形)
+934 49.3%  Medium 1244/85 Shortest Bridge (像素矩阵/围岛问题=>矩阵作为一个大类分出来)
 945 46.6%  Medium 586/27 Minimum Increment to Make Array Unique (并查集)
 973 64.4%  Medium 2822/147 K Closest Points to Origin (经典; 快排)
+984 38.4%  Medium String Without AAA or BBB (调度/贪心)
 991 46.3%  Medium 849/129 Broken Calculator (技巧和推理性很强/反向处理)
 1011 59.4%  Medium 1886/56 Capacity To Ship Packages Within D Days (二分B)
 
@@ -229,16 +269,19 @@ NSum
  18 4Sum(去重)
  923 36.0%  Medium 459/93 3Sum With Multiplicity
 
+连续子序列
+---------------
 
-连续子序列和
-----------
+连续自序列问题:
+1. 求和的: 前缀和+二分/哈希/数Ceil/Floor等技术
+2. 跟计数有关的: 双指针
 
-这类题目值得单独拿出来.
-通常的处理办法是前缀和之后, 结合二分, 哈希, 树Ceil/Floor等技术求解
-
-+有一道经典题
-363 38.3%    Hard 1071/80 Max Sum of Rectangle No Larger Than K (高优好好看: 85/560/862TODO)
-523 24.7%  Medium 1873/2612 Continuous Subarray Sum
+ +有一道经典题 (最大连续子序列和?)
+ 363 38.3%    Hard 1071/80 Max Sum of Rectangle No Larger Than K (求和;高优好好看: 85/560/862TODO)
+ 424 47.9%  Medium Longest Repeating Character Replacement (计数)
+ 523 24.7%  Medium 1873/2612 Continuous Subarray Sum (求和)
+ 904 42.8%  Medium 1138/1641 Fruit Into Baskets (计数)
+ 974 50.4%  Medium 1504/114 Subarray Sums Divisible by K
 
 回文
 ----
@@ -247,13 +290,15 @@ NSum
 
 131 51.0%  Medium 3128/99 Palindrome Partitioning (回文)
 132 30.9%    Hard 1722/52 Palindrome Partitioning II (回文)
+214 30.4%    Hard 1558/150 Shortest Palindrome (KMP)
 
 计算器
 ------
 
 目前看很少有转逆波兰再求值的. 都是直接算.
-要么直接算, 要么DFS等.
+要么直接算, 要么借助栈/DFS等.
 
+ 224 37.9%    Hard 1916/151 Basic Calculator (计算器)
  227 38.2%  Medium 2011/321 Basic Calculator II (计算器)
  241 56.8%  Medium 2098/113 Different Ways to Add Parentheses (计算器)
  282 36.4%    Hard 1061/268 Expression Add Operators (计算器)
@@ -291,16 +336,23 @@ A: 普通二分
 B: 二分搜索答案空间
 C: 在非排序数组上的查找
 
-33 35.5%  Medium 7190/637 Search in Rotated Sorted Array (二分C)
-81  33.4%  Medium 1983/572 Search in Rotated Sorted Array II (二分C)
+  4 30.6%    Hard 8949/1375 Median of Two Sorted Arrays (注: IPAD12; log(m+n); 难啊; 中位数)
+ 33 35.5%  Medium 7190/637 Search in Rotated Sorted Array (二分C)
+ 74 37.2%  Medium 2762/187 Search a 2D Matrix (二分A)
+ 81 33.4%  Medium 1983/572 Search in Rotated Sorted Array II (二分C)
 153 45.8%  Medium 3244/294 Find Minimum in Rotated Sorted Array
-162 43.7%  Medium 2634/2573 Find Peak Element (二分C)
+162 43.7%  Medium 2634/2573 Find Peak Element (二分C; 121模式)
+274 36.3%  Medium 883/1452 H-Index (二分B; 还有更好的O(n))
 
 数组类
 -----
  
 41  33.3%    Hard 5339/948 First Missing Positive (连续数字, O(n)+O(1))
+162 43.7%  Medium 2634/2573 Find Peak Element (二分C; 121模式)
+300 0.0%   Medium 6706/153 Longest Increasing Subsequence (经典; 二分)
 330 34.9%    Hard 604/84 Patching Array
+334 40.5%  Medium 2345/164 Increasing Triplet Subsequence (O(n)+O(1); 123模式; 132模式; LIS)
+354 36.0%    Hard 1653/51 Russian Doll Envelopes (二维LIS; 注)
 390 44.8%  Medium 542/407 Elimination Game (模拟/找规律)
 493 26.4%    Hard 1292/140 Reverse Pairs (MergeSort)
 462 54.2%  Medium 633/53 Minimum Moves to Equal Array Elements II (中位数)
@@ -308,6 +360,8 @@ C: 在非排序数组上的查找
 713 40.4%  Medium 2208/85 Subarray Product Less Than K (经典/双指针未发现)
 845 38.5%  Medium 1080/44 Longest Mountain in Array (山峰)
 945 46.6%  Medium 586/27 Minimum Increment to Make Array Unique 
+954 35.3%  Medium 400/61 Array of Doubled Pairs
+
 
 模拟题
 ------
@@ -316,14 +370,13 @@ C: 在非排序数组上的查找
  481 47.9%  Medium 127/746 Magical String
  650 49.8%  Medium 1669/119 2 Keys Keyboard
  670 44.8%  Medium 1405/88 Maximum Swap
-833 51.2%  Medium 445/517 Find And Replace in String (有技巧)
-
+ 794 33.6%  Medium 256/727 Valid Tic-Tac-Toe State
+ 833 51.2%  Medium 445/517 Find And Replace in String (有技巧)
 
 练手
 ----
 
  912 64.4%  Medium 761/360 Sort an Array (联系排序)
-
 
 未分类的好题目
 ------------
@@ -332,4 +385,7 @@ C: 在非排序数组上的查找
 2. 套公式: DP, 双指针, BFS/DFS/BackTrack等统统的不是.
 
 128 45.9%    Hard 4550/221 Longest Consecutive Sequence
+134 40.8%  Medium 2822/427 Gas Station
 525 43.3%  Medium 2603/134 Contiguous Array (有趣)
+554 50.5%  Medium 1133/56 Brick Wall (有趣)
+

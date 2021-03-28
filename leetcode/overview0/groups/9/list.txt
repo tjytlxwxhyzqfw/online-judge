@@ -28,24 +28,588 @@ Constraints:
 2) -100 <= Node.val <= 100
 Follow up: Recursive solution is trivial, could you do it iteratively?
 
- 114 51.2%  Medium Flatten Binary Tree to Linked List
- 134 40.8%  Medium Gas Station
- 154 41.9%    Hard Find Minimum in Rotated Sorted Array II
- 174 33.0%    Hard Dungeon Game
- 214 30.4%    Hard Shortest Palindrome
- 274 36.3%  Medium H-Index
- 334 40.5%  Medium Increasing Triplet Subsequence
- 354 36.0%    Hard Russian Doll Envelopes
- 394 52.2%  Medium Decode String
- 454 54.5%  Medium 4Sum II
- 474 43.4%  Medium Ones and Zeroes
- 494 45.9%  Medium Target Sum
- 554 50.5%  Medium Brick Wall
- 654 80.8%  Medium Maximum Binary Tree
+ 114 51.2%  Medium 3992/393 Flatten Binary Tree to Linked List
+------
+
+ 134 40.8%  Medium 2822/427 Gas Station
+------
+
+There are n gas stations along a circular route, where the amount of gas at the ith station is gas[i].
+
+You have a car with an unlimited gas tank and it costs cost[i] of gas to travel from the ith station to its next (i + 1)th station. You begin the journey with an empty tank at one of the gas stations.
+
+Given two integer arrays gas and cost, return the starting gas station's index if you can travel around the circuit once in the clockwise direction, otherwise return -1. If there exists a solution, it is guaranteed to be unique
+
+Example 1:
+
+Input: gas = [1,2,3,4,5], cost = [3,4,5,1,2]
+Output: 3
+Explanation:
+Start at station 3 (index 3) and fill up with 4 unit of gas. Your tank = 0 + 4 = 4
+Travel to station 4. Your tank = 4 - 1 + 5 = 8
+Travel to station 0. Your tank = 8 - 2 + 1 = 7
+Travel to station 1. Your tank = 7 - 3 + 2 = 6
+Travel to station 2. Your tank = 6 - 4 + 3 = 5
+Travel to station 3. The cost is 5. Your gas is just enough to travel back to station 3.
+Therefore, return 3 as the starting index.
+Example 2:
+
+Input: gas = [2,3,4], cost = [3,4,3]
+Output: -1
+Explanation:
+You can't start at station 0 or 1, as there is not enough gas to travel to the next station.
+Let's start at station 2 and fill up with 4 unit of gas. Your tank = 0 + 4 = 4
+Travel to station 0. Your tank = 4 - 3 + 2 = 3
+Travel to station 1. Your tank = 3 - 3 + 3 = 3
+You cannot travel back to station 2, as it requires 4 unit of gas but you only have 3.
+Therefore, you can't travel around the circuit once no matter where you start.
+
+Constraints:
+
+gas.length == n
+cost.length == n
+1 <= n <= 104
+0 <= gas[i], cost[i] <= 104
+
+ 154 41.9%    Hard 1474/271 Find Minimum in Rotated Sorted Array II
+------
+
+Suppose an array of length n sorted in ascending order is rotated between 1 and n times. For example, the array nums = [0,1,4,4,5,6,7] might become:
+
+[4,5,6,7,0,1,4] if it was rotated 4 times.
+[0,1,4,4,5,6,7] if it was rotated 7 times.
+Notice that rotating an array [a[0], a[1], a[2], ..., a[n-1]] 1 time results in the array [a[n-1], a[0], a[1], a[2], ..., a[n-2]].
+
+Given the sorted rotated array nums that may contain duplicates, return the minimum element of this array.
+
+Example 1:
+
+Input: nums = [1,3,5]
+Output: 1
+Example 2:
+
+Input: nums = [2,2,2,0,1]
+Output: 0
+ 
+Constraints:
+
+n == nums.length
+1 <= n <= 5000
+-5000 <= nums[i] <= 5000
+nums is sorted and rotated between 1 and n times.
+
+Follow up: This is the same as Find Minimum in Rotated Sorted Array but with duplicates. Would allow duplicates affect the run-time complexity? How and why?
+
+ 174 33.0%    Hard 2225/47 Dungeon Game
+------
+
+The demons had captured the princess and imprisoned her in the bottom-right corner of a dungeon. The dungeon consists of m x n rooms laid out in a 2D grid. Our valiant knight was initially positioned in the top-left room and must fight his way through dungeon to rescue the princess.
+
+The knight has an initial health point represented by a positive integer. If at any point his health point drops to 0 or below, he dies immediately.
+
+Some of the rooms are guarded by demons (represented by negative integers), so the knight loses health upon entering these rooms; other rooms are either empty (represented as 0) or contain magic orbs that increase the knight's health (represented by positive integers).
+
+To reach the princess as quickly as possible, the knight decides to move only rightward or downward in each step.
+
+Return the knight's minimum initial health so that he can rescue the princess.
+
+Note that any room can contain threats or power-ups, even the first room the knight enters and the bottom-right room where the princess is imprisoned.
+
+Example 1:
+
+
+Input: dungeon = [[-2,-3,3],[-5,-10,1],[10,30,-5]]
+Output: 7
+Explanation: The initial health of the knight must be at least 7 if he follows the optimal path: RIGHT-> RIGHT -> DOWN -> DOWN.
+Example 2:
+
+Input: dungeon = [[0]]
+Output: 1
+
+Constraints:
+
+m == dungeon.length
+n == dungeon[i].length
+1 <= m, n <= 200
+-1000 <= dungeon[i][j] <= 1000
+
+ 214 30.4%    Hard 1558/150 Shortest Palindrome
+------
+
+You are given a string s. You can convert s to a palindrome by adding characters in front of it.
+
+Return the shortest palindrome you can find by performing this transformation.
+
+Example 1:
+
+Input: s = "aacecaaa"
+Output: "aaacecaaa"
+Example 2:
+
+Input: s = "abcd"
+Output: "dcbabcd"
+ 
+Constraints:
+
+0 <= s.length <= 5 * 104
+s consists of lowercase English letters only.
+
+ 274 36.3%  Medium 883/1452 H-Index
+------
+
+Given an array of integers citations where citations[i] is the number of citations a researcher received for their ith paper, return compute the researcher's h-index.
+
+According to the definition of h-index on Wikipedia: A scientist has an index h if h of their n papers have at least h citations each, and the other n − h papers have no more than h citations each.
+
+If there are several possible values for h, the maximum one is taken as the h-index.
+
+Example 1:
+
+Input: citations = [3,0,6,1,5]
+Output: 3
+Explanation: [3,0,6,1,5] means the researcher has 5 papers in total and each of them had received 3, 0, 6, 1, 5 citations respectively.
+Since the researcher has 3 papers with at least 3 citations each and the remaining two with no more than 3 citations each, their h-index is 3.
+Example 2:
+
+Input: citations = [1,3,1]
+Output: 1
+ 
+Constraints:
+
+n == citations.length
+1 <= n <= 5000
+0 <= citations[i] <= 1000
+
+ 334 40.5%  Medium 2345/164 Increasing Triplet Subsequence
+------
+Given an integer array nums, return true if there exists a triple of indices (i, j, k) such that i < j < k and nums[i] < nums[j] < nums[k]. If no such indices exists, return false.
+
+Example 1:
+
+Input: nums = [1,2,3,4,5]
+Output: true
+Explanation: Any triplet where i < j < k is valid.
+Example 2:
+
+Input: nums = [5,4,3,2,1]
+Output: false
+Explanation: No triplet exists.
+Example 3:
+
+Input: nums = [2,1,5,0,4,6]
+Output: true
+Explanation: The triplet (3, 4, 5) is valid because nums[3] == 0 < nums[4] == 4 < nums[5] == 6.
+
+Constraints:
+
+1 <= nums.length <= 105
+-231 <= nums[i] <= 231 - 1
+ 
+Follow up: Could you implement a solution that runs in O(n) time complexity and O(1) space complexity?
+
+ 354 36.0%    Hard 1653/51 Russian Doll Envelopes
+------
+
+You are given a 2D array of integers envelopes where envelopes[i] = [wi, hi] represents the width and the height of an envelope.
+
+One envelope can fit into another if and only if both the width and height of one envelope is greater than the width and height of the other envelope.
+
+Return the maximum number of envelopes can you Russian doll (i.e., put one inside the other).
+
+Note: You cannot rotate an envelope.
+
+Example 1:
+
+Input: envelopes = [[5,4],[6,4],[6,7],[2,3]]
+Output: 3
+Explanation: The maximum number of envelopes you can Russian doll is 3 ([2,3] => [5,4] => [6,7]).
+Example 2:
+
+Input: envelopes = [[1,1],[1,1],[1,1]]
+Output: 1
+
+Constraints:
+
+1 <= envelopes.length <= 5000
+envelopes[i].length == 2
+1 <= wi, hi <= 104
+
+ 394 52.2%  Medium 4741/228 Decode String
+------
+
+Given an encoded string, return its decoded string.
+
+The encoding rule is: k[encoded_string], where the encoded_string inside the square brackets is being repeated exactly k times. Note that k is guaranteed to be a positive integer.
+
+You may assume that the input string is always valid; No extra white spaces, square brackets are well-formed, etc.
+
+Furthermore, you may assume that the original data does not contain any digits and that digits are only for those repeat numbers, k. For example, there won't be input like 3a or 2[4].
+
+Example 1:
+
+Input: s = "3[a]2[bc]"
+Output: "aaabcbc"
+Example 2:
+
+Input: s = "3[a2[c]]"
+Output: "accaccacc"
+Example 3:
+
+Input: s = "2[abc]3[cd]ef"
+Output: "abcabccdcdcdef"
+Example 4:
+
+Input: s = "abc3[cd]xyz"
+Output: "abccdcdcdxyz"
+ 
+Constraints:
+
+1 <= s.length <= 30
+s consists of lowercase English letters, digits, and square brackets '[]'.
+s is guaranteed to be a valid input.
+All the integers in s are in the range [1, 300].
+
+ 454 54.5%  Medium 1833/84 4Sum II
+----
+
+Given four lists A, B, C, D of integer values, compute how many tuples (i, j, k, l) there are such that A[i] + B[j] + C[k] + D[l] is zero.
+
+To make problem a bit easier, all A, B, C, D have same length of N where 0 ≤ N ≤ 500. All integers are in the range of -228 to 228 - 1 and the result is guaranteed to be at most 231 - 1.
+
+Example:
+
+Input:
+A = [ 1, 2]
+B = [-2,-1]
+C = [-1, 2]
+D = [ 0, 2]
+
+Output:
+2
+
+Explanation:
+The two tuples are:
+1. (0, 0, 0, 1) -> A[0] + B[0] + C[0] + D[1] = 1 + (-2) + (-1) + 2 = 0
+2. (1, 1, 0, 0) -> A[1] + B[1] + C[0] + D[0] = 2 + (-1) + (-1) + 0 = 0
+ 
+Accepted
+156,653
+Submissions
+286,761
+ 
+ 474 43.4%  Medium 1420/263 Ones and Zeroes
+------
+You are given an array of binary strings strs and two integers m and n.
+
+Return the size of the largest subset of strs such that there are at most m 0's and n 1's in the subset.
+
+A set x is a subset of a set y if all elements of x are also elements of y.
+
+ 
+
+Example 1:
+
+Input: strs = ["10","0001","111001","1","0"], m = 5, n = 3
+Output: 4
+Explanation: The largest subset with at most 5 0's and 3 1's is {"10", "0001", "1", "0"}, so the answer is 4.
+Other valid but smaller subsets include {"0001", "1"} and {"10", "1", "0"}.
+{"111001"} is an invalid subset because it contains 4 1's, greater than the maximum of 3.
+Example 2:
+
+Input: strs = ["10","0","1"], m = 1, n = 1
+Output: 2
+Explanation: The largest subset is {"0", "1"}, so the answer is 2.
+ 
+
+Constraints:
+
+1 <= strs.length <= 600
+1 <= strs[i].length <= 100
+strs[i] consists only of digits '0' and '1'.
+1 <= m, n <= 100
+
+ 494 45.9%  Medium 3838/158 Target Sum
+------
+
+You are given a list of non-negative integers, a1, a2, ..., an, and a target, S. Now you have 2 symbols + and -. For each integer, you should choose one from + and - as its new symbol.
+
+Find out how many ways to assign symbols to make sum of integers equal to target S.
+
+Example 1:
+
+Input: nums is [1, 1, 1, 1, 1], S is 3. 
+Output: 5
+Explanation: 
+
+-1+1+1+1+1 = 3
++1-1+1+1+1 = 3
++1+1-1+1+1 = 3
++1+1+1-1+1 = 3
++1+1+1+1-1 = 3
+
+There are 5 ways to assign symbols to make the sum of nums be target 3.
+
+Constraints:
+
+The length of the given array is positive and will not exceed 20.
+The sum of elements in the given array will not exceed 1000.
+Your output answer is guaranteed to be fitted in a 32-bit integer.
+
+ 554 50.5%  Medium 1133/56 Brick Wall
+------
+
+There is a brick wall in front of you. The wall is rectangular and has several rows of bricks. The bricks have the same height but different width. You want to draw a vertical line from the top to the bottom and cross the least bricks.
+
+The brick wall is represented by a list of rows. Each row is a list of integers representing the width of each brick in this row from left to right.
+
+If your line go through the edge of a brick, then the brick is not considered as crossed. You need to find out how to draw the line to cross the least bricks and return the number of crossed bricks.
+
+You cannot draw a line just along one of the two vertical edges of the wall, in which case the line will obviously cross no bricks.
+
+Example:
+
+Input: [[1,2,2,1],
+        [3,1,2],
+        [1,3,2],
+        [2,4],
+        [3,1,2],
+        [1,3,1,1]]
+
+Output: 2
+
+Explanation: 
+
+Note:
+
+The width sum of bricks in different rows are the same and won't exceed INT_MAX.
+The number of bricks in each row is in range [1,10,000]. The height of wall is in range [1,10,000]. Total number of bricks of the wall won't exceed 20,000.
+
+ 654 80.8%  Medium 2390/268 Maximum Binary Tree
+------
+You are given an integer array nums with no duplicates. A maximum binary tree can be built recursively from nums using the following algorithm:
+
+Create a root node whose value is the maximum value in nums.
+Recursively build the left subtree on the subarray prefix to the left of the maximum value.
+Recursively build the right subtree on the subarray suffix to the right of the maximum value.
+Return the maximum binary tree built from nums.
+
+Example 1:
+
+
+Input: nums = [3,2,1,6,0,5]
+Output: [6,3,5,null,2,0,null,null,1]
+Explanation: The recursive calls are as follow:
+- The largest value in [3,2,1,6,0,5] is 6. Left prefix is [3,2,1] and right suffix is [0,5].
+    - The largest value in [3,2,1] is 3. Left prefix is [] and right suffix is [2,1].
+        - Empty array, so no child.
+        - The largest value in [2,1] is 2. Left prefix is [] and right suffix is [1].
+            - Empty array, so no child.
+            - Only one element, so child is a node with value 1.
+    - The largest value in [0,5] is 5. Left prefix is [0] and right suffix is [].
+        - Only one element, so child is a node with value 0.
+        - Empty array, so no child.
+
+Example 2:
+
+Input: nums = [3,2,1]
+Output: [3,null,2,null,1]
+ 
+Constraints:
+
+1 <= nums.length <= 1000
+0 <= nums[i] <= 1000
+All integers in nums are unique.
+
  714 55.7%  Medium Best Time to Buy and Sell Stock with Transaction Fee
- 794 33.6%  Medium Valid Tic-Tac-Toe State
- 814 73.0%  Medium Binary Tree Pruning
- 894 76.8%  Medium All Possible Full Binary Trees
- 934 49.3%  Medium Shortest Bridge
- 954 35.3%  Medium Array of Doubled Pairs
- 974 50.4%  Medium Subarray Sums Divisible by K
+------
+You are given an array prices where prices[i] is the price of a given stock on the ith day, and an integer fee representing a transaction fee.
+
+Find the maximum profit you can achieve. You may complete as many transactions as you like, but you need to pay the transaction fee for each transaction.
+
+Note: You may not engage in multiple transactions simultaneously (i.e., you must sell the stock before you buy again).
+
+Example 1:
+
+Input: prices = [1,3,2,8,4,9], fee = 2
+Output: 8
+Explanation: The maximum profit can be achieved by:
+- Buying at prices[0] = 1
+- Selling at prices[3] = 8
+- Buying at prices[4] = 4
+- Selling at prices[5] = 9
+The total profit is ((8 - 1) - 2) + ((9 - 4) - 2) = 8.
+Example 2:
+
+Input: prices = [1,3,7,5,10,3], fee = 3
+Output: 6
+ 
+Constraints:
+
+1 <= prices.length <= 5 * 104
+1 <= prices[i] < 5 * 104
+0 <= fee < 5 * 104
+
+Accepted 105,030 Submissions 181,153
+
+ 794 33.6%  Medium 256/727 Valid Tic-Tac-Toe State
+------
+
+A Tic-Tac-Toe board is given as a string array board. Return True if and only if it is possible to reach this board position during the course of a valid tic-tac-toe game.
+
+The board is a 3 x 3 array, and consists of characters " ", "X", and "O".  The " " character represents an empty square.
+
+Here are the rules of Tic-Tac-Toe:
+
+Players take turns placing characters into empty squares (" ").
+The first player always places "X" characters, while the second player always places "O" characters.
+"X" and "O" characters are always placed into empty squares, never filled ones.
+The game ends when there are 3 of the same (non-empty) character filling any row, column, or diagonal.
+The game also ends if all squares are non-empty.
+No more moves can be played if the game is over.
+Example 1:
+Input: board = ["O  ", "   ", "   "]
+Output: false
+Explanation: The first player always plays "X".
+
+Example 2:
+Input: board = ["XOX", " X ", "   "]
+Output: false
+Explanation: Players take turns making moves.
+
+Example 3:
+Input: board = ["XXX", "   ", "OOO"]
+Output: false
+
+Example 4:
+Input: board = ["XOX", "O O", "XOX"]
+Output: true
+Note:
+
+board is a length-3 array of strings, where each string board[i] has length 3.
+Each board[i][j] is a character in the set {" ", "X", "O"}.
+
+ 814 73.0%  Medium 1372/52 Binary Tree Pruning
+------
+
+We are given the head node root of a binary tree, where additionally every node's value is either a 0 or a 1.
+
+Return the same tree where every subtree (of the given tree) not containing a 1 has been removed.
+
+(Recall that the subtree of a node X is X, plus every node that is a descendant of X.)
+
+Example 1:
+Input: [1,null,0,0,1]
+Output: [1,null,0,null,1]
+ 
+Explanation: 
+Only the red nodes satisfy the property "every subtree not containing a 1".
+The diagram on the right represents the answer.
+
+Example 2:
+Input: [1,0,1,0,0,0,1]
+Output: [1,null,1,null,1]
+
+Example 3:
+Input: [1,1,0,1,1,0,1,0]
+Output: [1,1,0,1,1,null,1]
+
+Note:
+
+The binary tree will have at most 200 nodes.
+The value of each node will only be 0 or 1.
+
+ 894 76.8%  Medium 1323/109 All Possible Full Binary Trees
+------
+
+Given an integer n, return a list of all possible full binary trees with n nodes. Each node of each tree in the answer must have Node.val == 0.
+
+Each element of the answer is the root node of one possible tree. You may return the final list of trees in any order.
+
+A full binary tree is a binary tree where each node has exactly 0 or 2 children.
+
+Example 1:
+
+Input: n = 7
+Output: [[0,0,0,null,null,0,0,null,null,0,0],[0,0,0,null,null,0,0,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,null,null,null,null,0,0],[0,0,0,0,0,null,null,0,0]]
+Example 2:
+
+Input: n = 3
+Output: [[0,0,0]]
+ 
+Constraints:
+
+1 <= n <= 20
+
+ 934 49.3%  Medium 1244/85 Shortest Bridge
+------
+
+In a given 2D binary array A, there are two islands.  (An island is a 4-directionally connected group of 1s not connected to any other 1s.)
+
+Now, we may change 0s to 1s so as to connect the two islands together to form 1 island.
+
+Return the smallest number of 0s that must be flipped.  (It is guaranteed that the answer is at least 1.)
+
+Example 1:
+
+Input: A = [[0,1],[1,0]]
+Output: 1
+Example 2:
+
+Input: A = [[0,1,0],[0,0,0],[0,0,1]]
+Output: 2
+Example 3:
+
+Input: A = [[1,1,1,1,1],[1,0,0,0,1],[1,0,1,0,1],[1,0,0,0,1],[1,1,1,1,1]]
+Output: 1
+ 
+Constraints:
+
+2 <= A.length == A[0].length <= 100
+A[i][j] == 0 or A[i][j] == 1
+
+ 954 35.3%  Medium 400/61 Array of Doubled Pairs
+------
+
+Given an array of integers arr of even length, return true if and only if it is possible to reorder it such that arr[2 * i + 1] = 2 * arr[2 * i] for every 0 <= i < len(arr) / 2.
+
+Example 1:
+
+Input: arr = [3,1,3,6]
+Output: false
+Example 2:
+
+Input: arr = [2,1,2,6]
+Output: false
+Example 3:
+
+Input: arr = [4,-2,2,-4]
+Output: true
+Explanation: We can take two groups, [-2,-4] and [2,4] to form [-2,-4,2,4] or [2,4,-2,-4].
+Example 4:
+
+Input: arr = [1,2,4,16,8,4]
+Output: false
+
+Constraints:
+
+0 <= arr.length <= 3 * 104
+arr.length is even.
+-105 <= arr[i] <= 105
+
+ 974 50.4%  Medium 1504/114 Subarray Sums Divisible by K
+------
+
+Given an array A of integers, return the number of (contiguous, non-empty) subarrays that have a sum divisible by K.
+
+Example 1:
+
+Input: A = [4,5,0,-2,-3,1], K = 5
+Output: 7
+Explanation: There are 7 subarrays with a sum divisible by K = 5:
+[4, 5, 0, -2, -3, 1], [5], [5, 0], [5, 0, -2, -3], [0], [0, -2, -3], [-2, -3]
+ 
+Note:
+
+1 <= A.length <= 30000
+-10000 <= A[i] <= 10000
+2 <= K <= 10000

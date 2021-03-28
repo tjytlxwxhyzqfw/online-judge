@@ -29,3 +29,64 @@ while (left < rght && top < down) {
 	for row: down -> top: add matrix[row][left]
 	if ++left > rght: break
 }
+
+134:
+
+从任意点X向右走, 如果遇到了第一个负数-N
+那么就从X向左走, 走到油量是+N为止. 
+走完为止.
+
+Discuss: 答案基本上跟我的是一样的
+
+354:
+
+如果面试问起来, 你要这样回答:
+
+宽度一样的信封, 我永远只保留短的? 不对; 最长的? 也不对;
+(1, 2) (2, 2) (2, 3) (2, 7), (3, 5)
+
+454:
+I: A和B合并, C和D合并, 然后用双指针的2Sum方法;
+D: A和B合并, 直接Hash计数; 然后C和D不合并, 边组合边计算;
+
+有个非常有必要搞明白的问题:
+两个数组X, Y, 都是升序排序
+现在i指向x第一个, j指向y最后一个.
+求X和Y中所有和为0的两元对; 请问, 双指针解法能行吗????
+
+一定要和3Sum解法对比着来看啊.
+
+474:
+
+I: 估计就是一个动态规划: 100*100*600 = 600W
+dp[i][j] = max{
+	dp[i-x1][j-y1] + 1
+	dp[i-x2][j-y2] + 1
+}
+
+714:
+
+buy[0] = -p[0]
+sel[0] = 0 // attention: 假设在-1天的时候我卖掉了所有股票; 收益为0; 
+
+i >= 0
+
+buy[i] = max {
+	buy[i-1]
+	sel[i-1]-p[i]
+}
+
+sel[i] = max {
+	sel[i-1]
+	buy[i-1] + p[i] - fee
+}
+
+for (int i = 0; i < p.length; ++i) {
+	buy[i] = Math.max(buy[i-1], sel[i-1]-p[i])
+	sel[i] = Math.max(sel[i-1], buy[i-1]+p[i]-fee)
+}
+
+
+
+
+
